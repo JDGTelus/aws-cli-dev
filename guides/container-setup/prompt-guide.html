@@ -7,6 +7,8 @@
         <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../tailwind-custom.css">
     <script src="../tailwind-config.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="gradient-page-bg min-h-screen p-5">
     <div class="max-w-7xl mx-auto p-10 bg-white/75 rounded-2xl shadow-2xl">
@@ -100,5 +102,10 @@ PROMPT='%(?:%{$fg_bold[green]%}aws-cli-env ➜ :%{$fg_bold[red]%}aws-cli-env ➜
         <h2 class="text-2xl font-semibold mb-4 text-blue-900">Full Documentation</h2>
         <p class="text-slate-600 leading-relaxed mb-3">See <code>guides/prompt-guide.md</code> for complete examples and advanced customization.</p>
     </div>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

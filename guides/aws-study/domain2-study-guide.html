@@ -57,11 +57,13 @@
       }
 
     </script>
-    </head>
+        <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
 <body class="gradient-page-bg min-h-screen p-5">
     <div class="max-w-7xl mx-auto p-10 bg-white/75 rounded-2xl shadow-2xl">
-        <div class="gradient-title-background text-center mb-12 p-10 rounded-2xl text-white shadow-lg">
-            <h1 class="text-5xl font-bold mb-4 drop-shadow-lg">🤖 Domain 2: Fundamentals of Generative AI</h1>
+        <div class="gradient-aws-dark text-center mb-12 p-10 rounded-2xl text-white shadow-lg">
+            <h1 class="text-5xl font-bold mb-4 drop-shadow-lg"><i data-lucide="bot" class="inline-block w-5 h-5"></i> Domain 2: Fundamentals of Generative AI</h1>
             <p class="text-slate-600 leading-relaxed mb-3">AWS AI Practitioner Certification Study Guide</p>
             <div class="bg-slate-100 rounded-xl h-2 my-5 overflow-hidden">
                 <div class="bg-gradient-to-r from-blue-300 to-blue-700 h-full rounded-xl transition-all duration-300" id="progressFill"></div>
@@ -70,7 +72,7 @@
         </div>
 
         <div class="bg-slate-50/90 p-6 rounded-xl mb-8 border-l-4 border-cyan-500 shadow-md">
-            <h2 class="text-2xl font-semibold mb-4 text-blue-900">📋 Domain Overview</h2>
+            <h2 class="text-2xl font-semibold mb-4 text-blue-900"><i data-lucide="clipboard" class="inline-block w-5 h-5"></i> Domain Overview</h2>
             <p class="text-slate-600 leading-relaxed mb-3"><strong>Purpose:</strong> This domain covers the core concepts of generative artificial intelligence, including foundation models, large language models (LLMs), and AWS services that enable generative AI applications.</p>
             <p class="text-slate-600 leading-relaxed mb-3"><strong>Focus Areas:</strong> Generative AI concepts, foundation models, prompt engineering, model capabilities/limitations, and AWS infrastructure for GenAI.</p>
             <p class="text-slate-600 leading-relaxed mb-3"><strong>Depth Level:</strong> Conceptual understanding with practical knowledge of AWS generative AI services and implementation patterns.</p>
@@ -78,13 +80,13 @@
 
         <!-- Task Statement 2.1 -->
         <div class="bg-white border border-slate-200 rounded-xl mb-6 overflow-hidden shadow-lg">
-            <div class="gradient-title-background text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task1')">
+            <div class="gradient-aws-dark text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task1')">
                 <h3 class="text-xl font-semibold mb-2 text-blue-900">Task Statement 2.1: Explain Basic Concepts of Generative AI</h3>
                 <button class="bg-transparent border-none text-white text-2xl cursor-pointer transition-transform duration-300 p-0 m-0 leading-none" id="toggle1">▼</button>
             </div>
             <div class="p-6 hidden" id="task1">
                 <div class="bg-slate-100/80 p-4 rounded-lg my-4 border-l-4 border-orange-300">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🎯 Learning Objectives:</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Learning Objectives:</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600">Understand foundational generative AI concepts and terminology</li>
                         <li class="text-slate-600">Distinguish between generative and discriminative AI models</li>
@@ -93,7 +95,7 @@
                     </ul>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900">🔑 Core Generative AI Concepts</h4>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="key" class="inline-block w-5 h-5"></i> Core Generative AI Concepts</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                         <h5 class="text-base font-semibold mb-2 text-blue-900">Generative AI</h5>
@@ -122,11 +124,11 @@
                 </div>
 
                 <div class="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-dashed border-slate-200 rounded-lg p-8 text-center my-4 text-slate-600 italic">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">📊 Recommended Visual: Generative vs Discriminative AI</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="bar-chart" class="inline-block w-5 h-5"></i> Recommended Visual: Generative vs Discriminative AI</h4>
                     <p class="text-slate-600 leading-relaxed mb-3">Create a comparison diagram showing Discriminative AI (classifies/predicts) vs Generative AI (creates new content) with examples of each type.</p>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900">🏗️ Transformer Architecture Fundamentals</h4>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="building" class="inline-block w-5 h-5"></i> Transformer Architecture Fundamentals</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                         <h5 class="text-base font-semibold mb-2 text-blue-900">Self-Attention Mechanism</h5>
@@ -150,7 +152,7 @@
                     </div>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900">🔄 Generative AI Lifecycle</h4>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="refresh-cw" class="inline-block w-5 h-5"></i> Generative AI Lifecycle</h4>
                 <div class="bg-slate-50/90 border-l-4 border-slate-400 p-4 my-2 rounded-r-lg active-step">
                     <h5 class="text-base font-semibold mb-2 text-blue-900">1. Data Collection & Preparation</h5>
                     <p class="text-slate-600 leading-relaxed mb-3">Gathering diverse, high-quality training data from various sources (web, books, code repositories)</p>
@@ -173,7 +175,7 @@
                 </div>
 
                 <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-orange-300">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🔧 Key AWS Services for Generative AI</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="wrench" class="inline-block w-5 h-5"></i> Key AWS Services for Generative AI</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                         <div class="bg-white/95 p-4 rounded-lg border border-slate-200">
                             <strong>Amazon Bedrock</strong><br>
@@ -195,7 +197,7 @@
                 </div>
 
                 <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-blue-400">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🛠️ Hands-On Practice</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="tool" class="inline-block w-5 h-5"></i> Hands-On Practice</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600"><strong>Amazon Bedrock:</strong> Experiment with different foundation models in the playground</li>
                         <li class="text-slate-600"><strong>PartyRock:</strong> Build a simple chatbot to understand generative AI interactions</li>
@@ -208,13 +210,13 @@
 
         <!-- Task Statement 2.2 -->
         <div class="bg-white border border-slate-200 rounded-xl mb-6 overflow-hidden shadow-lg">
-            <div class="gradient-title-background text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task2')">
+            <div class="gradient-aws-dark text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task2')">
                 <h3 class="text-xl font-semibold mb-2 text-blue-900">Task Statement 2.2: Understand Capabilities and Limitations of Generative AI</h3>
                 <button class="bg-transparent border-none text-white text-2xl cursor-pointer transition-transform duration-300 p-0 m-0 leading-none" id="toggle2">▼</button>
             </div>
             <div class="p-6 hidden" id="task2">
                 <div class="bg-slate-100/80 p-4 rounded-lg my-4 border-l-4 border-orange-300">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🎯 Learning Objectives:</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Learning Objectives:</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600">Identify what generative AI can and cannot do effectively</li>
                         <li class="text-slate-600">Understand common challenges and failure modes</li>
@@ -223,7 +225,7 @@
                     </ul>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900">✅ Generative AI Capabilities</h4>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="check-circle" class="inline-block w-5 h-5"></i> Generative AI Capabilities</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                         <h5 class="text-base font-semibold mb-2 text-blue-900">Content Creation</h5>
@@ -284,7 +286,7 @@
                 </div>
 
                 <div class="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-dashed border-slate-200 rounded-lg p-8 text-center my-4 text-slate-600 italic">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">📊 Recommended Visual: Capability vs Limitation Matrix</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="bar-chart" class="inline-block w-5 h-5"></i> Recommended Visual: Capability vs Limitation Matrix</h4>
                     <p class="text-slate-600 leading-relaxed mb-3">Create a matrix showing different use cases (rows) vs factors like accuracy, reliability, creativity (columns) with color-coded ratings.</p>
                 </div>
 
@@ -321,14 +323,14 @@
                 </div>
 
                 <div class="bg-blue-50/80 border border-blue-200 rounded-lg p-4 my-4">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🎯 Use Case Suitability Assessment</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Use Case Suitability Assessment</h4>
                     <p class="text-slate-600 leading-relaxed mb-3"><strong>High Suitability:</strong> Creative writing, code assistance, content summarization, language translation</p>
                     <p class="text-slate-600 leading-relaxed mb-3"><strong>Medium Suitability:</strong> Data analysis, customer support, educational content, brainstorming</p>
                     <p class="text-slate-600 leading-relaxed mb-3"><strong>Low Suitability:</strong> Critical decision-making, financial calculations, medical diagnosis, legal advice</p>
                 </div>
 
                 <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-orange-300">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🔧 AWS Tools for Evaluation & Monitoring</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="wrench" class="inline-block w-5 h-5"></i> AWS Tools for Evaluation & Monitoring</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                         <div class="bg-white/95 p-4 rounded-lg border border-slate-200">
                             <strong>Amazon Bedrock Model Evaluation</strong><br>
@@ -350,7 +352,7 @@
                 </div>
 
                 <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-blue-400">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🛠️ Hands-On Practice</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="tool" class="inline-block w-5 h-5"></i> Hands-On Practice</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600"><strong>Hallucination Testing:</strong> Ask models factual questions and verify accuracy</li>
                         <li class="text-slate-600"><strong>Bias Detection:</strong> Test models with prompts that might reveal biases</li>
@@ -363,13 +365,13 @@
 
         <!-- Task Statement 2.3 -->
         <div class="bg-white border border-slate-200 rounded-xl mb-6 overflow-hidden shadow-lg">
-            <div class="gradient-title-background text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task3')">
+            <div class="gradient-aws-dark text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task3')">
                 <h3 class="text-xl font-semibold mb-2 text-blue-900">Task Statement 2.3: Describe AWS Infrastructure and Technologies for Building Generative AI Applications</h3>
                 <button class="bg-transparent border-none text-white text-2xl cursor-pointer transition-transform duration-300 p-0 m-0 leading-none" id="toggle3">▼</button>
             </div>
             <div class="p-6 hidden" id="task3">
                 <div class="bg-slate-100/80 p-4 rounded-lg my-4 border-l-4 border-orange-300">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🎯 Learning Objectives:</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Learning Objectives:</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600">Understand AWS generative AI service offerings</li>
                         <li class="text-slate-600">Identify appropriate AWS services for different GenAI use cases</li>
@@ -378,7 +380,7 @@
                     </ul>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900">🏗️ AWS Generative AI Service Stack</h4>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="building" class="inline-block w-5 h-5"></i> AWS Generative AI Service Stack</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                         <h5 class="text-base font-semibold mb-2 text-blue-900">Foundation Layer: Amazon Bedrock</h5>
@@ -410,7 +412,7 @@
                     </div>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900">🔧 Foundation Models Available on AWS</h4>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="wrench" class="inline-block w-5 h-5"></i> Foundation Models Available on AWS</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-5">
                     <div class="bg-white/95 border-2 border-slate-200 rounded-xl p-4 transition-colors duration-300 hover:border-cyan-500">
                         <h6 class="text-sm font-semibold mb-2 text-orange-600">Amazon Titan</h6>
@@ -483,11 +485,11 @@
                 </div>
 
                 <div class="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-dashed border-slate-200 rounded-lg p-8 text-center my-4 text-slate-600 italic">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🏗️ Recommended Visual: AWS GenAI Architecture Diagram</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="building" class="inline-block w-5 h-5"></i> Recommended Visual: AWS GenAI Architecture Diagram</h4>
                     <p class="text-slate-600 leading-relaxed mb-3">Create a layered architecture diagram showing: User Interface → API Gateway → Application Logic → Bedrock/SageMaker → Infrastructure (compute, storage, networking)</p>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900">🔄 Integration Patterns</h4>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="refresh-cw" class="inline-block w-5 h-5"></i> Integration Patterns</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                         <h5 class="text-base font-semibold mb-2 text-blue-900">API-First Integration</h5>
@@ -516,7 +518,7 @@
                 </div>
 
                 <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-orange-300">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🔧 Supporting AWS Services</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="wrench" class="inline-block w-5 h-5"></i> Supporting AWS Services</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                         <div class="bg-white/95 p-4 rounded-lg border border-slate-200">
                             <strong>Lambda</strong><br>
@@ -546,7 +548,7 @@
                 </div>
 
                 <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-blue-400">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🛠️ Hands-On Practice</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="tool" class="inline-block w-5 h-5"></i> Hands-On Practice</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600"><strong>Bedrock Playground:</strong> Test different foundation models and compare outputs</li>
                         <li class="text-slate-600"><strong>Model Access:</strong> Request access to different models and understand pricing</li>
@@ -559,7 +561,7 @@
         </div>
 
         <div class="bg-slate-100/80 p-5 rounded-lg my-5 border-l-4 border-orange-300">
-            <h4 class="text-lg font-semibold mb-3 text-blue-900">💡 Study Tips for Domain 2</h4>
+            <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="lightbulb" class="inline-block w-5 h-5"></i> Study Tips for Domain 2</h4>
             <ul class="list-none space-y-2 ml-0">
                 <li class="text-slate-600"><strong>Hands-On Experience:</strong> Spend significant time with Bedrock playground and PartyRock</li>
                 <li class="text-slate-600"><strong>Model Comparison:</strong> Understand differences between available foundation models</li>
@@ -571,11 +573,11 @@
         </div>
 
         <div class="flex justify-between items-center gap-5 mt-10 mb-5 pt-5 border-t-2 border-slate-200">
-            <button class="gradient-title-background text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-slate-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='domain1-study-guide.html'">← Previous Domain</button>
-            <button class="gradient-title-background text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-slate-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='domain3-study-guide.html'">Next Domain →</button>
+            <button class="gradient-aws-dark text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-slate-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='domain1-study-guide.html'">← Previous Domain</button>
+            <button class="gradient-aws-dark text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-slate-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='domain3-study-guide.html'">Next Domain →</button>
         </div>
         <div style="text-align: center; margin-top: 20px;">
-            <button class="gradient-title-background text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-slate-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='index.html'" style="background: linear-gradient(135deg, #495057, #6c757d);">🏠 Back to Home</button>
+            <button class="gradient-aws-dark text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-slate-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='index.html'" style="background: linear-gradient(135deg, #495057, #6c757d);">🏠 Back to Home</button>
         </div>
     </div>
 
@@ -625,6 +627,11 @@
                 }, index * 500);
             });
         });
+    </script>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
     </script>
 </body>
 </html>

@@ -7,6 +7,8 @@
         <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../tailwind-custom.css">
     <script src="../tailwind-config.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="gradient-page-bg min-h-screen p-5">
     <div class="max-w-7xl mx-auto p-10 bg-white/75 rounded-2xl shadow-2xl">
@@ -55,12 +57,12 @@
         <h2 class="text-2xl font-semibold mb-4 text-blue-900">Important: Binding to 0.0.0.0</h2>
         
         <div class="success">
-            <p class="text-slate-600 leading-relaxed mb-3"><strong>✅ Correct:</strong></p>
+            <p class="text-slate-600 leading-relaxed mb-3"><strong><i data-lucide="check-circle" class="inline-block w-5 h-5"></i> Correct:</strong></p>
             <pre><code>app.run(host='0.0.0.0', port=5000)</code></pre>
         </div>
 
         <div class="warning">
-            <p class="text-slate-600 leading-relaxed mb-3"><strong>❌ Wrong:</strong></p>
+            <p class="text-slate-600 leading-relaxed mb-3"><strong><i data-lucide="x-circle" class="inline-block w-5 h-5"></i> Wrong:</strong></p>
             <pre><code>app.run(host='localhost', port=5000)  # Won't be accessible from host!</code></pre>
         </div>
 
@@ -101,5 +103,10 @@ npm run dev
         <h2 class="text-2xl font-semibold mb-4 text-blue-900">Full Documentation</h2>
         <p class="text-slate-600 leading-relaxed mb-3">See <code>guides/port-mapping-guide.md</code> for complete examples, troubleshooting, and advanced usage.</p>
     </div>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

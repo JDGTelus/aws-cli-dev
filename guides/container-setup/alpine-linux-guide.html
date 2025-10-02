@@ -7,10 +7,12 @@
         <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../tailwind-custom.css">
     <script src="../tailwind-config.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="gradient-page-bg min-h-screen p-5">
     <div class="max-w-7xl mx-auto p-10 bg-white/75 rounded-2xl shadow-2xl">
-        <h1 class="text-5xl font-bold mb-4 drop-shadow-lg">🏔️ Alpine Linux Container Guide</h1>
+        <h1 class="text-5xl font-bold mb-4 drop-shadow-lg"><i data-lucide="mountain" class="inline-block w-5 h-5"></i> Alpine Linux Container Guide</h1>
 
         <h2 class="text-2xl font-semibold mb-4 text-blue-900">What is Alpine Linux?</h2>
         <p class="text-slate-600 leading-relaxed mb-3"><strong>Alpine Linux</strong> is a security-oriented, lightweight Linux distribution. It's the most popular base image for Docker containers.</p>
@@ -74,13 +76,18 @@ apk list --installed</code></pre>
 
         <h2 class="text-2xl font-semibold mb-4 text-blue-900">Everything Else is Identical</h2>
         <div class="highlight">
-            <p class="text-slate-600 leading-relaxed mb-3">✅ Zsh with Oh-My-Zsh (same)<br>
-            ✅ AWS CLI (same)<br>
-            ✅ Git, Python, Node.js (same)<br>
-            ✅ Neovim 0.10+ (works perfectly)<br>
-            ✅ All your scripts (same)</p>
+            <p class="text-slate-600 leading-relaxed mb-3"><i data-lucide="check-circle" class="inline-block w-5 h-5"></i> Zsh with Oh-My-Zsh (same)<br>
+            <i data-lucide="check-circle" class="inline-block w-5 h-5"></i> AWS CLI (same)<br>
+            <i data-lucide="check-circle" class="inline-block w-5 h-5"></i> Git, Python, Node.js (same)<br>
+            <i data-lucide="check-circle" class="inline-block w-5 h-5"></i> Neovim 0.10+ (works perfectly)<br>
+            <i data-lucide="check-circle" class="inline-block w-5 h-5"></i> All your scripts (same)</p>
             <p class="text-slate-600 leading-relaxed mb-3"><strong>Only difference:</strong> Use <code>apk</code> instead of <code>apt</code>!</p>
         </div>
     </div>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

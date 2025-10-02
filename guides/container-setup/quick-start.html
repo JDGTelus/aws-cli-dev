@@ -7,10 +7,12 @@
         <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../tailwind-custom.css">
     <script src="../tailwind-config.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="gradient-page-bg min-h-screen p-5">
     <div class="max-w-7xl mx-auto p-10 bg-white/75 rounded-2xl shadow-2xl">
-        <h1 class="text-5xl font-bold mb-4 drop-shadow-lg">⚡ Quick Start Guide</h1>
+        <h1 class="text-5xl font-bold mb-4 drop-shadow-lg"><i data-lucide="zap" class="inline-block w-5 h-5"></i> Quick Start Guide</h1>
 
         <h2 class="text-2xl font-semibold mb-4 text-blue-900">Build and Run</h2>
         <pre><code>cd aws-cli-dev
@@ -93,5 +95,10 @@ cd workspace/my-app &amp;&amp; npm run dev
             <li class="text-slate-600">AWS setup: <code>guides/aws-setup-guide.md</code></li>
         </ul>
     </div>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

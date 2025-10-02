@@ -7,6 +7,8 @@
         <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../tailwind-custom.css">
     <script src="../tailwind-config.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="gradient-page-bg min-h-screen p-5">
     <div class="max-w-7xl mx-auto p-10 bg-white/75 rounded-2xl shadow-2xl">
@@ -322,7 +324,7 @@ aws cloudwatch describe-alarms --region us-east-1
 echo -e "\n7. Checking billing alerts..."
 aws cloudwatch describe-alarms --alarm-names "AI-Practice-Billing-Alert" --region us-east-1
 
-echo -e "\n✅ All checks complete!"</code></pre>
+echo -e "\n<i data-lucide="check-circle" class="inline-block w-5 h-5"></i> All checks complete!"</code></pre>
 
         <h2 class="text-2xl font-semibold mb-4 text-blue-900">Troubleshooting</h2>
 
@@ -384,5 +386,10 @@ echo -e "\n✅ All checks complete!"</code></pre>
             <p class="text-slate-600 leading-relaxed mb-3"><strong>Last Updated:</strong> October 2025 | <strong>Version:</strong> 1.0</p>
         </div>
     </div>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

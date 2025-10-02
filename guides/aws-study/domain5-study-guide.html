@@ -57,11 +57,13 @@
       }
 
     </script>
-    </head>
+        <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
 <body class="gradient-page-bg min-h-screen p-5">
     <div class="max-w-7xl mx-auto p-10 bg-white/75 rounded-2xl shadow-2xl">
-        <div class="gradient-title-background text-center mb-12 p-10 rounded-2xl text-white shadow-lg">
-            <h1 class="text-5xl font-bold mb-4 drop-shadow-lg">🔐 Domain 5: Security, Compliance, and Governance for AI Solutions</h1>
+        <div class="gradient-aws-dark text-center mb-12 p-10 rounded-2xl text-white shadow-lg">
+            <h1 class="text-5xl font-bold mb-4 drop-shadow-lg"><i data-lucide="lock" class="inline-block w-5 h-5"></i> Domain 5: Security, Compliance, and Governance for AI Solutions</h1>
             <p class="text-slate-600 leading-relaxed mb-3">AWS AI Practitioner Certification Study Guide</p>
             <div class="bg-slate-100 rounded-xl h-2 my-5 overflow-hidden">
                 <div class="bg-gradient-to-r from-blue-300 to-blue-700 h-full rounded-xl transition-all duration-300" id="progressFill"></div>
@@ -70,7 +72,7 @@
         </div>
 
         <div class="bg-slate-50/90 p-6 rounded-xl mb-8 border-l-4 border-cyan-500 shadow-md">
-            <h2 class="text-2xl font-semibold mb-4 text-blue-900">📋 Domain Overview</h2>
+            <h2 class="text-2xl font-semibold mb-4 text-blue-900"><i data-lucide="clipboard" class="inline-block w-5 h-5"></i> Domain Overview</h2>
             <p class="text-slate-600 leading-relaxed mb-3"><strong>Purpose:</strong> This domain covers securing AI systems, ensuring compliance with regulations, and implementing governance frameworks for AI solutions throughout their lifecycle.</p>
             <p class="text-slate-600 leading-relaxed mb-3"><strong>Focus Areas:</strong> AI system security, data protection, compliance frameworks (GDPR, HIPAA), governance policies, audit trails, and risk management.</p>
             <p class="text-slate-600 leading-relaxed mb-3"><strong>Depth Level:</strong> Practical implementation knowledge of AWS security services and compliance frameworks specific to AI workloads.</p>
@@ -78,13 +80,13 @@
 
         <!-- Task Statement 5.1 -->
         <div class="bg-white border border-slate-200 rounded-xl mb-6 overflow-hidden shadow-lg">
-            <div class="gradient-title-background text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task1')">
+            <div class="gradient-aws-dark text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task1')">
                 <h3 class="text-xl font-semibold mb-2 text-blue-900">Task Statement 5.1: Explain Methods to Secure AI Systems</h3>
                 <button class="bg-transparent border-none text-white text-2xl cursor-pointer transition-transform duration-300 p-0 m-0 leading-none" id="toggle1">▼</button>
             </div>
             <div class="p-6 hidden" id="task1">
                 <div class="bg-slate-100/80 p-4 rounded-lg my-4 border-l-4 border-orange-300">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🎯 Learning Objectives:</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Learning Objectives:</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600">Identify AWS services and features for securing AI systems</li>
                         <li class="text-slate-600">Understand data encryption methods for AI workloads</li>
@@ -129,7 +131,7 @@
                     </div>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900">🔐 Data Encryption for AI Workloads</h4>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="lock" class="inline-block w-5 h-5"></i> Data Encryption for AI Workloads</h4>
                 <div class="encryption-type at-rest">
                     <h5 class="text-base font-semibold mb-2 text-blue-900">Encryption at Rest</h5>
                     <p class="text-slate-600 leading-relaxed mb-3"><strong>Purpose:</strong> Protect stored data including training datasets, model artifacts, and logs</p>
@@ -157,7 +159,7 @@
                     <p class="text-slate-600 leading-relaxed mb-3"><strong>Considerations:</strong> Performance impact vs security requirements</p>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900">🔑 Identity and Access Management for AI Services</h4>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="key" class="inline-block w-5 h-5"></i> Identity and Access Management for AI Services</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                         <h5 class="text-base font-semibold mb-2 text-blue-900">IAM Roles and Policies</h5>
@@ -219,12 +221,12 @@
                 </div>
 
                 <div class="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-dashed border-slate-200 rounded-lg p-8 text-center my-4 text-slate-600 italic">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🏗️ Recommended Visual: AI Security Architecture Diagram</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="building" class="inline-block w-5 h-5"></i> Recommended Visual: AI Security Architecture Diagram</h4>
                     <p class="text-slate-600 leading-relaxed mb-3">Create a layered security diagram showing: User → WAF → API Gateway → VPC → AI Services with encryption, IAM, and monitoring at each layer.</p>
                 </div>
 
                 <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-orange-300">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🔧 Key AWS Security Services for AI</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="wrench" class="inline-block w-5 h-5"></i> Key AWS Security Services for AI</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                         <div class="bg-white/95 p-4 rounded-lg border border-slate-200">
                             <strong>AWS IAM</strong><br>
@@ -254,7 +256,7 @@
                 </div>
 
                 <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-blue-400">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🛠️ Hands-On Practice</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="tool" class="inline-block w-5 h-5"></i> Hands-On Practice</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600"><strong>VPC Setup:</strong> Create isolated VPC for AI workloads with proper subnetting</li>
                         <li class="text-slate-600"><strong>IAM Configuration:</strong> Set up roles and policies for SageMaker and Bedrock</li>
@@ -268,13 +270,13 @@
 
         <!-- Task Statement 5.2 -->
         <div class="bg-white border border-slate-200 rounded-xl mb-6 overflow-hidden shadow-lg">
-            <div class="gradient-title-background text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task2')">
+            <div class="gradient-aws-dark text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task2')">
                 <h3 class="text-xl font-semibold mb-2 text-blue-900">Task Statement 5.2: Recognize Compliance Requirements for AI Solutions</h3>
                 <button class="bg-transparent border-none text-white text-2xl cursor-pointer transition-transform duration-300 p-0 m-0 leading-none" id="toggle2">▼</button>
             </div>
             <div class="p-6 hidden" id="task2">
                 <div class="bg-slate-100/80 p-4 rounded-lg my-4 border-l-4 border-orange-300">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🎯 Learning Objectives:</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Learning Objectives:</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600">Understand major compliance frameworks affecting AI systems</li>
                         <li class="text-slate-600">Identify AWS compliance certifications and attestations</li>
@@ -350,7 +352,7 @@
                     </div>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900">📋 AWS Compliance Certifications and Attestations</h4>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="clipboard" class="inline-block w-5 h-5"></i> AWS Compliance Certifications and Attestations</h4>
                 <table class="comparison-table">
                     <thead>
                         <tr>
@@ -394,7 +396,7 @@
                     </tbody>
                 </table>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900">📝 Audit and Documentation Requirements</h4>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="file-text" class="inline-block w-5 h-5"></i> Audit and Documentation Requirements</h4>
                 <div class="lifecycle-container">
                     <div class="lifecycle-stage">
                         <h5 class="text-base font-semibold mb-2 text-blue-900">Data Documentation</h5>
@@ -427,7 +429,7 @@
                 </div>
 
                 <div class="bg-blue-50/80 border border-blue-200 rounded-lg p-4 my-4">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">⚖️ AI-Specific Compliance Considerations</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="scale" class="inline-block w-5 h-5"></i> AI-Specific Compliance Considerations</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600"><strong>Algorithmic Accountability:</strong> Transparency in AI decision-making processes</li>
                         <li class="text-slate-600"><strong>Bias and Fairness:</strong> Regular testing and mitigation of algorithmic bias</li>
@@ -439,7 +441,7 @@
                 </div>
 
                 <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-orange-300">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🔧 AWS Compliance and Governance Tools</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="wrench" class="inline-block w-5 h-5"></i> AWS Compliance and Governance Tools</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                         <div class="bg-white/95 p-4 rounded-lg border border-slate-200">
                             <strong>AWS Config</strong><br>
@@ -469,7 +471,7 @@
                 </div>
 
                 <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-blue-400">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🛠️ Hands-On Practice</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="tool" class="inline-block w-5 h-5"></i> Hands-On Practice</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600"><strong>Compliance Assessment:</strong> Review AWS Artifact for relevant certifications</li>
                         <li class="text-slate-600"><strong>Config Rules:</strong> Set up compliance monitoring for AI resources</li>
@@ -483,13 +485,13 @@
 
         <!-- Task Statement 5.3 -->
         <div class="bg-white border border-slate-200 rounded-xl mb-6 overflow-hidden shadow-lg">
-            <div class="gradient-title-background text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task3')">
+            <div class="gradient-aws-dark text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task3')">
                 <h3 class="text-xl font-semibold mb-2 text-blue-900">Task Statement 5.3: Describe Governance Strategies for AI Solutions</h3>
                 <button class="bg-transparent border-none text-white text-2xl cursor-pointer transition-transform duration-300 p-0 m-0 leading-none" id="toggle3">▼</button>
             </div>
             <div class="p-6 hidden" id="task3">
                 <div class="bg-slate-100/80 p-4 rounded-lg my-4 border-l-4 border-orange-300">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🎯 Learning Objectives:</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Learning Objectives:</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600">Understand AI governance frameworks and best practices</li>
                         <li class="text-slate-600">Implement model lifecycle management and versioning</li>
@@ -529,7 +531,7 @@
                     </div>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900">🔄 Model Lifecycle Management</h4>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="refresh-cw" class="inline-block w-5 h-5"></i> Model Lifecycle Management</h4>
                 <div class="lifecycle-container">
                     <div class="lifecycle-stage">
                         <h5 class="text-base font-semibold mb-2 text-blue-900">Model Development Governance</h5>
@@ -568,7 +570,7 @@
                     </div>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900">📊 Monitoring and Alerting for AI Systems</h4>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="bar-chart" class="inline-block w-5 h-5"></i> Monitoring and Alerting for AI Systems</h4>
                 <div class="tool-feature">
                     <h6 class="text-sm font-semibold mb-2 text-orange-600">Performance Monitoring</h6>
                     <p class="text-slate-600 leading-relaxed mb-3"><strong>Model Accuracy:</strong> Track prediction accuracy over time</p>
@@ -606,7 +608,7 @@
                 </div>
 
                 <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-orange-300">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🔧 AWS Governance and Monitoring Tools</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="wrench" class="inline-block w-5 h-5"></i> AWS Governance and Monitoring Tools</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                         <div class="bg-white/95 p-4 rounded-lg border border-slate-200">
                             <strong>SageMaker Model Registry</strong><br>
@@ -636,7 +638,7 @@
                 </div>
 
                 <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-blue-400">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🛠️ Hands-On Practice</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="tool" class="inline-block w-5 h-5"></i> Hands-On Practice</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600"><strong>Model Registry:</strong> Set up model versioning and approval workflows</li>
                         <li class="text-slate-600"><strong>Monitoring Setup:</strong> Configure comprehensive monitoring for AI systems</li>
@@ -649,7 +651,7 @@
         </div>
 
         <div class="bg-slate-100/80 p-5 rounded-lg my-5 border-l-4 border-orange-300">
-            <h4 class="text-lg font-semibold mb-3 text-blue-900">💡 Study Tips for Domain 5</h4>
+            <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="lightbulb" class="inline-block w-5 h-5"></i> Study Tips for Domain 5</h4>
             <ul class="list-none space-y-2 ml-0">
                 <li class="text-slate-600"><strong>Security First:</strong> Understand AWS shared responsibility model for AI</li>
                 <li class="text-slate-600"><strong>Compliance Frameworks:</strong> Know GDPR, HIPAA, and other major frameworks</li>
@@ -661,11 +663,11 @@
         </div>
 
         <div class="flex justify-between items-center gap-5 mt-10 mb-5 pt-5 border-t-2 border-slate-200">
-            <button class="gradient-title-background text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-slate-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='domain4-study-guide.html'">← Previous Domain</button>
-            <button class="gradient-title-background text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-slate-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='index.html'">Back to Home 🏠</button>
+            <button class="gradient-aws-dark text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-slate-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='domain4-study-guide.html'">← Previous Domain</button>
+            <button class="gradient-aws-dark text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-slate-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='index.html'">Back to Home 🏠</button>
         </div>
         <div style="text-align: center; margin-top: 20px;">
-            <button class="gradient-title-background text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-slate-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='index.html'" style="background: linear-gradient(135deg, #495057, #6c757d);">🏠 Back to Home</button>
+            <button class="gradient-aws-dark text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-slate-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='index.html'" style="background: linear-gradient(135deg, #495057, #6c757d);">🏠 Back to Home</button>
         </div>
     </div>
 
@@ -703,6 +705,11 @@
                 }, 100);
             });
         });
+    </script>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
     </script>
 </body>
 </html>

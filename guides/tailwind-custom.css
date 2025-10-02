@@ -8,8 +8,8 @@
 }
 
 /* Gradient backgrounds using Tailwind default colors */
-.gradient-title-background {
-    background: linear-gradient(117deg, #4195c5 0%, #89c9e9 100%);
+.gradient-aws-dark {
+    background: linear-gradient(135deg, #232f3e 0%, #131921 100%);
 }
 
 .gradient-page-bg {

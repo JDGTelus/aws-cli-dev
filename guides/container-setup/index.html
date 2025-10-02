@@ -7,16 +7,18 @@
         <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../tailwind-custom.css">
     <script src="../tailwind-config.js"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="gradient-page-bg min-h-screen p-5">
     <div class="max-w-7xl mx-auto p-10 bg-white/75 rounded-2xl shadow-2xl">
-        <div class="gradient-title-background text-white p-8 rounded-xl mb-8 text-center">
-            <h1 class="text-5xl font-bold mb-4 drop-shadow-lg">📚 AWS CLI Development Environment</h1>
+        <div class="gradient-aws-dark text-white p-8 rounded-xl mb-8 text-center">
+            <h1 class="text-5xl font-bold mb-4 drop-shadow-lg"><i data-lucide="book-open" class="inline-block w-5 h-5"></i> AWS CLI Development Environment</h1>
             <div class="text-orange-500 text-xl mt-2">Complete Documentation Wiki</div>
         </div>
 
         <div class="bg-cyan-50 border-l-4 border-cyan-500 p-5 rounded my-8">
-            <h3 class="text-xl font-semibold mb-2 text-blue-900">🚀 Quick Start</h3>
+            <h3 class="text-xl font-semibold mb-2 text-blue-900"><i data-lucide="rocket" class="inline-block w-5 h-5"></i> Quick Start</h3>
             <p class="text-slate-600 leading-relaxed mb-3">New to this environment? Start here:</p>
             <ul class="list-none space-y-2 ml-0">
                 <li class="text-slate-600"><a href="quick-start.html">Quick Start Guide</a> - Get up and running in minutes</li>
@@ -30,7 +32,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-8">
                 <div class="bg-slate-50 border-2 border-slate-200 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-orange-500 hover:shadow-lg hover:-translate-y-0.5">
                     <a href="quick-start.html">
-                        <div class="text-4xl mb-2">⚡</div>
+                        <div class="text-4xl mb-2"><i data-lucide="zap" class="inline-block w-5 h-5"></i></div>
                         <h3 class="text-xl font-semibold mb-2 text-blue-900">Quick Start Guide</h3>
                         <p class="text-slate-600 leading-relaxed mb-3">Build, run, and configure your development environment in minutes. Essential first steps and quick reference commands.</p>
                     </a>
@@ -38,7 +40,7 @@
 
                 <div class="bg-slate-50 border-2 border-slate-200 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-orange-500 hover:shadow-lg hover:-translate-y-0.5">
                     <a href="usage_guide.html">
-                        <div class="text-4xl mb-2">📖</div>
+                        <div class="text-4xl mb-2"><i data-lucide="book" class="inline-block w-5 h-5"></i></div>
                         <h3 class="text-xl font-semibold mb-2 text-blue-900">Usage Guide</h3>
                         <p class="text-slate-600 leading-relaxed mb-3">Comprehensive guide covering all features, tools, and best practices for the AI Practitioner AWS environment.</p>
                     </a>
@@ -46,7 +48,7 @@
 
                 <div class="bg-slate-50 border-2 border-slate-200 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-orange-500 hover:shadow-lg hover:-translate-y-0.5">
                     <a href="aws-setup-guide.html">
-                        <div class="text-4xl mb-2">☁️</div>
+                        <div class="text-4xl mb-2"><i data-lucide="cloud" class="inline-block w-5 h-5"></i></div>
                         <h3 class="text-xl font-semibold mb-2 text-blue-900">AWS Setup Guide</h3>
                         <p class="text-slate-600 leading-relaxed mb-3">Complete AWS configuration including IAM users, credentials, billing alerts, and service-specific setup for Bedrock and SageMaker.</p>
                     </a>
@@ -59,7 +61,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-8">
                 <div class="bg-slate-50 border-2 border-slate-200 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-orange-500 hover:shadow-lg hover:-translate-y-0.5">
                     <a href="neovim-lua-configuration-guide.html">
-                        <div class="text-4xl mb-2">⚙️</div>
+                        <div class="text-4xl mb-2"><i data-lucide="settings" class="inline-block w-5 h-5"></i></div>
                         <h3 class="text-xl font-semibold mb-2 text-blue-900">Neovim Lua Configuration</h3>
                         <p class="text-slate-600 leading-relaxed mb-3">Deep dive into the modern Lua-based Neovim configuration. Learn about plugins, LSP setup, and customization patterns.</p>
                     </a>
@@ -67,7 +69,7 @@
 
                 <div class="bg-slate-50 border-2 border-slate-200 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-orange-500 hover:shadow-lg hover:-translate-y-0.5">
                     <a href="neovim-navigation-manual.html">
-                        <div class="text-4xl mb-2">🧭</div>
+                        <div class="text-4xl mb-2"><i data-lucide="compass" class="inline-block w-5 h-5"></i></div>
                         <h3 class="text-xl font-semibold mb-2 text-blue-900">Neovim Navigation Manual</h3>
                         <p class="text-slate-600 leading-relaxed mb-3">Master Neovim navigation with comprehensive key bindings, movement commands, and productivity shortcuts.</p>
                     </a>
@@ -75,7 +77,7 @@
 
                 <div class="bg-slate-50 border-2 border-slate-200 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-orange-500 hover:shadow-lg hover:-translate-y-0.5">
                     <a href="port-mapping-guide.html">
-                        <div class="text-4xl mb-2">🔌</div>
+                        <div class="text-4xl mb-2"><i data-lucide="plug" class="inline-block w-5 h-5"></i></div>
                         <h3 class="text-xl font-semibold mb-2 text-blue-900">Port Mapping Guide</h3>
                         <p class="text-slate-600 leading-relaxed mb-3">Understanding container port mappings for web development, databases, and development servers.</p>
                     </a>
@@ -88,7 +90,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-8">
                 <div class="bg-slate-50 border-2 border-slate-200 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-orange-500 hover:shadow-lg hover:-translate-y-0.5">
                     <a href="alpine-linux-guide.html">
-                        <div class="text-4xl mb-2">🏔️</div>
+                        <div class="text-4xl mb-2"><i data-lucide="mountain" class="inline-block w-5 h-5"></i></div>
                         <h3 class="text-xl font-semibold mb-2 text-blue-900">Alpine Linux Guide</h3>
                         <p class="text-slate-600 leading-relaxed mb-3">Learn about Alpine Linux, the lightweight container base. Package management with apk and key differences from Ubuntu.</p>
                     </a>
@@ -104,7 +106,7 @@
 
                 <div class="bg-slate-50 border-2 border-slate-200 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-orange-500 hover:shadow-lg hover:-translate-y-0.5">
                     <a href="migration-arch.html">
-                        <div class="text-4xl mb-2">🏗️</div>
+                        <div class="text-4xl mb-2"><i data-lucide="building" class="inline-block w-5 h-5"></i></div>
                         <h3 class="text-xl font-semibold mb-2 text-blue-900">Migration Architecture</h3>
                         <p class="text-slate-600 leading-relaxed mb-3">Technical architecture and considerations for container base image migrations.</p>
                     </a>
@@ -117,7 +119,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-8">
                 <div class="bg-slate-50 border-2 border-slate-200 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-orange-500 hover:shadow-lg hover:-translate-y-0.5">
                     <a href="prompt-guide.html">
-                        <div class="text-4xl mb-2">💬</div>
+                        <div class="text-4xl mb-2"><i data-lucide="message-circle" class="inline-block w-5 h-5"></i></div>
                         <h3 class="text-xl font-semibold mb-2 text-blue-900">Prompt Engineering Guide</h3>
                         <p class="text-slate-600 leading-relaxed mb-3">Best practices and techniques for effective prompt engineering with AI models and assistants.</p>
                     </a>
@@ -126,7 +128,7 @@
         </div>
 
         <div class="bg-slate-50/90 p-6 rounded-xl mb-8 border-l-4 border-blue-700 shadow-md">
-            <h3 class="text-xl font-semibold mb-2 text-blue-900">📝 About This Documentation</h3>
+            <h3 class="text-xl font-semibold mb-2 text-blue-900"><i data-lucide="file-text" class="inline-block w-5 h-5"></i> About This Documentation</h3>
             <p class="text-slate-600 leading-relaxed mb-3">This wiki provides comprehensive documentation for the AWS CLI Development Environment. All guides are designed to help you maximize productivity with AWS services, modern development tools, and containerized workflows.</p>
             <p class="text-slate-600 leading-relaxed mb-3"><strong>Server Info:</strong> This documentation is served via Python's built-in HTTP server on port 8000.</p>
         </div>
@@ -136,5 +138,10 @@
             <p class="text-slate-600 leading-relaxed mb-3">Last Updated: October 2025 | Version: 1.0</p>
         </div>
     </div>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>

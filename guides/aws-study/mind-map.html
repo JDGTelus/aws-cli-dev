@@ -174,16 +174,18 @@
             }
         }
     </style>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="gradient-page-bg min-h-screen p-5">
     <div class="max-w-7xl mx-auto p-10 bg-white/75 rounded-2xl shadow-2xl">
-        <div class="gradient-title-background text-center mb-12 p-10 rounded-2xl text-white shadow-lg">
-            <h1 class="text-5xl font-bold mb-4 drop-shadow-lg">🗺️ AWS AI Practitioner Mind Map</h1>
+        <div class="gradient-aws-dark text-center mb-12 p-10 rounded-2xl text-white shadow-lg">
+            <h1 class="text-5xl font-bold mb-4 drop-shadow-lg"><i data-lucide="map" class="inline-block w-5 h-5"></i> AWS AI Practitioner Mind Map</h1>
             <p class="text-slate-600 leading-relaxed mb-3">Visual Overview of Key Concepts Across All Domains</p>
         </div>
 
         <div class="instructions">
-            <h3 class="text-xl font-semibold mb-2 text-blue-900">📖 How to Navigate the Mind Map</h3>
+            <h3 class="text-xl font-semibold mb-2 text-blue-900"><i data-lucide="book" class="inline-block w-5 h-5"></i> How to Navigate the Mind Map</h3>
             <ul class="list-none space-y-2 ml-0">
                 <li class="text-slate-600"><strong>Zoom:</strong> Use the +/- buttons or mouse wheel</li>
                 <li class="text-slate-600"><strong>Pan:</strong> Click and drag to move around</li>
@@ -216,7 +218,7 @@
         </div>
 
         <div class="flex justify-between items-center gap-5 mt-10 mb-5 pt-5 border-t-2 border-slate-200">
-            <button class="gradient-title-background text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg" onclick="window.location.href='index.html'">← Back to Home</button>
+            <button class="gradient-aws-dark text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg" onclick="window.location.href='index.html'">← Back to Home</button>
         </div>
     </div>
 
@@ -380,6 +382,11 @@
                 fitToScreen();
             }
         });
+    </script>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
     </script>
 </body>
 </html>

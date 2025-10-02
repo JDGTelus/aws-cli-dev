@@ -57,11 +57,13 @@
       }
 
     </script>
-    </head>
+        <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
 <body class="gradient-page-bg min-h-screen p-5">
     <div class="max-w-7xl mx-auto p-10 bg-white/75 rounded-2xl shadow-2xl">
-        <div class="gradient-title-background text-center mb-12 p-10 rounded-2xl text-white shadow-lg">
-            <h1 class="text-5xl font-bold mb-4 drop-shadow-lg">🚀 Domain 3: Applications of Foundation Models</h1>
+        <div class="gradient-aws-dark text-center mb-12 p-10 rounded-2xl text-white shadow-lg">
+            <h1 class="text-5xl font-bold mb-4 drop-shadow-lg"><i data-lucide="rocket" class="inline-block w-5 h-5"></i> Domain 3: Applications of Foundation Models</h1>
             <p class="text-slate-600 leading-relaxed mb-3">AWS AI Practitioner Certification Study Guide</p>
             <div class="bg-slate-100 rounded-xl h-2 my-5 overflow-hidden">
                 <div class="bg-gradient-to-r from-blue-300 to-blue-700 h-full rounded-xl transition-all duration-300" id="progressFill"></div>
@@ -70,7 +72,7 @@
         </div>
 
         <div class="bg-slate-50/90 p-6 rounded-xl mb-8 border-l-4 border-cyan-500 shadow-md">
-            <h2 class="text-2xl font-semibold mb-4 text-blue-900">📋 Domain Overview</h2>
+            <h2 class="text-2xl font-semibold mb-4 text-blue-900"><i data-lucide="clipboard" class="inline-block w-5 h-5"></i> Domain Overview</h2>
             <p class="text-slate-600 leading-relaxed mb-3"><strong>Purpose:</strong> This is the highest-weighted domain, focusing on practical implementation of foundation models in real-world applications. It covers design considerations, prompt engineering, training/fine-tuning, and performance evaluation.</p>
             <p class="text-slate-600 leading-relaxed mb-3"><strong>Focus Areas:</strong> Application design, prompt optimization, model customization, performance evaluation, and deployment strategies.</p>
             <p class="text-slate-600 leading-relaxed mb-3"><strong>Depth Level:</strong> Hands-on implementation knowledge with deep understanding of AWS services and best practices.</p>
@@ -78,13 +80,13 @@
 
         <!-- Task Statement 3.1 -->
         <div class="bg-white border border-slate-200 rounded-xl mb-6 overflow-hidden shadow-lg">
-            <div class="gradient-title-background text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task1')">
+            <div class="gradient-aws-dark text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task1')">
                 <h3 class="text-xl font-semibold mb-2 text-blue-900">Task Statement 3.1: Describe Design Considerations for Applications that Use Foundation Models</h3>
                 <button class="bg-transparent border-none text-white text-2xl cursor-pointer transition-transform duration-300 p-0 m-0 leading-none" id="toggle1">▼</button>
             </div>
             <div class="p-6 hidden" id="task1">
                 <div class="bg-slate-100/80 p-4 rounded-lg my-4 border-l-4 border-orange-300">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🎯 Learning Objectives:</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Learning Objectives:</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600">Understand architectural patterns for foundation model applications</li>
                         <li class="text-slate-600">Identify design considerations for scalability, latency, and cost</li>
@@ -93,7 +95,7 @@
                     </ul>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900">🏗️ Application Architecture Patterns</h4>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="building" class="inline-block w-5 h-5"></i> Application Architecture Patterns</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                         <h5 class="text-base font-semibold mb-2 text-blue-900">Direct API Integration</h5>
@@ -131,11 +133,11 @@
                 </div>
 
                 <div class="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-dashed border-slate-200 rounded-lg p-8 text-center my-4 text-slate-600 italic">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🏗️ Recommended Visual: Architecture Decision Tree</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="building" class="inline-block w-5 h-5"></i> Recommended Visual: Architecture Decision Tree</h4>
                     <p class="text-slate-600 leading-relaxed mb-3">Create a decision flowchart: Simple Use Case → Direct API | Need Domain Knowledge → RAG | Need Custom Behavior → Fine-tuning | Complex Workflow → Multi-Agent</p>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900">📊 Design Considerations Matrix</h4>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="bar-chart" class="inline-block w-5 h-5"></i> Design Considerations Matrix</h4>
                 <table class="comparison-table">
                     <thead>
                         <tr>
@@ -214,7 +216,7 @@
                 </div>
 
                 <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-orange-300">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🔧 Key AWS Services for Application Design</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="wrench" class="inline-block w-5 h-5"></i> Key AWS Services for Application Design</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                         <div class="bg-white/95 p-4 rounded-lg border border-slate-200">
                             <strong>Amazon Bedrock</strong><br>
@@ -244,7 +246,7 @@
                 </div>
 
                 <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-blue-400">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🛠️ Hands-On Practice</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="tool" class="inline-block w-5 h-5"></i> Hands-On Practice</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600"><strong>Architecture Design:</strong> Design a RAG system for document Q&A</li>
                         <li class="text-slate-600"><strong>Security Implementation:</strong> Set up VPC endpoints for Bedrock</li>
@@ -258,13 +260,13 @@
 
         <!-- Task Statement 3.2 -->
         <div class="bg-white border border-slate-200 rounded-xl mb-6 overflow-hidden shadow-lg">
-            <div class="gradient-title-background text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task2')">
+            <div class="gradient-aws-dark text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task2')">
                 <h3 class="text-xl font-semibold mb-2 text-blue-900">Task Statement 3.2: Choose Effective Prompt Engineering Techniques</h3>
                 <button class="bg-transparent border-none text-white text-2xl cursor-pointer transition-transform duration-300 p-0 m-0 leading-none" id="toggle2">▼</button>
             </div>
             <div class="p-6 hidden" id="task2">
                 <div class="bg-slate-100/80 p-4 rounded-lg my-4 border-l-4 border-orange-300">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🎯 Learning Objectives:</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Learning Objectives:</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600">Master various prompt engineering techniques and patterns</li>
                         <li class="text-slate-600">Understand when to apply different prompting strategies</li>
@@ -273,7 +275,7 @@
                     </ul>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900">🎯 Core Prompt Engineering Techniques</h4>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Core Prompt Engineering Techniques</h4>
                 <div class="technique-card">
                     <h5 class="text-base font-semibold mb-2 text-blue-900">Zero-Shot Prompting</h5>
                     <p class="text-slate-600 leading-relaxed mb-3">Providing a task description without examples, relying on the model's pre-trained knowledge.</p>
@@ -326,7 +328,7 @@
                     <p class="text-slate-600 leading-relaxed mb-3"><strong>Benefits:</strong> More focused responses, appropriate tone and style</p>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900">🔧 Advanced Prompting Strategies</h4>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="wrench" class="inline-block w-5 h-5"></i> Advanced Prompting Strategies</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                         <h5 class="text-base font-semibold mb-2 text-blue-900">Template-Based Prompting</h5>
@@ -359,11 +361,11 @@
                 </div>
 
                 <div class="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-dashed border-slate-200 rounded-lg p-8 text-center my-4 text-slate-600 italic">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">📊 Recommended Visual: Prompt Engineering Decision Matrix</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="bar-chart" class="inline-block w-5 h-5"></i> Recommended Visual: Prompt Engineering Decision Matrix</h4>
                     <p class="text-slate-600 leading-relaxed mb-3">Create a matrix showing Task Complexity (Simple/Complex) vs Available Examples (None/Few/Many) with recommended techniques in each quadrant.</p>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900">🎯 Model-Specific Considerations</h4>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Model-Specific Considerations</h4>
                 <div class="model-selection-matrix">
                     <div class="model-option">
                         <h6 class="text-sm font-semibold mb-2 text-orange-600">Anthropic Claude</h6>
@@ -412,7 +414,7 @@
                 </div>
 
                 <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-orange-300">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🔧 AWS Tools for Prompt Engineering</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="wrench" class="inline-block w-5 h-5"></i> AWS Tools for Prompt Engineering</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                         <div class="bg-white/95 p-4 rounded-lg border border-slate-200">
                             <strong>Bedrock Playground</strong><br>
@@ -434,7 +436,7 @@
                 </div>
 
                 <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-blue-400">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🛠️ Hands-On Practice</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="tool" class="inline-block w-5 h-5"></i> Hands-On Practice</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600"><strong>Prompt Comparison:</strong> Test the same task with different prompting techniques</li>
                         <li class="text-slate-600"><strong>Model Testing:</strong> Compare how different models respond to the same prompts</li>
@@ -448,13 +450,13 @@
 
         <!-- Task Statement 3.3 -->
         <div class="bg-white border border-slate-200 rounded-xl mb-6 overflow-hidden shadow-lg">
-            <div class="gradient-title-background text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task3')">
+            <div class="gradient-aws-dark text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task3')">
                 <h3 class="text-xl font-semibold mb-2 text-blue-900">Task Statement 3.3: Describe the Training and Fine-tuning Process for Foundation Models</h3>
                 <button class="bg-transparent border-none text-white text-2xl cursor-pointer transition-transform duration-300 p-0 m-0 leading-none" id="toggle3">▼</button>
             </div>
             <div class="p-6 hidden" id="task3">
                 <div class="bg-slate-100/80 p-4 rounded-lg my-4 border-l-4 border-orange-300">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🎯 Learning Objectives:</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Learning Objectives:</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600">Understand the complete model training lifecycle</li>
                         <li class="text-slate-600">Distinguish between pre-training, fine-tuning, and other adaptation methods</li>
@@ -463,7 +465,7 @@
                     </ul>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900">🔄 Foundation Model Training Lifecycle</h4>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="refresh-cw" class="inline-block w-5 h-5"></i> Foundation Model Training Lifecycle</h4>
                 <div class="architecture-container">
                     <div class="architecture-step">
                         <h5 class="text-base font-semibold mb-2 text-blue-900">Pre-training Phase</h5>
@@ -496,7 +498,7 @@
                     </div>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900">🎯 Fine-tuning Approaches and When to Use Them</h4>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Fine-tuning Approaches and When to Use Them</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                         <h5 class="text-base font-semibold mb-2 text-blue-900">Full Fine-tuning</h5>
@@ -533,11 +535,11 @@
                 </div>
 
                 <div class="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-dashed border-slate-200 rounded-lg p-8 text-center my-4 text-slate-600 italic">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">📊 Recommended Visual: Fine-tuning Decision Tree</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="bar-chart" class="inline-block w-5 h-5"></i> Recommended Visual: Fine-tuning Decision Tree</h4>
                     <p class="text-slate-600 leading-relaxed mb-3">Create a decision tree: Data Size → Training Budget → Performance Requirements → Recommended Approach (In-Context/RAG/PEFT/Full Fine-tuning)</p>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900">⚖️ Approach Comparison Matrix</h4>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="scale" class="inline-block w-5 h-5"></i> Approach Comparison Matrix</h4>
                 <table class="comparison-table">
                     <thead>
                         <tr>
@@ -585,7 +587,7 @@
                     </tbody>
                 </table>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900">🔧 AWS Fine-tuning Implementation</h4>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="wrench" class="inline-block w-5 h-5"></i> AWS Fine-tuning Implementation</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                         <h5 class="text-base font-semibold mb-2 text-blue-900">Amazon Bedrock Custom Models</h5>
@@ -622,7 +624,7 @@
                 </div>
 
                 <div class="bg-blue-50/80 border border-blue-200 rounded-lg p-4 my-4">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">💡 Fine-tuning Best Practices</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="lightbulb" class="inline-block w-5 h-5"></i> Fine-tuning Best Practices</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600"><strong>Start Small:</strong> Begin with in-context learning or RAG before committing to fine-tuning</li>
                         <li class="text-slate-600"><strong>Data Quality:</strong> Invest in high-quality, diverse training data</li>
@@ -634,7 +636,7 @@
                 </div>
 
                 <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-orange-300">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🔧 AWS Services for Model Training</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="wrench" class="inline-block w-5 h-5"></i> AWS Services for Model Training</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                         <div class="bg-white/95 p-4 rounded-lg border border-slate-200">
                             <strong>Amazon Bedrock</strong><br>
@@ -663,7 +665,7 @@
                 </div>
 
                 <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-blue-400">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900">🛠️ Hands-On Practice</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="tool" class="inline-block w-5 h-5"></i> Hands-On Practice</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600"><strong>Bedrock Custom Models:</strong> Explore fine-tuning options in Bedrock</li>
                         <li class="text-slate-600"><strong>SageMaker Training:</strong> Set up a training job for a foundation model</li>
@@ -676,7 +678,7 @@
         </div>
 
         <div class="bg-slate-100/80 p-5 rounded-lg my-5 border-l-4 border-orange-300">
-            <h4 class="text-lg font-semibold mb-3 text-blue-900">💡 Study Tips for Domain 3</h4>
+            <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="lightbulb" class="inline-block w-5 h-5"></i> Study Tips for Domain 3</h4>
             <ul class="list-none space-y-2 ml-0">
                 <li class="text-slate-600"><strong>Focus on Highest Weight:</strong> This is 28% of the exam - spend the most time here</li>
                 <li class="text-slate-600"><strong>Hands-On Practice:</strong> Extensive hands-on with Bedrock and SageMaker</li>
@@ -688,11 +690,11 @@
         </div>
 
         <div class="flex justify-between items-center gap-5 mt-10 mb-5 pt-5 border-t-2 border-slate-200">
-            <button class="gradient-title-background text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-slate-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='domain2-study-guide.html'">← Previous Domain</button>
-            <button class="gradient-title-background text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-slate-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='domain4-study-guide.html'">Next Domain →</button>
+            <button class="gradient-aws-dark text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-slate-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='domain2-study-guide.html'">← Previous Domain</button>
+            <button class="gradient-aws-dark text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-slate-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='domain4-study-guide.html'">Next Domain →</button>
         </div>
         <div style="text-align: center; margin-top: 20px;">
-            <button class="gradient-title-background text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-slate-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='index.html'" style="background: linear-gradient(135deg, #495057, #6c757d);">🏠 Back to Home</button>
+            <button class="gradient-aws-dark text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-slate-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='index.html'" style="background: linear-gradient(135deg, #495057, #6c757d);">🏠 Back to Home</button>
         </div>
     </div>
 
@@ -730,6 +732,11 @@
                 }, 100);
             });
         });
+    </script>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
     </script>
 </body>
 </html>
