@@ -6,37 +6,23 @@
     <title>Migration to Ubuntu</title>
         <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../tailwind-custom.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'aws-dark': '#232f3e',
-                        'aws-orange': '#ff9900',
-                        'aws-blue': '#2c5282',
-                        'aws-blue-dark': '#1e3a5f',
-                        'aws-blue-light': '#4a7ba7',
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="../tailwind-config.js"></script>
 </head>
 <body class="gradient-page-bg min-h-screen p-5">
     <div class="max-w-7xl mx-auto p-10 bg-white/75 rounded-2xl shadow-2xl">
         <h1 class="text-5xl font-bold mb-4 drop-shadow-lg">Migration to Ubuntu (Historical)</h1>
         <div class="warning">
-            <p class="text-gray-700 leading-relaxed mb-3"><strong>Note:</strong> This migration path was superseded. The project now uses <strong>Alpine Linux</strong>.</p>
-            <p class="text-gray-700 leading-relaxed mb-3">See <a href="alpine-linux-guide.html">alpine-linux-guide.html</a> for current setup.</p>
+            <p class="text-neutral-600 leading-relaxed mb-3"><strong>Note:</strong> This migration path was superseded. The project now uses <strong>Alpine Linux</strong>.</p>
+            <p class="text-neutral-600 leading-relaxed mb-3">See <a href="alpine-linux-guide.html">alpine-linux-guide.html</a> for current setup.</p>
         </div>
-        <h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Migration History</h2>
-        <p class="text-gray-700 leading-relaxed mb-3">Debian Bookworm → Ubuntu 24.04 → Alpine Linux</p>
+        <h2 class="text-2xl font-semibold mb-4 text-primary-900">Migration History</h2>
+        <p class="text-neutral-600 leading-relaxed mb-3">Debian Bookworm → Ubuntu 24.04 → Alpine Linux</p>
         <ul style="margin: 20px 0 20px 30px;">
-            <li class="text-gray-700"><strong>Debian Bookworm</strong>: Neovim 0.7.2 (too old)</li>
-            <li class="text-gray-700"><strong>Ubuntu 24.04</strong>: Neovim 0.9.5 (still too old for nvim-lspconfig 0.10+)</li>
-            <li class="text-gray-700"><strong>Alpine Linux</strong>: Neovim 0.11.1 (current, perfect!)</li>
+            <li class="text-neutral-600"><strong>Debian Bookworm</strong>: Neovim 0.7.2 (too old)</li>
+            <li class="text-neutral-600"><strong>Ubuntu 24.04</strong>: Neovim 0.9.5 (still too old for nvim-lspconfig 0.10+)</li>
+            <li class="text-neutral-600"><strong>Alpine Linux</strong>: Neovim 0.11.1 (current, perfect!)</li>
         </ul>
-        <h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Current Setup</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-primary-900">Current Setup</h2>
         <pre><code>Base Image: alpine:latest
 Neovim: 0.11.1
 Package Manager: apk

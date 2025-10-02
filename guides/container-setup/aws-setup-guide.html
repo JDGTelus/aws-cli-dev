@@ -6,73 +6,59 @@
     <title>AWS Setup Guide for AI Practitioner Environment</title>
         <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../tailwind-custom.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'aws-dark': '#232f3e',
-                        'aws-orange': '#ff9900',
-                        'aws-blue': '#2c5282',
-                        'aws-blue-dark': '#1e3a5f',
-                        'aws-blue-light': '#4a7ba7',
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="../tailwind-config.js"></script>
 </head>
 <body class="gradient-page-bg min-h-screen p-5">
     <div class="max-w-7xl mx-auto p-10 bg-white/75 rounded-2xl shadow-2xl">
         <h1 class="text-5xl font-bold mb-4 drop-shadow-lg">AWS Setup Guide for AI Practitioner Environment</h1>
 
         <div class="nav">
-            <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Table of Contents</h3>
+            <h3 class="text-xl font-semibold mb-2 text-primary-900">Table of Contents</h3>
             <ul class="list-none space-y-2 ml-0">
-                <li class="text-gray-700"><a href="#prerequisites">Prerequisites</a></li>
-                <li class="text-gray-700"><a href="#account-setup">AWS Account Setup</a></li>
-                <li class="text-gray-700"><a href="#iam-user">IAM User and Credentials</a></li>
-                <li class="text-gray-700"><a href="#iam-policy">IAM Policy Configuration</a></li>
-                <li class="text-gray-700"><a href="#cli-config">AWS CLI Configuration</a></li>
-                <li class="text-gray-700"><a href="#billing">Billing and Cost Management</a></li>
-                <li class="text-gray-700"><a href="#services">Service-Specific Setup</a></li>
-                <li class="text-gray-700"><a href="#security">Security Best Practices</a></li>
-                <li class="text-gray-700"><a href="#verification">Verification Steps</a></li>
+                <li class="text-neutral-600"><a href="#prerequisites">Prerequisites</a></li>
+                <li class="text-neutral-600"><a href="#account-setup">AWS Account Setup</a></li>
+                <li class="text-neutral-600"><a href="#iam-user">IAM User and Credentials</a></li>
+                <li class="text-neutral-600"><a href="#iam-policy">IAM Policy Configuration</a></li>
+                <li class="text-neutral-600"><a href="#cli-config">AWS CLI Configuration</a></li>
+                <li class="text-neutral-600"><a href="#billing">Billing and Cost Management</a></li>
+                <li class="text-neutral-600"><a href="#services">Service-Specific Setup</a></li>
+                <li class="text-neutral-600"><a href="#security">Security Best Practices</a></li>
+                <li class="text-neutral-600"><a href="#verification">Verification Steps</a></li>
             </ul>
         </div>
 
         <h2 id="prerequisites">Prerequisites</h2>
         <ul class="checklist">
-            <li class="text-gray-700">Active AWS Account</li>
-            <li class="text-gray-700">AWS CLI installed in container (provided by this environment)</li>
-            <li class="text-gray-700">Basic understanding of IAM policies and roles</li>
+            <li class="text-neutral-600">Active AWS Account</li>
+            <li class="text-neutral-600">AWS CLI installed in container (provided by this environment)</li>
+            <li class="text-neutral-600">Basic understanding of IAM policies and roles</li>
         </ul>
 
         <h2 id="account-setup">AWS Account Setup</h2>
 
-        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">1. Create AWS Account</h3>
+        <h3 class="text-xl font-semibold mb-2 text-primary-900">1. Create AWS Account</h3>
         <div class="step-box">
-            <p class="text-gray-700 leading-relaxed mb-3">If you don't have an AWS account:</p>
+            <p class="text-neutral-600 leading-relaxed mb-3">If you don't have an AWS account:</p>
             <ol>
-                <li class="text-gray-700">Go to <a href="https://aws.amazon.com" target="_blank">https://aws.amazon.com</a></li>
-                <li class="text-gray-700">Click "Create an AWS Account"</li>
-                <li class="text-gray-700">Follow the registration process</li>
-                <li class="text-gray-700">Provide payment method (required even for free tier)</li>
-                <li class="text-gray-700">Verify your identity via phone</li>
-                <li class="text-gray-700">Choose Support Plan (Basic/Free is sufficient for learning)</li>
+                <li class="text-neutral-600">Go to <a href="https://aws.amazon.com" target="_blank">https://aws.amazon.com</a></li>
+                <li class="text-neutral-600">Click "Create an AWS Account"</li>
+                <li class="text-neutral-600">Follow the registration process</li>
+                <li class="text-neutral-600">Provide payment method (required even for free tier)</li>
+                <li class="text-neutral-600">Verify your identity via phone</li>
+                <li class="text-neutral-600">Choose Support Plan (Basic/Free is sufficient for learning)</li>
             </ol>
         </div>
 
-        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">2. Enable MFA (Multi-Factor Authentication)</h3>
+        <h3 class="text-xl font-semibold mb-2 text-primary-900">2. Enable MFA (Multi-Factor Authentication)</h3>
         <div class="success">
             <strong>Highly Recommended for Security</strong>
             <ol>
-                <li class="text-gray-700">Sign in to AWS Console</li>
-                <li class="text-gray-700">Click your account name → Security Credentials</li>
-                <li class="text-gray-700">Under "Multi-factor authentication (MFA)", click "Assign MFA device"</li>
-                <li class="text-gray-700">Choose virtual MFA device</li>
-                <li class="text-gray-700">Use Google Authenticator, Authy, or similar app</li>
-                <li class="text-gray-700">Scan QR code and enter two consecutive MFA codes</li>
+                <li class="text-neutral-600">Sign in to AWS Console</li>
+                <li class="text-neutral-600">Click your account name → Security Credentials</li>
+                <li class="text-neutral-600">Under "Multi-factor authentication (MFA)", click "Assign MFA device"</li>
+                <li class="text-neutral-600">Choose virtual MFA device</li>
+                <li class="text-neutral-600">Use Google Authenticator, Authy, or similar app</li>
+                <li class="text-neutral-600">Scan QR code and enter two consecutive MFA codes</li>
             </ol>
         </div>
 
@@ -82,45 +68,45 @@
             <strong>⚠️ WARNING:</strong> Never use root account credentials for daily operations!
         </div>
 
-        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Create IAM User (RECOMMENDED)</h3>
+        <h3 class="text-xl font-semibold mb-2 text-primary-900">Create IAM User (RECOMMENDED)</h3>
 
-        <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">Step 1: Create IAM User</h4>
+        <h4 class="text-lg font-semibold mb-3 text-primary-900">Step 1: Create IAM User</h4>
         <pre><code>aws iam create-user --user-name ai-practitioner-user</code></pre>
 
-        <p class="text-gray-700 leading-relaxed mb-3">Or via AWS Console:</p>
+        <p class="text-neutral-600 leading-relaxed mb-3">Or via AWS Console:</p>
         <ol>
-            <li class="text-gray-700">Go to IAM Dashboard → Users → Add User</li>
-            <li class="text-gray-700">User name: <code>ai-practitioner-user</code></li>
-            <li class="text-gray-700">Access type: Select "Programmatic access"</li>
-            <li class="text-gray-700">Click "Next: Permissions"</li>
+            <li class="text-neutral-600">Go to IAM Dashboard → Users → Add User</li>
+            <li class="text-neutral-600">User name: <code>ai-practitioner-user</code></li>
+            <li class="text-neutral-600">Access type: Select "Programmatic access"</li>
+            <li class="text-neutral-600">Click "Next: Permissions"</li>
         </ol>
 
-        <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">Step 2: Attach Policies</h4>
-        <p class="text-gray-700 leading-relaxed mb-3"><strong>Using Custom Policy (Recommended):</strong></p>
+        <h4 class="text-lg font-semibold mb-3 text-primary-900">Step 2: Attach Policies</h4>
+        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Using Custom Policy (Recommended):</strong></p>
         <pre><code>aws iam create-policy \
   --policy-name AIPractitionerPolicy \
   --policy-document file://iam-policy-template.json</code></pre>
 
-        <p class="text-gray-700 leading-relaxed mb-3">Then attach to user:</p>
+        <p class="text-neutral-600 leading-relaxed mb-3">Then attach to user:</p>
         <pre><code>aws iam attach-user-policy \
   --user-name ai-practitioner-user \
   --policy-arn arn:aws:iam::YOUR_ACCOUNT_ID:policy/AIPractitionerPolicy</code></pre>
 
-        <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">Step 3: Create Access Keys</h4>
+        <h4 class="text-lg font-semibold mb-3 text-primary-900">Step 3: Create Access Keys</h4>
         <pre><code>aws iam create-access-key --user-name ai-practitioner-user</code></pre>
 
         <div class="warning">
             <strong>Important:</strong> Save the output! You'll need:
             <ul class="list-none space-y-2 ml-0">
-                <li class="text-gray-700"><code>AccessKeyId</code></li>
-                <li class="text-gray-700"><code>SecretAccessKey</code></li>
+                <li class="text-neutral-600"><code>AccessKeyId</code></li>
+                <li class="text-neutral-600"><code>SecretAccessKey</code></li>
             </ul>
         </div>
 
         <h2 id="iam-policy">IAM Policy Configuration</h2>
 
-        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Understanding the Provided Policy Template</h3>
-        <p class="text-gray-700 leading-relaxed mb-3">The <code>iam-policy-template.json</code> includes permissions for:</p>
+        <h3 class="text-xl font-semibold mb-2 text-primary-900">Understanding the Provided Policy Template</h3>
+        <p class="text-neutral-600 leading-relaxed mb-3">The <code>iam-policy-template.json</code> includes permissions for:</p>
 
         <table>
             <thead>
@@ -166,30 +152,30 @@
 
         <h2 id="cli-config">AWS CLI Configuration</h2>
 
-        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Method 1: Interactive Configuration</h3>
-        <p class="text-gray-700 leading-relaxed mb-3">Inside the container:</p>
+        <h3 class="text-xl font-semibold mb-2 text-primary-900">Method 1: Interactive Configuration</h3>
+        <p class="text-neutral-600 leading-relaxed mb-3">Inside the container:</p>
         <pre><code>aws configure</code></pre>
 
-        <p class="text-gray-700 leading-relaxed mb-3">Enter:</p>
+        <p class="text-neutral-600 leading-relaxed mb-3">Enter:</p>
         <ul class="list-none space-y-2 ml-0">
-            <li class="text-gray-700"><strong>AWS Access Key ID:</strong> Your access key</li>
-            <li class="text-gray-700"><strong>AWS Secret Access Key:</strong> Your secret key</li>
-            <li class="text-gray-700"><strong>Default region name:</strong> <span class="highlight">us-east-1</span></li>
-            <li class="text-gray-700"><strong>Default output format:</strong> json</li>
+            <li class="text-neutral-600"><strong>AWS Access Key ID:</strong> Your access key</li>
+            <li class="text-neutral-600"><strong>AWS Secret Access Key:</strong> Your secret key</li>
+            <li class="text-neutral-600"><strong>Default region name:</strong> <span class="highlight">us-east-1</span></li>
+            <li class="text-neutral-600"><strong>Default output format:</strong> json</li>
         </ul>
 
-        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Method 2: Manual Configuration</h3>
-        <p class="text-gray-700 leading-relaxed mb-3">Create <code>~/.aws/credentials</code>:</p>
+        <h3 class="text-xl font-semibold mb-2 text-primary-900">Method 2: Manual Configuration</h3>
+        <p class="text-neutral-600 leading-relaxed mb-3">Create <code>~/.aws/credentials</code>:</p>
         <pre><code>[default]
 aws_access_key_id = YOUR_ACCESS_KEY_ID
 aws_secret_access_key = YOUR_SECRET_ACCESS_KEY</code></pre>
 
-        <p class="text-gray-700 leading-relaxed mb-3">Create <code>~/.aws/config</code>:</p>
+        <p class="text-neutral-600 leading-relaxed mb-3">Create <code>~/.aws/config</code>:</p>
         <pre><code>[default]
 region = us-east-1
 output = json</code></pre>
 
-        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Verify Configuration</h3>
+        <h3 class="text-xl font-semibold mb-2 text-primary-900">Verify Configuration</h3>
         <pre><code>aws sts get-caller-identity</code></pre>
 
         <div class="success">
@@ -203,20 +189,20 @@ output = json</code></pre>
 
         <h2 id="billing">Billing and Cost Management</h2>
 
-        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">1. Enable Billing Alerts</h3>
+        <h3 class="text-xl font-semibold mb-2 text-primary-900">1. Enable Billing Alerts</h3>
 
-        <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">Prerequisites</h4>
+        <h4 class="text-lg font-semibold mb-3 text-primary-900">Prerequisites</h4>
         <ol>
-            <li class="text-gray-700">Sign in as root user</li>
-            <li class="text-gray-700">Go to Billing Dashboard → Billing Preferences</li>
-            <li class="text-gray-700">Check "Receive Billing Alerts"</li>
-            <li class="text-gray-700">Save preferences</li>
+            <li class="text-neutral-600">Sign in as root user</li>
+            <li class="text-neutral-600">Go to Billing Dashboard → Billing Preferences</li>
+            <li class="text-neutral-600">Check "Receive Billing Alerts"</li>
+            <li class="text-neutral-600">Save preferences</li>
         </ol>
 
-        <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">Create SNS Topic for Alerts</h4>
+        <h4 class="text-lg font-semibold mb-3 text-primary-900">Create SNS Topic for Alerts</h4>
         <pre><code>aws sns create-topic --name billing-alerts --region us-east-1</code></pre>
 
-        <p class="text-gray-700 leading-relaxed mb-3">Subscribe to topic:</p>
+        <p class="text-neutral-600 leading-relaxed mb-3">Subscribe to topic:</p>
         <pre><code>aws sns subscribe \
   --topic-arn arn:aws:sns:us-east-1:YOUR_ACCOUNT_ID:billing-alerts \
   --protocol email \
@@ -227,11 +213,11 @@ output = json</code></pre>
             <strong>Important:</strong> Confirm subscription via email!
         </div>
 
-        <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">Create Billing Alarm</h4>
-        <p class="text-gray-700 leading-relaxed mb-3">Run the provided script:</p>
+        <h4 class="text-lg font-semibold mb-3 text-primary-900">Create Billing Alarm</h4>
+        <p class="text-neutral-600 leading-relaxed mb-3">Run the provided script:</p>
         <pre><code>/scripts/configure-billing-alerts.sh</code></pre>
 
-        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">2. Monitor Costs</h3>
+        <h3 class="text-xl font-semibold mb-2 text-primary-900">2. Monitor Costs</h3>
         <pre><code>aws ce get-cost-and-usage \
   --time-period Start=2025-10-01,End=2025-10-31 \
   --granularity MONTHLY \
@@ -240,80 +226,80 @@ output = json</code></pre>
 
         <h2 id="services">Service-Specific Setup</h2>
 
-        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Amazon Bedrock</h3>
+        <h3 class="text-xl font-semibold mb-2 text-primary-900">Amazon Bedrock</h3>
 
-        <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">1. Enable Model Access</h4>
-        <div class="bg-slate-50/90 p-6 rounded-xl mb-8 border-l-4 border-aws-blue shadow-md">
-            <p class="text-gray-700 leading-relaxed mb-3">Bedrock requires explicit model access request:</p>
+        <h4 class="text-lg font-semibold mb-3 text-primary-900">1. Enable Model Access</h4>
+        <div class="bg-neutral-50/90 p-6 rounded-xl mb-8 border-l-4 border-primary-700 shadow-md">
+            <p class="text-neutral-600 leading-relaxed mb-3">Bedrock requires explicit model access request:</p>
             <ol>
-                <li class="text-gray-700">Go to AWS Console → Bedrock</li>
-                <li class="text-gray-700">Click "Model access" in left sidebar</li>
-                <li class="text-gray-700">Click "Manage model access"</li>
-                <li class="text-gray-700">Select models you want to use:
+                <li class="text-neutral-600">Go to AWS Console → Bedrock</li>
+                <li class="text-neutral-600">Click "Model access" in left sidebar</li>
+                <li class="text-neutral-600">Click "Manage model access"</li>
+                <li class="text-neutral-600">Select models you want to use:
                     <ul class="list-none space-y-2 ml-0">
-                        <li class="text-gray-700"><strong>Claude</strong> (Anthropic)</li>
-                        <li class="text-gray-700"><strong>Titan</strong> (Amazon)</li>
-                        <li class="text-gray-700"><strong>Llama</strong> (Meta)</li>
-                        <li class="text-gray-700"><strong>Stable Diffusion</strong> (Stability AI)</li>
+                        <li class="text-neutral-600"><strong>Claude</strong> (Anthropic)</li>
+                        <li class="text-neutral-600"><strong>Titan</strong> (Amazon)</li>
+                        <li class="text-neutral-600"><strong>Llama</strong> (Meta)</li>
+                        <li class="text-neutral-600"><strong>Stable Diffusion</strong> (Stability AI)</li>
                     </ul>
                 </li>
-                <li class="text-gray-700">Submit access request</li>
+                <li class="text-neutral-600">Submit access request</li>
             </ol>
         </div>
 
-        <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">2. Verify Model Access</h4>
+        <h4 class="text-lg font-semibold mb-3 text-primary-900">2. Verify Model Access</h4>
         <pre><code>aws bedrock list-foundation-models --region us-east-1</code></pre>
 
-        <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">3. Test Model Invocation</h4>
+        <h4 class="text-lg font-semibold mb-3 text-primary-900">3. Test Model Invocation</h4>
         <pre><code>aws bedrock-runtime invoke-model \
   --model-id anthropic.claude-v2 \
   --body '{"prompt": "\n\nHuman: Hello\n\nAssistant:", "max_tokens_to_sample": 100}' \
   --region us-east-1 \
   output.json</code></pre>
 
-        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Amazon SageMaker</h3>
+        <h3 class="text-xl font-semibold mb-2 text-primary-900">Amazon SageMaker</h3>
 
-        <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">1. Create SageMaker Execution Role</h4>
+        <h4 class="text-lg font-semibold mb-3 text-primary-900">1. Create SageMaker Execution Role</h4>
         <pre><code>aws iam create-role \
   --role-name SageMakerExecutionRole \
   --assume-role-policy-document file://trust-policy.json</code></pre>
 
-        <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">2. Create S3 Bucket for SageMaker</h4>
+        <h4 class="text-lg font-semibold mb-3 text-primary-900">2. Create S3 Bucket for SageMaker</h4>
         <pre><code>aws s3 mb s3://ai-practitioner-sagemaker-bucket --region us-east-1</code></pre>
 
         <h2 id="security">Security Best Practices</h2>
 
         <div class="step-box">
-            <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Essential Security Measures</h3>
+            <h3 class="text-xl font-semibold mb-2 text-primary-900">Essential Security Measures</h3>
             <ol>
-                <li class="text-gray-700"><strong>Use IAM Roles Instead of Keys</strong> (when possible)
-                    <p class="text-gray-700 leading-relaxed mb-3">For EC2 instances or Lambda functions, use IAM roles instead of access keys.</p>
+                <li class="text-neutral-600"><strong>Use IAM Roles Instead of Keys</strong> (when possible)
+                    <p class="text-neutral-600 leading-relaxed mb-3">For EC2 instances or Lambda functions, use IAM roles instead of access keys.</p>
                 </li>
-                <li class="text-gray-700"><strong>Rotate Access Keys Regularly</strong>
+                <li class="text-neutral-600"><strong>Rotate Access Keys Regularly</strong>
                     <pre><code>aws iam create-access-key --user-name ai-practitioner-user
 aws iam delete-access-key \
   --user-name ai-practitioner-user \
   --access-key-id OLD_ACCESS_KEY_ID</code></pre>
                 </li>
-                <li class="text-gray-700"><strong>Enable CloudTrail</strong>
+                <li class="text-neutral-600"><strong>Enable CloudTrail</strong>
                     <pre><code>aws cloudtrail create-trail \
   --name ai-practitioner-trail \
   --s3-bucket-name ai-practitioner-cloudtrail-bucket \
   --is-multi-region-trail</code></pre>
                 </li>
-                <li class="text-gray-700"><strong>Use Least Privilege Principle</strong>
-                    <p class="text-gray-700 leading-relaxed mb-3">Only grant permissions that are absolutely necessary.</p>
+                <li class="text-neutral-600"><strong>Use Least Privilege Principle</strong>
+                    <p class="text-neutral-600 leading-relaxed mb-3">Only grant permissions that are absolutely necessary.</p>
                 </li>
-                <li class="text-gray-700"><strong>Monitor with AWS Config</strong>
-                    <p class="text-gray-700 leading-relaxed mb-3">Enable AWS Config to track resource changes and compliance.</p>
+                <li class="text-neutral-600"><strong>Monitor with AWS Config</strong>
+                    <p class="text-neutral-600 leading-relaxed mb-3">Enable AWS Config to track resource changes and compliance.</p>
                 </li>
             </ol>
         </div>
 
         <h2 id="verification">Verification Steps</h2>
 
-        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Complete Setup Checklist</h3>
-        <p class="text-gray-700 leading-relaxed mb-3">Run these commands to verify your setup:</p>
+        <h3 class="text-xl font-semibold mb-2 text-primary-900">Complete Setup Checklist</h3>
+        <p class="text-neutral-600 leading-relaxed mb-3">Run these commands to verify your setup:</p>
 
         <pre><code>echo "1. Testing AWS CLI connection..."
 aws sts get-caller-identity
@@ -338,7 +324,7 @@ aws cloudwatch describe-alarms --alarm-names "AI-Practice-Billing-Alert" --regio
 
 echo -e "\n✅ All checks complete!"</code></pre>
 
-        <h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Troubleshooting</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-primary-900">Troubleshooting</h2>
 
         <table>
             <thead>
@@ -352,9 +338,9 @@ echo -e "\n✅ All checks complete!"</code></pre>
                     <td>Access Denied Errors</td>
                     <td>
                         <ul class="list-none space-y-2 ml-0">
-                            <li class="text-gray-700">Check IAM policy is attached to user</li>
-                            <li class="text-gray-700">Verify Bedrock model access is enabled in console</li>
-                            <li class="text-gray-700">Confirm correct region (us-east-1)</li>
+                            <li class="text-neutral-600">Check IAM policy is attached to user</li>
+                            <li class="text-neutral-600">Verify Bedrock model access is enabled in console</li>
+                            <li class="text-neutral-600">Confirm correct region (us-east-1)</li>
                         </ul>
                     </td>
                 </tr>
@@ -362,9 +348,9 @@ echo -e "\n✅ All checks complete!"</code></pre>
                     <td>Unable to locate credentials</td>
                     <td>
                         <ul class="list-none space-y-2 ml-0">
-                            <li class="text-gray-700">Run <code>aws configure</code></li>
-                            <li class="text-gray-700">Verify <code>~/.aws/credentials</code> exists</li>
-                            <li class="text-gray-700">Check environment variables</li>
+                            <li class="text-neutral-600">Run <code>aws configure</code></li>
+                            <li class="text-neutral-600">Verify <code>~/.aws/credentials</code> exists</li>
+                            <li class="text-neutral-600">Check environment variables</li>
                         </ul>
                     </td>
                 </tr>
@@ -376,26 +362,26 @@ echo -e "\n✅ All checks complete!"</code></pre>
                     <td>Billing alerts not working</td>
                     <td>
                         <ul class="list-none space-y-2 ml-0">
-                            <li class="text-gray-700">Confirm email subscription to SNS topic</li>
-                            <li class="text-gray-700">Verify CloudWatch alarm is active</li>
-                            <li class="text-gray-700">Check billing preferences are enabled (root account only)</li>
+                            <li class="text-neutral-600">Confirm email subscription to SNS topic</li>
+                            <li class="text-neutral-600">Verify CloudWatch alarm is active</li>
+                            <li class="text-neutral-600">Check billing preferences are enabled (root account only)</li>
                         </ul>
                     </td>
                 </tr>
             </tbody>
         </table>
 
-        <h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Additional Resources</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-primary-900">Additional Resources</h2>
         <ul class="list-none space-y-2 ml-0">
-            <li class="text-gray-700"><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html" target="_blank">AWS IAM Best Practices</a></li>
-            <li class="text-gray-700"><a href="https://docs.aws.amazon.com/bedrock/latest/userguide/" target="_blank">AWS Bedrock User Guide</a></li>
-            <li class="text-gray-700"><a href="https://awscli.amazonaws.com/v2/documentation/api/latest/index.html" target="_blank">AWS CLI Command Reference</a></li>
-            <li class="text-gray-700"><a href="https://docs.aws.amazon.com/cost-management/" target="_blank">AWS Cost Management</a></li>
-            <li class="text-gray-700"><a href="https://aws.amazon.com/architecture/security-identity-compliance/" target="_blank">AWS Security Best Practices</a></li>
+            <li class="text-neutral-600"><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html" target="_blank">AWS IAM Best Practices</a></li>
+            <li class="text-neutral-600"><a href="https://docs.aws.amazon.com/bedrock/latest/userguide/" target="_blank">AWS Bedrock User Guide</a></li>
+            <li class="text-neutral-600"><a href="https://awscli.amazonaws.com/v2/documentation/api/latest/index.html" target="_blank">AWS CLI Command Reference</a></li>
+            <li class="text-neutral-600"><a href="https://docs.aws.amazon.com/cost-management/" target="_blank">AWS Cost Management</a></li>
+            <li class="text-neutral-600"><a href="https://aws.amazon.com/architecture/security-identity-compliance/" target="_blank">AWS Security Best Practices</a></li>
         </ul>
 
-        <div class="text-center p-8 text-gray-600 border-t-2 border-gray-300 mt-10">
-            <p class="text-gray-700 leading-relaxed mb-3"><strong>Last Updated:</strong> October 2025 | <strong>Version:</strong> 1.0</p>
+        <div class="text-center p-8 text-neutral-600 border-t-2 border-neutral-200 mt-10">
+            <p class="text-neutral-600 leading-relaxed mb-3"><strong>Last Updated:</strong> October 2025 | <strong>Version:</strong> 1.0</p>
         </div>
     </div>
 </body>

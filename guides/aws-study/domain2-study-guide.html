@@ -7,21 +7,7 @@
     <title>AWS AI Practitioner - Domain 2: Fundamentals of Generative AI</title>
         <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../tailwind-custom.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'aws-dark': '#232f3e',
-                        'aws-orange': '#ff9900',
-                        'aws-blue': '#2c5282',
-                        'aws-blue-dark': '#1e3a5f',
-                        'aws-blue-light': '#4a7ba7',
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="../tailwind-config.js"></script>
 
     <script>
       
@@ -74,522 +60,522 @@
     </head>
 <body class="gradient-page-bg min-h-screen p-5">
     <div class="max-w-7xl mx-auto p-10 bg-white/75 rounded-2xl shadow-2xl">
-        <div class="gradient-aws-blue text-center mb-12 p-10 rounded-2xl text-white shadow-lg">
+        <div class="gradient-primary-700 text-center mb-12 p-10 rounded-2xl text-white shadow-lg">
             <h1 class="text-5xl font-bold mb-4 drop-shadow-lg">🤖 Domain 2: Fundamentals of Generative AI</h1>
-            <p class="text-gray-700 leading-relaxed mb-3">AWS AI Practitioner Certification Study Guide</p>
-            <div class="bg-gray-200 rounded-xl h-2 my-5 overflow-hidden">
-                <div class="bg-gradient-to-r from-aws-blue-light to-aws-blue h-full rounded-xl transition-all duration-300" id="progressFill"></div>
+            <p class="text-neutral-600 leading-relaxed mb-3">AWS AI Practitioner Certification Study Guide</p>
+            <div class="bg-neutral-100 rounded-xl h-2 my-5 overflow-hidden">
+                <div class="bg-gradient-to-r from-primary-300 to-primary-700 h-full rounded-xl transition-all duration-300" id="progressFill"></div>
             </div>
-            <p class="text-gray-700 leading-relaxed mb-3"><strong>Weight: 24% of exam</strong> | <strong>Study Time: 3-4 weeks</strong></p>
+            <p class="text-neutral-600 leading-relaxed mb-3"><strong>Weight: 24% of exam</strong> | <strong>Study Time: 3-4 weeks</strong></p>
         </div>
 
-        <div class="bg-slate-50/90 p-6 rounded-xl mb-8 border-l-4 border-aws-blue shadow-md">
-            <h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">📋 Domain Overview</h2>
-            <p class="text-gray-700 leading-relaxed mb-3"><strong>Purpose:</strong> This domain covers the core concepts of generative artificial intelligence, including foundation models, large language models (LLMs), and AWS services that enable generative AI applications.</p>
-            <p class="text-gray-700 leading-relaxed mb-3"><strong>Focus Areas:</strong> Generative AI concepts, foundation models, prompt engineering, model capabilities/limitations, and AWS infrastructure for GenAI.</p>
-            <p class="text-gray-700 leading-relaxed mb-3"><strong>Depth Level:</strong> Conceptual understanding with practical knowledge of AWS generative AI services and implementation patterns.</p>
+        <div class="bg-neutral-50/90 p-6 rounded-xl mb-8 border-l-4 border-primary-700 shadow-md">
+            <h2 class="text-2xl font-semibold mb-4 text-primary-900">📋 Domain Overview</h2>
+            <p class="text-neutral-600 leading-relaxed mb-3"><strong>Purpose:</strong> This domain covers the core concepts of generative artificial intelligence, including foundation models, large language models (LLMs), and AWS services that enable generative AI applications.</p>
+            <p class="text-neutral-600 leading-relaxed mb-3"><strong>Focus Areas:</strong> Generative AI concepts, foundation models, prompt engineering, model capabilities/limitations, and AWS infrastructure for GenAI.</p>
+            <p class="text-neutral-600 leading-relaxed mb-3"><strong>Depth Level:</strong> Conceptual understanding with practical knowledge of AWS generative AI services and implementation patterns.</p>
         </div>
 
         <!-- Task Statement 2.1 -->
-        <div class="bg-white border border-gray-200 rounded-xl mb-6 overflow-hidden shadow-lg">
-            <div class="gradient-aws-blue text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task1')">
-                <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Task Statement 2.1: Explain Basic Concepts of Generative AI</h3>
+        <div class="bg-white border border-neutral-200 rounded-xl mb-6 overflow-hidden shadow-lg">
+            <div class="gradient-primary-700 text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task1')">
+                <h3 class="text-xl font-semibold mb-2 text-primary-900">Task Statement 2.1: Explain Basic Concepts of Generative AI</h3>
                 <button class="bg-transparent border-none text-white text-2xl cursor-pointer transition-transform duration-300 p-0 m-0 leading-none" id="toggle1">▼</button>
             </div>
             <div class="p-6 hidden" id="task1">
-                <div class="bg-slate-100/80 p-4 rounded-lg my-4 border-l-4 border-aws-blue-light">
-                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🎯 Learning Objectives:</h4>
+                <div class="bg-neutral-100/80 p-4 rounded-lg my-4 border-l-4 border-primary-300">
+                    <h4 class="text-lg font-semibold mb-3 text-primary-900">🎯 Learning Objectives:</h4>
                     <ul class="list-none space-y-2 ml-0">
-                        <li class="text-gray-700">Understand foundational generative AI concepts and terminology</li>
-                        <li class="text-gray-700">Distinguish between generative and discriminative AI models</li>
-                        <li class="text-gray-700">Identify key components of generative AI systems</li>
-                        <li class="text-gray-700">Recognize the role of foundation models and LLMs</li>
+                        <li class="text-neutral-600">Understand foundational generative AI concepts and terminology</li>
+                        <li class="text-neutral-600">Distinguish between generative and discriminative AI models</li>
+                        <li class="text-neutral-600">Identify key components of generative AI systems</li>
+                        <li class="text-neutral-600">Recognize the role of foundation models and LLMs</li>
                     </ul>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🔑 Core Generative AI Concepts</h4>
+                <h4 class="text-lg font-semibold mb-3 text-primary-900">🔑 Core Generative AI Concepts</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Generative AI</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3">AI systems that can create new content (text, images, audio, code) based on patterns learned from training data.</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Key Feature:</strong> Creates original content rather than just classifying or analyzing existing content</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Examples:</strong> ChatGPT, DALL-E, GitHub Copilot</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Generative AI</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3">AI systems that can create new content (text, images, audio, code) based on patterns learned from training data.</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Key Feature:</strong> Creates original content rather than just classifying or analyzing existing content</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Examples:</strong> ChatGPT, DALL-E, GitHub Copilot</p>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Foundation Models</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3">Large-scale AI models trained on diverse datasets that can be adapted for multiple downstream tasks.</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Characteristics:</strong> Pre-trained, versatile, can be fine-tuned</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Examples:</strong> GPT, BERT, Claude, LLaMA</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Foundation Models</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Large-scale AI models trained on diverse datasets that can be adapted for multiple downstream tasks.</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Characteristics:</strong> Pre-trained, versatile, can be fine-tuned</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Examples:</strong> GPT, BERT, Claude, LLaMA</p>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Large Language Models (LLMs)</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3">Foundation models specifically designed for understanding and generating human language.</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Capabilities:</strong> Text generation, translation, summarization, Q&A</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Architecture:</strong> Typically based on Transformer neural networks</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Large Language Models (LLMs)</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Foundation models specifically designed for understanding and generating human language.</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Capabilities:</strong> Text generation, translation, summarization, Q&A</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Architecture:</strong> Typically based on Transformer neural networks</p>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Tokens</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3">Basic units of text that language models process - can be words, subwords, or characters.</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Importance:</strong> Determines model input/output limits and processing costs</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Example:</strong> "Hello world" might be 2 tokens: ["Hello", " world"]</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Tokens</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Basic units of text that language models process - can be words, subwords, or characters.</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Importance:</strong> Determines model input/output limits and processing costs</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Example:</strong> "Hello world" might be 2 tokens: ["Hello", " world"]</p>
                     </div>
                 </div>
 
-                <div class="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-dashed border-gray-400 rounded-lg p-8 text-center my-4 text-gray-600 italic">
-                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">📊 Recommended Visual: Generative vs Discriminative AI</h4>
-                    <p class="text-gray-700 leading-relaxed mb-3">Create a comparison diagram showing Discriminative AI (classifies/predicts) vs Generative AI (creates new content) with examples of each type.</p>
+                <div class="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-dashed border-neutral-200 rounded-lg p-8 text-center my-4 text-neutral-600 italic">
+                    <h4 class="text-lg font-semibold mb-3 text-primary-900">📊 Recommended Visual: Generative vs Discriminative AI</h4>
+                    <p class="text-neutral-600 leading-relaxed mb-3">Create a comparison diagram showing Discriminative AI (classifies/predicts) vs Generative AI (creates new content) with examples of each type.</p>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🏗️ Transformer Architecture Fundamentals</h4>
+                <h4 class="text-lg font-semibold mb-3 text-primary-900">🏗️ Transformer Architecture Fundamentals</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Self-Attention Mechanism</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3">Allows the model to weigh the importance of different words in a sequence when processing each word.</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Benefit:</strong> Captures long-range dependencies in text</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Self-Attention Mechanism</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Allows the model to weigh the importance of different words in a sequence when processing each word.</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Benefit:</strong> Captures long-range dependencies in text</p>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Encoder-Decoder Structure</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3">Encoder processes input, decoder generates output. Some models use only encoder (BERT) or only decoder (GPT).</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Use Cases:</strong> Translation, summarization, text generation</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Encoder-Decoder Structure</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Encoder processes input, decoder generates output. Some models use only encoder (BERT) or only decoder (GPT).</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Use Cases:</strong> Translation, summarization, text generation</p>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Positional Encoding</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3">Helps the model understand the order of words in a sequence since transformers don't inherently process sequentially.</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Importance:</strong> Critical for understanding context and meaning</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Positional Encoding</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Helps the model understand the order of words in a sequence since transformers don't inherently process sequentially.</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Importance:</strong> Critical for understanding context and meaning</p>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Multi-Head Attention</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3">Multiple attention mechanisms working in parallel to capture different types of relationships.</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Advantage:</strong>Allows model to focus on different aspects simultaneously</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Multi-Head Attention</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Multiple attention mechanisms working in parallel to capture different types of relationships.</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Advantage:</strong>Allows model to focus on different aspects simultaneously</p>
                     </div>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🔄 Generative AI Lifecycle</h4>
-                <div class="bg-slate-50/90 border-l-4 border-gray-500 p-4 my-2 rounded-r-lg active-step">
-                    <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">1. Data Collection & Preparation</h5>
-                    <p class="text-gray-700 leading-relaxed mb-3">Gathering diverse, high-quality training data from various sources (web, books, code repositories)</p>
+                <h4 class="text-lg font-semibold mb-3 text-primary-900">🔄 Generative AI Lifecycle</h4>
+                <div class="bg-neutral-50/90 border-l-4 border-neutral-400 p-4 my-2 rounded-r-lg active-step">
+                    <h5 class="text-base font-semibold mb-2 text-primary-900">1. Data Collection & Preparation</h5>
+                    <p class="text-neutral-600 leading-relaxed mb-3">Gathering diverse, high-quality training data from various sources (web, books, code repositories)</p>
                 </div>
-                <div class="bg-slate-50/90 border-l-4 border-gray-500 p-4 my-2 rounded-r-lg">
-                    <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">2. Pre-training</h5>
-                    <p class="text-gray-700 leading-relaxed mb-3">Training foundation models on large datasets to learn general patterns and representations</p>
+                <div class="bg-neutral-50/90 border-l-4 border-neutral-400 p-4 my-2 rounded-r-lg">
+                    <h5 class="text-base font-semibold mb-2 text-primary-900">2. Pre-training</h5>
+                    <p class="text-neutral-600 leading-relaxed mb-3">Training foundation models on large datasets to learn general patterns and representations</p>
                 </div>
-                <div class="bg-slate-50/90 border-l-4 border-gray-500 p-4 my-2 rounded-r-lg">
-                    <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">3. Fine-tuning</h5>
-                    <p class="text-gray-700 leading-relaxed mb-3">Adapting pre-trained models for specific tasks or domains with smaller, targeted datasets</p>
+                <div class="bg-neutral-50/90 border-l-4 border-neutral-400 p-4 my-2 rounded-r-lg">
+                    <h5 class="text-base font-semibold mb-2 text-primary-900">3. Fine-tuning</h5>
+                    <p class="text-neutral-600 leading-relaxed mb-3">Adapting pre-trained models for specific tasks or domains with smaller, targeted datasets</p>
                 </div>
-                <div class="bg-slate-50/90 border-l-4 border-gray-500 p-4 my-2 rounded-r-lg">
-                    <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">4. Alignment & Safety</h5>
-                    <p class="text-gray-700 leading-relaxed mb-3">Training models to follow instructions, be helpful, harmless, and honest (RLHF - Reinforcement Learning from Human Feedback)</p>
+                <div class="bg-neutral-50/90 border-l-4 border-neutral-400 p-4 my-2 rounded-r-lg">
+                    <h5 class="text-base font-semibold mb-2 text-primary-900">4. Alignment & Safety</h5>
+                    <p class="text-neutral-600 leading-relaxed mb-3">Training models to follow instructions, be helpful, harmless, and honest (RLHF - Reinforcement Learning from Human Feedback)</p>
                 </div>
-                <div class="bg-slate-50/90 border-l-4 border-gray-500 p-4 my-2 rounded-r-lg">
-                    <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">5. Deployment & Inference</h5>
-                    <p class="text-gray-700 leading-relaxed mb-3">Serving the model to users through APIs, applications, or integrated systems</p>
+                <div class="bg-neutral-50/90 border-l-4 border-neutral-400 p-4 my-2 rounded-r-lg">
+                    <h5 class="text-base font-semibold mb-2 text-primary-900">5. Deployment & Inference</h5>
+                    <p class="text-neutral-600 leading-relaxed mb-3">Serving the model to users through APIs, applications, or integrated systems</p>
                 </div>
 
-                <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-aws-blue-light">
-                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🔧 Key AWS Services for Generative AI</h4>
+                <div class="bg-neutral-100/80 p-5 rounded-lg my-4 border-l-4 border-primary-300">
+                    <h4 class="text-lg font-semibold mb-3 text-primary-900">🔧 Key AWS Services for Generative AI</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
+                        <div class="bg-white/95 p-4 rounded-lg border border-neutral-200">
                             <strong>Amazon Bedrock</strong><br>
                             Fully managed service providing access to foundation models via APIs
                         </div>
-                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
+                        <div class="bg-white/95 p-4 rounded-lg border border-neutral-200">
                             <strong>Amazon SageMaker JumpStart</strong><br>
                             Pre-built foundation models and solutions for quick deployment
                         </div>
-                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
+                        <div class="bg-white/95 p-4 rounded-lg border border-neutral-200">
                             <strong>Amazon PartyRock</strong><br>
                             Code-free app builder for experimenting with generative AI
                         </div>
-                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
+                        <div class="bg-white/95 p-4 rounded-lg border border-neutral-200">
                             <strong>Amazon CodeWhisperer</strong><br>
                             AI-powered coding companion for generating code suggestions
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-blue-400">
-                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🛠️ Hands-On Practice</h4>
+                <div class="bg-neutral-100/80 p-5 rounded-lg my-4 border-l-4 border-blue-400">
+                    <h4 class="text-lg font-semibold mb-3 text-primary-900">🛠️ Hands-On Practice</h4>
                     <ul class="list-none space-y-2 ml-0">
-                        <li class="text-gray-700"><strong>Amazon Bedrock:</strong> Experiment with different foundation models in the playground</li>
-                        <li class="text-gray-700"><strong>PartyRock:</strong> Build a simple chatbot to understand generative AI interactions</li>
-                        <li class="text-gray-700"><strong>Token Counting:</strong> Practice calculating tokens for different text inputs</li>
-                        <li class="text-gray-700"><strong>Model Comparison:</strong> Compare outputs from different LLMs for the same prompt</li>
+                        <li class="text-neutral-600"><strong>Amazon Bedrock:</strong> Experiment with different foundation models in the playground</li>
+                        <li class="text-neutral-600"><strong>PartyRock:</strong> Build a simple chatbot to understand generative AI interactions</li>
+                        <li class="text-neutral-600"><strong>Token Counting:</strong> Practice calculating tokens for different text inputs</li>
+                        <li class="text-neutral-600"><strong>Model Comparison:</strong> Compare outputs from different LLMs for the same prompt</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <!-- Task Statement 2.2 -->
-        <div class="bg-white border border-gray-200 rounded-xl mb-6 overflow-hidden shadow-lg">
-            <div class="gradient-aws-blue text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task2')">
-                <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Task Statement 2.2: Understand Capabilities and Limitations of Generative AI</h3>
+        <div class="bg-white border border-neutral-200 rounded-xl mb-6 overflow-hidden shadow-lg">
+            <div class="gradient-primary-700 text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task2')">
+                <h3 class="text-xl font-semibold mb-2 text-primary-900">Task Statement 2.2: Understand Capabilities and Limitations of Generative AI</h3>
                 <button class="bg-transparent border-none text-white text-2xl cursor-pointer transition-transform duration-300 p-0 m-0 leading-none" id="toggle2">▼</button>
             </div>
             <div class="p-6 hidden" id="task2">
-                <div class="bg-slate-100/80 p-4 rounded-lg my-4 border-l-4 border-aws-blue-light">
-                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🎯 Learning Objectives:</h4>
+                <div class="bg-neutral-100/80 p-4 rounded-lg my-4 border-l-4 border-primary-300">
+                    <h4 class="text-lg font-semibold mb-3 text-primary-900">🎯 Learning Objectives:</h4>
                     <ul class="list-none space-y-2 ml-0">
-                        <li class="text-gray-700">Identify what generative AI can and cannot do effectively</li>
-                        <li class="text-gray-700">Understand common challenges and failure modes</li>
-                        <li class="text-gray-700">Recognize business value and use case suitability</li>
-                        <li class="text-gray-700">Understand evaluation metrics for generative AI</li>
+                        <li class="text-neutral-600">Identify what generative AI can and cannot do effectively</li>
+                        <li class="text-neutral-600">Understand common challenges and failure modes</li>
+                        <li class="text-neutral-600">Recognize business value and use case suitability</li>
+                        <li class="text-neutral-600">Understand evaluation metrics for generative AI</li>
                     </ul>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">✅ Generative AI Capabilities</h4>
+                <h4 class="text-lg font-semibold mb-3 text-primary-900">✅ Generative AI Capabilities</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Content Creation</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Text:</strong> Articles, emails, summaries, creative writing</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Code:</strong> Programming assistance, debugging, documentation</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Images:</strong> Art generation, design concepts, photo editing</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Audio:</strong> Music composition, voice synthesis, sound effects</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Content Creation</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Text:</strong> Articles, emails, summaries, creative writing</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Code:</strong> Programming assistance, debugging, documentation</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Images:</strong> Art generation, design concepts, photo editing</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Audio:</strong> Music composition, voice synthesis, sound effects</p>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Language Tasks</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Translation:</strong> Between multiple languages with context awareness</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Summarization:</strong> Extractive and abstractive summarization</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Q&A:</strong> Answering questions based on context or training knowledge</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Conversation:</strong> Natural dialogue and chat interactions</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Language Tasks</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Translation:</strong> Between multiple languages with context awareness</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Summarization:</strong> Extractive and abstractive summarization</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Q&A:</strong> Answering questions based on context or training knowledge</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Conversation:</strong> Natural dialogue and chat interactions</p>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Analysis & Reasoning</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Text Analysis:</strong> Sentiment, themes, key insights</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Problem Solving:</strong> Step-by-step reasoning for complex problems</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Pattern Recognition:</strong> Identifying trends and relationships</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Classification:</strong> Categorizing content with explanations</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Analysis & Reasoning</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Text Analysis:</strong> Sentiment, themes, key insights</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Problem Solving:</strong> Step-by-step reasoning for complex problems</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Pattern Recognition:</strong> Identifying trends and relationships</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Classification:</strong> Categorizing content with explanations</p>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Multimodal Capabilities</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Vision + Language:</strong> Image description, visual Q&A</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Audio + Text:</strong> Transcription with context understanding</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Cross-modal:</strong> Generating text from images, images from text</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Integration:</strong> Combining multiple input types for richer outputs</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Multimodal Capabilities</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Vision + Language:</strong> Image description, visual Q&A</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Audio + Text:</strong> Transcription with context understanding</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Cross-modal:</strong> Generating text from images, images from text</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Integration:</strong> Combining multiple input types for richer outputs</p>
                     </div>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">⚠️ Generative AI Limitations</h4>
+                <h4 class="text-lg font-semibold mb-3 text-primary-900">⚠️ Generative AI Limitations</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Hallucinations</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3">Generating plausible-sounding but factually incorrect information</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Risk:</strong> Confidently stating false facts or making up sources</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Mitigation:</strong> Fact-checking, RAG systems, human oversight</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Hallucinations</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Generating plausible-sounding but factually incorrect information</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Risk:</strong> Confidently stating false facts or making up sources</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Mitigation:</strong> Fact-checking, RAG systems, human oversight</p>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Knowledge Cutoff</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3">Limited to information available during training, no real-time updates</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Issue:</strong> Cannot access current events or recent developments</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Solution:</strong> RAG, fine-tuning with recent data, API integrations</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Knowledge Cutoff</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Limited to information available during training, no real-time updates</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Issue:</strong> Cannot access current events or recent developments</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Solution:</strong> RAG, fine-tuning with recent data, API integrations</p>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Context Window Limits</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3">Restricted amount of text that can be processed in a single interaction</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Impact:</strong> Cannot handle very long documents in one go</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Workaround:</strong> Chunking, summarization, context compression</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Context Window Limits</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Restricted amount of text that can be processed in a single interaction</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Impact:</strong> Cannot handle very long documents in one go</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Workaround:</strong> Chunking, summarization, context compression</p>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Bias & Fairness Issues</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3">May reflect biases present in training data</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Concerns:</strong> Stereotypes, cultural bias, unfair representations</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Approaches:</strong> Diverse training data, bias testing, guardrails</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Bias & Fairness Issues</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3">May reflect biases present in training data</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Concerns:</strong> Stereotypes, cultural bias, unfair representations</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Approaches:</strong> Diverse training data, bias testing, guardrails</p>
                     </div>
                 </div>
 
-                <div class="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-dashed border-gray-400 rounded-lg p-8 text-center my-4 text-gray-600 italic">
-                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">📊 Recommended Visual: Capability vs Limitation Matrix</h4>
-                    <p class="text-gray-700 leading-relaxed mb-3">Create a matrix showing different use cases (rows) vs factors like accuracy, reliability, creativity (columns) with color-coded ratings.</p>
+                <div class="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-dashed border-neutral-200 rounded-lg p-8 text-center my-4 text-neutral-600 italic">
+                    <h4 class="text-lg font-semibold mb-3 text-primary-900">📊 Recommended Visual: Capability vs Limitation Matrix</h4>
+                    <p class="text-neutral-600 leading-relaxed mb-3">Create a matrix showing different use cases (rows) vs factors like accuracy, reliability, creativity (columns) with color-coded ratings.</p>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">💼 Business Value & Metrics</h4>
+                <h4 class="text-lg font-semibold mb-3 text-primary-900">💼 Business Value & Metrics</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Productivity Gains</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Content Creation:</strong> 50-80% faster writing and editing</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Code Development:</strong> 30-50% faster programming tasks</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Customer Service:</strong> 24/7 availability, instant responses</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Research:</strong> Rapid information synthesis and analysis</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Productivity Gains</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Content Creation:</strong> 50-80% faster writing and editing</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Code Development:</strong> 30-50% faster programming tasks</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Customer Service:</strong> 24/7 availability, instant responses</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Research:</strong> Rapid information synthesis and analysis</p>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Cost Reduction</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Labor Costs:</strong> Automation of routine tasks</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Training Costs:</strong> Reduced need for specialized skills</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Operational Costs:</strong> Streamlined workflows and processes</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Scale Economics:</strong> Handle increased volume without proportional cost increase</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Cost Reduction</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Labor Costs:</strong> Automation of routine tasks</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Training Costs:</strong> Reduced need for specialized skills</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Operational Costs:</strong> Streamlined workflows and processes</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Scale Economics:</strong> Handle increased volume without proportional cost increase</p>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Quality Metrics</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Accuracy:</strong> Factual correctness of generated content</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Relevance:</strong> Appropriateness to the given context</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Coherence:</strong> Logical flow and consistency</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Creativity:</strong> Novelty and originality of outputs</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Quality Metrics</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Accuracy:</strong> Factual correctness of generated content</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Relevance:</strong> Appropriateness to the given context</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Coherence:</strong> Logical flow and consistency</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Creativity:</strong> Novelty and originality of outputs</p>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">User Experience Metrics</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Response Time:</strong> Speed of content generation</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>User Satisfaction:</strong> Quality ratings and feedback</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Adoption Rate:</strong> User engagement and retention</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Task Completion:</strong> Success rate for intended use cases</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">User Experience Metrics</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Response Time:</strong> Speed of content generation</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>User Satisfaction:</strong> Quality ratings and feedback</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Adoption Rate:</strong> User engagement and retention</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Task Completion:</strong> Success rate for intended use cases</p>
                     </div>
                 </div>
 
                 <div class="bg-blue-50/80 border border-blue-200 rounded-lg p-4 my-4">
-                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🎯 Use Case Suitability Assessment</h4>
-                    <p class="text-gray-700 leading-relaxed mb-3"><strong>High Suitability:</strong> Creative writing, code assistance, content summarization, language translation</p>
-                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Medium Suitability:</strong> Data analysis, customer support, educational content, brainstorming</p>
-                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Low Suitability:</strong> Critical decision-making, financial calculations, medical diagnosis, legal advice</p>
+                    <h4 class="text-lg font-semibold mb-3 text-primary-900">🎯 Use Case Suitability Assessment</h4>
+                    <p class="text-neutral-600 leading-relaxed mb-3"><strong>High Suitability:</strong> Creative writing, code assistance, content summarization, language translation</p>
+                    <p class="text-neutral-600 leading-relaxed mb-3"><strong>Medium Suitability:</strong> Data analysis, customer support, educational content, brainstorming</p>
+                    <p class="text-neutral-600 leading-relaxed mb-3"><strong>Low Suitability:</strong> Critical decision-making, financial calculations, medical diagnosis, legal advice</p>
                 </div>
 
-                <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-aws-blue-light">
-                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🔧 AWS Tools for Evaluation & Monitoring</h4>
+                <div class="bg-neutral-100/80 p-5 rounded-lg my-4 border-l-4 border-primary-300">
+                    <h4 class="text-lg font-semibold mb-3 text-primary-900">🔧 AWS Tools for Evaluation & Monitoring</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
+                        <div class="bg-white/95 p-4 rounded-lg border border-neutral-200">
                             <strong>Amazon Bedrock Model Evaluation</strong><br>
                             Built-in evaluation capabilities for foundation models
                         </div>
-                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
+                        <div class="bg-white/95 p-4 rounded-lg border border-neutral-200">
                             <strong>SageMaker Clarify</strong><br>
                             Bias detection and model explainability for AI systems
                         </div>
-                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
+                        <div class="bg-white/95 p-4 rounded-lg border border-neutral-200">
                             <strong>CloudWatch</strong><br>
                             Monitoring model performance and usage metrics
                         </div>
-                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
+                        <div class="bg-white/95 p-4 rounded-lg border border-neutral-200">
                             <strong>A2I (Augmented AI)</strong><br>
                             Human review workflows for AI-generated content
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-blue-400">
-                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🛠️ Hands-On Practice</h4>
+                <div class="bg-neutral-100/80 p-5 rounded-lg my-4 border-l-4 border-blue-400">
+                    <h4 class="text-lg font-semibold mb-3 text-primary-900">🛠️ Hands-On Practice</h4>
                     <ul class="list-none space-y-2 ml-0">
-                        <li class="text-gray-700"><strong>Hallucination Testing:</strong> Ask models factual questions and verify accuracy</li>
-                        <li class="text-gray-700"><strong>Bias Detection:</strong> Test models with prompts that might reveal biases</li>
-                        <li class="text-gray-700"><strong>Use Case Evaluation:</strong> Try different tasks and assess model performance</li>
-                        <li class="text-gray-700"><strong>Metric Collection:</strong> Measure response times and quality for various prompts</li>
+                        <li class="text-neutral-600"><strong>Hallucination Testing:</strong> Ask models factual questions and verify accuracy</li>
+                        <li class="text-neutral-600"><strong>Bias Detection:</strong> Test models with prompts that might reveal biases</li>
+                        <li class="text-neutral-600"><strong>Use Case Evaluation:</strong> Try different tasks and assess model performance</li>
+                        <li class="text-neutral-600"><strong>Metric Collection:</strong> Measure response times and quality for various prompts</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <!-- Task Statement 2.3 -->
-        <div class="bg-white border border-gray-200 rounded-xl mb-6 overflow-hidden shadow-lg">
-            <div class="gradient-aws-blue text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task3')">
-                <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Task Statement 2.3: Describe AWS Infrastructure and Technologies for Building Generative AI Applications</h3>
+        <div class="bg-white border border-neutral-200 rounded-xl mb-6 overflow-hidden shadow-lg">
+            <div class="gradient-primary-700 text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task3')">
+                <h3 class="text-xl font-semibold mb-2 text-primary-900">Task Statement 2.3: Describe AWS Infrastructure and Technologies for Building Generative AI Applications</h3>
                 <button class="bg-transparent border-none text-white text-2xl cursor-pointer transition-transform duration-300 p-0 m-0 leading-none" id="toggle3">▼</button>
             </div>
             <div class="p-6 hidden" id="task3">
-                <div class="bg-slate-100/80 p-4 rounded-lg my-4 border-l-4 border-aws-blue-light">
-                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🎯 Learning Objectives:</h4>
+                <div class="bg-neutral-100/80 p-4 rounded-lg my-4 border-l-4 border-primary-300">
+                    <h4 class="text-lg font-semibold mb-3 text-primary-900">🎯 Learning Objectives:</h4>
                     <ul class="list-none space-y-2 ml-0">
-                        <li class="text-gray-700">Understand AWS generative AI service offerings</li>
-                        <li class="text-gray-700">Identify appropriate AWS services for different GenAI use cases</li>
-                        <li class="text-gray-700">Understand infrastructure requirements for GenAI applications</li>
-                        <li class="text-gray-700">Recognize integration patterns and architectures</li>
+                        <li class="text-neutral-600">Understand AWS generative AI service offerings</li>
+                        <li class="text-neutral-600">Identify appropriate AWS services for different GenAI use cases</li>
+                        <li class="text-neutral-600">Understand infrastructure requirements for GenAI applications</li>
+                        <li class="text-neutral-600">Recognize integration patterns and architectures</li>
                     </ul>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🏗️ AWS Generative AI Service Stack</h4>
+                <h4 class="text-lg font-semibold mb-3 text-primary-900">🏗️ AWS Generative AI Service Stack</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Foundation Layer: Amazon Bedrock</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3">Fully managed service providing access to foundation models from leading AI companies</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Models Available:</strong> Anthropic Claude, Amazon Titan, AI21 Jurassic, Cohere Command</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Features:</strong> Model playground, fine-tuning, guardrails, agents</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Benefits:</strong> No infrastructure management, pay-per-use, enterprise security</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Foundation Layer: Amazon Bedrock</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Fully managed service providing access to foundation models from leading AI companies</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Models Available:</strong> Anthropic Claude, Amazon Titan, AI21 Jurassic, Cohere Command</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Features:</strong> Model playground, fine-tuning, guardrails, agents</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Benefits:</strong> No infrastructure management, pay-per-use, enterprise security</p>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Custom Models: SageMaker</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3">Platform for building, training, and deploying custom foundation models</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>JumpStart:</strong> Pre-built models and solutions</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Training Jobs:</strong> Distributed training for large models</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Endpoints:</strong> Real-time and batch inference</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Custom Models: SageMaker</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Platform for building, training, and deploying custom foundation models</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>JumpStart:</strong> Pre-built models and solutions</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Training Jobs:</strong> Distributed training for large models</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Endpoints:</strong> Real-time and batch inference</p>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Application Layer: PartyRock</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3">Code-free app builder for creating generative AI applications</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Use Cases:</strong> Chatbots, content generators, creative tools</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Features:</strong> Drag-and-drop interface, pre-built widgets</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Target Users:</strong> Non-technical users, rapid prototyping</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Application Layer: PartyRock</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Code-free app builder for creating generative AI applications</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Use Cases:</strong> Chatbots, content generators, creative tools</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Features:</strong> Drag-and-drop interface, pre-built widgets</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Target Users:</strong> Non-technical users, rapid prototyping</p>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Developer Tools: CodeWhisperer</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3">AI-powered coding companion integrated into IDEs</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Capabilities:</strong> Code generation, completion, documentation</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Languages:</strong> Python, Java, JavaScript, TypeScript, C#, and more</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Integration:</strong> VS Code, IntelliJ, AWS Cloud9</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Developer Tools: CodeWhisperer</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3">AI-powered coding companion integrated into IDEs</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Capabilities:</strong> Code generation, completion, documentation</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Languages:</strong> Python, Java, JavaScript, TypeScript, C#, and more</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Integration:</strong> VS Code, IntelliJ, AWS Cloud9</p>
                     </div>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🔧 Foundation Models Available on AWS</h4>
+                <h4 class="text-lg font-semibold mb-3 text-primary-900">🔧 Foundation Models Available on AWS</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-5">
-                    <div class="bg-white/95 border-2 border-gray-300 rounded-xl p-4 transition-colors duration-300 hover:border-aws-blue">
-                        <h6 class="text-sm font-semibold mb-2 text-aws-blue">Amazon Titan</h6>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Text Models:</strong> Titan Text Express, Titan Text Lite</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Embeddings:</strong> Titan Embeddings for semantic search</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Strengths:</strong> Cost-effective, good for general tasks</p>
+                    <div class="bg-white/95 border-2 border-neutral-200 rounded-xl p-4 transition-colors duration-300 hover:border-primary-700">
+                        <h6 class="text-sm font-semibold mb-2 text-primary-700">Amazon Titan</h6>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Text Models:</strong> Titan Text Express, Titan Text Lite</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Embeddings:</strong> Titan Embeddings for semantic search</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Strengths:</strong> Cost-effective, good for general tasks</p>
                     </div>
-                    <div class="bg-white/95 border-2 border-gray-300 rounded-xl p-4 transition-colors duration-300 hover:border-aws-blue">
-                        <h6 class="text-sm font-semibold mb-2 text-aws-blue">Anthropic Claude</h6>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Versions:</strong> Claude 3 Haiku, Sonnet, Opus</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Strengths:</strong> Safety, reasoning, long context windows</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Use Cases:</strong> Complex analysis, creative writing</p>
+                    <div class="bg-white/95 border-2 border-neutral-200 rounded-xl p-4 transition-colors duration-300 hover:border-primary-700">
+                        <h6 class="text-sm font-semibold mb-2 text-primary-700">Anthropic Claude</h6>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Versions:</strong> Claude 3 Haiku, Sonnet, Opus</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Strengths:</strong> Safety, reasoning, long context windows</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Use Cases:</strong> Complex analysis, creative writing</p>
                     </div>
-                    <div class="bg-white/95 border-2 border-gray-300 rounded-xl p-4 transition-colors duration-300 hover:border-aws-blue">
-                        <h6 class="text-sm font-semibold mb-2 text-aws-blue">AI21 Jurassic</h6>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Models:</strong> Jurassic-2 Mid, Jurassic-2 Ultra</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Strengths:</strong> Multilingual, instruction following</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Features:</strong> Custom model fine-tuning</p>
+                    <div class="bg-white/95 border-2 border-neutral-200 rounded-xl p-4 transition-colors duration-300 hover:border-primary-700">
+                        <h6 class="text-sm font-semibold mb-2 text-primary-700">AI21 Jurassic</h6>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Models:</strong> Jurassic-2 Mid, Jurassic-2 Ultra</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Strengths:</strong> Multilingual, instruction following</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Features:</strong> Custom model fine-tuning</p>
                     </div>
-                    <div class="bg-white/95 border-2 border-gray-300 rounded-xl p-4 transition-colors duration-300 hover:border-aws-blue">
-                        <h6 class="text-sm font-semibold mb-2 text-aws-blue">Cohere Command</h6>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Specialization:</strong> Business applications, RAG</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Features:</strong> Grounded generation, citations</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Use Cases:</strong> Enterprise search, customer service</p>
+                    <div class="bg-white/95 border-2 border-neutral-200 rounded-xl p-4 transition-colors duration-300 hover:border-primary-700">
+                        <h6 class="text-sm font-semibold mb-2 text-primary-700">Cohere Command</h6>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Specialization:</strong> Business applications, RAG</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Features:</strong> Grounded generation, citations</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Use Cases:</strong> Enterprise search, customer service</p>
                     </div>
-                    <div class="bg-white/95 border-2 border-gray-300 rounded-xl p-4 transition-colors duration-300 hover:border-aws-blue">
-                        <h6 class="text-sm font-semibold mb-2 text-aws-blue">Meta LLaMA</h6>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Models:</strong> LLaMA 2, Code Llama</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Strengths:</strong> Open source, customizable</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Deployment:</strong> SageMaker, self-managed</p>
+                    <div class="bg-white/95 border-2 border-neutral-200 rounded-xl p-4 transition-colors duration-300 hover:border-primary-700">
+                        <h6 class="text-sm font-semibold mb-2 text-primary-700">Meta LLaMA</h6>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Models:</strong> LLaMA 2, Code Llama</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Strengths:</strong> Open source, customizable</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Deployment:</strong> SageMaker, self-managed</p>
                     </div>
-                    <div class="bg-white/95 border-2 border-gray-300 rounded-xl p-4 transition-colors duration-300 hover:border-aws-blue">
-                        <h6 class="text-sm font-semibold mb-2 text-aws-blue">Stability AI</h6>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Focus:</strong> Image generation (Stable Diffusion)</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Capabilities:</strong> Text-to-image, image-to-image</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Use Cases:</strong> Creative content, design</p>
+                    <div class="bg-white/95 border-2 border-neutral-200 rounded-xl p-4 transition-colors duration-300 hover:border-primary-700">
+                        <h6 class="text-sm font-semibold mb-2 text-primary-700">Stability AI</h6>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Focus:</strong> Image generation (Stable Diffusion)</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Capabilities:</strong> Text-to-image, image-to-image</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Use Cases:</strong> Creative content, design</p>
                     </div>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🏛️ Infrastructure Components</h4>
+                <h4 class="text-lg font-semibold mb-3 text-primary-900">🏛️ Infrastructure Components</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Compute Infrastructure</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>GPU Instances:</strong> P4, P5 instances for model training and inference</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Inferentia:</strong> AWS custom chips optimized for inference</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Trainium:</strong> Custom chips for training large models</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Auto Scaling:</strong> Dynamic scaling based on demand</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Compute Infrastructure</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>GPU Instances:</strong> P4, P5 instances for model training and inference</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Inferentia:</strong> AWS custom chips optimized for inference</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Trainium:</strong> Custom chips for training large models</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Auto Scaling:</strong> Dynamic scaling based on demand</p>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Storage & Data</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>S3:</strong> Storage for training data, model artifacts, generated content</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>EFS:</strong> Shared file systems for distributed training</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>OpenSearch:</strong> Vector databases for RAG implementations</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>RDS:</strong> Structured data for applications and metadata</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Storage & Data</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>S3:</strong> Storage for training data, model artifacts, generated content</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>EFS:</strong> Shared file systems for distributed training</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>OpenSearch:</strong> Vector databases for RAG implementations</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>RDS:</strong> Structured data for applications and metadata</p>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Networking & Security</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>VPC:</strong> Isolated network environments</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>IAM:</strong> Fine-grained access controls</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>KMS:</strong> Encryption for data and models</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>API Gateway:</strong> Secure API endpoints for model access</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Networking & Security</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>VPC:</strong> Isolated network environments</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>IAM:</strong> Fine-grained access controls</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>KMS:</strong> Encryption for data and models</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>API Gateway:</strong> Secure API endpoints for model access</p>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Monitoring & Observability</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>CloudWatch:</strong> Metrics, logs, and alarms</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>X-Ray:</strong> Distributed tracing for complex applications</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>CloudTrail:</strong> API call auditing and compliance</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>SageMaker Model Monitor:</strong> Model performance monitoring</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Monitoring & Observability</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>CloudWatch:</strong> Metrics, logs, and alarms</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>X-Ray:</strong> Distributed tracing for complex applications</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>CloudTrail:</strong> API call auditing and compliance</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>SageMaker Model Monitor:</strong> Model performance monitoring</p>
                     </div>
                 </div>
 
-                <div class="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-dashed border-gray-400 rounded-lg p-8 text-center my-4 text-gray-600 italic">
-                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🏗️ Recommended Visual: AWS GenAI Architecture Diagram</h4>
-                    <p class="text-gray-700 leading-relaxed mb-3">Create a layered architecture diagram showing: User Interface → API Gateway → Application Logic → Bedrock/SageMaker → Infrastructure (compute, storage, networking)</p>
+                <div class="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-dashed border-neutral-200 rounded-lg p-8 text-center my-4 text-neutral-600 italic">
+                    <h4 class="text-lg font-semibold mb-3 text-primary-900">🏗️ Recommended Visual: AWS GenAI Architecture Diagram</h4>
+                    <p class="text-neutral-600 leading-relaxed mb-3">Create a layered architecture diagram showing: User Interface → API Gateway → Application Logic → Bedrock/SageMaker → Infrastructure (compute, storage, networking)</p>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🔄 Integration Patterns</h4>
+                <h4 class="text-lg font-semibold mb-3 text-primary-900">🔄 Integration Patterns</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">API-First Integration</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3">Direct API calls to Bedrock or SageMaker endpoints</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Use Cases:</strong> Simple applications, microservices</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Benefits:</strong> Low latency, direct control</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">API-First Integration</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Direct API calls to Bedrock or SageMaker endpoints</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Use Cases:</strong> Simple applications, microservices</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Benefits:</strong> Low latency, direct control</p>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Event-Driven Architecture</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3">Using Lambda functions triggered by events for GenAI processing</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Services:</strong> EventBridge, SQS, SNS</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Benefits:</strong> Scalable, decoupled, cost-effective</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Event-Driven Architecture</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Using Lambda functions triggered by events for GenAI processing</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Services:</strong> EventBridge, SQS, SNS</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Benefits:</strong> Scalable, decoupled, cost-effective</p>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Retrieval Augmented Generation (RAG)</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3">Combining foundation models with external knowledge sources</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Components:</strong> Vector DB (OpenSearch), embeddings, retrieval logic</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Benefits:</strong> Up-to-date information, domain-specific knowledge</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Retrieval Augmented Generation (RAG)</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Combining foundation models with external knowledge sources</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Components:</strong> Vector DB (OpenSearch), embeddings, retrieval logic</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Benefits:</strong> Up-to-date information, domain-specific knowledge</p>
                     </div>
-                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Multi-Model Orchestration</h5>
-                        <p class="text-gray-700 leading-relaxed mb-3">Using multiple models for different tasks in a workflow</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Tools:</strong> Step Functions, SageMaker Pipelines</p>
-                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Use Cases:</strong> Complex document processing, multi-step analysis</p>
+                    <div class="bg-neutral-50 p-5 rounded-xl border border-neutral-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-primary-900">Multi-Model Orchestration</h5>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Using multiple models for different tasks in a workflow</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Tools:</strong> Step Functions, SageMaker Pipelines</p>
+                        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Use Cases:</strong> Complex document processing, multi-step analysis</p>
                     </div>
                 </div>
 
-                <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-aws-blue-light">
-                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🔧 Supporting AWS Services</h4>
+                <div class="bg-neutral-100/80 p-5 rounded-lg my-4 border-l-4 border-primary-300">
+                    <h4 class="text-lg font-semibold mb-3 text-primary-900">🔧 Supporting AWS Services</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
+                        <div class="bg-white/95 p-4 rounded-lg border border-neutral-200">
                             <strong>Lambda</strong><br>
                             Serverless compute for GenAI application logic
                         </div>
-                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
+                        <div class="bg-white/95 p-4 rounded-lg border border-neutral-200">
                             <strong>API Gateway</strong><br>
                             Managed API endpoints with authentication and throttling
                         </div>
-                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
+                        <div class="bg-white/95 p-4 rounded-lg border border-neutral-200">
                             <strong>Step Functions</strong><br>
                             Orchestrate complex GenAI workflows
                         </div>
-                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
+                        <div class="bg-white/95 p-4 rounded-lg border border-neutral-200">
                             <strong>EventBridge</strong><br>
                             Event-driven integration between services
                         </div>
-                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
+                        <div class="bg-white/95 p-4 rounded-lg border border-neutral-200">
                             <strong>AppSync</strong><br>
                             GraphQL APIs for real-time GenAI applications
                         </div>
-                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
+                        <div class="bg-white/95 p-4 rounded-lg border border-neutral-200">
                             <strong>Amplify</strong><br>
                             Full-stack development platform with GenAI integration
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-blue-400">
-                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🛠️ Hands-On Practice</h4>
+                <div class="bg-neutral-100/80 p-5 rounded-lg my-4 border-l-4 border-blue-400">
+                    <h4 class="text-lg font-semibold mb-3 text-primary-900">🛠️ Hands-On Practice</h4>
                     <ul class="list-none space-y-2 ml-0">
-                        <li class="text-gray-700"><strong>Bedrock Playground:</strong> Test different foundation models and compare outputs</li>
-                        <li class="text-gray-700"><strong>Model Access:</strong> Request access to different models and understand pricing</li>
-                        <li class="text-gray-700"><strong>SageMaker JumpStart:</strong> Deploy a foundation model endpoint</li>
-                        <li class="text-gray-700"><strong>PartyRock:</strong> Build a complete GenAI application without code</li>
-                        <li class="text-gray-700"><strong>Architecture Design:</strong> Design a RAG system using AWS services</li>
+                        <li class="text-neutral-600"><strong>Bedrock Playground:</strong> Test different foundation models and compare outputs</li>
+                        <li class="text-neutral-600"><strong>Model Access:</strong> Request access to different models and understand pricing</li>
+                        <li class="text-neutral-600"><strong>SageMaker JumpStart:</strong> Deploy a foundation model endpoint</li>
+                        <li class="text-neutral-600"><strong>PartyRock:</strong> Build a complete GenAI application without code</li>
+                        <li class="text-neutral-600"><strong>Architecture Design:</strong> Design a RAG system using AWS services</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <div class="bg-slate-100/80 p-5 rounded-lg my-5 border-l-4 border-aws-blue-light">
-            <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">💡 Study Tips for Domain 2</h4>
+        <div class="bg-neutral-100/80 p-5 rounded-lg my-5 border-l-4 border-primary-300">
+            <h4 class="text-lg font-semibold mb-3 text-primary-900">💡 Study Tips for Domain 2</h4>
             <ul class="list-none space-y-2 ml-0">
-                <li class="text-gray-700"><strong>Hands-On Experience:</strong> Spend significant time with Bedrock playground and PartyRock</li>
-                <li class="text-gray-700"><strong>Model Comparison:</strong> Understand differences between available foundation models</li>
-                <li class="text-gray-700"><strong>Practical Limitations:</strong> Test models to understand their real-world limitations</li>
-                <li class="text-gray-700"><strong>AWS Integration:</strong> Focus on how GenAI services integrate with other AWS services</li>
-                <li class="text-gray-700"><strong>Use Case Mapping:</strong> Practice matching business problems to appropriate GenAI solutions</li>
-                <li class="text-gray-700"><strong>Cost Awareness:</strong> Understand token-based pricing and cost optimization strategies</li>
+                <li class="text-neutral-600"><strong>Hands-On Experience:</strong> Spend significant time with Bedrock playground and PartyRock</li>
+                <li class="text-neutral-600"><strong>Model Comparison:</strong> Understand differences between available foundation models</li>
+                <li class="text-neutral-600"><strong>Practical Limitations:</strong> Test models to understand their real-world limitations</li>
+                <li class="text-neutral-600"><strong>AWS Integration:</strong> Focus on how GenAI services integrate with other AWS services</li>
+                <li class="text-neutral-600"><strong>Use Case Mapping:</strong> Practice matching business problems to appropriate GenAI solutions</li>
+                <li class="text-neutral-600"><strong>Cost Awareness:</strong> Understand token-based pricing and cost optimization strategies</li>
             </ul>
         </div>
 
-        <div class="flex justify-between items-center gap-5 mt-10 mb-5 pt-5 border-t-2 border-gray-300">
-            <button class="bg-gradient-to-r from-aws-blue to-aws-blue-dark text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:from-aws-blue-dark hover:to-aws-blue hover:-translate-y-0.5 hover:shadow-lg disabled:bg-gray-400 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='domain1-study-guide.html'">← Previous Domain</button>
-            <button class="bg-gradient-to-r from-aws-blue to-aws-blue-dark text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:from-aws-blue-dark hover:to-aws-blue hover:-translate-y-0.5 hover:shadow-lg disabled:bg-gray-400 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='domain3-study-guide.html'">Next Domain →</button>
+        <div class="flex justify-between items-center gap-5 mt-10 mb-5 pt-5 border-t-2 border-neutral-200">
+            <button class="bg-gradient-to-r from-primary-700 to-primary-900 text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:from-primary-900 hover:to-primary-700 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-neutral-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='domain1-study-guide.html'">← Previous Domain</button>
+            <button class="bg-gradient-to-r from-primary-700 to-primary-900 text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:from-primary-900 hover:to-primary-700 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-neutral-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='domain3-study-guide.html'">Next Domain →</button>
         </div>
         <div style="text-align: center; margin-top: 20px;">
-            <button class="bg-gradient-to-r from-aws-blue to-aws-blue-dark text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:from-aws-blue-dark hover:to-aws-blue hover:-translate-y-0.5 hover:shadow-lg disabled:bg-gray-400 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='index.html'" style="background: linear-gradient(135deg, #495057, #6c757d);">🏠 Back to Home</button>
+            <button class="bg-gradient-to-r from-primary-700 to-primary-900 text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:from-primary-900 hover:to-primary-700 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-neutral-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='index.html'" style="background: linear-gradient(135deg, #495057, #6c757d);">🏠 Back to Home</button>
         </div>
     </div>
 

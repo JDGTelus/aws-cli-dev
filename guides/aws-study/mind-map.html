@@ -6,21 +6,7 @@
     <title>AWS AI Practitioner - Mind Map</title>
         <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../tailwind-custom.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'aws-dark': '#232f3e',
-                        'aws-orange': '#ff9900',
-                        'aws-blue': '#2c5282',
-                        'aws-blue-dark': '#1e3a5f',
-                        'aws-blue-light': '#4a7ba7',
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="../tailwind-config.js"></script>
     <style>
         .mind-map-container {
             position: relative;
@@ -191,19 +177,19 @@
 </head>
 <body class="gradient-page-bg min-h-screen p-5">
     <div class="max-w-7xl mx-auto p-10 bg-white/75 rounded-2xl shadow-2xl">
-        <div class="gradient-aws-blue text-center mb-12 p-10 rounded-2xl text-white shadow-lg">
+        <div class="gradient-primary-700 text-center mb-12 p-10 rounded-2xl text-white shadow-lg">
             <h1 class="text-5xl font-bold mb-4 drop-shadow-lg">🗺️ AWS AI Practitioner Mind Map</h1>
-            <p class="text-gray-700 leading-relaxed mb-3">Visual Overview of Key Concepts Across All Domains</p>
+            <p class="text-neutral-600 leading-relaxed mb-3">Visual Overview of Key Concepts Across All Domains</p>
         </div>
 
         <div class="instructions">
-            <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">📖 How to Navigate the Mind Map</h3>
+            <h3 class="text-xl font-semibold mb-2 text-primary-900">📖 How to Navigate the Mind Map</h3>
             <ul class="list-none space-y-2 ml-0">
-                <li class="text-gray-700"><strong>Zoom:</strong> Use the +/- buttons or mouse wheel</li>
-                <li class="text-gray-700"><strong>Pan:</strong> Click and drag to move around</li>
-                <li class="text-gray-700"><strong>Reset:</strong> Click the reset button to return to original view</li>
-                <li class="text-gray-700"><strong>Fullscreen:</strong> Click the fullscreen button for immersive viewing</li>
-                <li class="text-gray-700"><strong>Keyboard:</strong> Use +/- keys to zoom, R to reset</li>
+                <li class="text-neutral-600"><strong>Zoom:</strong> Use the +/- buttons or mouse wheel</li>
+                <li class="text-neutral-600"><strong>Pan:</strong> Click and drag to move around</li>
+                <li class="text-neutral-600"><strong>Reset:</strong> Click the reset button to return to original view</li>
+                <li class="text-neutral-600"><strong>Fullscreen:</strong> Click the fullscreen button for immersive viewing</li>
+                <li class="text-neutral-600"><strong>Keyboard:</strong> Use +/- keys to zoom, R to reset</li>
             </ul>
         </div>
 
@@ -229,8 +215,8 @@
             </div>
         </div>
 
-        <div class="flex justify-between items-center gap-5 mt-10 mb-5 pt-5 border-t-2 border-gray-300">
-            <button class="bg-gradient-to-r from-aws-blue to-aws-blue-dark text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:from-aws-blue-dark hover:to-aws-blue hover:-translate-y-0.5 hover:shadow-lg disabled:bg-gray-400 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='index.html'">← Back to Home</button>
+        <div class="flex justify-between items-center gap-5 mt-10 mb-5 pt-5 border-t-2 border-neutral-200">
+            <button class="bg-gradient-to-r from-primary-700 to-primary-900 text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:from-primary-900 hover:to-primary-700 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-neutral-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='index.html'">← Back to Home</button>
         </div>
     </div>
 

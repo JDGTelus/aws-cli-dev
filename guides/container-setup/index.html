@@ -6,21 +6,7 @@
     <title>AWS CLI Development Environment - Documentation Wiki</title>
         <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../tailwind-custom.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'aws-dark': '#232f3e',
-                        'aws-orange': '#ff9900',
-                        'aws-blue': '#2c5282',
-                        'aws-blue-dark': '#1e3a5f',
-                        'aws-blue-light': '#4a7ba7',
-                    }
-                }
-            }
-        }
-    </script>
+    <script src="../tailwind-config.js"></script>
 </head>
 <body class="gradient-page-bg min-h-screen p-5">
     <div class="max-w-7xl mx-auto p-10 bg-white/75 rounded-2xl shadow-2xl">
@@ -30,39 +16,39 @@
         </div>
 
         <div class="bg-cyan-50 border-l-4 border-cyan-500 p-5 rounded my-8">
-            <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">🚀 Quick Start</h3>
-            <p class="text-gray-700 leading-relaxed mb-3">New to this environment? Start here:</p>
+            <h3 class="text-xl font-semibold mb-2 text-primary-900">🚀 Quick Start</h3>
+            <p class="text-neutral-600 leading-relaxed mb-3">New to this environment? Start here:</p>
             <ul class="list-none space-y-2 ml-0">
-                <li class="text-gray-700"><a href="quick-start.html">Quick Start Guide</a> - Get up and running in minutes</li>
-                <li class="text-gray-700"><a href="usage_guide.html">Usage Guide</a> - Complete environment overview</li>
-                <li class="text-gray-700"><a href="aws-setup-guide.html">AWS Setup Guide</a> - Configure AWS credentials and services</li>
+                <li class="text-neutral-600"><a href="quick-start.html">Quick Start Guide</a> - Get up and running in minutes</li>
+                <li class="text-neutral-600"><a href="usage_guide.html">Usage Guide</a> - Complete environment overview</li>
+                <li class="text-neutral-600"><a href="aws-setup-guide.html">AWS Setup Guide</a> - Configure AWS credentials and services</li>
             </ul>
         </div>
 
         <div class="my-10">
             <h2 class="text-aws-dark border-l-4 border-aws-orange pl-4 mb-5 text-2xl font-semibold">Getting Started</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-8">
-                <div class="bg-slate-50 border-2 border-gray-300 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-aws-orange hover:shadow-lg hover:-translate-y-0.5">
+                <div class="bg-neutral-50 border-2 border-neutral-200 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-aws-orange hover:shadow-lg hover:-translate-y-0.5">
                     <a href="quick-start.html">
                         <div class="text-4xl mb-2">⚡</div>
-                        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Quick Start Guide</h3>
-                        <p class="text-gray-700 leading-relaxed mb-3">Build, run, and configure your development environment in minutes. Essential first steps and quick reference commands.</p>
+                        <h3 class="text-xl font-semibold mb-2 text-primary-900">Quick Start Guide</h3>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Build, run, and configure your development environment in minutes. Essential first steps and quick reference commands.</p>
                     </a>
                 </div>
 
-                <div class="bg-slate-50 border-2 border-gray-300 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-aws-orange hover:shadow-lg hover:-translate-y-0.5">
+                <div class="bg-neutral-50 border-2 border-neutral-200 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-aws-orange hover:shadow-lg hover:-translate-y-0.5">
                     <a href="usage_guide.html">
                         <div class="text-4xl mb-2">📖</div>
-                        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Usage Guide</h3>
-                        <p class="text-gray-700 leading-relaxed mb-3">Comprehensive guide covering all features, tools, and best practices for the AI Practitioner AWS environment.</p>
+                        <h3 class="text-xl font-semibold mb-2 text-primary-900">Usage Guide</h3>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Comprehensive guide covering all features, tools, and best practices for the AI Practitioner AWS environment.</p>
                     </a>
                 </div>
 
-                <div class="bg-slate-50 border-2 border-gray-300 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-aws-orange hover:shadow-lg hover:-translate-y-0.5">
+                <div class="bg-neutral-50 border-2 border-neutral-200 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-aws-orange hover:shadow-lg hover:-translate-y-0.5">
                     <a href="aws-setup-guide.html">
                         <div class="text-4xl mb-2">☁️</div>
-                        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">AWS Setup Guide</h3>
-                        <p class="text-gray-700 leading-relaxed mb-3">Complete AWS configuration including IAM users, credentials, billing alerts, and service-specific setup for Bedrock and SageMaker.</p>
+                        <h3 class="text-xl font-semibold mb-2 text-primary-900">AWS Setup Guide</h3>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Complete AWS configuration including IAM users, credentials, billing alerts, and service-specific setup for Bedrock and SageMaker.</p>
                     </a>
                 </div>
             </div>
@@ -71,27 +57,27 @@
         <div class="my-10">
             <h2 class="text-aws-dark border-l-4 border-aws-orange pl-4 mb-5 text-2xl font-semibold">Development Tools</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-8">
-                <div class="bg-slate-50 border-2 border-gray-300 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-aws-orange hover:shadow-lg hover:-translate-y-0.5">
+                <div class="bg-neutral-50 border-2 border-neutral-200 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-aws-orange hover:shadow-lg hover:-translate-y-0.5">
                     <a href="neovim-lua-configuration-guide.html">
                         <div class="text-4xl mb-2">⚙️</div>
-                        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Neovim Lua Configuration</h3>
-                        <p class="text-gray-700 leading-relaxed mb-3">Deep dive into the modern Lua-based Neovim configuration. Learn about plugins, LSP setup, and customization patterns.</p>
+                        <h3 class="text-xl font-semibold mb-2 text-primary-900">Neovim Lua Configuration</h3>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Deep dive into the modern Lua-based Neovim configuration. Learn about plugins, LSP setup, and customization patterns.</p>
                     </a>
                 </div>
 
-                <div class="bg-slate-50 border-2 border-gray-300 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-aws-orange hover:shadow-lg hover:-translate-y-0.5">
+                <div class="bg-neutral-50 border-2 border-neutral-200 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-aws-orange hover:shadow-lg hover:-translate-y-0.5">
                     <a href="neovim-navigation-manual.html">
                         <div class="text-4xl mb-2">🧭</div>
-                        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Neovim Navigation Manual</h3>
-                        <p class="text-gray-700 leading-relaxed mb-3">Master Neovim navigation with comprehensive key bindings, movement commands, and productivity shortcuts.</p>
+                        <h3 class="text-xl font-semibold mb-2 text-primary-900">Neovim Navigation Manual</h3>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Master Neovim navigation with comprehensive key bindings, movement commands, and productivity shortcuts.</p>
                     </a>
                 </div>
 
-                <div class="bg-slate-50 border-2 border-gray-300 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-aws-orange hover:shadow-lg hover:-translate-y-0.5">
+                <div class="bg-neutral-50 border-2 border-neutral-200 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-aws-orange hover:shadow-lg hover:-translate-y-0.5">
                     <a href="port-mapping-guide.html">
                         <div class="text-4xl mb-2">🔌</div>
-                        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Port Mapping Guide</h3>
-                        <p class="text-gray-700 leading-relaxed mb-3">Understanding container port mappings for web development, databases, and development servers.</p>
+                        <h3 class="text-xl font-semibold mb-2 text-primary-900">Port Mapping Guide</h3>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Understanding container port mappings for web development, databases, and development servers.</p>
                     </a>
                 </div>
             </div>
@@ -100,27 +86,27 @@
         <div class="my-10">
             <h2 class="text-aws-dark border-l-4 border-aws-orange pl-4 mb-5 text-2xl font-semibold">Container & System</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-8">
-                <div class="bg-slate-50 border-2 border-gray-300 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-aws-orange hover:shadow-lg hover:-translate-y-0.5">
+                <div class="bg-neutral-50 border-2 border-neutral-200 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-aws-orange hover:shadow-lg hover:-translate-y-0.5">
                     <a href="alpine-linux-guide.html">
                         <div class="text-4xl mb-2">🏔️</div>
-                        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Alpine Linux Guide</h3>
-                        <p class="text-gray-700 leading-relaxed mb-3">Learn about Alpine Linux, the lightweight container base. Package management with apk and key differences from Ubuntu.</p>
+                        <h3 class="text-xl font-semibold mb-2 text-primary-900">Alpine Linux Guide</h3>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Learn about Alpine Linux, the lightweight container base. Package management with apk and key differences from Ubuntu.</p>
                     </a>
                 </div>
 
-                <div class="bg-slate-50 border-2 border-gray-300 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-aws-orange hover:shadow-lg hover:-translate-y-0.5">
+                <div class="bg-neutral-50 border-2 border-neutral-200 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-aws-orange hover:shadow-lg hover:-translate-y-0.5">
                     <a href="migration-ubuntu.html">
                         <div class="text-4xl mb-2">�</div>
-                        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Ubuntu Migration Guide</h3>
-                        <p class="text-gray-700 leading-relaxed mb-3">Step-by-step guide for migrating from Alpine to Ubuntu-based containers if needed.</p>
+                        <h3 class="text-xl font-semibold mb-2 text-primary-900">Ubuntu Migration Guide</h3>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Step-by-step guide for migrating from Alpine to Ubuntu-based containers if needed.</p>
                     </a>
                 </div>
 
-                <div class="bg-slate-50 border-2 border-gray-300 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-aws-orange hover:shadow-lg hover:-translate-y-0.5">
+                <div class="bg-neutral-50 border-2 border-neutral-200 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-aws-orange hover:shadow-lg hover:-translate-y-0.5">
                     <a href="migration-arch.html">
                         <div class="text-4xl mb-2">🏗️</div>
-                        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Migration Architecture</h3>
-                        <p class="text-gray-700 leading-relaxed mb-3">Technical architecture and considerations for container base image migrations.</p>
+                        <h3 class="text-xl font-semibold mb-2 text-primary-900">Migration Architecture</h3>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Technical architecture and considerations for container base image migrations.</p>
                     </a>
                 </div>
             </div>
@@ -129,25 +115,25 @@
         <div class="my-10">
             <h2 class="text-aws-dark border-l-4 border-aws-orange pl-4 mb-5 text-2xl font-semibold">AI & Prompting</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-8">
-                <div class="bg-slate-50 border-2 border-gray-300 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-aws-orange hover:shadow-lg hover:-translate-y-0.5">
+                <div class="bg-neutral-50 border-2 border-neutral-200 rounded-lg p-5 transition-all duration-300 cursor-pointer hover:border-aws-orange hover:shadow-lg hover:-translate-y-0.5">
                     <a href="prompt-guide.html">
                         <div class="text-4xl mb-2">💬</div>
-                        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Prompt Engineering Guide</h3>
-                        <p class="text-gray-700 leading-relaxed mb-3">Best practices and techniques for effective prompt engineering with AI models and assistants.</p>
+                        <h3 class="text-xl font-semibold mb-2 text-primary-900">Prompt Engineering Guide</h3>
+                        <p class="text-neutral-600 leading-relaxed mb-3">Best practices and techniques for effective prompt engineering with AI models and assistants.</p>
                     </a>
                 </div>
             </div>
         </div>
 
-        <div class="bg-slate-50/90 p-6 rounded-xl mb-8 border-l-4 border-aws-blue shadow-md">
-            <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">📝 About This Documentation</h3>
-            <p class="text-gray-700 leading-relaxed mb-3">This wiki provides comprehensive documentation for the AWS CLI Development Environment. All guides are designed to help you maximize productivity with AWS services, modern development tools, and containerized workflows.</p>
-            <p class="text-gray-700 leading-relaxed mb-3"><strong>Server Info:</strong> This documentation is served via Python's built-in HTTP server on port 8000.</p>
+        <div class="bg-neutral-50/90 p-6 rounded-xl mb-8 border-l-4 border-primary-700 shadow-md">
+            <h3 class="text-xl font-semibold mb-2 text-primary-900">📝 About This Documentation</h3>
+            <p class="text-neutral-600 leading-relaxed mb-3">This wiki provides comprehensive documentation for the AWS CLI Development Environment. All guides are designed to help you maximize productivity with AWS services, modern development tools, and containerized workflows.</p>
+            <p class="text-neutral-600 leading-relaxed mb-3"><strong>Server Info:</strong> This documentation is served via Python's built-in HTTP server on port 8000.</p>
         </div>
 
-        <div class="text-center p-8 text-gray-600 border-t-2 border-gray-300 mt-10">
-            <p class="text-gray-700 leading-relaxed mb-3"><strong>AWS CLI Development Environment</strong> | Documentation Wiki</p>
-            <p class="text-gray-700 leading-relaxed mb-3">Last Updated: October 2025 | Version: 1.0</p>
+        <div class="text-center p-8 text-neutral-600 border-t-2 border-neutral-200 mt-10">
+            <p class="text-neutral-600 leading-relaxed mb-3"><strong>AWS CLI Development Environment</strong> | Documentation Wiki</p>
+            <p class="text-neutral-600 leading-relaxed mb-3">Last Updated: October 2025 | Version: 1.0</p>
         </div>
     </div>
 </body>
