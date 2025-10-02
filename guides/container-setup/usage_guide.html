@@ -12,91 +12,91 @@
     <div class="max-w-7xl mx-auto p-10 bg-white/75 rounded-2xl shadow-2xl">
         <h1 class="text-5xl font-bold mb-4 drop-shadow-lg">AI Practitioner AWS Environment - Usage Guide</h1>
 
-        <h2 class="text-2xl font-semibold mb-4 text-primary-900">Overview</h2>
-        <p class="text-neutral-600 leading-relaxed mb-3">This containerized environment provides a complete development setup for AWS AI Practitioner certification preparation, featuring AWS CLI v2, Python, Node.js, and a fully configured Neovim IDE.</p>
+        <h2 class="text-2xl font-semibold mb-4 text-blue-900">Overview</h2>
+        <p class="text-slate-600 leading-relaxed mb-3">This containerized environment provides a complete development setup for AWS AI Practitioner certification preparation, featuring AWS CLI v2, Python, Node.js, and a fully configured Neovim IDE.</p>
 
-        <h2 class="text-2xl font-semibold mb-4 text-primary-900">Quick Start</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-blue-900">Quick Start</h2>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">1. Initial Setup</h3>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">1. Initial Setup</h3>
         <pre><code>chmod +x setup.sh
 ./setup.sh</code></pre>
-        <p class="text-neutral-600 leading-relaxed mb-3">This will:</p>
+        <p class="text-slate-600 leading-relaxed mb-3">This will:</p>
         <ul class="list-none space-y-2 ml-0">
-            <li class="text-neutral-600">Create necessary directories (<code>workspace/</code>, <code>scripts/</code>)</li>
-            <li class="text-neutral-600">Build the Docker container</li>
-            <li class="text-neutral-600">Generate billing alert configuration script</li>
+            <li class="text-slate-600">Create necessary directories (<code>workspace/</code>, <code>scripts/</code>)</li>
+            <li class="text-slate-600">Build the Docker container</li>
+            <li class="text-slate-600">Generate billing alert configuration script</li>
         </ul>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">2. Start the Environment</h3>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">2. Start the Environment</h3>
         <pre><code>docker-compose up -d</code></pre>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">3. Access the Container</h3>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">3. Access the Container</h3>
         <pre><code>docker-compose exec aws-cli-env bash</code></pre>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">4. Stop the Environment</h3>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">4. Stop the Environment</h3>
         <pre><code>docker-compose down</code></pre>
 
-        <h2 class="text-2xl font-semibold mb-4 text-primary-900">Environment Features</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-blue-900">Environment Features</h2>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">Installed Tools</h3>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">Installed Tools</h3>
         <div class="features">
             <div class="feature-box">
-                <h4 class="text-lg font-semibold mb-3 text-primary-900">AWS CLI v2</h4>
-                <p class="text-neutral-600 leading-relaxed mb-3">Latest version with full AWS service support</p>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900">AWS CLI v2</h4>
+                <p class="text-slate-600 leading-relaxed mb-3">Latest version with full AWS service support</p>
             </div>
             <div class="feature-box">
-                <h4 class="text-lg font-semibold mb-3 text-primary-900">Python 3</h4>
-                <p class="text-neutral-600 leading-relaxed mb-3">Aliased to <code>python</code> (also includes <code>pip</code>)</p>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900">Python 3</h4>
+                <p class="text-slate-600 leading-relaxed mb-3">Aliased to <code>python</code> (also includes <code>pip</code>)</p>
             </div>
             <div class="feature-box">
-                <h4 class="text-lg font-semibold mb-3 text-primary-900">Node.js & npm</h4>
-                <p class="text-neutral-600 leading-relaxed mb-3">For JavaScript/TypeScript development</p>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900">Node.js & npm</h4>
+                <p class="text-slate-600 leading-relaxed mb-3">For JavaScript/TypeScript development</p>
             </div>
             <div class="feature-box">
-                <h4 class="text-lg font-semibold mb-3 text-primary-900">Neovim</h4>
-                <p class="text-neutral-600 leading-relaxed mb-3">Configured as complete IDE with LSP support</p>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900">Neovim</h4>
+                <p class="text-slate-600 leading-relaxed mb-3">Configured as complete IDE with LSP support</p>
             </div>
             <div class="feature-box">
-                <h4 class="text-lg font-semibold mb-3 text-primary-900">Git</h4>
-                <p class="text-neutral-600 leading-relaxed mb-3">Version control</p>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900">Git</h4>
+                <p class="text-slate-600 leading-relaxed mb-3">Version control</p>
             </div>
             <div class="feature-box">
-                <h4 class="text-lg font-semibold mb-3 text-primary-900">jq</h4>
-                <p class="text-neutral-600 leading-relaxed mb-3">JSON processor for AWS CLI output</p>
+                <h4 class="text-lg font-semibold mb-3 text-blue-900">jq</h4>
+                <p class="text-slate-600 leading-relaxed mb-3">JSON processor for AWS CLI output</p>
             </div>
         </div>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">Development Tools</h3>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">Development Tools</h3>
 
-        <h4 class="text-lg font-semibold mb-3 text-primary-900">Python</h4>
+        <h4 class="text-lg font-semibold mb-3 text-blue-900">Python</h4>
         <ul class="list-none space-y-2 ml-0">
-            <li class="text-neutral-600"><code>boto3</code>: AWS SDK for Python</li>
-            <li class="text-neutral-600"><code>pylint</code>, <code>flake8</code>: Linters</li>
-            <li class="text-neutral-600"><code>black</code>, <code>autopep8</code>: Code formatters</li>
-            <li class="text-neutral-600"><code>pyright</code>: Language server for Python</li>
+            <li class="text-slate-600"><code>boto3</code>: AWS SDK for Python</li>
+            <li class="text-slate-600"><code>pylint</code>, <code>flake8</code>: Linters</li>
+            <li class="text-slate-600"><code>black</code>, <code>autopep8</code>: Code formatters</li>
+            <li class="text-slate-600"><code>pyright</code>: Language server for Python</li>
         </ul>
 
-        <h4 class="text-lg font-semibold mb-3 text-primary-900">JavaScript/TypeScript</h4>
+        <h4 class="text-lg font-semibold mb-3 text-blue-900">JavaScript/TypeScript</h4>
         <ul class="list-none space-y-2 ml-0">
-            <li class="text-neutral-600"><code>typescript</code>: TypeScript compiler</li>
-            <li class="text-neutral-600"><code>typescript-language-server</code>: LSP for TypeScript</li>
-            <li class="text-neutral-600"><code>eslint</code>: JavaScript/TypeScript linter</li>
-            <li class="text-neutral-600"><code>prettier</code>: Code formatter</li>
-            <li class="text-neutral-600"><code>vscode-langservers-extracted</code>: HTML, CSS, JSON LSP</li>
+            <li class="text-slate-600"><code>typescript</code>: TypeScript compiler</li>
+            <li class="text-slate-600"><code>typescript-language-server</code>: LSP for TypeScript</li>
+            <li class="text-slate-600"><code>eslint</code>: JavaScript/TypeScript linter</li>
+            <li class="text-slate-600"><code>prettier</code>: Code formatter</li>
+            <li class="text-slate-600"><code>vscode-langservers-extracted</code>: HTML, CSS, JSON LSP</li>
         </ul>
 
-        <h4 class="text-lg font-semibold mb-3 text-primary-900">CSS</h4>
+        <h4 class="text-lg font-semibold mb-3 text-blue-900">CSS</h4>
         <ul class="list-none space-y-2 ml-0">
-            <li class="text-neutral-600"><code>stylelint</code>: CSS linter</li>
+            <li class="text-slate-600"><code>stylelint</code>: CSS linter</li>
         </ul>
 
-        <h2 class="text-2xl font-semibold mb-4 text-primary-900">Neovim IDE Configuration</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-blue-900">Neovim IDE Configuration</h2>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">Plugin Manager</h3>
-        <p class="text-neutral-600 leading-relaxed mb-3">The environment uses <code>vim-plug</code> for plugin management. First time you enter Neovim, install plugins:</p>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">Plugin Manager</h3>
+        <p class="text-slate-600 leading-relaxed mb-3">The environment uses <code>vim-plug</code> for plugin management. First time you enter Neovim, install plugins:</p>
         <pre><code>:PlugInstall</code></pre>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">Key Bindings</h3>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">Key Bindings</h3>
         <table>
             <thead>
                 <tr>
@@ -164,25 +164,25 @@
             <strong>Note:</strong> Leader key is set to <code>&lt;Space&gt;</code>
         </div>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">Auto-Formatting</h3>
-        <p class="text-neutral-600 leading-relaxed mb-3">Files are automatically formatted on save using:</p>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">Auto-Formatting</h3>
+        <p class="text-slate-600 leading-relaxed mb-3">Files are automatically formatted on save using:</p>
         <ul class="list-none space-y-2 ml-0">
-            <li class="text-neutral-600"><strong>Python:</strong> black</li>
-            <li class="text-neutral-600"><strong>JavaScript/TypeScript:</strong> prettier + eslint</li>
-            <li class="text-neutral-600"><strong>CSS:</strong> prettier</li>
-            <li class="text-neutral-600"><strong>HTML:</strong> prettier</li>
-            <li class="text-neutral-600"><strong>JSON:</strong> prettier</li>
+            <li class="text-slate-600"><strong>Python:</strong> black</li>
+            <li class="text-slate-600"><strong>JavaScript/TypeScript:</strong> prettier + eslint</li>
+            <li class="text-slate-600"><strong>CSS:</strong> prettier</li>
+            <li class="text-slate-600"><strong>HTML:</strong> prettier</li>
+            <li class="text-slate-600"><strong>JSON:</strong> prettier</li>
         </ul>
 
-        <h2 class="text-2xl font-semibold mb-4 text-primary-900">AWS CLI Usage</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-blue-900">AWS CLI Usage</h2>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">Verify AWS Configuration</h3>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">Verify AWS Configuration</h3>
         <pre><code>aws sts get-caller-identity</code></pre>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">Test Bedrock Access</h3>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">Test Bedrock Access</h3>
         <pre><code>aws bedrock list-foundation-models --region us-east-1</code></pre>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">Common AWS Commands</h3>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">Common AWS Commands</h3>
         <pre><code># List SageMaker Domains
 aws sagemaker list-domains --region us-east-1
 
@@ -195,86 +195,86 @@ aws rekognition list-collections --region us-east-1
 # Check CloudWatch Alarms
 aws cloudwatch describe-alarms --region us-east-1</code></pre>
 
-        <h2 class="text-2xl font-semibold mb-4 text-primary-900">AWS Credentials Configuration</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-blue-900">AWS Credentials Configuration</h2>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">Method 1: Mount Local AWS Credentials (Recommended)</h3>
-        <p class="text-neutral-600 leading-relaxed mb-3">The docker-compose.yml is configured to mount <code>~/.aws:/root/.aws:ro</code> by default.</p>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">Method 1: Mount Local AWS Credentials (Recommended)</h3>
+        <p class="text-slate-600 leading-relaxed mb-3">The docker-compose.yml is configured to mount <code>~/.aws:/root/.aws:ro</code> by default.</p>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">Method 2: Environment Variables</h3>
-        <p class="text-neutral-600 leading-relaxed mb-3">Edit <code>docker-compose.yml</code> and add:</p>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">Method 2: Environment Variables</h3>
+        <p class="text-slate-600 leading-relaxed mb-3">Edit <code>docker-compose.yml</code> and add:</p>
         <pre><code>environment:
   - AWS_ACCESS_KEY_ID=your_access_key
   - AWS_SECRET_ACCESS_KEY=your_secret_key
   - AWS_DEFAULT_REGION=us-east-1</code></pre>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">Method 3: Configure Inside Container</h3>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">Method 3: Configure Inside Container</h3>
         <pre><code>docker-compose exec aws-cli-env bash
 aws configure</code></pre>
 
-        <h2 class="text-2xl font-semibold mb-4 text-primary-900">Working with Python</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-blue-900">Working with Python</h2>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">Create Virtual Environment</h3>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">Create Virtual Environment</h3>
         <pre><code>python -m venv venv
 source venv/bin/activate</code></pre>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">Example: Using Boto3</h3>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">Example: Using Boto3</h3>
         <pre><code>import boto3
 
 bedrock = boto3.client('bedrock', region_name='us-east-1')
 response = bedrock.list_foundation_models()
 print(response)</code></pre>
 
-        <h2 class="text-2xl font-semibold mb-4 text-primary-900">Billing Alerts</h2>
-        <p class="text-neutral-600 leading-relaxed mb-3">Configure billing alerts to avoid unexpected costs:</p>
+        <h2 class="text-2xl font-semibold mb-4 text-blue-900">Billing Alerts</h2>
+        <p class="text-slate-600 leading-relaxed mb-3">Configure billing alerts to avoid unexpected costs:</p>
         <pre><code>/scripts/configure-billing-alerts.sh</code></pre>
         <div class="note">
             <strong>Note:</strong> Update <code>YOUR_ACCOUNT_ID</code> in the script with your actual AWS account ID.
         </div>
 
-        <h2 class="text-2xl font-semibold mb-4 text-primary-900">File Persistence</h2>
-        <p class="text-neutral-600 leading-relaxed mb-3">The following directories are mounted from your host:</p>
+        <h2 class="text-2xl font-semibold mb-4 text-blue-900">File Persistence</h2>
+        <p class="text-slate-600 leading-relaxed mb-3">The following directories are mounted from your host:</p>
         <ul class="list-none space-y-2 ml-0">
-            <li class="text-neutral-600"><code>./workspace</code> → <code>/workspace</code> (Read/Write)</li>
-            <li class="text-neutral-600"><code>./scripts</code> → <code>/scripts</code> (Read-only)</li>
-            <li class="text-neutral-600"><code>~/.aws</code> → <code>/root/.aws</code> (Read-only)</li>
+            <li class="text-slate-600"><code>./workspace</code> → <code>/workspace</code> (Read/Write)</li>
+            <li class="text-slate-600"><code>./scripts</code> → <code>/scripts</code> (Read-only)</li>
+            <li class="text-slate-600"><code>~/.aws</code> → <code>/root/.aws</code> (Read-only)</li>
         </ul>
-        <p class="text-neutral-600 leading-relaxed mb-3">All work in <code>/workspace</code> will persist after container restarts.</p>
+        <p class="text-slate-600 leading-relaxed mb-3">All work in <code>/workspace</code> will persist after container restarts.</p>
 
-        <h2 class="text-2xl font-semibold mb-4 text-primary-900">Troubleshooting</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-blue-900">Troubleshooting</h2>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">AWS Credentials Not Found</h3>
-        <p class="text-neutral-600 leading-relaxed mb-3">Ensure your <code>~/.aws/credentials</code> file exists or environment variables are set.</p>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">AWS Credentials Not Found</h3>
+        <p class="text-slate-600 leading-relaxed mb-3">Ensure your <code>~/.aws/credentials</code> file exists or environment variables are set.</p>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">Neovim Plugins Not Working</h3>
-        <p class="text-neutral-600 leading-relaxed mb-3">Run <code>:PlugInstall</code> inside Neovim to install all plugins.</p>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">Neovim Plugins Not Working</h3>
+        <p class="text-slate-600 leading-relaxed mb-3">Run <code>:PlugInstall</code> inside Neovim to install all plugins.</p>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">LSP Not Working</h3>
-        <p class="text-neutral-600 leading-relaxed mb-3">Install language servers on first use:</p>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">LSP Not Working</h3>
+        <p class="text-slate-600 leading-relaxed mb-3">Install language servers on first use:</p>
         <pre><code>:TSInstall python javascript typescript html css json</code></pre>
 
-        <h2 class="text-2xl font-semibold mb-4 text-primary-900">Tips and Best Practices</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-blue-900">Tips and Best Practices</h2>
         <div class="tip">
             <ol>
-                <li class="text-neutral-600"><strong>Always use us-east-1 region</strong> for maximum AI service availability</li>
-                <li class="text-neutral-600"><strong>Set up billing alerts</strong> before starting practice</li>
-                <li class="text-neutral-600"><strong>Use workspaces</strong> for organizing different practice areas</li>
-                <li class="text-neutral-600"><strong>Commit code to Git</strong> for version control</li>
-                <li class="text-neutral-600"><strong>Test AWS connectivity</strong> before starting work sessions</li>
-                <li class="text-neutral-600"><strong>Use jq</strong> to parse AWS CLI JSON output: <code>aws ... | jq .</code></li>
-                <li class="text-neutral-600"><strong>Leverage Neovim LSP</strong> for intelligent code completion</li>
+                <li class="text-slate-600"><strong>Always use us-east-1 region</strong> for maximum AI service availability</li>
+                <li class="text-slate-600"><strong>Set up billing alerts</strong> before starting practice</li>
+                <li class="text-slate-600"><strong>Use workspaces</strong> for organizing different practice areas</li>
+                <li class="text-slate-600"><strong>Commit code to Git</strong> for version control</li>
+                <li class="text-slate-600"><strong>Test AWS connectivity</strong> before starting work sessions</li>
+                <li class="text-slate-600"><strong>Use jq</strong> to parse AWS CLI JSON output: <code>aws ... | jq .</code></li>
+                <li class="text-slate-600"><strong>Leverage Neovim LSP</strong> for intelligent code completion</li>
             </ol>
         </div>
 
-        <h2 class="text-2xl font-semibold mb-4 text-primary-900">Additional Resources</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-blue-900">Additional Resources</h2>
         <ul class="list-none space-y-2 ml-0">
-            <li class="text-neutral-600"><a href="https://docs.aws.amazon.com/cli/">AWS CLI Documentation</a></li>
-            <li class="text-neutral-600"><a href="https://boto3.amazonaws.com/v1/documentation/api/latest/index.html">Boto3 Documentation</a></li>
-            <li class="text-neutral-600"><a href="https://neovim.io/doc/">Neovim Documentation</a></li>
-            <li class="text-neutral-600"><a href="https://docs.aws.amazon.com/bedrock/">AWS Bedrock Documentation</a></li>
+            <li class="text-slate-600"><a href="https://docs.aws.amazon.com/cli/">AWS CLI Documentation</a></li>
+            <li class="text-slate-600"><a href="https://boto3.amazonaws.com/v1/documentation/api/latest/index.html">Boto3 Documentation</a></li>
+            <li class="text-slate-600"><a href="https://neovim.io/doc/">Neovim Documentation</a></li>
+            <li class="text-slate-600"><a href="https://docs.aws.amazon.com/bedrock/">AWS Bedrock Documentation</a></li>
         </ul>
 
-        <div class="text-center p-8 text-neutral-600 border-t-2 border-neutral-200 mt-10">
-            <p class="text-neutral-600 leading-relaxed mb-3"><strong>Environment Version:</strong> 1.0 | <strong>Last Updated:</strong> October 2025</p>
+        <div class="text-center p-8 text-slate-600 border-t-2 border-slate-200 mt-10">
+            <p class="text-slate-600 leading-relaxed mb-3"><strong>Environment Version:</strong> 1.0 | <strong>Last Updated:</strong> October 2025</p>
         </div>
     </div>
 </body>

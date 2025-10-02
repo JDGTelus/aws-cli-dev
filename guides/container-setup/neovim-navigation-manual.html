@@ -10,334 +10,334 @@
 <body class="gradient-page-bg min-h-screen p-5">
 <h1 class="text-5xl font-bold mb-4 drop-shadow-lg">Neovim Navigation &amp; IDE Features Manual</h1>
 <br>
-<h2 class="text-2xl font-semibold mb-4 text-primary-900">Getting Started</h2>
+<h2 class="text-2xl font-semibold mb-4 text-blue-900">Getting Started</h2>
 <br>
-<p class="text-neutral-600 leading-relaxed mb-3">Launch Neovim with: <code>nvim</code></p>
+<p class="text-slate-600 leading-relaxed mb-3">Launch Neovim with: <code>nvim</code></p>
 <br>
-<p class="text-neutral-600 leading-relaxed mb-3">First time setup: Open Neovim and let lazy.nvim install all plugins automatically.</p>
+<p class="text-slate-600 leading-relaxed mb-3">First time setup: Open Neovim and let lazy.nvim install all plugins automatically.</p>
 <br>
-<h2 class="text-2xl font-semibold mb-4 text-primary-900">Basic Navigation</h2>
+<h2 class="text-2xl font-semibold mb-4 text-blue-900">Basic Navigation</h2>
 <br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Moving Around</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>h, j, k, l</strong> - Left, Down, Up, Right</li>
-<li class="text-neutral-600"><strong>w</strong> - Jump to next word</li>
-<li class="text-neutral-600"><strong>b</strong> - Jump to previous word  </li>
-<li class="text-neutral-600"><strong>0</strong> - Go to beginning of line</li>
-<li class="text-neutral-600"><strong>$</strong> - Go to end of line</li>
-<li class="text-neutral-600"><strong>gg</strong> - Go to top of file</li>
-<li class="text-neutral-600"><strong>G</strong> - Go to bottom of file</li>
-<li class="text-neutral-600"><strong>Ctrl+u</strong> - Scroll up half page</li>
-<li class="text-neutral-600"><strong>Ctrl+d</strong> - Scroll down half page</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Moving Around</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>h, j, k, l</strong> - Left, Down, Up, Right</li>
+<li class="text-slate-600"><strong>w</strong> - Jump to next word</li>
+<li class="text-slate-600"><strong>b</strong> - Jump to previous word  </li>
+<li class="text-slate-600"><strong>0</strong> - Go to beginning of line</li>
+<li class="text-slate-600"><strong>$</strong> - Go to end of line</li>
+<li class="text-slate-600"><strong>gg</strong> - Go to top of file</li>
+<li class="text-slate-600"><strong>G</strong> - Go to bottom of file</li>
+<li class="text-slate-600"><strong>Ctrl+u</strong> - Scroll up half page</li>
+<li class="text-slate-600"><strong>Ctrl+d</strong> - Scroll down half page</li>
 </ul><br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Search &amp; Jump</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>/pattern</strong> - Search forward</li>
-<li class="text-neutral-600"><strong>?pattern</strong> - Search backward  </li>
-<li class="text-neutral-600"><strong>n</strong> - Next search result</li>
-<li class="text-neutral-600"><strong>N</strong> - Previous search result</li>
-<li class="text-neutral-600"><strong>\</strong>* - Search for word under cursor</li>
-<li class="text-neutral-600"><strong>%</strong> - Jump to matching bracket/parenthesis</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Search &amp; Jump</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>/pattern</strong> - Search forward</li>
+<li class="text-slate-600"><strong>?pattern</strong> - Search backward  </li>
+<li class="text-slate-600"><strong>n</strong> - Next search result</li>
+<li class="text-slate-600"><strong>N</strong> - Previous search result</li>
+<li class="text-slate-600"><strong>\</strong>* - Search for word under cursor</li>
+<li class="text-slate-600"><strong>%</strong> - Jump to matching bracket/parenthesis</li>
 </ul><br>
-<h2 class="text-2xl font-semibold mb-4 text-primary-900">File Operations</h2>
+<h2 class="text-2xl font-semibold mb-4 text-blue-900">File Operations</h2>
 <br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">File Explorer (nvim-tree)</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>F2</strong> - Toggle file tree</li>
-<li class="text-neutral-600"><strong>Enter</strong> - Open file/folder</li>
-<li class="text-neutral-600"><strong>o</strong> - Open file in split</li>
-<li class="text-neutral-600"><strong>v</strong> - Open file in vertical split  </li>
-<li class="text-neutral-600"><strong>t</strong> - Open file in new tab</li>
-<li class="text-neutral-600"><strong>R</strong> - Refresh tree</li>
-<li class="text-neutral-600"><strong>a</strong> - Create new file/folder</li>
-<li class="text-neutral-600"><strong>d</strong> - Delete file/folder</li>
-<li class="text-neutral-600"><strong>r</strong> - Rename file/folder</li>
-<li class="text-neutral-600"><strong>x</strong> - Cut file/folder</li>
-<li class="text-neutral-600"><strong>c</strong> - Copy file/folder</li>
-<li class="text-neutral-600"><strong>p</strong> - Paste file/folder</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">File Explorer (nvim-tree)</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>F2</strong> - Toggle file tree</li>
+<li class="text-slate-600"><strong>Enter</strong> - Open file/folder</li>
+<li class="text-slate-600"><strong>o</strong> - Open file in split</li>
+<li class="text-slate-600"><strong>v</strong> - Open file in vertical split  </li>
+<li class="text-slate-600"><strong>t</strong> - Open file in new tab</li>
+<li class="text-slate-600"><strong>R</strong> - Refresh tree</li>
+<li class="text-slate-600"><strong>a</strong> - Create new file/folder</li>
+<li class="text-slate-600"><strong>d</strong> - Delete file/folder</li>
+<li class="text-slate-600"><strong>r</strong> - Rename file/folder</li>
+<li class="text-slate-600"><strong>x</strong> - Cut file/folder</li>
+<li class="text-slate-600"><strong>c</strong> - Copy file/folder</li>
+<li class="text-slate-600"><strong>p</strong> - Paste file/folder</li>
 </ul><br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Fuzzy Finding (Telescope)</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>Space + ff</strong> - Find files</li>
-<li class="text-neutral-600"><strong>Space + fg</strong> - Live grep (search in files)</li>
-<li class="text-neutral-600"><strong>Space + fb</strong> - Show open buffers</li>
-<li class="text-neutral-600"><strong>Space + fh</strong> - Show recent files</li>
-<li class="text-neutral-600"><strong>Ctrl+n/p</strong> - Navigate results up/down</li>
-<li class="text-neutral-600"><strong>Enter</strong> - Open file</li>
-<li class="text-neutral-600"><strong>Ctrl+x</strong> - Open in horizontal split</li>
-<li class="text-neutral-600"><strong>Ctrl+v</strong> - Open in vertical split</li>
-<li class="text-neutral-600"><strong>Ctrl+t</strong> - Open in new tab</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Fuzzy Finding (Telescope)</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>Space + ff</strong> - Find files</li>
+<li class="text-slate-600"><strong>Space + fg</strong> - Live grep (search in files)</li>
+<li class="text-slate-600"><strong>Space + fb</strong> - Show open buffers</li>
+<li class="text-slate-600"><strong>Space + fh</strong> - Show recent files</li>
+<li class="text-slate-600"><strong>Ctrl+n/p</strong> - Navigate results up/down</li>
+<li class="text-slate-600"><strong>Enter</strong> - Open file</li>
+<li class="text-slate-600"><strong>Ctrl+x</strong> - Open in horizontal split</li>
+<li class="text-slate-600"><strong>Ctrl+v</strong> - Open in vertical split</li>
+<li class="text-slate-600"><strong>Ctrl+t</strong> - Open in new tab</li>
 </ul><br>
-<h2 class="text-2xl font-semibold mb-4 text-primary-900">Code Navigation &amp; LSP Features</h2>
+<h2 class="text-2xl font-semibold mb-4 text-blue-900">Code Navigation &amp; LSP Features</h2>
 <br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Go to Definition/References</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>gd</strong> - Go to definition</li>
-<li class="text-neutral-600"><strong>gD</strong> - Go to declaration</li>
-<li class="text-neutral-600"><strong>gi</strong> - Go to implementation</li>
-<li class="text-neutral-600"><strong>gr</strong> - Show references</li>
-<li class="text-neutral-600"><strong>gy</strong> - Go to type definition</li>
-<li class="text-neutral-600"><strong>K</strong> - Show hover documentation</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Go to Definition/References</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>gd</strong> - Go to definition</li>
+<li class="text-slate-600"><strong>gD</strong> - Go to declaration</li>
+<li class="text-slate-600"><strong>gi</strong> - Go to implementation</li>
+<li class="text-slate-600"><strong>gr</strong> - Show references</li>
+<li class="text-slate-600"><strong>gy</strong> - Go to type definition</li>
+<li class="text-slate-600"><strong>K</strong> - Show hover documentation</li>
 </ul><br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Code Actions</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>Space + ca</strong> - Show code actions</li>
-<li class="text-neutral-600"><strong>Space + rn</strong> - Rename symbol</li>
-<li class="text-neutral-600"><strong>Space + f</strong> - Format current file</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Code Actions</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>Space + ca</strong> - Show code actions</li>
+<li class="text-slate-600"><strong>Space + rn</strong> - Rename symbol</li>
+<li class="text-slate-600"><strong>Space + f</strong> - Format current file</li>
 </ul><br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Diagnostics</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>]d</strong> - Next diagnostic</li>
-<li class="text-neutral-600"><strong>[d</strong> - Previous diagnostic</li>
-<li class="text-neutral-600"><strong>Space + e</strong> - Show line diagnostics</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Diagnostics</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>]d</strong> - Next diagnostic</li>
+<li class="text-slate-600"><strong>[d</strong> - Previous diagnostic</li>
+<li class="text-slate-600"><strong>Space + e</strong> - Show line diagnostics</li>
 </ul><br>
-<h2 class="text-2xl font-semibold mb-4 text-primary-900">Window &amp; Pane Management</h2>
+<h2 class="text-2xl font-semibold mb-4 text-blue-900">Window &amp; Pane Management</h2>
 <br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Splitting Windows</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>:sp</strong> or <strong>:split</strong> - Horizontal split</li>
-<li class="text-neutral-600"><strong>:vs</strong> or <strong>:vsplit</strong> - Vertical split</li>
-<li class="text-neutral-600"><strong>Ctrl+w + s</strong> - Horizontal split</li>
-<li class="text-neutral-600"><strong>Ctrl+w + v</strong> - Vertical split</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Splitting Windows</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>:sp</strong> or <strong>:split</strong> - Horizontal split</li>
+<li class="text-slate-600"><strong>:vs</strong> or <strong>:vsplit</strong> - Vertical split</li>
+<li class="text-slate-600"><strong>Ctrl+w + s</strong> - Horizontal split</li>
+<li class="text-slate-600"><strong>Ctrl+w + v</strong> - Vertical split</li>
 </ul><br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Moving Between Windows</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>Ctrl+w + h/j/k/l</strong> - Move left/down/up/right</li>
-<li class="text-neutral-600"><strong>Ctrl+w + w</strong> - Cycle through windows</li>
-<li class="text-neutral-600"><strong>Ctrl+m + h/j/k/l</strong> - Move left/down/up/right (custom mapping)</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Moving Between Windows</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>Ctrl+w + h/j/k/l</strong> - Move left/down/up/right</li>
+<li class="text-slate-600"><strong>Ctrl+w + w</strong> - Cycle through windows</li>
+<li class="text-slate-600"><strong>Ctrl+m + h/j/k/l</strong> - Move left/down/up/right (custom mapping)</li>
 </ul><br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Resizing Windows</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>Ctrl+w + =</strong> - Equal window sizes</li>
-<li class="text-neutral-600"><strong>Ctrl+w + +</strong> - Increase height</li>
-<li class="text-neutral-600"><strong>Ctrl+w + -</strong> - Decrease height</li>
-<li class="text-neutral-600"><strong>Ctrl+w + &gt;</strong> - Increase width</li>
-<li class="text-neutral-600"><strong>Ctrl+w + &lt;</strong> - Decrease width</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Resizing Windows</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>Ctrl+w + =</strong> - Equal window sizes</li>
+<li class="text-slate-600"><strong>Ctrl+w + +</strong> - Increase height</li>
+<li class="text-slate-600"><strong>Ctrl+w + -</strong> - Decrease height</li>
+<li class="text-slate-600"><strong>Ctrl+w + &gt;</strong> - Increase width</li>
+<li class="text-slate-600"><strong>Ctrl+w + &lt;</strong> - Decrease width</li>
 </ul><br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Closing Windows</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>Ctrl+w + c</strong> - Close current window</li>
-<li class="text-neutral-600"><strong>Ctrl+w + o</strong> - Close all other windows</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Closing Windows</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>Ctrl+w + c</strong> - Close current window</li>
+<li class="text-slate-600"><strong>Ctrl+w + o</strong> - Close all other windows</li>
 </ul><br>
-<h2 class="text-2xl font-semibold mb-4 text-primary-900">Buffer Management</h2>
+<h2 class="text-2xl font-semibold mb-4 text-blue-900">Buffer Management</h2>
 <br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Buffer Navigation</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>F3</strong> - Next buffer</li>
-<li class="text-neutral-600"><strong>Shift+F3</strong> - Previous buffer</li>
-<li class="text-neutral-600"><strong>:b [name]</strong> - Switch to buffer by name</li>
-<li class="text-neutral-600"><strong>:bd</strong> - Delete current buffer</li>
-<li class="text-neutral-600"><strong>:bn</strong> - Next buffer</li>
-<li class="text-neutral-600"><strong>:bp</strong> - Previous buffer</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Buffer Navigation</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>F3</strong> - Next buffer</li>
+<li class="text-slate-600"><strong>Shift+F3</strong> - Previous buffer</li>
+<li class="text-slate-600"><strong>:b [name]</strong> - Switch to buffer by name</li>
+<li class="text-slate-600"><strong>:bd</strong> - Delete current buffer</li>
+<li class="text-slate-600"><strong>:bn</strong> - Next buffer</li>
+<li class="text-slate-600"><strong>:bp</strong> - Previous buffer</li>
 </ul><br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Buffer Actions</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>:ls</strong> - List all buffers</li>
-<li class="text-neutral-600"><strong>:b#</strong> - Switch to last buffer</li>
-<li class="text-neutral-600"><strong>:bw</strong> - Wipe buffer (delete completely)</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Buffer Actions</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>:ls</strong> - List all buffers</li>
+<li class="text-slate-600"><strong>:b#</strong> - Switch to last buffer</li>
+<li class="text-slate-600"><strong>:bw</strong> - Wipe buffer (delete completely)</li>
 </ul><br>
-<h2 class="text-2xl font-semibold mb-4 text-primary-900">Code Completion &amp; Snippets</h2>
+<h2 class="text-2xl font-semibold mb-4 text-blue-900">Code Completion &amp; Snippets</h2>
 <br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Autocompletion</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>Ctrl+Space</strong> - Trigger completion</li>
-<li class="text-neutral-600"><strong>Tab</strong> - Select next item / expand snippet</li>
-<li class="text-neutral-600"><strong>Shift+Tab</strong> - Select previous item / jump back in snippet</li>
-<li class="text-neutral-600"><strong>Enter</strong> - Confirm selection</li>
-<li class="text-neutral-600"><strong>Ctrl+e</strong> - Close completion menu</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Autocompletion</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>Ctrl+Space</strong> - Trigger completion</li>
+<li class="text-slate-600"><strong>Tab</strong> - Select next item / expand snippet</li>
+<li class="text-slate-600"><strong>Shift+Tab</strong> - Select previous item / jump back in snippet</li>
+<li class="text-slate-600"><strong>Enter</strong> - Confirm selection</li>
+<li class="text-slate-600"><strong>Ctrl+e</strong> - Close completion menu</li>
 </ul><br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Snippet Navigation</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>Tab</strong> - Jump to next snippet placeholder</li>
-<li class="text-neutral-600"><strong>Shift+Tab</strong> - Jump to previous snippet placeholder</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Snippet Navigation</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>Tab</strong> - Jump to next snippet placeholder</li>
+<li class="text-slate-600"><strong>Shift+Tab</strong> - Jump to previous snippet placeholder</li>
 </ul><br>
-<h2 class="text-2xl font-semibold mb-4 text-primary-900">Editing Features</h2>
+<h2 class="text-2xl font-semibold mb-4 text-blue-900">Editing Features</h2>
 <br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Comments</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>gcc</strong> - Toggle line comment</li>
-<li class="text-neutral-600"><strong>gc</strong> (in visual mode) - Toggle block comment</li>
-<li class="text-neutral-600"><strong>gbc</strong> - Toggle block comment on current line</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Comments</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>gcc</strong> - Toggle line comment</li>
+<li class="text-slate-600"><strong>gc</strong> (in visual mode) - Toggle block comment</li>
+<li class="text-slate-600"><strong>gbc</strong> - Toggle block comment on current line</li>
 </ul><br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Auto-pairs</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600">Automatically closes brackets, quotes, etc.</li>
-<li class="text-neutral-600"><strong>Ctrl+h</strong> - Delete pair</li>
-<li class="text-neutral-600"><strong>Alt+p</strong> - Toggle auto-pairs</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Auto-pairs</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600">Automatically closes brackets, quotes, etc.</li>
+<li class="text-slate-600"><strong>Ctrl+h</strong> - Delete pair</li>
+<li class="text-slate-600"><strong>Alt+p</strong> - Toggle auto-pairs</li>
 </ul><br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Text Objects</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>ciw</strong> - Change inner word</li>
-<li class="text-neutral-600"><strong>ci&quot;</strong> - Change inside quotes</li>
-<li class="text-neutral-600"><strong>ci(</strong> - Change inside parentheses</li>
-<li class="text-neutral-600"><strong>ca&quot;</strong> - Change around quotes (includes quotes)</li>
-<li class="text-neutral-600"><strong>di{</strong> - Delete inside braces</li>
-<li class="text-neutral-600"><strong>ya}</strong> - Yank around braces</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Text Objects</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>ciw</strong> - Change inner word</li>
+<li class="text-slate-600"><strong>ci&quot;</strong> - Change inside quotes</li>
+<li class="text-slate-600"><strong>ci(</strong> - Change inside parentheses</li>
+<li class="text-slate-600"><strong>ca&quot;</strong> - Change around quotes (includes quotes)</li>
+<li class="text-slate-600"><strong>di{</strong> - Delete inside braces</li>
+<li class="text-slate-600"><strong>ya}</strong> - Yank around braces</li>
 </ul><br>
-<h2 class="text-2xl font-semibold mb-4 text-primary-900">Database Operations (vim-dadbod)</h2>
+<h2 class="text-2xl font-semibold mb-4 text-blue-900">Database Operations (vim-dadbod)</h2>
 <br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Database UI</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>Space + db</strong> - Open database UI</li>
-<li class="text-neutral-600"><strong>Enter</strong> - Execute query</li>
-<li class="text-neutral-600"><strong>S</strong> - Save query</li>
-<li class="text-neutral-600"><strong>R</strong> - Refresh connection</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Database UI</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>Space + db</strong> - Open database UI</li>
+<li class="text-slate-600"><strong>Enter</strong> - Execute query</li>
+<li class="text-slate-600"><strong>S</strong> - Save query</li>
+<li class="text-slate-600"><strong>R</strong> - Refresh connection</li>
 </ul><br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Connecting to SQLite</h3>
-<p class="text-neutral-600 leading-relaxed mb-3">1. Open database UI with <strong>Space + db</strong></p>
-<p class="text-neutral-600 leading-relaxed mb-3">2. Press <strong>A</strong> to add connection</p>
-<p class="text-neutral-600 leading-relaxed mb-3">3. Enter: <code>sqlite:///path/to/your/database.db</code></p>
-<p class="text-neutral-600 leading-relaxed mb-3">4. Name your connection</p>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Connecting to SQLite</h3>
+<p class="text-slate-600 leading-relaxed mb-3">1. Open database UI with <strong>Space + db</strong></p>
+<p class="text-slate-600 leading-relaxed mb-3">2. Press <strong>A</strong> to add connection</p>
+<p class="text-slate-600 leading-relaxed mb-3">3. Enter: <code>sqlite:///path/to/your/database.db</code></p>
+<p class="text-slate-600 leading-relaxed mb-3">4. Name your connection</p>
 <br>
-<h2 class="text-2xl font-semibold mb-4 text-primary-900">Git Integration (gitsigns)</h2>
+<h2 class="text-2xl font-semibold mb-4 text-blue-900">Git Integration (gitsigns)</h2>
 <br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Git Hunks</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>]c</strong> - Next git change</li>
-<li class="text-neutral-600"><strong>[c</strong> - Previous git change</li>
-<li class="text-neutral-600"><strong>Space + hs</strong> - Stage hunk</li>
-<li class="text-neutral-600"><strong>Space + hr</strong> - Reset hunk</li>
-<li class="text-neutral-600"><strong>Space + hp</strong> - Preview hunk</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Git Hunks</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>]c</strong> - Next git change</li>
+<li class="text-slate-600"><strong>[c</strong> - Previous git change</li>
+<li class="text-slate-600"><strong>Space + hs</strong> - Stage hunk</li>
+<li class="text-slate-600"><strong>Space + hr</strong> - Reset hunk</li>
+<li class="text-slate-600"><strong>Space + hp</strong> - Preview hunk</li>
 </ul><br>
-<h2 class="text-2xl font-semibold mb-4 text-primary-900">Search &amp; Replace</h2>
+<h2 class="text-2xl font-semibold mb-4 text-blue-900">Search &amp; Replace</h2>
 <br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Basic Search/Replace</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>:%s/old/new/g</strong> - Replace all occurrences</li>
-<li class="text-neutral-600"><strong>:%s/old/new/gc</strong> - Replace with confirmation</li>
-<li class="text-neutral-600"><strong>:s/old/new</strong> - Replace in current line</li>
-<li class="text-neutral-600"><strong>:&#x27;&lt;,&#x27;&gt;s/old/new/g</strong> - Replace in visual selection</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Basic Search/Replace</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>:%s/old/new/g</strong> - Replace all occurrences</li>
+<li class="text-slate-600"><strong>:%s/old/new/gc</strong> - Replace with confirmation</li>
+<li class="text-slate-600"><strong>:s/old/new</strong> - Replace in current line</li>
+<li class="text-slate-600"><strong>:&#x27;&lt;,&#x27;&gt;s/old/new/g</strong> - Replace in visual selection</li>
 </ul><br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Advanced Search</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>Space + fg</strong> - Live grep across project</li>
-<li class="text-neutral-600"><strong>/\\&lt;word\\&gt;</strong> - Search for exact word</li>
-<li class="text-neutral-600"><strong>/\\v(pattern)</strong> - Very magic mode (easier regex)</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Advanced Search</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>Space + fg</strong> - Live grep across project</li>
+<li class="text-slate-600"><strong>/\\&lt;word\\&gt;</strong> - Search for exact word</li>
+<li class="text-slate-600"><strong>/\\v(pattern)</strong> - Very magic mode (easier regex)</li>
 </ul><br>
-<h2 class="text-2xl font-semibold mb-4 text-primary-900">Modes &amp; Editing</h2>
+<h2 class="text-2xl font-semibold mb-4 text-blue-900">Modes &amp; Editing</h2>
 <br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Mode Switching</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>Esc</strong> or <strong>Ctrl+[</strong> - Exit to normal mode</li>
-<li class="text-neutral-600"><strong>i</strong> - Insert before cursor</li>
-<li class="text-neutral-600"><strong>a</strong> - Insert after cursor</li>
-<li class="text-neutral-600"><strong>I</strong> - Insert at beginning of line</li>
-<li class="text-neutral-600"><strong>A</strong> - Insert at end of line</li>
-<li class="text-neutral-600"><strong>o</strong> - New line below and insert</li>
-<li class="text-neutral-600"><strong>O</strong> - New line above and insert</li>
-<li class="text-neutral-600"><strong>v</strong> - Visual mode</li>
-<li class="text-neutral-600"><strong>V</strong> - Visual line mode</li>
-<li class="text-neutral-600"><strong>Ctrl+v</strong> - Visual block mode</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Mode Switching</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>Esc</strong> or <strong>Ctrl+[</strong> - Exit to normal mode</li>
+<li class="text-slate-600"><strong>i</strong> - Insert before cursor</li>
+<li class="text-slate-600"><strong>a</strong> - Insert after cursor</li>
+<li class="text-slate-600"><strong>I</strong> - Insert at beginning of line</li>
+<li class="text-slate-600"><strong>A</strong> - Insert at end of line</li>
+<li class="text-slate-600"><strong>o</strong> - New line below and insert</li>
+<li class="text-slate-600"><strong>O</strong> - New line above and insert</li>
+<li class="text-slate-600"><strong>v</strong> - Visual mode</li>
+<li class="text-slate-600"><strong>V</strong> - Visual line mode</li>
+<li class="text-slate-600"><strong>Ctrl+v</strong> - Visual block mode</li>
 </ul><br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Copying &amp; Pasting</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>yy</strong> - Yank (copy) current line</li>
-<li class="text-neutral-600"><strong>y</strong> (in visual mode) - Yank selection</li>
-<li class="text-neutral-600"><strong>p</strong> - Paste after cursor</li>
-<li class="text-neutral-600"><strong>P</strong> - Paste before cursor</li>
-<li class="text-neutral-600"><strong>dd</strong> - Delete (cut) current line</li>
-<li class="text-neutral-600"><strong>d</strong> (in visual mode) - Delete selection</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Copying &amp; Pasting</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>yy</strong> - Yank (copy) current line</li>
+<li class="text-slate-600"><strong>y</strong> (in visual mode) - Yank selection</li>
+<li class="text-slate-600"><strong>p</strong> - Paste after cursor</li>
+<li class="text-slate-600"><strong>P</strong> - Paste before cursor</li>
+<li class="text-slate-600"><strong>dd</strong> - Delete (cut) current line</li>
+<li class="text-slate-600"><strong>d</strong> (in visual mode) - Delete selection</li>
 </ul><br>
-<h2 class="text-2xl font-semibold mb-4 text-primary-900">Tabs</h2>
+<h2 class="text-2xl font-semibold mb-4 text-blue-900">Tabs</h2>
 <br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Tab Operations</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>:tabnew</strong> - New tab</li>
-<li class="text-neutral-600"><strong>:tabn</strong> or <strong>gt</strong> - Next tab</li>
-<li class="text-neutral-600"><strong>:tabp</strong> or <strong>gT</strong> - Previous tab</li>
-<li class="text-neutral-600"><strong>:tabc</strong> - Close current tab</li>
-<li class="text-neutral-600"><strong>:tabo</strong> - Close all other tabs</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Tab Operations</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>:tabnew</strong> - New tab</li>
+<li class="text-slate-600"><strong>:tabn</strong> or <strong>gt</strong> - Next tab</li>
+<li class="text-slate-600"><strong>:tabp</strong> or <strong>gT</strong> - Previous tab</li>
+<li class="text-slate-600"><strong>:tabc</strong> - Close current tab</li>
+<li class="text-slate-600"><strong>:tabo</strong> - Close all other tabs</li>
 </ul><br>
-<h2 class="text-2xl font-semibold mb-4 text-primary-900">Sessions &amp; Workspaces</h2>
+<h2 class="text-2xl font-semibold mb-4 text-blue-900">Sessions &amp; Workspaces</h2>
 <br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Session Management</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>:mksession [name]</strong> - Save session</li>
-<li class="text-neutral-600"><strong>:source [session_file]</strong> - Load session</li>
-<li class="text-neutral-600"><strong>nvim -S [session_file]</strong> - Start with session</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Session Management</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>:mksession [name]</strong> - Save session</li>
+<li class="text-slate-600"><strong>:source [session_file]</strong> - Load session</li>
+<li class="text-slate-600"><strong>nvim -S [session_file]</strong> - Start with session</li>
 </ul><br>
-<h2 class="text-2xl font-semibold mb-4 text-primary-900">Markdown Preview</h2>
+<h2 class="text-2xl font-semibold mb-4 text-blue-900">Markdown Preview</h2>
 <br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Markdown Preview Features</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>Space + mp</strong> - Start markdown preview in default browser</li>
-<li class="text-neutral-600"><strong>Space + mw</strong> - Start markdown preview in w3m (terminal split)</li>
-<li class="text-neutral-600"><strong>Space + ms</strong> - Stop markdown preview</li>
-<li class="text-neutral-600"><strong>Space + mt</strong> - Toggle markdown preview</li>
-<li class="text-neutral-600"><strong>:MarkdownPreview</strong> - Start preview in browser (manual command)</li>
-<li class="text-neutral-600"><strong>:MarkdownPreviewW3m</strong> - Start preview in w3m (manual command)</li>
-<li class="text-neutral-600"><strong>:MarkdownPreviewStop</strong> - Stop preview (manual command)</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Markdown Preview Features</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>Space + mp</strong> - Start markdown preview in default browser</li>
+<li class="text-slate-600"><strong>Space + mw</strong> - Start markdown preview in w3m (terminal split)</li>
+<li class="text-slate-600"><strong>Space + ms</strong> - Stop markdown preview</li>
+<li class="text-slate-600"><strong>Space + mt</strong> - Toggle markdown preview</li>
+<li class="text-slate-600"><strong>:MarkdownPreview</strong> - Start preview in browser (manual command)</li>
+<li class="text-slate-600"><strong>:MarkdownPreviewW3m</strong> - Start preview in w3m (manual command)</li>
+<li class="text-slate-600"><strong>:MarkdownPreviewStop</strong> - Stop preview (manual command)</li>
 </ul><br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Preview Options</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>Browser preview</strong>: Live updates, full feature support</li>
-<li class="text-neutral-600"><strong>w3m preview</strong>: Static snapshot in terminal split, no external dependencies</li>
-<li class="text-neutral-600">Support for tables, code blocks, and basic formatting</li>
-<li class="text-neutral-600">Works with any markdown file</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Preview Options</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>Browser preview</strong>: Live updates, full feature support</li>
+<li class="text-slate-600"><strong>w3m preview</strong>: Static snapshot in terminal split, no external dependencies</li>
+<li class="text-slate-600">Support for tables, code blocks, and basic formatting</li>
+<li class="text-slate-600">Works with any markdown file</li>
 </ul><br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Usage Tips</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>For live preview</strong>: Use <strong>Space + mp</strong> (opens in browser)</li>
-<li class="text-neutral-600"><strong>For terminal preview</strong>: Use <strong>Space + mw</strong> (opens w3m in split)</li>
-<li class="text-neutral-600">w3m preview opens in a horizontal split below current window</li>
-<li class="text-neutral-600">Press <strong>q</strong> in w3m to quit, then <strong>:q</strong> to close the split</li>
-<li class="text-neutral-600">Browser preview updates automatically on file save</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Usage Tips</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>For live preview</strong>: Use <strong>Space + mp</strong> (opens in browser)</li>
+<li class="text-slate-600"><strong>For terminal preview</strong>: Use <strong>Space + mw</strong> (opens w3m in split)</li>
+<li class="text-slate-600">w3m preview opens in a horizontal split below current window</li>
+<li class="text-slate-600">Press <strong>q</strong> in w3m to quit, then <strong>:q</strong> to close the split</li>
+<li class="text-slate-600">Browser preview updates automatically on file save</li>
 </ul><br>
-<h2 class="text-2xl font-semibold mb-4 text-primary-900">Using OpenCode from Neovim</h2>
+<h2 class="text-2xl font-semibold mb-4 text-blue-900">Using OpenCode from Neovim</h2>
 <br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Terminal Integration</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>:terminal</strong> - Open terminal in Neovim</li>
-<li class="text-neutral-600"><strong>:term opencode</strong> - Launch opencode in terminal</li>
-<li class="text-neutral-600"><strong>Ctrl+\\</strong> <strong>Ctrl+n</strong> - Exit terminal insert mode</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Terminal Integration</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>:terminal</strong> - Open terminal in Neovim</li>
+<li class="text-slate-600"><strong>:term opencode</strong> - Launch opencode in terminal</li>
+<li class="text-slate-600"><strong>Ctrl+\\</strong> <strong>Ctrl+n</strong> - Exit terminal insert mode</li>
 </ul><br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">External Commands</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>:!opencode %</strong> - Open current file in opencode</li>
-<li class="text-neutral-600"><strong>:!opencode .</strong> - Open current directory in opencode</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">External Commands</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>:!opencode %</strong> - Open current file in opencode</li>
+<li class="text-slate-600"><strong>:!opencode .</strong> - Open current directory in opencode</li>
 </ul><br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Background Execution</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>:!opencode % &amp;</strong> - Open current file in background</li>
-<li class="text-neutral-600"><strong>:!opencode . &amp;</strong> - Open current directory in background</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Background Execution</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>:!opencode % &amp;</strong> - Open current file in background</li>
+<li class="text-slate-600"><strong>:!opencode . &amp;</strong> - Open current directory in background</li>
 </ul><br>
-<h2 class="text-2xl font-semibold mb-4 text-primary-900">Configuration &amp; Customization</h2>
+<h2 class="text-2xl font-semibold mb-4 text-blue-900">Configuration &amp; Customization</h2>
 <br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Key Configuration Files</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>~/.config/nvim/init.lua</strong> - Main config</li>
-<li class="text-neutral-600"><strong>~/.config/nvim/lua/plugins.lua</strong> - Plugin configuration</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Key Configuration Files</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>~/.config/nvim/init.lua</strong> - Main config</li>
+<li class="text-slate-600"><strong>~/.config/nvim/lua/plugins.lua</strong> - Plugin configuration</li>
 </ul><br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Useful Commands</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>:checkhealth</strong> - Check Neovim health</li>
-<li class="text-neutral-600"><strong>:Lazy</strong> - Manage plugins</li>
-<li class="text-neutral-600"><strong>:Mason</strong> - Manage LSP servers</li>
-<li class="text-neutral-600"><strong>:LspInfo</strong> - Show LSP status</li>
-<li class="text-neutral-600"><strong>:TSUpdate</strong> - Update Treesitter parsers</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Useful Commands</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>:checkhealth</strong> - Check Neovim health</li>
+<li class="text-slate-600"><strong>:Lazy</strong> - Manage plugins</li>
+<li class="text-slate-600"><strong>:Mason</strong> - Manage LSP servers</li>
+<li class="text-slate-600"><strong>:LspInfo</strong> - Show LSP status</li>
+<li class="text-slate-600"><strong>:TSUpdate</strong> - Update Treesitter parsers</li>
 </ul><br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Settings Toggle</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>F4</strong> - Toggle line numbers</li>
-<li class="text-neutral-600"><strong>:set wrap!</strong> - Toggle line wrapping</li>
-<li class="text-neutral-600"><strong>:set hlsearch!</strong> - Toggle search highlighting</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Settings Toggle</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>F4</strong> - Toggle line numbers</li>
+<li class="text-slate-600"><strong>:set wrap!</strong> - Toggle line wrapping</li>
+<li class="text-slate-600"><strong>:set hlsearch!</strong> - Toggle search highlighting</li>
 </ul><br>
-<h2 class="text-2xl font-semibold mb-4 text-primary-900">Troubleshooting</h2>
+<h2 class="text-2xl font-semibold mb-4 text-blue-900">Troubleshooting</h2>
 <br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Plugin Issues</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>:Lazy sync</strong> - Update all plugins</li>
-<li class="text-neutral-600"><strong>:Lazy clean</strong> - Remove unused plugins</li>
-<li class="text-neutral-600"><strong>:Lazy restore</strong> - Restore plugins to lockfile state</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Plugin Issues</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>:Lazy sync</strong> - Update all plugins</li>
+<li class="text-slate-600"><strong>:Lazy clean</strong> - Remove unused plugins</li>
+<li class="text-slate-600"><strong>:Lazy restore</strong> - Restore plugins to lockfile state</li>
 </ul><br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">LSP Issues</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>:LspRestart</strong> - Restart LSP server</li>
-<li class="text-neutral-600"><strong>:Mason</strong> - Install/manage LSP servers (use this to install servers like ts_ls, pyright, etc.)</li>
-<li class="text-neutral-600"><strong>:checkhealth lsp</strong> - Check LSP health</li>
-<li class="text-neutral-600"><strong>:LspInfo</strong> - Show attached LSP servers</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">LSP Issues</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>:LspRestart</strong> - Restart LSP server</li>
+<li class="text-slate-600"><strong>:Mason</strong> - Install/manage LSP servers (use this to install servers like ts_ls, pyright, etc.)</li>
+<li class="text-slate-600"><strong>:checkhealth lsp</strong> - Check LSP health</li>
+<li class="text-slate-600"><strong>:LspInfo</strong> - Show attached LSP servers</li>
 </ul><br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Installing LSP Servers</h3>
-<p class="text-neutral-600 leading-relaxed mb-3">1. Open Neovim and run <strong>:Mason</strong></p>
-<p class="text-neutral-600 leading-relaxed mb-3">2. Navigate with <strong>j/k</strong> and press <strong>i</strong> to install servers:</p>
-<p class="text-neutral-600 leading-relaxed mb-3">   - <strong>ts_ls</strong> - TypeScript/JavaScript</p>
-<p class="text-neutral-600 leading-relaxed mb-3">   - <strong>pyright</strong> - Python  </p>
-<p class="text-neutral-600 leading-relaxed mb-3">   - <strong>html</strong> - HTML</p>
-<p class="text-neutral-600 leading-relaxed mb-3">   - <strong>cssls</strong> - CSS</p>
-<p class="text-neutral-600 leading-relaxed mb-3">   - <strong>jsonls</strong> - JSON</p>
-<p class="text-neutral-600 leading-relaxed mb-3">   - <strong>eslint</strong> - ESLint</p>
-<p class="text-neutral-600 leading-relaxed mb-3">   - <strong>lua_ls</strong> - Lua</p>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Installing LSP Servers</h3>
+<p class="text-slate-600 leading-relaxed mb-3">1. Open Neovim and run <strong>:Mason</strong></p>
+<p class="text-slate-600 leading-relaxed mb-3">2. Navigate with <strong>j/k</strong> and press <strong>i</strong> to install servers:</p>
+<p class="text-slate-600 leading-relaxed mb-3">   - <strong>ts_ls</strong> - TypeScript/JavaScript</p>
+<p class="text-slate-600 leading-relaxed mb-3">   - <strong>pyright</strong> - Python  </p>
+<p class="text-slate-600 leading-relaxed mb-3">   - <strong>html</strong> - HTML</p>
+<p class="text-slate-600 leading-relaxed mb-3">   - <strong>cssls</strong> - CSS</p>
+<p class="text-slate-600 leading-relaxed mb-3">   - <strong>jsonls</strong> - JSON</p>
+<p class="text-slate-600 leading-relaxed mb-3">   - <strong>eslint</strong> - ESLint</p>
+<p class="text-slate-600 leading-relaxed mb-3">   - <strong>lua_ls</strong> - Lua</p>
 <br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Performance</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>:profile start [file]</strong> - Start profiling</li>
-<li class="text-neutral-600"><strong>:profile stop</strong> - Stop profiling</li>
-<li class="text-neutral-600"><strong>:checkhealth</strong> - Check overall health</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Performance</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>:profile start [file]</strong> - Start profiling</li>
+<li class="text-slate-600"><strong>:profile stop</strong> - Stop profiling</li>
+<li class="text-slate-600"><strong>:checkhealth</strong> - Check overall health</li>
 </ul><br>
-<h2 class="text-2xl font-semibold mb-4 text-primary-900">Advanced Tips</h2>
+<h2 class="text-2xl font-semibold mb-4 text-blue-900">Advanced Tips</h2>
 <br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Multiple Cursors (Visual Block)</h3>
-<p class="text-neutral-600 leading-relaxed mb-3">1. <strong>Ctrl+v</strong> - Enter visual block mode</p>
-<p class="text-neutral-600 leading-relaxed mb-3">2. Select multiple lines</p>
-<p class="text-neutral-600 leading-relaxed mb-3">3. <strong>I</strong> - Insert at beginning of all lines</p>
-<p class="text-neutral-600 leading-relaxed mb-3">4. <strong>A</strong> - Insert at end of all lines</p>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Multiple Cursors (Visual Block)</h3>
+<p class="text-slate-600 leading-relaxed mb-3">1. <strong>Ctrl+v</strong> - Enter visual block mode</p>
+<p class="text-slate-600 leading-relaxed mb-3">2. Select multiple lines</p>
+<p class="text-slate-600 leading-relaxed mb-3">3. <strong>I</strong> - Insert at beginning of all lines</p>
+<p class="text-slate-600 leading-relaxed mb-3">4. <strong>A</strong> - Insert at end of all lines</p>
 <br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Macros</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>q[letter]</strong> - Start recording macro</li>
-<li class="text-neutral-600"><strong>q</strong> - Stop recording</li>
-<li class="text-neutral-600"><strong>@[letter]</strong> - Execute macro</li>
-<li class="text-neutral-600"><strong>@@</strong> - Repeat last macro</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Macros</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>q[letter]</strong> - Start recording macro</li>
+<li class="text-slate-600"><strong>q</strong> - Stop recording</li>
+<li class="text-slate-600"><strong>@[letter]</strong> - Execute macro</li>
+<li class="text-slate-600"><strong>@@</strong> - Repeat last macro</li>
 </ul><br>
-<h3 class="text-xl font-semibold mb-2 text-primary-900">Marks</h3>
-<ul class="list-none space-y-2 ml-0"><li class="text-neutral-600"><strong>m[letter]</strong> - Set mark</li>
-<li class="text-neutral-600"><strong>&#x27;[letter]</strong> - Jump to mark</li>
-<li class="text-neutral-600"><strong>&#x27;&#x27;</strong> - Jump to previous position</li>
+<h3 class="text-xl font-semibold mb-2 text-blue-900">Marks</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-slate-600"><strong>m[letter]</strong> - Set mark</li>
+<li class="text-slate-600"><strong>&#x27;[letter]</strong> - Jump to mark</li>
+<li class="text-slate-600"><strong>&#x27;&#x27;</strong> - Jump to previous position</li>
 </ul><br>
-<p class="text-neutral-600 leading-relaxed mb-3">---</p>
+<p class="text-slate-600 leading-relaxed mb-3">---</p>
 <br>
-<h2 class="text-2xl font-semibold mb-4 text-primary-900">Quick Reference Card</h2>
+<h2 class="text-2xl font-semibold mb-4 text-blue-900">Quick Reference Card</h2>
 <br>
 <table><tr><td>Action</td><td>Keymap</td></tr>
 <tr><td>File tree toggle</td><td>F2</td></tr>
@@ -358,6 +358,6 @@
 <tr><td>Stop MD preview</td><td>Space + ms</td></tr>
 <tr><td>Toggle MD preview</td><td>Space + mt</td></tr>
 </table><br>
-<p class="text-neutral-600 leading-relaxed mb-3">This manual covers the essential navigation and IDE features of your new Neovim setup. Practice these commands regularly to build muscle memory and boost your productivity!</p>
+<p class="text-slate-600 leading-relaxed mb-3">This manual covers the essential navigation and IDE features of your new Neovim setup. Practice these commands regularly to build muscle memory and boost your productivity!</p>
 </body>
 </html>

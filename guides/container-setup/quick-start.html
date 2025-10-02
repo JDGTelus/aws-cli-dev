@@ -12,55 +12,55 @@
     <div class="max-w-7xl mx-auto p-10 bg-white/75 rounded-2xl shadow-2xl">
         <h1 class="text-5xl font-bold mb-4 drop-shadow-lg">⚡ Quick Start Guide</h1>
 
-        <h2 class="text-2xl font-semibold mb-4 text-primary-900">Build and Run</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-blue-900">Build and Run</h2>
         <pre><code>cd aws-cli-dev
 ./setup.sh
 docker-compose up -d
 docker-compose exec aws-cli-env zsh</code></pre>
 
-        <h2 class="text-2xl font-semibold mb-4 text-primary-900">First Steps Inside Container</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-blue-900">First Steps Inside Container</h2>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">1. Configure AWS (Required for AWS work)</h3>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">1. Configure AWS (Required for AWS work)</h3>
         <pre><code>aws configure</code></pre>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">2. Setup Neovim IDE (Lua-based)</h3>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">2. Setup Neovim IDE (Lua-based)</h3>
         <pre><code>/scripts/setup-neovim.sh</code></pre>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">3. Setup Tmux (Optional)</h3>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">3. Setup Tmux (Optional)</h3>
         <pre><code>/scripts/setup-tmux-preview.sh</code></pre>
 
-        <h2 class="text-2xl font-semibold mb-4 text-primary-900">Quick Reference</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-blue-900">Quick Reference</h2>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">Neovim (after setup-neovim.sh)</h3>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">Neovim (after setup-neovim.sh)</h3>
         <ul class="list-none space-y-2 ml-0">
-            <li class="text-neutral-600"><code>&lt;Space&gt;</code> - Leader key</li>
-            <li class="text-neutral-600"><code>&lt;F2&gt;</code> - Toggle file explorer (nvim-tree)</li>
-            <li class="text-neutral-600"><code>&lt;Leader&gt;ff</code> - Find files (Telescope)</li>
-            <li class="text-neutral-600"><code>&lt;Leader&gt;fg</code> - Live grep (Telescope)</li>
-            <li class="text-neutral-600"><code>&lt;Leader&gt;fb</code> - Browse buffers (Telescope)</li>
-            <li class="text-neutral-600"><code>:Mason</code> - Manage LSP servers</li>
-            <li class="text-neutral-600"><code>:Lazy</code> - Manage plugins</li>
+            <li class="text-slate-600"><code>&lt;Space&gt;</code> - Leader key</li>
+            <li class="text-slate-600"><code>&lt;F2&gt;</code> - Toggle file explorer (nvim-tree)</li>
+            <li class="text-slate-600"><code>&lt;Leader&gt;ff</code> - Find files (Telescope)</li>
+            <li class="text-slate-600"><code>&lt;Leader&gt;fg</code> - Live grep (Telescope)</li>
+            <li class="text-slate-600"><code>&lt;Leader&gt;fb</code> - Browse buffers (Telescope)</li>
+            <li class="text-slate-600"><code>:Mason</code> - Manage LSP servers</li>
+            <li class="text-slate-600"><code>:Lazy</code> - Manage plugins</li>
         </ul>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">Tmux (after setup)</h3>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">Tmux (after setup)</h3>
         <ul class="list-none space-y-2 ml-0">
-            <li class="text-neutral-600"><code>Ctrl+a</code> - Prefix key</li>
-            <li class="text-neutral-600"><code>Prefix + c</code> - New window</li>
-            <li class="text-neutral-600"><code>Prefix + "</code> - Split horizontal</li>
-            <li class="text-neutral-600"><code>Prefix + %</code> - Split vertical</li>
-            <li class="text-neutral-600"><code>Prefix + h/j/k/l</code> - Navigate panes</li>
-            <li class="text-neutral-600"><code>Prefix + I</code> - Install plugins</li>
+            <li class="text-slate-600"><code>Ctrl+a</code> - Prefix key</li>
+            <li class="text-slate-600"><code>Prefix + c</code> - New window</li>
+            <li class="text-slate-600"><code>Prefix + "</code> - Split horizontal</li>
+            <li class="text-slate-600"><code>Prefix + %</code> - Split vertical</li>
+            <li class="text-slate-600"><code>Prefix + h/j/k/l</code> - Navigate panes</li>
+            <li class="text-slate-600"><code>Prefix + I</code> - Install plugins</li>
         </ul>
 
-        <h3 class="text-xl font-semibold mb-2 text-primary-900">Zsh Aliases</h3>
+        <h3 class="text-xl font-semibold mb-2 text-blue-900">Zsh Aliases</h3>
         <ul class="list-none space-y-2 ml-0">
-            <li class="text-neutral-600"><code>awswho</code> - Show AWS identity</li>
-            <li class="text-neutral-600"><code>awsregion</code> - Show AWS region</li>
-            <li class="text-neutral-600"><code>ll</code>, <code>la</code>, <code>l</code> - Better ls</li>
-            <li class="text-neutral-600"><code>gs</code>, <code>ga</code>, <code>gc</code> - Git shortcuts</li>
+            <li class="text-slate-600"><code>awswho</code> - Show AWS identity</li>
+            <li class="text-slate-600"><code>awsregion</code> - Show AWS region</li>
+            <li class="text-slate-600"><code>ll</code>, <code>la</code>, <code>l</code> - Better ls</li>
+            <li class="text-slate-600"><code>gs</code>, <code>ga</code>, <code>gc</code> - Git shortcuts</li>
         </ul>
 
-        <h2 class="text-2xl font-semibold mb-4 text-primary-900">Useful Commands</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-blue-900">Useful Commands</h2>
         <pre><code># Check Neovim version (should be 0.10.2+)
 nvim --version
 
@@ -73,24 +73,24 @@ pip list
 # Check Node.js packages
 npm list -g --depth=0</code></pre>
 
-        <h2 class="text-2xl font-semibold mb-4 text-primary-900">Exposed Ports</h2>
-        <p class="text-neutral-600 leading-relaxed mb-3">Common development ports are mapped to your host:</p>
+        <h2 class="text-2xl font-semibold mb-4 text-blue-900">Exposed Ports</h2>
+        <p class="text-slate-600 leading-relaxed mb-3">Common development ports are mapped to your host:</p>
         <ul class="list-none space-y-2 ml-0">
-            <li class="text-neutral-600"><strong>Frontend</strong>: 3000 (React/Next.js), 5173 (Vite), 8080 (Vue)</li>
-            <li class="text-neutral-600"><strong>Backend</strong>: 5000 (Flask), 8000 (Django/FastAPI)</li>
-            <li class="text-neutral-600"><strong>Node.js</strong>: 3030, 4000 (GraphQL)</li>
-            <li class="text-neutral-600"><strong>Databases</strong>: 5432 (PostgreSQL), 3306 (MySQL), 27017 (MongoDB)</li>
+            <li class="text-slate-600"><strong>Frontend</strong>: 3000 (React/Next.js), 5173 (Vite), 8080 (Vue)</li>
+            <li class="text-slate-600"><strong>Backend</strong>: 5000 (Flask), 8000 (Django/FastAPI)</li>
+            <li class="text-slate-600"><strong>Node.js</strong>: 3030, 4000 (GraphQL)</li>
+            <li class="text-slate-600"><strong>Databases</strong>: 5432 (PostgreSQL), 3306 (MySQL), 27017 (MongoDB)</li>
         </ul>
-        <p class="text-neutral-600 leading-relaxed mb-3"><strong>Example:</strong></p>
+        <p class="text-slate-600 leading-relaxed mb-3"><strong>Example:</strong></p>
         <pre><code># Start React app in container
 cd workspace/my-app &amp;&amp; npm run dev
 # Access from host: http://localhost:3000</code></pre>
 
-        <h2 class="text-2xl font-semibold mb-4 text-primary-900">Documentation</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-blue-900">Documentation</h2>
         <ul class="list-none space-y-2 ml-0">
-            <li class="text-neutral-600">Full docs: <code>/guides/usage_guide.md</code></li>
-            <li class="text-neutral-600">Neovim guide: <code>/guides/neovim-lua-configuration-guide.md</code></li>
-            <li class="text-neutral-600">AWS setup: <code>guides/aws-setup-guide.md</code></li>
+            <li class="text-slate-600">Full docs: <code>/guides/usage_guide.md</code></li>
+            <li class="text-slate-600">Neovim guide: <code>/guides/neovim-lua-configuration-guide.md</code></li>
+            <li class="text-slate-600">AWS setup: <code>guides/aws-setup-guide.md</code></li>
         </ul>
     </div>
 </body>
