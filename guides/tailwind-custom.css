@@ -8,24 +8,8 @@
 }
 
 /* Gradient backgrounds using Tailwind default colors */
-.gradient-blue-header {
-    background: linear-gradient(135deg, rgb(30 58 138) 0%, rgb(15 23 42) 100%);
-}
-
-.gradient-slate-page {
-    background: linear-gradient(135deg, rgb(248 250 252) 0%, rgb(226 232 240) 100%);
-}
-
-.gradient-aws-dark {
-    background: linear-gradient(135deg, #232f3e 0%, #131921 100%);
-}
-
-/* Legacy gradient support - mapped to Tailwind defaults */
-.gradient-aws-blue,
-.gradient-primary,
-.gradient-header,
-.gradient-primary-700 {
-    background: linear-gradient(135deg, rgb(30 58 138 / 0.95) 0%, rgb(15 23 42 / 0.95) 100%);
+.gradient-title-background {
+    background: linear-gradient(117deg, #4195c5 0%, #89c9e9 100%);
 }
 
 .gradient-page-bg {

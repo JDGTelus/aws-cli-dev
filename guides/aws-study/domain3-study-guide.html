@@ -60,7 +60,7 @@
     </head>
 <body class="gradient-page-bg min-h-screen p-5">
     <div class="max-w-7xl mx-auto p-10 bg-white/75 rounded-2xl shadow-2xl">
-        <div class="gradient-blue-header text-center mb-12 p-10 rounded-2xl text-white shadow-lg">
+        <div class="gradient-title-background text-center mb-12 p-10 rounded-2xl text-white shadow-lg">
             <h1 class="text-5xl font-bold mb-4 drop-shadow-lg">🚀 Domain 3: Applications of Foundation Models</h1>
             <p class="text-slate-600 leading-relaxed mb-3">AWS AI Practitioner Certification Study Guide</p>
             <div class="bg-slate-100 rounded-xl h-2 my-5 overflow-hidden">
@@ -69,7 +69,7 @@
             <p class="text-slate-600 leading-relaxed mb-3"><strong>Weight: 28% of exam</strong> | <strong>Study Time: 4-5 weeks</strong></p>
         </div>
 
-        <div class="bg-slate-50/90 p-6 rounded-xl mb-8 border-l-4 border-blue-700 shadow-md">
+        <div class="bg-slate-50/90 p-6 rounded-xl mb-8 border-l-4 border-cyan-500 shadow-md">
             <h2 class="text-2xl font-semibold mb-4 text-blue-900">📋 Domain Overview</h2>
             <p class="text-slate-600 leading-relaxed mb-3"><strong>Purpose:</strong> This is the highest-weighted domain, focusing on practical implementation of foundation models in real-world applications. It covers design considerations, prompt engineering, training/fine-tuning, and performance evaluation.</p>
             <p class="text-slate-600 leading-relaxed mb-3"><strong>Focus Areas:</strong> Application design, prompt optimization, model customization, performance evaluation, and deployment strategies.</p>
@@ -78,12 +78,12 @@
 
         <!-- Task Statement 3.1 -->
         <div class="bg-white border border-slate-200 rounded-xl mb-6 overflow-hidden shadow-lg">
-            <div class="gradient-blue-header text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task1')">
+            <div class="gradient-title-background text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task1')">
                 <h3 class="text-xl font-semibold mb-2 text-blue-900">Task Statement 3.1: Describe Design Considerations for Applications that Use Foundation Models</h3>
                 <button class="bg-transparent border-none text-white text-2xl cursor-pointer transition-transform duration-300 p-0 m-0 leading-none" id="toggle1">▼</button>
             </div>
             <div class="p-6 hidden" id="task1">
-                <div class="bg-slate-100/80 p-4 rounded-lg my-4 border-l-4 border-blue-300">
+                <div class="bg-slate-100/80 p-4 rounded-lg my-4 border-l-4 border-orange-300">
                     <h4 class="text-lg font-semibold mb-3 text-blue-900">🎯 Learning Objectives:</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600">Understand architectural patterns for foundation model applications</li>
@@ -213,7 +213,7 @@
                     </div>
                 </div>
 
-                <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-blue-300">
+                <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-orange-300">
                     <h4 class="text-lg font-semibold mb-3 text-blue-900">🔧 Key AWS Services for Application Design</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                         <div class="bg-white/95 p-4 rounded-lg border border-slate-200">
@@ -258,12 +258,12 @@
 
         <!-- Task Statement 3.2 -->
         <div class="bg-white border border-slate-200 rounded-xl mb-6 overflow-hidden shadow-lg">
-            <div class="gradient-blue-header text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task2')">
+            <div class="gradient-title-background text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task2')">
                 <h3 class="text-xl font-semibold mb-2 text-blue-900">Task Statement 3.2: Choose Effective Prompt Engineering Techniques</h3>
                 <button class="bg-transparent border-none text-white text-2xl cursor-pointer transition-transform duration-300 p-0 m-0 leading-none" id="toggle2">▼</button>
             </div>
             <div class="p-6 hidden" id="task2">
-                <div class="bg-slate-100/80 p-4 rounded-lg my-4 border-l-4 border-blue-300">
+                <div class="bg-slate-100/80 p-4 rounded-lg my-4 border-l-4 border-orange-300">
                     <h4 class="text-lg font-semibold mb-3 text-blue-900">🎯 Learning Objectives:</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600">Master various prompt engineering techniques and patterns</li>
@@ -277,7 +277,7 @@
                 <div class="technique-card">
                     <h5 class="text-base font-semibold mb-2 text-blue-900">Zero-Shot Prompting</h5>
                     <p class="text-slate-600 leading-relaxed mb-3">Providing a task description without examples, relying on the model's pre-trained knowledge.</p>
-                    <div class="bg-blue-900 text-slate-100 p-4 rounded-lg font-mono my-4 overflow-x-auto border border-blue-700">
+                    <div class="bg-slate-800 text-slate-100 p-4 rounded-lg font-mono my-4 overflow-x-auto border border-cyan-500">
                         <span class="prompt-label">Prompt:</span> "Translate the following English text to French: 'Hello, how are you today?'"<br><br>
                         <span class="response-label">Response:</span> "Bonjour, comment allez-vous aujourd'hui ?"
                     </div>
@@ -288,7 +288,7 @@
                 <div class="technique-card">
                     <h5 class="text-base font-semibold mb-2 text-blue-900">Few-Shot Prompting</h5>
                     <p class="text-slate-600 leading-relaxed mb-3">Providing a few examples of the desired input-output pattern before the actual task.</p>
-                    <div class="bg-blue-900 text-slate-100 p-4 rounded-lg font-mono my-4 overflow-x-auto border border-blue-700">
+                    <div class="bg-slate-800 text-slate-100 p-4 rounded-lg font-mono my-4 overflow-x-auto border border-cyan-500">
                         <span class="prompt-label">Prompt:</span> "Classify the sentiment of these reviews:<br>
                         Review: 'The product is amazing!' Sentiment: Positive<br>
                         Review: 'Terrible quality, waste of money.' Sentiment: Negative<br>
@@ -302,7 +302,7 @@
                 <div class="technique-card">
                     <h5 class="text-base font-semibold mb-2 text-blue-900">Chain-of-Thought (CoT) Prompting</h5>
                     <p class="text-slate-600 leading-relaxed mb-3">Encouraging the model to show its reasoning process step-by-step.</p>
-                    <div class="bg-blue-900 text-slate-100 p-4 rounded-lg font-mono my-4 overflow-x-auto border border-blue-700">
+                    <div class="bg-slate-800 text-slate-100 p-4 rounded-lg font-mono my-4 overflow-x-auto border border-cyan-500">
                         <span class="prompt-label">Prompt:</span> "Solve this step by step: If a store has 15 apples and sells 7, then receives a shipment of 12 more apples, how many apples does the store have now?"<br><br>
                         <span class="response-label">Response:</span> "Let me solve this step by step:<br>
                         1. Starting apples: 15<br>
@@ -318,7 +318,7 @@
                 <div class="technique-card">
                     <h5 class="text-base font-semibold mb-2 text-blue-900">Role-Based Prompting</h5>
                     <p class="text-slate-600 leading-relaxed mb-3">Assigning a specific role or persona to the model to guide its responses.</p>
-                    <div class="bg-blue-900 text-slate-100 p-4 rounded-lg font-mono my-4 overflow-x-auto border border-blue-700">
+                    <div class="bg-slate-800 text-slate-100 p-4 rounded-lg font-mono my-4 overflow-x-auto border border-cyan-500">
                         <span class="prompt-label">Prompt:</span> "You are a senior AWS solutions architect. Explain the benefits of using Amazon Bedrock for a startup building a customer service chatbot."<br><br>
                         <span class="response-label">Response:</span> "As a solutions architect, I'd recommend Bedrock for several key reasons: managed infrastructure reduces operational overhead, pay-per-use pricing aligns with startup budgets, multiple model options allow experimentation..."
                     </div>
@@ -366,7 +366,7 @@
                 <h4 class="text-lg font-semibold mb-3 text-blue-900">🎯 Model-Specific Considerations</h4>
                 <div class="model-selection-matrix">
                     <div class="model-option">
-                        <h6 class="text-sm font-semibold mb-2 text-blue-700">Anthropic Claude</h6>
+                        <h6 class="text-sm font-semibold mb-2 text-orange-600">Anthropic Claude</h6>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Strengths:</strong> Long context, reasoning, safety</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Prompt Style:</strong> Conversational, detailed instructions</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Best Techniques:</strong> Chain-of-thought, role-based prompting</p>
@@ -377,7 +377,7 @@
                         </div>
                     </div>
                     <div class="model-option">
-                        <h6 class="text-sm font-semibold mb-2 text-blue-700">Amazon Titan</h6>
+                        <h6 class="text-sm font-semibold mb-2 text-orange-600">Amazon Titan</h6>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Strengths:</strong> Cost-effective, general purpose</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Prompt Style:</strong> Clear, concise instructions</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Best Techniques:</strong> Zero-shot, few-shot for simple tasks</p>
@@ -388,7 +388,7 @@
                         </div>
                     </div>
                     <div class="model-option">
-                        <h6 class="text-sm font-semibold mb-2 text-blue-700">AI21 Jurassic</h6>
+                        <h6 class="text-sm font-semibold mb-2 text-orange-600">AI21 Jurassic</h6>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Strengths:</strong> Multilingual, instruction following</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Prompt Style:</strong> Structured, explicit instructions</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Best Techniques:</strong> Template-based, role prompting</p>
@@ -399,7 +399,7 @@
                         </div>
                     </div>
                     <div class="model-option">
-                        <h6 class="text-sm font-semibold mb-2 text-blue-700">Cohere Command</h6>
+                        <h6 class="text-sm font-semibold mb-2 text-orange-600">Cohere Command</h6>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Strengths:</strong> RAG optimization, citations</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Prompt Style:</strong> Structured queries with context</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Best Techniques:</strong> RAG-enhanced prompting, citation requests</p>
@@ -411,7 +411,7 @@
                     </div>
                 </div>
 
-                <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-blue-300">
+                <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-orange-300">
                     <h4 class="text-lg font-semibold mb-3 text-blue-900">🔧 AWS Tools for Prompt Engineering</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                         <div class="bg-white/95 p-4 rounded-lg border border-slate-200">
@@ -448,12 +448,12 @@
 
         <!-- Task Statement 3.3 -->
         <div class="bg-white border border-slate-200 rounded-xl mb-6 overflow-hidden shadow-lg">
-            <div class="gradient-blue-header text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task3')">
+            <div class="gradient-title-background text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task3')">
                 <h3 class="text-xl font-semibold mb-2 text-blue-900">Task Statement 3.3: Describe the Training and Fine-tuning Process for Foundation Models</h3>
                 <button class="bg-transparent border-none text-white text-2xl cursor-pointer transition-transform duration-300 p-0 m-0 leading-none" id="toggle3">▼</button>
             </div>
             <div class="p-6 hidden" id="task3">
-                <div class="bg-slate-100/80 p-4 rounded-lg my-4 border-l-4 border-blue-300">
+                <div class="bg-slate-100/80 p-4 rounded-lg my-4 border-l-4 border-orange-300">
                     <h4 class="text-lg font-semibold mb-3 text-blue-900">🎯 Learning Objectives:</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600">Understand the complete model training lifecycle</li>
@@ -633,7 +633,7 @@
                     </ul>
                 </div>
 
-                <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-blue-300">
+                <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-orange-300">
                     <h4 class="text-lg font-semibold mb-3 text-blue-900">🔧 AWS Services for Model Training</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                         <div class="bg-white/95 p-4 rounded-lg border border-slate-200">
@@ -675,7 +675,7 @@
             </div>
         </div>
 
-        <div class="bg-slate-100/80 p-5 rounded-lg my-5 border-l-4 border-blue-300">
+        <div class="bg-slate-100/80 p-5 rounded-lg my-5 border-l-4 border-orange-300">
             <h4 class="text-lg font-semibold mb-3 text-blue-900">💡 Study Tips for Domain 3</h4>
             <ul class="list-none space-y-2 ml-0">
                 <li class="text-slate-600"><strong>Focus on Highest Weight:</strong> This is 28% of the exam - spend the most time here</li>
@@ -688,11 +688,11 @@
         </div>
 
         <div class="flex justify-between items-center gap-5 mt-10 mb-5 pt-5 border-t-2 border-slate-200">
-            <button class="bg-gradient-to-r from-blue-700 to-blue-900 text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:from-blue-900 hover:to-blue-700 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-slate-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='domain2-study-guide.html'">← Previous Domain</button>
-            <button class="bg-gradient-to-r from-blue-700 to-blue-900 text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:from-blue-900 hover:to-blue-700 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-slate-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='domain4-study-guide.html'">Next Domain →</button>
+            <button class="gradient-title-background text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-slate-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='domain2-study-guide.html'">← Previous Domain</button>
+            <button class="gradient-title-background text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-slate-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='domain4-study-guide.html'">Next Domain →</button>
         </div>
         <div style="text-align: center; margin-top: 20px;">
-            <button class="bg-gradient-to-r from-blue-700 to-blue-900 text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:from-blue-900 hover:to-blue-700 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-slate-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='index.html'" style="background: linear-gradient(135deg, #495057, #6c757d);">🏠 Back to Home</button>
+            <button class="gradient-title-background text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:opacity-90 hover:-translate-y-0.5 hover:shadow-lg disabled:bg-slate-200 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='index.html'" style="background: linear-gradient(135deg, #495057, #6c757d);">🏠 Back to Home</button>
         </div>
     </div>
 
