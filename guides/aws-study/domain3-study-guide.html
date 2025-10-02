@@ -72,7 +72,7 @@
         </div>
 
         <div class="bg-slate-50/90 p-6 rounded-xl mb-8 border-l-4 border-cyan-500 shadow-md">
-            <h2 class="text-2xl font-semibold mb-4 text-blue-900"><i data-lucide="clipboard" class="inline-block w-5 h-5"></i> Domain Overview</h2>
+            <h2 class="text-2xl font-semibold mb-4 text-slate-900"><i data-lucide="clipboard" class="inline-block w-5 h-5"></i> Domain Overview</h2>
             <p class="text-slate-600 leading-relaxed mb-3"><strong>Purpose:</strong> This is the highest-weighted domain, focusing on practical implementation of foundation models in real-world applications. It covers design considerations, prompt engineering, training/fine-tuning, and performance evaluation.</p>
             <p class="text-slate-600 leading-relaxed mb-3"><strong>Focus Areas:</strong> Application design, prompt optimization, model customization, performance evaluation, and deployment strategies.</p>
             <p class="text-slate-600 leading-relaxed mb-3"><strong>Depth Level:</strong> Hands-on implementation knowledge with deep understanding of AWS services and best practices.</p>
@@ -81,12 +81,12 @@
         <!-- Task Statement 3.1 -->
         <div class="bg-white border border-slate-200 rounded-xl mb-6 overflow-hidden shadow-lg">
             <div class="gradient-aws-dark text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task1')">
-                <h3 class="text-xl font-semibold mb-2 text-blue-900">Task Statement 3.1: Describe Design Considerations for Applications that Use Foundation Models</h3>
+                <h3 class="text-xl font-semibold mb-2 text-slate-900">Task Statement 3.1: Describe Design Considerations for Applications that Use Foundation Models</h3>
                 <button class="bg-transparent border-none text-white text-2xl cursor-pointer transition-transform duration-300 p-0 m-0 leading-none" id="toggle1">▼</button>
             </div>
             <div class="p-6 hidden" id="task1">
                 <div class="bg-slate-100/80 p-4 rounded-lg my-4 border-l-4 border-orange-300">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Learning Objectives:</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-slate-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Learning Objectives:</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600">Understand architectural patterns for foundation model applications</li>
                         <li class="text-slate-600">Identify design considerations for scalability, latency, and cost</li>
@@ -95,10 +95,10 @@
                     </ul>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="building" class="inline-block w-5 h-5"></i> Application Architecture Patterns</h4>
+                <h4 class="text-lg font-semibold mb-3 text-slate-900"><i data-lucide="building" class="inline-block w-5 h-5"></i> Application Architecture Patterns</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-blue-900">Direct API Integration</h5>
+                        <h5 class="text-base font-semibold mb-2 text-slate-900">Direct API Integration</h5>
                         <p class="text-slate-600 leading-relaxed mb-3">Simple applications that directly call foundation model APIs</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Use Cases:</strong> Chatbots, content generation tools, simple Q&A systems</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>AWS Services:</strong> Bedrock API, Lambda functions, API Gateway</p>
@@ -107,7 +107,7 @@
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Cons:</strong> Limited customization, dependency on model availability</p>
                     </div>
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-blue-900">Retrieval Augmented Generation (RAG)</h5>
+                        <h5 class="text-base font-semibold mb-2 text-slate-900">Retrieval Augmented Generation (RAG)</h5>
                         <p class="text-slate-600 leading-relaxed mb-3">Combines foundation models with external knowledge sources</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Components:</strong> Vector database, embedding models, retrieval logic</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>AWS Services:</strong> OpenSearch, Bedrock, Kendra, S3</p>
@@ -115,7 +115,7 @@
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Complexity:</strong> Higher implementation and maintenance overhead</p>
                     </div>
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-blue-900">Fine-tuned Model Deployment</h5>
+                        <h5 class="text-base font-semibold mb-2 text-slate-900">Fine-tuned Model Deployment</h5>
                         <p class="text-slate-600 leading-relaxed mb-3">Custom-trained models deployed on dedicated infrastructure</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Use Cases:</strong> Domain-specific tasks, proprietary data, performance optimization</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>AWS Services:</strong> SageMaker endpoints, Bedrock custom models</p>
@@ -123,7 +123,7 @@
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Considerations:</strong> Higher cost, longer development time</p>
                     </div>
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-blue-900">Multi-Agent Systems</h5>
+                        <h5 class="text-base font-semibold mb-2 text-slate-900">Multi-Agent Systems</h5>
                         <p class="text-slate-600 leading-relaxed mb-3">Multiple specialized models working together in workflows</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Orchestration:</strong> Step Functions, EventBridge, SQS</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Use Cases:</strong> Complex document processing, multi-step analysis</p>
@@ -133,11 +133,11 @@
                 </div>
 
                 <div class="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-dashed border-slate-200 rounded-lg p-8 text-center my-4 text-slate-600 italic">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="building" class="inline-block w-5 h-5"></i> Recommended Visual: Architecture Decision Tree</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-slate-900"><i data-lucide="building" class="inline-block w-5 h-5"></i> Recommended Visual: Architecture Decision Tree</h4>
                     <p class="text-slate-600 leading-relaxed mb-3">Create a decision flowchart: Simple Use Case → Direct API | Need Domain Knowledge → RAG | Need Custom Behavior → Fine-tuning | Complex Workflow → Multi-Agent</p>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="bar-chart" class="inline-block w-5 h-5"></i> Design Considerations Matrix</h4>
+                <h4 class="text-lg font-semibold mb-3 text-slate-900"><i data-lucide="bar-chart" class="inline-block w-5 h-5"></i> Design Considerations Matrix</h4>
                 <table class="comparison-table">
                     <thead>
                         <tr>
@@ -187,28 +187,28 @@
                     </tbody>
                 </table>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900">🔒 Security & Compliance Considerations</h4>
+                <h4 class="text-lg font-semibold mb-3 text-slate-900">🔒 Security & Compliance Considerations</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-blue-900">Data Privacy</h5>
+                        <h5 class="text-base font-semibold mb-2 text-slate-900">Data Privacy</h5>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Concerns:</strong> Sensitive data in prompts, model training data</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Solutions:</strong> Data anonymization, private endpoints, encryption</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>AWS Tools:</strong> VPC endpoints, KMS encryption, IAM policies</p>
                     </div>
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-blue-900">Model Security</h5>
+                        <h5 class="text-base font-semibold mb-2 text-slate-900">Model Security</h5>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Threats:</strong> Prompt injection, data extraction, model poisoning</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Mitigations:</strong> Input validation, output filtering, guardrails</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>AWS Features:</strong> Bedrock Guardrails, WAF, CloudTrail</p>
                     </div>
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-blue-900">Compliance Requirements</h5>
+                        <h5 class="text-base font-semibold mb-2 text-slate-900">Compliance Requirements</h5>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Standards:</strong> GDPR, HIPAA, SOC 2, PCI DSS</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Considerations:</strong> Data residency, audit trails, access controls</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>AWS Support:</strong> Compliance certifications, Config, CloudTrail</p>
                     </div>
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-blue-900">Intellectual Property</h5>
+                        <h5 class="text-base font-semibold mb-2 text-slate-900">Intellectual Property</h5>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Concerns:</strong> Code generation, content ownership, training data rights</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Protections:</strong> Usage agreements, output review, attribution</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Best Practices:</strong> Clear policies, human oversight, documentation</p>
@@ -216,7 +216,7 @@
                 </div>
 
                 <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-orange-300">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="wrench" class="inline-block w-5 h-5"></i> Key AWS Services for Application Design</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-slate-900"><i data-lucide="wrench" class="inline-block w-5 h-5"></i> Key AWS Services for Application Design</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                         <div class="bg-white/95 p-4 rounded-lg border border-slate-200">
                             <strong>Amazon Bedrock</strong><br>
@@ -246,7 +246,7 @@
                 </div>
 
                 <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-blue-400">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="tool" class="inline-block w-5 h-5"></i> Hands-On Practice</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-slate-900"><i data-lucide="tool" class="inline-block w-5 h-5"></i> Hands-On Practice</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600"><strong>Architecture Design:</strong> Design a RAG system for document Q&A</li>
                         <li class="text-slate-600"><strong>Security Implementation:</strong> Set up VPC endpoints for Bedrock</li>
@@ -261,12 +261,12 @@
         <!-- Task Statement 3.2 -->
         <div class="bg-white border border-slate-200 rounded-xl mb-6 overflow-hidden shadow-lg">
             <div class="gradient-aws-dark text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task2')">
-                <h3 class="text-xl font-semibold mb-2 text-blue-900">Task Statement 3.2: Choose Effective Prompt Engineering Techniques</h3>
+                <h3 class="text-xl font-semibold mb-2 text-slate-900">Task Statement 3.2: Choose Effective Prompt Engineering Techniques</h3>
                 <button class="bg-transparent border-none text-white text-2xl cursor-pointer transition-transform duration-300 p-0 m-0 leading-none" id="toggle2">▼</button>
             </div>
             <div class="p-6 hidden" id="task2">
                 <div class="bg-slate-100/80 p-4 rounded-lg my-4 border-l-4 border-orange-300">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Learning Objectives:</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-slate-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Learning Objectives:</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600">Master various prompt engineering techniques and patterns</li>
                         <li class="text-slate-600">Understand when to apply different prompting strategies</li>
@@ -275,9 +275,9 @@
                     </ul>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Core Prompt Engineering Techniques</h4>
+                <h4 class="text-lg font-semibold mb-3 text-slate-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Core Prompt Engineering Techniques</h4>
                 <div class="technique-card">
-                    <h5 class="text-base font-semibold mb-2 text-blue-900">Zero-Shot Prompting</h5>
+                    <h5 class="text-base font-semibold mb-2 text-slate-900">Zero-Shot Prompting</h5>
                     <p class="text-slate-600 leading-relaxed mb-3">Providing a task description without examples, relying on the model's pre-trained knowledge.</p>
                     <div class="bg-slate-800 text-slate-100 p-4 rounded-lg font-mono my-4 overflow-x-auto border border-cyan-500">
                         <span class="prompt-label">Prompt:</span> "Translate the following English text to French: 'Hello, how are you today?'"<br><br>
@@ -288,7 +288,7 @@
                 </div>
 
                 <div class="technique-card">
-                    <h5 class="text-base font-semibold mb-2 text-blue-900">Few-Shot Prompting</h5>
+                    <h5 class="text-base font-semibold mb-2 text-slate-900">Few-Shot Prompting</h5>
                     <p class="text-slate-600 leading-relaxed mb-3">Providing a few examples of the desired input-output pattern before the actual task.</p>
                     <div class="bg-slate-800 text-slate-100 p-4 rounded-lg font-mono my-4 overflow-x-auto border border-cyan-500">
                         <span class="prompt-label">Prompt:</span> "Classify the sentiment of these reviews:<br>
@@ -302,7 +302,7 @@
                 </div>
 
                 <div class="technique-card">
-                    <h5 class="text-base font-semibold mb-2 text-blue-900">Chain-of-Thought (CoT) Prompting</h5>
+                    <h5 class="text-base font-semibold mb-2 text-slate-900">Chain-of-Thought (CoT) Prompting</h5>
                     <p class="text-slate-600 leading-relaxed mb-3">Encouraging the model to show its reasoning process step-by-step.</p>
                     <div class="bg-slate-800 text-slate-100 p-4 rounded-lg font-mono my-4 overflow-x-auto border border-cyan-500">
                         <span class="prompt-label">Prompt:</span> "Solve this step by step: If a store has 15 apples and sells 7, then receives a shipment of 12 more apples, how many apples does the store have now?"<br><br>
@@ -318,7 +318,7 @@
                 </div>
 
                 <div class="technique-card">
-                    <h5 class="text-base font-semibold mb-2 text-blue-900">Role-Based Prompting</h5>
+                    <h5 class="text-base font-semibold mb-2 text-slate-900">Role-Based Prompting</h5>
                     <p class="text-slate-600 leading-relaxed mb-3">Assigning a specific role or persona to the model to guide its responses.</p>
                     <div class="bg-slate-800 text-slate-100 p-4 rounded-lg font-mono my-4 overflow-x-auto border border-cyan-500">
                         <span class="prompt-label">Prompt:</span> "You are a senior AWS solutions architect. Explain the benefits of using Amazon Bedrock for a startup building a customer service chatbot."<br><br>
@@ -328,31 +328,31 @@
                     <p class="text-slate-600 leading-relaxed mb-3"><strong>Benefits:</strong> More focused responses, appropriate tone and style</p>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="wrench" class="inline-block w-5 h-5"></i> Advanced Prompting Strategies</h4>
+                <h4 class="text-lg font-semibold mb-3 text-slate-900"><i data-lucide="wrench" class="inline-block w-5 h-5"></i> Advanced Prompting Strategies</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-blue-900">Template-Based Prompting</h5>
+                        <h5 class="text-base font-semibold mb-2 text-slate-900">Template-Based Prompting</h5>
                         <p class="text-slate-600 leading-relaxed mb-3">Using structured templates with placeholders for dynamic content</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Example:</strong> "Analyze the {document_type} for {specific_aspect} and provide {output_format}"</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Benefits:</strong> Consistency, reusability, easier testing</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>AWS Implementation:</strong> Parameter Store, Lambda environment variables</p>
                     </div>
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-blue-900">Iterative Refinement</h5>
+                        <h5 class="text-base font-semibold mb-2 text-slate-900">Iterative Refinement</h5>
                         <p class="text-slate-600 leading-relaxed mb-3">Progressively refining prompts based on model outputs</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Process:</strong> Initial prompt → Analyze output → Identify issues → Refine prompt</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Tools:</strong> A/B testing, version control, performance metrics</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>AWS Support:</strong> SageMaker Experiments, CloudWatch metrics</p>
                     </div>
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-blue-900">Context Window Optimization</h5>
+                        <h5 class="text-base font-semibold mb-2 text-slate-900">Context Window Optimization</h5>
                         <p class="text-slate-600 leading-relaxed mb-3">Efficiently using available context space for maximum effectiveness</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Strategies:</strong> Prioritize important information, use compression techniques</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Considerations:</strong> Token limits, cost implications, performance impact</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Monitoring:</strong> Track token usage and costs</p>
                     </div>
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-blue-900">Multi-Turn Conversations</h5>
+                        <h5 class="text-base font-semibold mb-2 text-slate-900">Multi-Turn Conversations</h5>
                         <p class="text-slate-600 leading-relaxed mb-3">Maintaining context across multiple interactions</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Challenges:</strong> Context management, memory limitations, state tracking</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Solutions:</strong> Session storage, context summarization, conversation history</p>
@@ -361,11 +361,11 @@
                 </div>
 
                 <div class="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-dashed border-slate-200 rounded-lg p-8 text-center my-4 text-slate-600 italic">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="bar-chart" class="inline-block w-5 h-5"></i> Recommended Visual: Prompt Engineering Decision Matrix</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-slate-900"><i data-lucide="bar-chart" class="inline-block w-5 h-5"></i> Recommended Visual: Prompt Engineering Decision Matrix</h4>
                     <p class="text-slate-600 leading-relaxed mb-3">Create a matrix showing Task Complexity (Simple/Complex) vs Available Examples (None/Few/Many) with recommended techniques in each quadrant.</p>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Model-Specific Considerations</h4>
+                <h4 class="text-lg font-semibold mb-3 text-slate-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Model-Specific Considerations</h4>
                 <div class="model-selection-matrix">
                     <div class="model-option">
                         <h6 class="text-sm font-semibold mb-2 text-orange-600">Anthropic Claude</h6>
@@ -414,7 +414,7 @@
                 </div>
 
                 <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-orange-300">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="wrench" class="inline-block w-5 h-5"></i> AWS Tools for Prompt Engineering</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-slate-900"><i data-lucide="wrench" class="inline-block w-5 h-5"></i> AWS Tools for Prompt Engineering</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                         <div class="bg-white/95 p-4 rounded-lg border border-slate-200">
                             <strong>Bedrock Playground</strong><br>
@@ -436,7 +436,7 @@
                 </div>
 
                 <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-blue-400">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="tool" class="inline-block w-5 h-5"></i> Hands-On Practice</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-slate-900"><i data-lucide="tool" class="inline-block w-5 h-5"></i> Hands-On Practice</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600"><strong>Prompt Comparison:</strong> Test the same task with different prompting techniques</li>
                         <li class="text-slate-600"><strong>Model Testing:</strong> Compare how different models respond to the same prompts</li>
@@ -451,12 +451,12 @@
         <!-- Task Statement 3.3 -->
         <div class="bg-white border border-slate-200 rounded-xl mb-6 overflow-hidden shadow-lg">
             <div class="gradient-aws-dark text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task3')">
-                <h3 class="text-xl font-semibold mb-2 text-blue-900">Task Statement 3.3: Describe the Training and Fine-tuning Process for Foundation Models</h3>
+                <h3 class="text-xl font-semibold mb-2 text-slate-900">Task Statement 3.3: Describe the Training and Fine-tuning Process for Foundation Models</h3>
                 <button class="bg-transparent border-none text-white text-2xl cursor-pointer transition-transform duration-300 p-0 m-0 leading-none" id="toggle3">▼</button>
             </div>
             <div class="p-6 hidden" id="task3">
                 <div class="bg-slate-100/80 p-4 rounded-lg my-4 border-l-4 border-orange-300">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Learning Objectives:</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-slate-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Learning Objectives:</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600">Understand the complete model training lifecycle</li>
                         <li class="text-slate-600">Distinguish between pre-training, fine-tuning, and other adaptation methods</li>
@@ -465,10 +465,10 @@
                     </ul>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="refresh-cw" class="inline-block w-5 h-5"></i> Foundation Model Training Lifecycle</h4>
+                <h4 class="text-lg font-semibold mb-3 text-slate-900"><i data-lucide="refresh-cw" class="inline-block w-5 h-5"></i> Foundation Model Training Lifecycle</h4>
                 <div class="architecture-container">
                     <div class="architecture-step">
-                        <h5 class="text-base font-semibold mb-2 text-blue-900">Pre-training Phase</h5>
+                        <h5 class="text-base font-semibold mb-2 text-slate-900">Pre-training Phase</h5>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Purpose:</strong> Train base model on large, diverse datasets to learn general language patterns</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Data:</strong> Billions of tokens from books, web pages, articles, code repositories</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Duration:</strong> Weeks to months with massive compute resources</p>
@@ -476,21 +476,21 @@
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>AWS Context:</strong> Typically done by model providers (Anthropic, AI21, etc.)</p>
                     </div>
                     <div class="architecture-step">
-                        <h5 class="text-base font-semibold mb-2 text-blue-900">Instruction Tuning</h5>
+                        <h5 class="text-base font-semibold mb-2 text-slate-900">Instruction Tuning</h5>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Purpose:</strong> Teach model to follow instructions and respond helpfully</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Data:</strong> Instruction-response pairs, task-specific examples</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Techniques:</strong> Supervised fine-tuning on curated datasets</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Outcome:</strong> Model that can understand and execute various tasks</p>
                     </div>
                     <div class="architecture-step">
-                        <h5 class="text-base font-semibold mb-2 text-blue-900">Alignment Training (RLHF)</h5>
+                        <h5 class="text-base font-semibold mb-2 text-slate-900">Alignment Training (RLHF)</h5>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Purpose:</strong> Align model behavior with human preferences and values</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Method:</strong> Reinforcement Learning from Human Feedback</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Process:</strong> Human rating → Reward model training → Policy optimization</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Goals:</strong> Helpful, harmless, honest responses</p>
                     </div>
                     <div class="architecture-step">
-                        <h5 class="text-base font-semibold mb-2 text-blue-900">Domain-Specific Fine-tuning</h5>
+                        <h5 class="text-base font-semibold mb-2 text-slate-900">Domain-Specific Fine-tuning</h5>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Purpose:</strong> Adapt model for specific domains, tasks, or organizations</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Data:</strong> Domain-specific datasets, proprietary information</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>AWS Services:</strong> Bedrock custom models, SageMaker training jobs</p>
@@ -498,10 +498,10 @@
                     </div>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Fine-tuning Approaches and When to Use Them</h4>
+                <h4 class="text-lg font-semibold mb-3 text-slate-900"><i data-lucide="target" class="inline-block w-5 h-5"></i> Fine-tuning Approaches and When to Use Them</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-blue-900">Full Fine-tuning</h5>
+                        <h5 class="text-base font-semibold mb-2 text-slate-900">Full Fine-tuning</h5>
                         <p class="text-slate-600 leading-relaxed mb-3">Updating all model parameters with new data</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>When to Use:</strong> Large datasets, significant domain shift, maximum performance needed</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Requirements:</strong> Substantial compute resources, large datasets (10K+ examples)</p>
@@ -509,7 +509,7 @@
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Cost:</strong> High - requires significant compute time and resources</p>
                     </div>
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-blue-900">Parameter-Efficient Fine-tuning (PEFT)</h5>
+                        <h5 class="text-base font-semibold mb-2 text-slate-900">Parameter-Efficient Fine-tuning (PEFT)</h5>
                         <p class="text-slate-600 leading-relaxed mb-3">Updating only a small subset of model parameters</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Techniques:</strong> LoRA (Low-Rank Adaptation), Adapters, Prefix tuning</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Benefits:</strong> Lower compute cost, faster training, reduced storage</p>
@@ -517,7 +517,7 @@
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>AWS Support:</strong> Available in SageMaker JumpStart</p>
                     </div>
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-blue-900">In-Context Learning</h5>
+                        <h5 class="text-base font-semibold mb-2 text-slate-900">In-Context Learning</h5>
                         <p class="text-slate-600 leading-relaxed mb-3">Providing examples within the prompt without updating model parameters</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Advantages:</strong> No training required, immediate results, easy to iterate</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Limitations:</strong> Context window limits, higher inference costs</p>
@@ -525,7 +525,7 @@
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>AWS Implementation:</strong> Direct Bedrock API calls with examples</p>
                     </div>
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-blue-900">Retrieval Augmented Generation (RAG)</h5>
+                        <h5 class="text-base font-semibold mb-2 text-slate-900">Retrieval Augmented Generation (RAG)</h5>
                         <p class="text-slate-600 leading-relaxed mb-3">Enhancing model responses with retrieved external information</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Components:</strong> Vector database, embedding model, retrieval system</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Benefits:</strong> Up-to-date information, no model retraining needed</p>
@@ -535,11 +535,11 @@
                 </div>
 
                 <div class="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-dashed border-slate-200 rounded-lg p-8 text-center my-4 text-slate-600 italic">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="bar-chart" class="inline-block w-5 h-5"></i> Recommended Visual: Fine-tuning Decision Tree</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-slate-900"><i data-lucide="bar-chart" class="inline-block w-5 h-5"></i> Recommended Visual: Fine-tuning Decision Tree</h4>
                     <p class="text-slate-600 leading-relaxed mb-3">Create a decision tree: Data Size → Training Budget → Performance Requirements → Recommended Approach (In-Context/RAG/PEFT/Full Fine-tuning)</p>
                 </div>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="scale" class="inline-block w-5 h-5"></i> Approach Comparison Matrix</h4>
+                <h4 class="text-lg font-semibold mb-3 text-slate-900"><i data-lucide="scale" class="inline-block w-5 h-5"></i> Approach Comparison Matrix</h4>
                 <table class="comparison-table">
                     <thead>
                         <tr>
@@ -587,10 +587,10 @@
                     </tbody>
                 </table>
 
-                <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="wrench" class="inline-block w-5 h-5"></i> AWS Fine-tuning Implementation</h4>
+                <h4 class="text-lg font-semibold mb-3 text-slate-900"><i data-lucide="wrench" class="inline-block w-5 h-5"></i> AWS Fine-tuning Implementation</h4>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-blue-900">Amazon Bedrock Custom Models</h5>
+                        <h5 class="text-base font-semibold mb-2 text-slate-900">Amazon Bedrock Custom Models</h5>
                         <p class="text-slate-600 leading-relaxed mb-3">Managed fine-tuning service for supported foundation models</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Supported Models:</strong> Amazon Titan, select third-party models</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Process:</strong> Upload data → Configure training → Monitor progress → Deploy</p>
@@ -598,7 +598,7 @@
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Limitations:</strong> Limited model selection, less customization</p>
                     </div>
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-blue-900">SageMaker Training Jobs</h5>
+                        <h5 class="text-base font-semibold mb-2 text-slate-900">SageMaker Training Jobs</h5>
                         <p class="text-slate-600 leading-relaxed mb-3">Full control over training process with custom environments</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Capabilities:</strong> Any model, custom training scripts, distributed training</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Instance Types:</strong> ml.p4d, ml.p5, ml.trn1 for large model training</p>
@@ -606,7 +606,7 @@
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Complexity:</strong> Requires ML engineering expertise</p>
                     </div>
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-blue-900">SageMaker JumpStart</h5>
+                        <h5 class="text-base font-semibold mb-2 text-slate-900">SageMaker JumpStart</h5>
                         <p class="text-slate-600 leading-relaxed mb-3">Pre-configured training environments for popular models</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Models Available:</strong> LLaMA, Falcon, FLAN-T5, and many others</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Features:</strong> One-click deployment, example notebooks, PEFT support</p>
@@ -614,7 +614,7 @@
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Use Cases:</strong> Rapid prototyping, standard fine-tuning workflows</p>
                     </div>
                     <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                        <h5 class="text-base font-semibold mb-2 text-blue-900">Data Preparation Considerations</h5>
+                        <h5 class="text-base font-semibold mb-2 text-slate-900">Data Preparation Considerations</h5>
                         <p class="text-slate-600 leading-relaxed mb-3">Critical factors for successful fine-tuning</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Quality:</strong> High-quality, relevant examples</p>
                         <p class="text-slate-600 leading-relaxed mb-3"><strong>Quantity:</strong> Sufficient data for the chosen approach</p>
@@ -624,7 +624,7 @@
                 </div>
 
                 <div class="bg-blue-50/80 border border-blue-200 rounded-lg p-4 my-4">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="lightbulb" class="inline-block w-5 h-5"></i> Fine-tuning Best Practices</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-slate-900"><i data-lucide="lightbulb" class="inline-block w-5 h-5"></i> Fine-tuning Best Practices</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600"><strong>Start Small:</strong> Begin with in-context learning or RAG before committing to fine-tuning</li>
                         <li class="text-slate-600"><strong>Data Quality:</strong> Invest in high-quality, diverse training data</li>
@@ -636,7 +636,7 @@
                 </div>
 
                 <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-orange-300">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="wrench" class="inline-block w-5 h-5"></i> AWS Services for Model Training</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-slate-900"><i data-lucide="wrench" class="inline-block w-5 h-5"></i> AWS Services for Model Training</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
                         <div class="bg-white/95 p-4 rounded-lg border border-slate-200">
                             <strong>Amazon Bedrock</strong><br>
@@ -665,7 +665,7 @@
                 </div>
 
                 <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-blue-400">
-                    <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="tool" class="inline-block w-5 h-5"></i> Hands-On Practice</h4>
+                    <h4 class="text-lg font-semibold mb-3 text-slate-900"><i data-lucide="tool" class="inline-block w-5 h-5"></i> Hands-On Practice</h4>
                     <ul class="list-none space-y-2 ml-0">
                         <li class="text-slate-600"><strong>Bedrock Custom Models:</strong> Explore fine-tuning options in Bedrock</li>
                         <li class="text-slate-600"><strong>SageMaker Training:</strong> Set up a training job for a foundation model</li>
@@ -678,7 +678,7 @@
         </div>
 
         <div class="bg-slate-100/80 p-5 rounded-lg my-5 border-l-4 border-orange-300">
-            <h4 class="text-lg font-semibold mb-3 text-blue-900"><i data-lucide="lightbulb" class="inline-block w-5 h-5"></i> Study Tips for Domain 3</h4>
+            <h4 class="text-lg font-semibold mb-3 text-slate-900"><i data-lucide="lightbulb" class="inline-block w-5 h-5"></i> Study Tips for Domain 3</h4>
             <ul class="list-none space-y-2 ml-0">
                 <li class="text-slate-600"><strong>Focus on Highest Weight:</strong> This is 28% of the exam - spend the most time here</li>
                 <li class="text-slate-600"><strong>Hands-On Practice:</strong> Extensive hands-on with Bedrock and SageMaker</li>

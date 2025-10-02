@@ -14,12 +14,12 @@
     <div class="max-w-7xl mx-auto p-10 bg-white/75 rounded-2xl shadow-2xl">
         <h1 class="text-5xl font-bold mb-4 drop-shadow-lg">🌐 Port Mapping Guide</h1>
 
-        <h2 class="text-2xl font-semibold mb-4 text-blue-900">Overview</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-slate-900">Overview</h2>
         <p class="text-slate-600 leading-relaxed mb-3">The container exposes common development ports, allowing you to run web applications inside the container and access them from your host browser.</p>
 
-        <h2 class="text-2xl font-semibold mb-4 text-blue-900">Exposed Ports</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-slate-900">Exposed Ports</h2>
 
-        <h3 class="text-xl font-semibold mb-2 text-blue-900">Frontend Development</h3>
+        <h3 class="text-xl font-semibold mb-2 text-slate-900">Frontend Development</h3>
         <table>
             <thead>
                 <tr>
@@ -37,7 +37,7 @@
             </tbody>
         </table>
 
-        <h3 class="text-xl font-semibold mb-2 text-blue-900">Backend Development</h3>
+        <h3 class="text-xl font-semibold mb-2 text-slate-900">Backend Development</h3>
         <table>
             <thead>
                 <tr>
@@ -54,7 +54,7 @@
             </tbody>
         </table>
 
-        <h2 class="text-2xl font-semibold mb-4 text-blue-900">Important: Binding to 0.0.0.0</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-slate-900">Important: Binding to 0.0.0.0</h2>
         
         <div class="success">
             <p class="text-slate-600 leading-relaxed mb-3"><strong><i data-lucide="check-circle" class="inline-block w-5 h-5"></i> Correct:</strong></p>
@@ -66,9 +66,9 @@
             <pre><code>app.run(host='localhost', port=5000)  # Won't be accessible from host!</code></pre>
         </div>
 
-        <h2 class="text-2xl font-semibold mb-4 text-blue-900">Quick Examples</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-slate-900">Quick Examples</h2>
 
-        <h3 class="text-xl font-semibold mb-2 text-blue-900">React Application</h3>
+        <h3 class="text-xl font-semibold mb-2 text-slate-900">React Application</h3>
         <pre><code># Inside container
 cd workspace/my-react-app
 npm create vite@latest . -- --template react
@@ -77,21 +77,21 @@ npm run dev
 
 # Access from host: http://localhost:5173</code></pre>
 
-        <h3 class="text-xl font-semibold mb-2 text-blue-900">Flask API</h3>
+        <h3 class="text-xl font-semibold mb-2 text-slate-900">Flask API</h3>
         <pre><code># Inside container
 cd workspace/my-api
 python app.py  # Must bind to 0.0.0.0
 
 # Access from host: http://localhost:5000</code></pre>
 
-        <h3 class="text-xl font-semibold mb-2 text-blue-900">Next.js Application</h3>
+        <h3 class="text-xl font-semibold mb-2 text-slate-900">Next.js Application</h3>
         <pre><code># Inside container
 cd workspace/my-nextjs-app
 npm run dev
 
 # Access from host: http://localhost:3000</code></pre>
 
-        <h2 class="text-2xl font-semibold mb-4 text-blue-900">Best Practices</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-slate-900">Best Practices</h2>
         <ul class="list-none space-y-2 ml-0">
             <li class="text-slate-600">Always bind to <code>0.0.0.0</code> (not localhost)</li>
             <li class="text-slate-600">Access from host via <code>http://localhost:PORT</code></li>
@@ -100,7 +100,7 @@ npm run dev
             <li class="text-slate-600">Add custom ports in <code>docker-compose.yml</code> if needed</li>
         </ul>
 
-        <h2 class="text-2xl font-semibold mb-4 text-blue-900">Full Documentation</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-slate-900">Full Documentation</h2>
         <p class="text-slate-600 leading-relaxed mb-3">See <code>guides/port-mapping-guide.md</code> for complete examples, troubleshooting, and advanced usage.</p>
     </div>
 
