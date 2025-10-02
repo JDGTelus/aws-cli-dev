@@ -2,7 +2,9 @@
 
 Complete containerized development environment for AWS AI Practitioner certification preparation.
 
-**Base Image:** Alpine Linux (Latest) - Tiny, secure, multi-platform with Neovim 0.10+
+**Base Image:** Alpine Linux (Latest) - Tiny, secure, multi-platform with Neovim 0.11+
+
+**Note:** Configured for Apple Silicon (ARM) compatibility with platform: linux/amd64
 
 📖 **New to Alpine?** See [guides/alpine-linux-guide.md](guides/alpine-linux-guide.md)
 
@@ -153,15 +155,15 @@ docker-compose up -d
 ## Key Features
 
 ### Installed Tools
-- AWS CLI v2
-- Python 3 (aliased as `python`)
+- **AWS CLI** (pip-based installation for ARM compatibility)
+- Python 3.12+ (aliased as `python`)
 - pip (aliased from `pip3`)
 - boto3, pylint, flake8, black, autopep8, pyright
-- Node.js & npm
+- Node.js 22+ & npm
 - TypeScript, ESLint, Prettier
 - **Neovim 0.11+** (Latest from Alpine repos with vim-plug pre-installed)
 - Tmux (bare installation)
-- Git, jq, ripgrep, fd
+- Git, jq, ripgrep, fd, groff, less
 - Zsh with Oh-My-Zsh
 
 ### Zsh Features
