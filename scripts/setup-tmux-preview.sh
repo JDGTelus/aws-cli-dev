@@ -26,6 +26,9 @@ fi
 
 echo "[3/5] Writing tmux configuration..."
 cat > "$TMUX_CONF" << 'TMUXCONF'
+set -g default-terminal "tmux-256color"
+set -ga terminal-overrides ",*256col*:Tc"
+
 unbind r
 bind r source-file ~/.tmux.conf
 

@@ -22,8 +22,8 @@ docker-compose exec aws-cli-env zsh
 - **Python 3** with boto3 and development tools
 - **Node.js** with TypeScript support
 - **Neovim** - Ready for custom configuration
-- **Tmux** - Terminal multiplexer ready for plugins
-- **Zsh + Oh-My-Zsh** - Enhanced shell with AWS region in prompt
+- **Tmux** - 256-color and UTF-8 support, ready for plugins
+- **Zsh + Oh-My-Zsh** - Enhanced shell with UTF-8 locale and AWS region in prompt
 - **Independent AWS config** - Isolated from host credentials
 - **Port Mapping** - Common dev/prod ports exposed for web development
 
@@ -79,9 +79,13 @@ This installs:
 - **TPM** (Tmux Plugin Manager)
 - **tmux-sensible** - Sensible defaults
 - **tmux-resurrect** - Session persistence
-- **Dracula theme** - Beautiful dark theme
+- **Dracula theme** - Beautiful dark theme with powerline
+- **256-color support** - Full color range and true color
+- **UTF-8 support** - Proper rendering of special characters
 - **Mouse support** and vim-like navigation
 - **Status bar** with RAM usage and git info
+
+**Note:** The container is pre-configured with UTF-8 locale and tmux terminal settings for full character support.
 
 **Dependencies:** Git is required (pre-installed in container).
 
@@ -162,6 +166,7 @@ docker-compose up -d
 
 ### Zsh Features
 - **Custom Prompt** - Shows current AWS region when configured
+- **UTF-8 Locale** - Full character support (en_US.UTF-8)
 - **Git Integration** - Branch and status in prompt
 - **No Plugin Errors** - Clean startup, no missing dependencies
 
@@ -176,6 +181,8 @@ docker-compose up -d
 ### Environment Variables
 - `EDITOR=nvim` - Default editor
 - `SHELL=/bin/zsh` - Default shell
+- `LANG=en_US.UTF-8` - UTF-8 locale support
+- `LC_ALL=en_US.UTF-8` - UTF-8 locale support
 - `AWS_DEFAULT_REGION=us-east-1` - Default AWS region
 - `AWS_DEFAULT_OUTPUT=json` - Default AWS output format
 
