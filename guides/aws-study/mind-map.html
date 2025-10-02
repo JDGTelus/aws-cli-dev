@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS AI Practitioner - Mind Map</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .mind-map-container {
+            position: relative;
+            width: 100%;
+            height: calc(100vh - 200px);
+            min-height: 600px;
+            background: #f8fafb;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 2px solid #cbd5e0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-viewport {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            cursor: grab;
+            position: relative;
+        }
+
+        .image-viewport:active {
+            cursor: grabbing;
+        }
+
+        .mind-map-image {
+            position: absolute;
+            max-width: none;
+            transition: transform 0.1s ease-out;
+            transform-origin: center center;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .controls-panel {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            padding: 15px 25px;
+            border-radius: 50px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            z-index: 100;
+            border: 2px solid #cbd5e0;
+        }
+
+        .control-btn {
+            background: linear-gradient(135deg, #2c5282, #1e3a5f);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(44, 82, 130, 0.2);
+        }
+
+        .control-btn:hover {
+            background: linear-gradient(135deg, #3d5a80, #2c5282);
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(44, 82, 130, 0.3);
+        }
+
+        .control-btn:active {
+            transform: scale(0.95);
+        }
+
+        .zoom-level {
+            color: #1e3a5f;
+            font-weight: 600;
+            font-size: 14px;
+            min-width: 60px;
+            text-align: center;
+            padding: 0 10px;
+        }
+
+        .instructions {
+            background: rgba(237, 242, 247, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid #4a7ba7;
+        }
+
+        .instructions h3 {
+            color: #1e3a5f;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .instructions ul {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 10px;
+        }
+
+        .instructions li {
+            color: #2d3748;
+            padding: 5px 0;
+            font-size: 0.95em;
+        }
+
+        .instructions li:before {
+            content: "→ ";
+            color: #4a7ba7;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        .fullscreen-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #2c5282;
+            border: 2px solid #cbd5e0;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .fullscreen-btn:hover {
+            background: white;
+            box-shadow: 0 4px 12px rgba(44, 82, 130, 0.2);
+        }
+
+        .loading-indicator {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #4a7ba7;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .controls-panel {
+                padding: 10px 15px;
+                gap: 10px;
+            }
+
+            .control-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+
+            .instructions ul {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🗺️ AWS AI Practitioner Mind Map</h1>
+            <p>Visual Overview of Key Concepts Across All Domains</p>
+        </div>
+
+        <div class="instructions">
+            <h3>📖 How to Navigate the Mind Map</h3>
+            <ul>
+                <li><strong>Zoom:</strong> Use the +/- buttons or mouse wheel</li>
+                <li><strong>Pan:</strong> Click and drag to move around</li>
+                <li><strong>Reset:</strong> Click the reset button to return to original view</li>
+                <li><strong>Fullscreen:</strong> Click the fullscreen button for immersive viewing</li>
+                <li><strong>Keyboard:</strong> Use +/- keys to zoom, R to reset</li>
+            </ul>
+        </div>
+
+        <div class="mind-map-container">
+            <button class="fullscreen-btn" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+            <div class="image-viewport" id="viewport">
+                <div class="loading-indicator" id="loading">Loading mind map...</div>
+                <img 
+                    src="Mind Map - Key Concepts per Domain.png" 
+                    alt="AWS AI Practitioner Mind Map" 
+                    class="mind-map-image"
+                    id="mindMapImage"
+                    onload="imageLoaded()"
+                    onerror="imageError()"
+                >
+            </div>
+            <div class="controls-panel">
+                <button class="control-btn" onclick="zoomOut()" title="Zoom Out">−</button>
+                <div class="zoom-level" id="zoomLevel">100%</div>
+                <button class="control-btn" onclick="zoomIn()" title="Zoom In">+</button>
+                <button class="control-btn" onclick="resetView()" title="Reset View">⟲</button>
+                <button class="control-btn" onclick="fitToScreen()" title="Fit to Screen">⛶</button>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <button class="nav-btn" onclick="window.location.href='index.html'">← Back to Home</button>
+        </div>
+    </div>
+
+    <script>
+        let currentZoom = 1;
+        let isDragging = false;
+        let startX, startY;
+        let translateX = 0;
+        let translateY = 0;
+        let initialImageWidth, initialImageHeight;
+
+        const viewport = document.getElementById('viewport');
+        const image = document.getElementById('mindMapImage');
+        const zoomLevelDisplay = document.getElementById('zoomLevel');
+
+        function imageLoaded() {
+            document.getElementById('loading').style.display = 'none';
+            initialImageWidth = image.naturalWidth;
+            initialImageHeight = image.naturalHeight;
+            fitToScreen();
+        }
+
+        function imageError() {
+            document.getElementById('loading').textContent = 'Error loading image. Please refresh the page.';
+            document.getElementById('loading').style.color = '#dc3545';
+        }
+
+        function updateTransform() {
+            image.style.transform = `translate(${translateX}px, ${translateY}px) scale(${currentZoom})`;
+            zoomLevelDisplay.textContent = Math.round(currentZoom * 100) + '%';
+        }
+
+        function zoomIn() {
+            currentZoom = Math.min(currentZoom * 1.2, 5);
+            updateTransform();
+        }
+
+        function zoomOut() {
+            currentZoom = Math.max(currentZoom / 1.2, 0.1);
+            updateTransform();
+        }
+
+        function resetView() {
+            currentZoom = 1;
+            translateX = 0;
+            translateY = 0;
+            updateTransform();
+            setTimeout(centerImage, 50);
+        }
+
+        function fitToScreen() {
+            const viewportRect = viewport.getBoundingClientRect();
+            const scaleX = viewportRect.width / initialImageWidth;
+            const scaleY = viewportRect.height / initialImageHeight;
+            currentZoom = Math.min(scaleX, scaleY) * 0.95;
+            translateX = 0;
+            translateY = 0;
+            updateTransform();
+            setTimeout(centerImage, 50);
+        }
+
+        function centerImage() {
+            const viewportRect = viewport.getBoundingClientRect();
+            const imageRect = image.getBoundingClientRect();
+            
+            translateX = (viewportRect.width - imageRect.width) / 2;
+            translateY = (viewportRect.height - imageRect.height) / 2;
+            updateTransform();
+        }
+
+        function toggleFullscreen() {
+            const container = document.querySelector('.mind-map-container');
+            if (!document.fullscreenElement) {
+                container.requestFullscreen().catch(err => {
+                    console.log('Fullscreen error:', err);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
+        // Mouse drag functionality
+        viewport.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.clientX - translateX;
+            startY = e.clientY - translateY;
+            viewport.style.cursor = 'grabbing';
+        });
+
+        viewport.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            translateX = e.clientX - startX;
+            translateY = e.clientY - startY;
+            updateTransform();
+        });
+
+        viewport.addEventListener('mouseup', () => {
+            isDragging = false;
+            viewport.style.cursor = 'grab';
+        });
+
+        viewport.addEventListener('mouseleave', () => {
+            isDragging = false;
+            viewport.style.cursor = 'grab';
+        });
+
+        // Touch support for mobile
+        let touchStartX, touchStartY;
+        viewport.addEventListener('touchstart', (e) => {
+            if (e.touches.length === 1) {
+                touchStartX = e.touches[0].clientX - translateX;
+                touchStartY = e.touches[0].clientY - translateY;
+            }
+        });
+
+        viewport.addEventListener('touchmove', (e) => {
+            if (e.touches.length === 1) {
+                e.preventDefault();
+                translateX = e.touches[0].clientX - touchStartX;
+                translateY = e.touches[0].clientY - touchStartY;
+                updateTransform();
+            }
+        });
+
+        // Mouse wheel zoom
+        viewport.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            const delta = e.deltaY;
+            
+            if (delta < 0) {
+                zoomIn();
+            } else {
+                zoomOut();
+            }
+        }, { passive: false });
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '+' || e.key === '=') {
+                e.preventDefault();
+                zoomIn();
+            } else if (e.key === '-' || e.key === '_') {
+                e.preventDefault();
+                zoomOut();
+            } else if (e.key === 'r' || e.key === 'R') {
+                e.preventDefault();
+                resetView();
+            } else if (e.key === 'f' || e.key === 'F') {
+                e.preventDefault();
+                fitToScreen();
+            }
+        });
+
+        // Prevent context menu on image
+        image.addEventListener('contextmenu', (e) => e.preventDefault());
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (currentZoom < 1) {
+                fitToScreen();
+            }
+        });
+    </script>
+</body>
+</html>

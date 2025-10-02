@@ -1,0 +1,706 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS AI Practitioner - Domain 5: Security, Compliance, and Governance for AI Solutions</title>
+    <link rel="stylesheet" href="../style.css">
+
+    <script>
+      
+      const files = {
+        
+      }
+    
+
+
+      window.fs = {}
+      window.fs.readFile = (fileName) => {
+        // return array buffer
+        return new Promise((resolve) => {
+          const content = files[fileName]
+          const decoded = atob(content)
+          const arr = new Uint8Array(decoded.length)
+          for (let i = 0; i < decoded.length; i++) {
+            arr[i] = decoded.charCodeAt(i)
+          }
+          resolve(arr)
+        })
+      }
+
+      // stub out window.user.get, window.db.get and window.db.set so that it works when you download the html doc
+      window.db = {}
+      window.db.get = (key) => {
+        // use localStorage to store the artifact
+        const value = localStorage.getItem(key)
+        if (value) {
+          return JSON.parse(value)
+        }
+
+        return null
+      }
+
+      window.db.set = (key, value) => {
+        // use localStorage to store the artifact
+        localStorage.setItem(key, JSON.stringify(value))
+      }
+
+      window.user = {}
+      window.user.get = () => {
+        return {
+          userId: "user-id-placeholder",
+          email: "placeholder@test.com"
+        }
+      }
+
+    </script>
+    </head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔐 Domain 5: Security, Compliance, and Governance for AI Solutions</h1>
+            <p>AWS AI Practitioner Certification Study Guide</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <p><strong>Weight: 14% of exam</strong> | <strong>Study Time: 2-3 weeks</strong></p>
+        </div>
+
+        <div class="domain-overview">
+            <h2>📋 Domain Overview</h2>
+            <p><strong>Purpose:</strong> This domain covers securing AI systems, ensuring compliance with regulations, and implementing governance frameworks for AI solutions throughout their lifecycle.</p>
+            <p><strong>Focus Areas:</strong> AI system security, data protection, compliance frameworks (GDPR, HIPAA), governance policies, audit trails, and risk management.</p>
+            <p><strong>Depth Level:</strong> Practical implementation knowledge of AWS security services and compliance frameworks specific to AI workloads.</p>
+        </div>
+
+        <!-- Task Statement 5.1 -->
+        <div class="task-statement">
+            <div class="task-header" onclick="toggleTask('task1')">
+                <h3>Task Statement 5.1: Explain Methods to Secure AI Systems</h3>
+                <button class="toggle-btn" id="toggle1">▼</button>
+            </div>
+            <div class="task-content" id="task1">
+                <div class="objectives">
+                    <h4>🎯 Learning Objectives:</h4>
+                    <ul>
+                        <li>Identify AWS services and features for securing AI systems</li>
+                        <li>Understand data encryption methods for AI workloads</li>
+                        <li>Implement access controls and identity management for AI services</li>
+                        <li>Configure network security for AI applications</li>
+                    </ul>
+                </div>
+
+                <h4>🔒 Multi-Layer Security Architecture for AI Systems</h4>
+                <div class="concept-grid">
+                    <div class="security-layer">
+                        <h5>Infrastructure Security</h5>
+                        <p><strong>Network Isolation:</strong> VPC, subnets, security groups, NACLs</p>
+                        <p><strong>Compute Security:</strong> EC2 instance hardening, container security</p>
+                        <p><strong>Storage Security:</strong> S3 bucket policies, EBS encryption</p>
+                        <p><strong>Key Services:</strong> VPC, Security Groups, AWS WAF, Shield</p>
+                        <p><strong>AI Context:</strong> Isolated environments for model training and inference</p>
+                    </div>
+                    <div class="security-layer">
+                        <h5>Application Security</h5>
+                        <p><strong>API Security:</strong> API Gateway authentication, throttling, monitoring</p>
+                        <p><strong>Code Security:</strong> Secure coding practices, dependency scanning</p>
+                        <p><strong>Runtime Security:</strong> Application firewalls, intrusion detection</p>
+                        <p><strong>Key Services:</strong> API Gateway, CodeGuru, Inspector</p>
+                        <p><strong>AI Context:</strong> Securing model APIs and AI application endpoints</p>
+                    </div>
+                    <div class="security-layer">
+                        <h5>Data Security</h5>
+                        <p><strong>Encryption:</strong> At-rest, in-transit, and in-use encryption</p>
+                        <p><strong>Access Control:</strong> Fine-grained permissions, data classification</p>
+                        <p><strong>Data Loss Prevention:</strong> Monitoring, alerting, blocking</p>
+                        <p><strong>Key Services:</strong> KMS, Secrets Manager, Macie</p>
+                        <p><strong>AI Context:</strong> Protecting training data, model artifacts, and predictions</p>
+                    </div>
+                    <div class="security-layer">
+                        <h5>Identity & Access Management</h5>
+                        <p><strong>Authentication:</strong> Multi-factor authentication, federated access</p>
+                        <p><strong>Authorization:</strong> Role-based access control, least privilege</p>
+                        <p><strong>Monitoring:</strong> Access logging, anomaly detection</p>
+                        <p><strong>Key Services:</strong> IAM, Cognito, SSO, Directory Service</p>
+                        <p><strong>AI Context:</strong> Controlling access to AI services and model resources</p>
+                    </div>
+                </div>
+
+                <h4>🔐 Data Encryption for AI Workloads</h4>
+                <div class="encryption-type at-rest">
+                    <h5>Encryption at Rest</h5>
+                    <p><strong>Purpose:</strong> Protect stored data including training datasets, model artifacts, and logs</p>
+                    <p><strong>AWS Implementation:</strong> S3 default encryption, EBS encryption, RDS encryption</p>
+                    <p><strong>Key Management:</strong> AWS KMS customer-managed keys for enhanced control</p>
+                    <p><strong>AI Services:</strong> SageMaker encrypts training data, model artifacts, and endpoints</p>
+                    <p><strong>Best Practices:</strong> Use separate keys for different data classifications</p>
+                </div>
+
+                <div class="encryption-type in-transit">
+                    <h5>Encryption in Transit</h5>
+                    <p><strong>Purpose:</strong> Protect data moving between services and to/from clients</p>
+                    <p><strong>AWS Implementation:</strong> TLS/SSL for all API calls, VPC endpoints for internal traffic</p>
+                    <p><strong>Certificate Management:</strong> AWS Certificate Manager for SSL/TLS certificates</p>
+                    <p><strong>AI Services:</strong> Bedrock and SageMaker use HTTPS for all communications</p>
+                    <p><strong>Best Practices:</strong> Enforce TLS 1.2+ for all AI service communications</p>
+                </div>
+
+                <div class="encryption-type in-use">
+                    <h5>Encryption in Use</h5>
+                    <p><strong>Purpose:</strong> Protect data while being processed in memory</p>
+                    <p><strong>AWS Implementation:</strong> Nitro Enclaves for confidential computing</p>
+                    <p><strong>Use Cases:</strong> Sensitive model inference, private data processing</p>
+                    <p><strong>AI Applications:</strong> Healthcare AI, financial modeling, personal data processing</p>
+                    <p><strong>Considerations:</strong> Performance impact vs security requirements</p>
+                </div>
+
+                <h4>🔑 Identity and Access Management for AI Services</h4>
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h5>IAM Roles and Policies</h5>
+                        <p><strong>Service Roles:</strong> SageMaker execution roles, Bedrock service roles</p>
+                        <p><strong>User Roles:</strong> Data scientists, ML engineers, business users</p>
+                        <p><strong>Cross-Account Access:</strong> Secure sharing of AI resources</p>
+                        <p><strong>Policy Examples:</strong> Read-only model access, training job permissions</p>
+                        <p><strong>Best Practices:</strong> Least privilege, regular access reviews</p>
+                    </div>
+                    <div class="concept-card">
+                        <h5>Resource-Based Policies</h5>
+                        <p><strong>S3 Bucket Policies:</strong> Control access to training data and models</p>
+                        <p><strong>KMS Key Policies:</strong> Encryption key access control</p>
+                        <p><strong>SageMaker Resource Policies:</strong> Model and endpoint access control</p>
+                        <p><strong>Cross-Service Access:</strong> Bedrock to S3, Lambda to SageMaker</p>
+                        <p><strong>Conditions:</strong> IP restrictions, time-based access, MFA requirements</p>
+                    </div>
+                    <div class="concept-card">
+                        <h5>Federated Access</h5>
+                        <p><strong>SAML Integration:</strong> Enterprise identity provider integration</p>
+                        <p><strong>OIDC Support:</strong> Modern authentication protocols</p>
+                        <p><strong>Temporary Credentials:</strong> STS assume role for secure access</p>
+                        <p><strong>AI Workbench Integration:</strong> SageMaker Studio domain authentication</p>
+                        <p><strong>Benefits:</strong> Centralized identity management, reduced credential sprawl</p>
+                    </div>
+                    <div class="concept-card">
+                        <h5>Fine-Grained Access Control</h5>
+                        <p><strong>Attribute-Based Access:</strong> Dynamic permissions based on context</p>
+                        <p><strong>Resource Tags:</strong> Tag-based access control for AI resources</p>
+                        <p><strong>Condition Keys:</strong> Time, location, and request context</p>
+                        <p><strong>Data Classification:</strong> Access based on data sensitivity levels</p>
+                        <p><strong>Use Cases:</strong> Multi-tenant AI platforms, regulated industries</p>
+                    </div>
+                </div>
+
+                <h4>🌐 Network Security for AI Applications</h4>
+                <div class="tool-feature">
+                    <h6>VPC Endpoints for AI Services</h6>
+                    <p><strong>Purpose:</strong> Private connectivity to AWS AI services without internet routing</p>
+                    <p><strong>Supported Services:</strong> SageMaker, Bedrock, Comprehend, Transcribe</p>
+                    <p><strong>Benefits:</strong> Reduced attack surface, improved performance, compliance</p>
+                    <p><strong>Configuration:</strong> Interface endpoints for API access, Gateway endpoints for S3</p>
+                </div>
+
+                <div class="tool-feature">
+                    <h6>Security Groups and NACLs</h6>
+                    <p><strong>Security Groups:</strong> Stateful firewall rules for EC2 instances and services</p>
+                    <p><strong>NACLs:</strong> Stateless subnet-level network filtering</p>
+                    <p><strong>AI Applications:</strong> Restrict access to training clusters, inference endpoints</p>
+                    <p><strong>Best Practices:</strong> Principle of least privilege, regular rule auditing</p>
+                </div>
+
+                <div class="tool-feature">
+                    <h6>AWS WAF for AI APIs</h6>
+                    <p><strong>Protection:</strong> SQL injection, XSS, DDoS protection for AI endpoints</p>
+                    <p><strong>Rate Limiting:</strong> Prevent abuse of AI inference APIs</p>
+                    <p><strong>Geo-blocking:</strong> Restrict access based on geographic location</p>
+                    <p><strong>Integration:</strong> API Gateway, Application Load Balancer, CloudFront</p>
+                </div>
+
+                <div class="visual-placeholder">
+                    <h4>🏗️ Recommended Visual: AI Security Architecture Diagram</h4>
+                    <p>Create a layered security diagram showing: User → WAF → API Gateway → VPC → AI Services with encryption, IAM, and monitoring at each layer.</p>
+                </div>
+
+                <div class="aws-services">
+                    <h4>🔧 Key AWS Security Services for AI</h4>
+                    <div class="service-grid">
+                        <div class="service-item">
+                            <strong>AWS IAM</strong><br>
+                            Identity and access management with fine-grained permissions for AI services
+                        </div>
+                        <div class="service-item">
+                            <strong>AWS KMS</strong><br>
+                            Key management service for encryption of AI data and models
+                        </div>
+                        <div class="service-item">
+                            <strong>VPC Endpoints</strong><br>
+                            Private connectivity to AI services without internet exposure
+                        </div>
+                        <div class="service-item">
+                            <strong>AWS WAF</strong><br>
+                            Web application firewall protection for AI API endpoints
+                        </div>
+                        <div class="service-item">
+                            <strong>AWS Secrets Manager</strong><br>
+                            Secure storage and rotation of API keys and credentials
+                        </div>
+                        <div class="service-item">
+                            <strong>Amazon Macie</strong><br>
+                            Data security and privacy service for discovering sensitive data
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hands-on">
+                    <h4>🛠️ Hands-On Practice</h4>
+                    <ul>
+                        <li><strong>VPC Setup:</strong> Create isolated VPC for AI workloads with proper subnetting</li>
+                        <li><strong>IAM Configuration:</strong> Set up roles and policies for SageMaker and Bedrock</li>
+                        <li><strong>Encryption Setup:</strong> Configure KMS keys for AI data encryption</li>
+                        <li><strong>VPC Endpoints:</strong> Create private endpoints for AI services</li>
+                        <li><strong>Security Testing:</strong> Test access controls and network isolation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Task Statement 5.2 -->
+        <div class="task-statement">
+            <div class="task-header" onclick="toggleTask('task2')">
+                <h3>Task Statement 5.2: Recognize Compliance Requirements for AI Solutions</h3>
+                <button class="toggle-btn" id="toggle2">▼</button>
+            </div>
+            <div class="task-content" id="task2">
+                <div class="objectives">
+                    <h4>🎯 Learning Objectives:</h4>
+                    <ul>
+                        <li>Understand major compliance frameworks affecting AI systems</li>
+                        <li>Identify AWS compliance certifications and attestations</li>
+                        <li>Recognize data residency and sovereignty requirements</li>
+                        <li>Understand audit and documentation requirements for AI compliance</li>
+                    </ul>
+                </div>
+
+                <h4>📜 Major Compliance Frameworks for AI</h4>
+                <div class="compliance-framework gdpr">
+                    <h5>GDPR (General Data Protection Regulation)</h5>
+                    <p><strong>Scope:</strong> EU residents' personal data protection</p>
+                    <p><strong>AI Implications:</strong> Right to explanation, automated decision-making restrictions</p>
+                    <p><strong>Key Requirements:</strong> Consent, data minimization, purpose limitation, accountability</p>
+                    <p><strong>AWS Support:</strong> Data Processing Agreements, GDPR-compliant services</p>
+                    <p><strong>AI Considerations:</strong> Explainable AI, data anonymization, consent management</p>
+                    <p><strong>Penalties:</strong> Up to 4% of annual global turnover or €20 million</p>
+                </div>
+
+                <div class="compliance-framework hipaa">
+                    <h5>HIPAA (Health Insurance Portability and Accountability Act)</h5>
+                    <p><strong>Scope:</strong> Protected Health Information (PHI) in the US</p>
+                    <p><strong>AI Applications:</strong> Medical diagnosis, treatment recommendations, health analytics</p>
+                    <p><strong>Key Requirements:</strong> Administrative, physical, and technical safeguards</p>
+                    <p><strong>AWS Support:</strong> Business Associate Agreement (BAA), HIPAA-eligible services</p>
+                    <p><strong>AI Considerations:</strong> De-identification, minimum necessary standard, audit logs</p>
+                    <p><strong>HIPAA-Eligible AI Services:</strong> SageMaker, Comprehend Medical, Transcribe Medical</p>
+                </div>
+
+                <div class="compliance-framework sox">
+                    <h5>SOX (Sarbanes-Oxley Act)</h5>
+                    <p><strong>Scope:</strong> Financial reporting and internal controls for public companies</p>
+                    <p><strong>AI Applications:</strong> Financial modeling, risk assessment, fraud detection</p>
+                    <p><strong>Key Requirements:</strong> Internal controls, audit trails, data integrity</p>
+                    <p><strong>AWS Support:</strong> SOC reports, compliance documentation</p>
+                    <p><strong>AI Considerations:</strong> Model governance, change management, audit trails</p>
+                    <p><strong>Controls:</strong> Access controls, data retention, model validation</p>
+                </div>
+
+                <h4>🌍 Data Residency and Sovereignty</h4>
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h5>Data Residency Requirements</h5>
+                        <p><strong>Definition:</strong> Legal requirements for data to remain within specific geographic boundaries</p>
+                        <p><strong>Drivers:</strong> National security, privacy laws, regulatory compliance</p>
+                        <p><strong>AWS Regions:</strong> Choose regions based on data residency requirements</p>
+                        <p><strong>AI Implications:</strong> Model training and inference must respect data location</p>
+                        <p><strong>Examples:</strong> EU data must stay in EU, Russian data localization laws</p>
+                    </div>
+                    <div class="concept-card">
+                        <h5>Data Sovereignty</h5>
+                        <p><strong>Definition:</strong> Concept that data is subject to laws of the country where it's located</p>
+                        <p><strong>Government Access:</strong> Understanding when governments can access data</p>
+                        <p><strong>AWS Approach:</strong> Customer control over data location and encryption keys</p>
+                        <p><strong>AI Considerations:</strong> Cross-border model training, federated learning</p>
+                        <p><strong>Solutions:</strong> Regional deployments, local data processing</p>
+                    </div>
+                    <div class="concept-card">
+                        <h5>Cross-Border Data Transfers</h5>
+                        <p><strong>Mechanisms:</strong> Adequacy decisions, Standard Contractual Clauses (SCCs)</p>
+                        <p><strong>GDPR Article 44:</strong> Restrictions on international data transfers</p>
+                        <p><strong>AWS Tools:</strong> Data Processing Agreements, regional service deployment</p>
+                        <p><strong>AI Challenges:</strong> Global model training vs local data requirements</p>
+                        <p><strong>Solutions:</strong> Federated learning, differential privacy, local inference</p>
+                    </div>
+                    <div class="concept-card">
+                        <h5>Industry-Specific Requirements</h5>
+                        <p><strong>Financial Services:</strong> PCI DSS, Basel III, MiFID II</p>
+                        <p><strong>Healthcare:</strong> HIPAA, FDA regulations, medical device standards</p>
+                        <p><strong>Government:</strong> FedRAMP, FISMA, ITAR</p>
+                        <p><strong>Education:</strong> FERPA, COPPA for student data protection</p>
+                        <p><strong>AI Impact:</strong> Specific requirements for AI/ML in regulated industries</p>
+                    </div>
+                </div>
+
+                <h4>📋 AWS Compliance Certifications and Attestations</h4>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Certification/Standard</th>
+                            <th>Scope</th>
+                            <th>AI Service Coverage</th>
+                            <th>Key Benefits</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>SOC 1/2/3</strong></td>
+                            <td>Internal controls and security</td>
+                            <td>SageMaker, Bedrock, AI services</td>
+                            <td>Audit readiness, control validation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ISO 27001</strong></td>
+                            <td>Information security management</td>
+                            <td>All AWS services</td>
+                            <td>Global security standard compliance</td>
+                        </tr>
+                        <tr>
+                            <td><strong>FedRAMP</strong></td>
+                            <td>US government cloud security</td>
+                            <td>GovCloud AI services</td>
+                            <td>Government sector compliance</td>
+                        </tr>
+                        <tr>
+                            <td><strong>PCI DSS</strong></td>
+                            <td>Payment card data protection</td>
+                            <td>Infrastructure services</td>
+                            <td>Payment processing compliance</td>
+                        </tr>
+                        <tr>
+                            <td><strong>HIPAA BAA</strong></td>
+                            <td>Healthcare data protection</td>
+                            <td>Eligible AI services</td>
+                            <td>Healthcare AI applications</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h4>📝 Audit and Documentation Requirements</h4>
+                <div class="lifecycle-container">
+                    <div class="lifecycle-stage">
+                        <h5>Data Documentation</h5>
+                        <p><strong>Data Inventory:</strong> Catalog of all data used in AI systems</p>
+                        <p><strong>Data Lineage:</strong> Track data from source to model output</p>
+                        <p><strong>Data Classification:</strong> Sensitivity levels and handling requirements</p>
+                        <p><strong>AWS Tools:</strong> Data Catalog, Lake Formation, Macie</p>
+                    </div>
+                    <div class="lifecycle-stage">
+                        <h5>Model Documentation</h5>
+                        <p><strong>Model Cards:</strong> Comprehensive model documentation</p>
+                        <p><strong>Training Records:</strong> Datasets, parameters, performance metrics</p>
+                        <p><strong>Version Control:</strong> Model versioning and change tracking</p>
+                        <p><strong>AWS Tools:</strong> SageMaker Model Registry, CodeCommit</p>
+                    </div>
+                    <div class="lifecycle-stage">
+                        <h5>Access and Activity Logging</h5>
+                        <p><strong>API Calls:</strong> All interactions with AI services</p>
+                        <p><strong>Data Access:</strong> Who accessed what data when</p>
+                        <p><strong>Model Usage:</strong> Inference requests and responses</p>
+                        <p><strong>AWS Tools:</strong> CloudTrail, CloudWatch Logs, VPC Flow Logs</p>
+                    </div>
+                    <div class="lifecycle-stage">
+                        <h5>Compliance Reporting</h5>
+                        <p><strong>Regular Assessments:</strong> Scheduled compliance reviews</p>
+                        <p><strong>Incident Reports:</strong> Security and compliance incidents</p>
+                        <p><strong>Audit Trails:</strong> Complete audit trail maintenance</p>
+                        <p><strong>AWS Tools:</strong> Config, Security Hub, Trusted Advisor</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>⚖️ AI-Specific Compliance Considerations</h4>
+                    <ul>
+                        <li><strong>Algorithmic Accountability:</strong> Transparency in AI decision-making processes</li>
+                        <li><strong>Bias and Fairness:</strong> Regular testing and mitigation of algorithmic bias</li>
+                        <li><strong>Explainability:</strong> Ability to explain AI decisions, especially in regulated industries</li>
+                        <li><strong>Data Minimization:</strong> Using only necessary data for AI training and inference</li>
+                        <li><strong>Consent Management:</strong> Proper consent for AI processing of personal data</li>
+                        <li><strong>Right to Rectification:</strong> Ability to correct data used in AI systems</li>
+                    </ul>
+                </div>
+
+                <div class="aws-services">
+                    <h4>🔧 AWS Compliance and Governance Tools</h4>
+                    <div class="service-grid">
+                        <div class="service-item">
+                            <strong>AWS Config</strong><br>
+                            Configuration compliance monitoring and automated remediation
+                        </div>
+                        <div class="service-item">
+                            <strong>AWS CloudTrail</strong><br>
+                            Comprehensive audit logging for all AWS API calls
+                        </div>
+                        <div class="service-item">
+                            <strong>AWS Security Hub</strong><br>
+                            Centralized security and compliance dashboard
+                        </div>
+                        <div class="service-item">
+                            <strong>AWS Artifact</strong><br>
+                            Access to compliance reports and certifications
+                        </div>
+                        <div class="service-item">
+                            <strong>Amazon Macie</strong><br>
+                            Data discovery and classification for compliance
+                        </div>
+                        <div class="service-item">
+                            <strong>AWS Control Tower</strong><br>
+                            Multi-account governance and compliance automation
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hands-on">
+                    <h4>🛠️ Hands-On Practice</h4>
+                    <ul>
+                        <li><strong>Compliance Assessment:</strong> Review AWS Artifact for relevant certifications</li>
+                        <li><strong>Config Rules:</strong> Set up compliance monitoring for AI resources</li>
+                        <li><strong>Data Classification:</strong> Use Macie to discover and classify sensitive data</li>
+                        <li><strong>Audit Trail Setup:</strong> Configure CloudTrail for comprehensive logging</li>
+                        <li><strong>Documentation:</strong> Create model cards and compliance documentation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Task Statement 5.3 -->
+        <div class="task-statement">
+            <div class="task-header" onclick="toggleTask('task3')">
+                <h3>Task Statement 5.3: Describe Governance Strategies for AI Solutions</h3>
+                <button class="toggle-btn" id="toggle3">▼</button>
+            </div>
+            <div class="task-content" id="task3">
+                <div class="objectives">
+                    <h4>🎯 Learning Objectives:</h4>
+                    <ul>
+                        <li>Understand AI governance frameworks and best practices</li>
+                        <li>Implement model lifecycle management and versioning</li>
+                        <li>Establish monitoring and alerting for AI systems</li>
+                        <li>Create policies and procedures for responsible AI deployment</li>
+                    </ul>
+                </div>
+
+                <h4>🏛️ AI Governance Framework Components</h4>
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h5>Governance Policies</h5>
+                        <span class="governance-pillar governance-policy">Policy</span>
+                        <p><strong>AI Ethics Policy:</strong> Principles for responsible AI development and use</p>
+                        <p><strong>Data Governance:</strong> Data quality, privacy, and usage policies</p>
+                        <p><strong>Model Governance:</strong> Model development, validation, and deployment standards</p>
+                        <p><strong>Risk Management:</strong> AI risk assessment and mitigation strategies</p>
+                        <p><strong>Compliance Policy:</strong> Regulatory compliance requirements and procedures</p>
+                    </div>
+                    <div class="concept-card">
+                        <h5>Governance Processes</h5>
+                        <span class="governance-pillar governance-process">Process</span>
+                        <p><strong>AI Review Board:</strong> Cross-functional team for AI project oversight</p>
+                        <p><strong>Model Approval:</strong> Staged approval process for model deployment</p>
+                        <p><strong>Risk Assessment:</strong> Regular evaluation of AI system risks</p>
+                        <p><strong>Incident Response:</strong> Procedures for AI system failures or issues</p>
+                        <p><strong>Continuous Monitoring:</strong> Ongoing performance and compliance monitoring</p>
+                    </div>
+                    <div class="concept-card">
+                        <h5>Governance Technology</h5>
+                        <span class="governance-pillar governance-technology">Technology</span>
+                        <p><strong>Model Registry:</strong> Centralized repository for model artifacts</p>
+                        <p><strong>Monitoring Systems:</strong> Real-time performance and drift detection</p>
+                        <p><strong>Audit Tools:</strong> Automated compliance checking and reporting</p>
+                        <p><strong>Access Controls:</strong> Role-based access to AI resources</p>
+                        <p><strong>Documentation Systems:</strong> Automated documentation and lineage tracking</p>
+                    </div>
+                </div>
+
+                <h4>🔄 Model Lifecycle Management</h4>
+                <div class="lifecycle-container">
+                    <div class="lifecycle-stage">
+                        <h5>Model Development Governance</h5>
+                        <p><strong>Development Standards:</strong> Coding standards, testing requirements, documentation</p>
+                        <p><strong>Data Requirements:</strong> Data quality standards, bias testing, validation</p>
+                        <p><strong>Review Gates:</strong> Peer review, technical review, business review</p>
+                        <p><strong>AWS Tools:</strong> SageMaker Studio, CodeCommit, CodeReview</p>
+                    </div>
+                    <div class="lifecycle-stage">
+                        <h5>Model Validation and Testing</h5>
+                        <p><strong>Performance Testing:</strong> Accuracy, latency, scalability testing</p>
+                        <p><strong>Bias Testing:</strong> Fairness evaluation across different groups</p>
+                        <p><strong>Security Testing:</strong> Adversarial testing, input validation</p>
+                        <p><strong>AWS Tools:</strong> SageMaker Clarify, A2I, custom testing frameworks</p>
+                    </div>
+                    <div class="lifecycle-stage">
+                        <h5>Model Deployment Governance</h5>
+                        <p><strong>Staging Process:</strong> Dev → Test → Staging → Production deployment</p>
+                        <p><strong>Approval Workflow:</strong> Multi-stage approval with stakeholder sign-off</p>
+                        <p><strong>Rollback Procedures:</strong> Automated rollback for failed deployments</p>
+                        <p><strong>AWS Tools:</strong> SageMaker Pipelines, CodePipeline, CodeDeploy</p>
+                    </div>
+                    <div class="lifecycle-stage">
+                        <h5>Model Monitoring and Maintenance</h5>
+                        <p><strong>Performance Monitoring:</strong> Real-time accuracy and latency tracking</p>
+                        <p><strong>Drift Detection:</strong> Data drift and concept drift monitoring</p>
+                        <p><strong>Retraining Triggers:</strong> Automated retraining based on performance thresholds</p>
+                        <p><strong>AWS Tools:</strong> SageMaker Model Monitor, CloudWatch, EventBridge</p>
+                    </div>
+                    <div class="lifecycle-stage">
+                        <h5>Model Retirement</h5>
+                        <p><strong>End-of-Life Planning:</strong> Planned obsolescence and replacement strategy</p>
+                        <p><strong>Data Retention:</strong> Compliance with data retention policies</p>
+                        <p><strong>Documentation:</strong> Final performance reports and lessons learned</p>
+                        <p><strong>AWS Tools:</strong> S3 lifecycle policies, automated cleanup processes</p>
+                    </div>
+                </div>
+
+                <h4>📊 Monitoring and Alerting for AI Systems</h4>
+                <div class="tool-feature">
+                    <h6>Performance Monitoring</h6>
+                    <p><strong>Model Accuracy:</strong> Track prediction accuracy over time</p>
+                    <p><strong>Inference Latency:</strong> Monitor response times for real-time applications</p>
+                    <p><strong>Throughput:</strong> Track requests per second and scaling behavior</p>
+                    <p><strong>Resource Utilization:</strong> CPU, memory, and GPU usage monitoring</p>
+                    <p><strong>AWS Implementation:</strong> CloudWatch metrics, custom dashboards</p>
+                </div>
+
+                <div class="tool-feature">
+                    <h6>Data Quality Monitoring</h6>
+                    <p><strong>Data Drift Detection:</strong> Statistical changes in input data distribution</p>
+                    <p><strong>Schema Validation:</strong> Ensure input data matches expected format</p>
+                    <p><strong>Missing Data Detection:</strong> Monitor for incomplete or missing features</p>
+                    <p><strong>Outlier Detection:</strong> Identify unusual input patterns</p>
+                    <p><strong>AWS Implementation:</strong> SageMaker Data Quality, custom validators</p>
+                </div>
+
+                <div class="tool-feature">
+                    <h6>Model Drift Monitoring</h6>
+                    <p><strong>Concept Drift:</strong> Changes in the relationship between inputs and outputs</p>
+                    <p><strong>Feature Importance Drift:</strong> Changes in feature relevance over time</p>
+                    <p><strong>Prediction Drift:</strong> Changes in model output distributions</p>
+                    <p><strong>Baseline Comparison:</strong> Comparing current vs historical performance</p>
+                    <p><strong>AWS Implementation:</strong> SageMaker Model Quality monitoring</p>
+                </div>
+
+                <div class="tool-feature">
+                    <h6>Security and Compliance Monitoring</h6>
+                    <p><strong>Access Monitoring:</strong> Track who accesses AI systems and data</p>
+                    <p><strong>Anomaly Detection:</strong> Identify unusual patterns in AI system usage</p>
+                    <p><strong>Compliance Validation:</strong> Continuous compliance checking</p>
+                    <p><strong>Incident Detection:</strong> Automated detection of security incidents</p>
+                    <p><strong>AWS Implementation:</strong> CloudTrail, GuardDuty, Security Hub</p>
+                </div>
+
+                <div class="aws-services">
+                    <h4>🔧 AWS Governance and Monitoring Tools</h4>
+                    <div class="service-grid">
+                        <div class="service-item">
+                            <strong>SageMaker Model Registry</strong><br>
+                            Centralized model versioning and lifecycle management
+                        </div>
+                        <div class="service-item">
+                            <strong>SageMaker Model Monitor</strong><br>
+                            Automated monitoring for data quality and model performance
+                        </div>
+                        <div class="service-item">
+                            <strong>AWS CloudWatch</strong><br>
+                            Comprehensive metrics, logs, and alerting for AI systems
+                        </div>
+                        <div class="service-item">
+                            <strong>AWS EventBridge</strong><br>
+                            Event-driven automation for governance workflows
+                        </div>
+                        <div class="service-item">
+                            <strong>AWS Step Functions</strong><br>
+                            Orchestration of complex governance processes
+                        </div>
+                        <div class="service-item">
+                            <strong>AWS Control Tower</strong><br>
+                            Multi-account governance for enterprise AI deployments
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hands-on">
+                    <h4>🛠️ Hands-On Practice</h4>
+                    <ul>
+                        <li><strong>Model Registry:</strong> Set up model versioning and approval workflows</li>
+                        <li><strong>Monitoring Setup:</strong> Configure comprehensive monitoring for AI systems</li>
+                        <li><strong>Drift Detection:</strong> Implement data and model drift detection</li>
+                        <li><strong>Governance Policies:</strong> Create and enforce AI governance policies</li>
+                        <li><strong>Incident Response:</strong> Develop and test AI incident response procedures</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="study-tips">
+            <h4>💡 Study Tips for Domain 5</h4>
+            <ul>
+                <li><strong>Security First:</strong> Understand AWS shared responsibility model for AI</li>
+                <li><strong>Compliance Frameworks:</strong> Know GDPR, HIPAA, and other major frameworks</li>
+                <li><strong>Hands-On Security:</strong> Practice with IAM, VPC, KMS, and encryption</li>
+                <li><strong>Governance Processes:</strong> Understand model lifecycle management</li>
+                <li><strong>Monitoring Tools:</strong> Deep dive into CloudWatch, CloudTrail, Config</li>
+                <li><strong>Real-World Scenarios:</strong> Study enterprise AI security and governance patterns</li>
+            </ul>
+        </div>
+
+        <div class="nav-buttons">
+            <button class="nav-btn" onclick="window.location.href='domain4-study-guide.html'">← Previous Domain</button>
+            <button class="nav-btn" onclick="window.location.href='index.html'">Back to Home 🏠</button>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <button class="nav-btn" onclick="window.location.href='index.html'" style="background: linear-gradient(135deg, #495057, #6c757d);">🏠 Back to Home</button>
+        </div>
+    </div>
+
+    <script>
+        function toggleTask(taskId) {
+            const content = document.getElementById(taskId);
+            const toggleBtn = document.getElementById('toggle' + taskId.slice(-1));
+            
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+                toggleBtn.classList.remove('active');
+            } else {
+                content.classList.add('active');
+                toggleBtn.classList.add('active');
+            }
+            
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const totalTasks = 3;
+            const activeTasks = document.querySelectorAll('.task-content.active').length;
+            const progressPercent = (activeTasks / totalTasks) * 100;
+            document.getElementById('progressFill').style.width = progressPercent + '%';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            toggleTask('task1');
+        });
+
+        document.querySelectorAll('.task-header').forEach(header => {
+            header.addEventListener('click', function() {
+                setTimeout(() => {
+                    this.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>

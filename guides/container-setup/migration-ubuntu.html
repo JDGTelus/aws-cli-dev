@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Migration to Ubuntu</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Migration to Ubuntu (Historical)</h1>
+        <div class="warning">
+            <p><strong>Note:</strong> This migration path was superseded. The project now uses <strong>Alpine Linux</strong>.</p>
+            <p>See <a href="alpine-linux-guide.html">alpine-linux-guide.html</a> for current setup.</p>
+        </div>
+        <h2>Migration History</h2>
+        <p>Debian Bookworm → Ubuntu 24.04 → Alpine Linux</p>
+        <ul style="margin: 20px 0 20px 30px;">
+            <li><strong>Debian Bookworm</strong>: Neovim 0.7.2 (too old)</li>
+            <li><strong>Ubuntu 24.04</strong>: Neovim 0.9.5 (still too old for nvim-lspconfig 0.10+)</li>
+            <li><strong>Alpine Linux</strong>: Neovim 0.11.1 (current, perfect!)</li>
+        </ul>
+        <h2>Current Setup</h2>
+        <pre><code>Base Image: alpine:latest
+Neovim: 0.11.1
+Package Manager: apk
+Size: ~7MB base image</code></pre>
+    </div>
+</body>
+</html>

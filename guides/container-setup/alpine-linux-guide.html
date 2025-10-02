@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpine Linux Container Guide</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🏔️ Alpine Linux Container Guide</h1>
+
+        <h2>What is Alpine Linux?</h2>
+        <p><strong>Alpine Linux</strong> is a security-oriented, lightweight Linux distribution. It's the most popular base image for Docker containers.</p>
+
+        <h3>Why Alpine?</h3>
+        <ul>
+            <li><strong>Neovim 0.10+</strong>: Latest in repositories</li>
+            <li><strong>Tiny</strong>: ~7MB base image</li>
+            <li><strong>Fast</strong>: APK package manager</li>
+            <li><strong>Multi-platform</strong>: ARM64 + x86_64 support</li>
+        </ul>
+
+        <h2>Package Manager: <code>apk</code></h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Debian/Ubuntu</th>
+                    <th>Alpine</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Update</td>
+                    <td><code>apt update</code></td>
+                    <td><code>apk update</code></td>
+                </tr>
+                <tr>
+                    <td>Install</td>
+                    <td><code>apt install pkg</code></td>
+                    <td><code>apk add pkg</code></td>
+                </tr>
+                <tr>
+                    <td>Remove</td>
+                    <td><code>apt remove pkg</code></td>
+                    <td><code>apk del pkg</code></td>
+                </tr>
+                <tr>
+                    <td>Search</td>
+                    <td><code>apt search pkg</code></td>
+                    <td><code>apk search pkg</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Common Commands</h2>
+        <pre><code># Update &amp; upgrade
+apk update &amp;&amp; apk upgrade
+
+# Install package
+apk add package-name
+
+# Remove package
+apk del package-name
+
+# Search
+apk search keyword
+
+# List installed
+apk list --installed</code></pre>
+
+        <h2>Everything Else is Identical</h2>
+        <div class="highlight">
+            <p>✅ Zsh with Oh-My-Zsh (same)<br>
+            ✅ AWS CLI (same)<br>
+            ✅ Git, Python, Node.js (same)<br>
+            ✅ Neovim 0.10+ (works perfectly)<br>
+            ✅ All your scripts (same)</p>
+            <p><strong>Only difference:</strong> Use <code>apk</code> instead of <code>apt</code>!</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS CLI Development Environment - Documentation Wiki</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .wiki-header {
+            background: linear-gradient(135deg, #232f3e 0%, #131921 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .wiki-header h1 {
+            color: white;
+            border: none;
+            margin: 0;
+            padding: 0;
+        }
+        .wiki-subtitle {
+            color: #ff9900;
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .doc-card {
+            background: #f8f9fa;
+            border: 2px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .doc-card:hover {
+            border-color: #ff9900;
+            box-shadow: 0 4px 12px rgba(255, 153, 0, 0.2);
+            transform: translateY(-2px);
+        }
+        .doc-card h3 {
+            color: #232f3e;
+            margin: 0 0 10px 0;
+            font-size: 1.3em;
+        }
+        .doc-card p {
+            color: #545b64;
+            margin: 0;
+            line-height: 1.5;
+        }
+        .doc-card a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .doc-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .category-section {
+            margin: 40px 0;
+        }
+        .category-title {
+            color: #232f3e;
+            border-left: 5px solid #ff9900;
+            padding-left: 15px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        .quick-links {
+            background: #d1ecf1;
+            border-left: 5px solid #17a2b8;
+            padding: 20px;
+            border-radius: 4px;
+            margin: 30px 0;
+        }
+        .quick-links h3 {
+            color: #0c5460;
+            margin-top: 0;
+        }
+        .quick-links ul {
+            margin: 10px 0 0 20px;
+        }
+        .quick-links li {
+            margin: 8px 0;
+        }
+        .quick-links a {
+            color: #0c5460;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wiki-header">
+            <h1>📚 AWS CLI Development Environment</h1>
+            <div class="wiki-subtitle">Complete Documentation Wiki</div>
+        </div>
+
+        <div class="quick-links">
+            <h3>🚀 Quick Start</h3>
+            <p>New to this environment? Start here:</p>
+            <ul>
+                <li><a href="quick-start.html">Quick Start Guide</a> - Get up and running in minutes</li>
+                <li><a href="usage_guide.html">Usage Guide</a> - Complete environment overview</li>
+                <li><a href="aws-setup-guide.html">AWS Setup Guide</a> - Configure AWS credentials and services</li>
+            </ul>
+        </div>
+
+        <div class="category-section">
+            <h2 class="category-title">Getting Started</h2>
+            <div class="doc-grid">
+                <div class="doc-card">
+                    <a href="quick-start.html">
+                        <div class="doc-icon">⚡</div>
+                        <h3>Quick Start Guide</h3>
+                        <p>Build, run, and configure your development environment in minutes. Essential first steps and quick reference commands.</p>
+                    </a>
+                </div>
+
+                <div class="doc-card">
+                    <a href="usage_guide.html">
+                        <div class="doc-icon">📖</div>
+                        <h3>Usage Guide</h3>
+                        <p>Comprehensive guide covering all features, tools, and best practices for the AI Practitioner AWS environment.</p>
+                    </a>
+                </div>
+
+                <div class="doc-card">
+                    <a href="aws-setup-guide.html">
+                        <div class="doc-icon">☁️</div>
+                        <h3>AWS Setup Guide</h3>
+                        <p>Complete AWS configuration including IAM users, credentials, billing alerts, and service-specific setup for Bedrock and SageMaker.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h2 class="category-title">Development Tools</h2>
+            <div class="doc-grid">
+                <div class="doc-card">
+                    <a href="neovim-lua-configuration-guide.html">
+                        <div class="doc-icon">⚙️</div>
+                        <h3>Neovim Lua Configuration</h3>
+                        <p>Deep dive into the modern Lua-based Neovim configuration. Learn about plugins, LSP setup, and customization patterns.</p>
+                    </a>
+                </div>
+
+                <div class="doc-card">
+                    <a href="neovim-navigation-manual.html">
+                        <div class="doc-icon">🧭</div>
+                        <h3>Neovim Navigation Manual</h3>
+                        <p>Master Neovim navigation with comprehensive key bindings, movement commands, and productivity shortcuts.</p>
+                    </a>
+                </div>
+
+                <div class="doc-card">
+                    <a href="port-mapping-guide.html">
+                        <div class="doc-icon">🔌</div>
+                        <h3>Port Mapping Guide</h3>
+                        <p>Understanding container port mappings for web development, databases, and development servers.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h2 class="category-title">Container & System</h2>
+            <div class="doc-grid">
+                <div class="doc-card">
+                    <a href="alpine-linux-guide.html">
+                        <div class="doc-icon">🏔️</div>
+                        <h3>Alpine Linux Guide</h3>
+                        <p>Learn about Alpine Linux, the lightweight container base. Package management with apk and key differences from Ubuntu.</p>
+                    </a>
+                </div>
+
+                <div class="doc-card">
+                    <a href="migration-ubuntu.html">
+                        <div class="doc-icon">🔄</div>
+                        <h3>Ubuntu Migration Guide</h3>
+                        <p>Step-by-step guide for migrating from Alpine to Ubuntu-based containers if needed.</p>
+                    </a>
+                </div>
+
+                <div class="doc-card">
+                    <a href="migration-arch.html">
+                        <div class="doc-icon">🏗️</div>
+                        <h3>Migration Architecture</h3>
+                        <p>Technical architecture and considerations for container base image migrations.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h2 class="category-title">AI & Prompting</h2>
+            <div class="doc-grid">
+                <div class="doc-card">
+                    <a href="prompt-guide.html">
+                        <div class="doc-icon">💬</div>
+                        <h3>Prompt Engineering Guide</h3>
+                        <p>Best practices and techniques for effective prompt engineering with AI models and assistants.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="info">
+            <h3>📝 About This Documentation</h3>
+            <p>This wiki provides comprehensive documentation for the AWS CLI Development Environment. All guides are designed to help you maximize productivity with AWS services, modern development tools, and containerized workflows.</p>
+            <p><strong>Server Info:</strong> This documentation is served via Python's built-in HTTP server on port 8000.</p>
+        </div>
+
+        <div class="footer">
+            <p><strong>AWS CLI Development Environment</strong> | Documentation Wiki</p>
+            <p>Last Updated: October 2025 | Version: 1.0</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Practitioner AWS Environment - Usage Guide</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Practitioner AWS Environment - Usage Guide</h1>
+
+        <h2>Overview</h2>
+        <p>This containerized environment provides a complete development setup for AWS AI Practitioner certification preparation, featuring AWS CLI v2, Python, Node.js, and a fully configured Neovim IDE.</p>
+
+        <h2>Quick Start</h2>
+
+        <h3>1. Initial Setup</h3>
+        <pre><code>chmod +x setup.sh
+./setup.sh</code></pre>
+        <p>This will:</p>
+        <ul>
+            <li>Create necessary directories (<code>workspace/</code>, <code>scripts/</code>)</li>
+            <li>Build the Docker container</li>
+            <li>Generate billing alert configuration script</li>
+        </ul>
+
+        <h3>2. Start the Environment</h3>
+        <pre><code>docker-compose up -d</code></pre>
+
+        <h3>3. Access the Container</h3>
+        <pre><code>docker-compose exec aws-cli-env bash</code></pre>
+
+        <h3>4. Stop the Environment</h3>
+        <pre><code>docker-compose down</code></pre>
+
+        <h2>Environment Features</h2>
+
+        <h3>Installed Tools</h3>
+        <div class="features">
+            <div class="feature-box">
+                <h4>AWS CLI v2</h4>
+                <p>Latest version with full AWS service support</p>
+            </div>
+            <div class="feature-box">
+                <h4>Python 3</h4>
+                <p>Aliased to <code>python</code> (also includes <code>pip</code>)</p>
+            </div>
+            <div class="feature-box">
+                <h4>Node.js & npm</h4>
+                <p>For JavaScript/TypeScript development</p>
+            </div>
+            <div class="feature-box">
+                <h4>Neovim</h4>
+                <p>Configured as complete IDE with LSP support</p>
+            </div>
+            <div class="feature-box">
+                <h4>Git</h4>
+                <p>Version control</p>
+            </div>
+            <div class="feature-box">
+                <h4>jq</h4>
+                <p>JSON processor for AWS CLI output</p>
+            </div>
+        </div>
+
+        <h3>Development Tools</h3>
+
+        <h4>Python</h4>
+        <ul>
+            <li><code>boto3</code>: AWS SDK for Python</li>
+            <li><code>pylint</code>, <code>flake8</code>: Linters</li>
+            <li><code>black</code>, <code>autopep8</code>: Code formatters</li>
+            <li><code>pyright</code>: Language server for Python</li>
+        </ul>
+
+        <h4>JavaScript/TypeScript</h4>
+        <ul>
+            <li><code>typescript</code>: TypeScript compiler</li>
+            <li><code>typescript-language-server</code>: LSP for TypeScript</li>
+            <li><code>eslint</code>: JavaScript/TypeScript linter</li>
+            <li><code>prettier</code>: Code formatter</li>
+            <li><code>vscode-langservers-extracted</code>: HTML, CSS, JSON LSP</li>
+        </ul>
+
+        <h4>CSS</h4>
+        <ul>
+            <li><code>stylelint</code>: CSS linter</li>
+        </ul>
+
+        <h2>Neovim IDE Configuration</h2>
+
+        <h3>Plugin Manager</h3>
+        <p>The environment uses <code>vim-plug</code> for plugin management. First time you enter Neovim, install plugins:</p>
+        <pre><code>:PlugInstall</code></pre>
+
+        <h3>Key Bindings</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Key Binding</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>&lt;leader&gt;ff</code></td>
+                    <td>Find files (Telescope)</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;leader&gt;fg</code></td>
+                    <td>Live grep (search in files)</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;leader&gt;fb</code></td>
+                    <td>Browse buffers</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;leader&gt;fh</code></td>
+                    <td>Help tags</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;leader&gt;w</code></td>
+                    <td>Save file</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;leader&gt;q</code></td>
+                    <td>Quit</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;leader&gt;x</code></td>
+                    <td>Save and quit</td>
+                </tr>
+                <tr>
+                    <td><code>gd</code></td>
+                    <td>Go to definition</td>
+                </tr>
+                <tr>
+                    <td><code>K</code></td>
+                    <td>Hover documentation</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;leader&gt;rn</code></td>
+                    <td>Rename symbol</td>
+                </tr>
+                <tr>
+                    <td><code>&lt;leader&gt;ca</code></td>
+                    <td>Code actions</td>
+                </tr>
+                <tr>
+                    <td><code>gr</code></td>
+                    <td>Go to references</td>
+                </tr>
+                <tr>
+                    <td><code>jk</code></td>
+                    <td>Exit insert mode</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="note">
+            <strong>Note:</strong> Leader key is set to <code>&lt;Space&gt;</code>
+        </div>
+
+        <h3>Auto-Formatting</h3>
+        <p>Files are automatically formatted on save using:</p>
+        <ul>
+            <li><strong>Python:</strong> black</li>
+            <li><strong>JavaScript/TypeScript:</strong> prettier + eslint</li>
+            <li><strong>CSS:</strong> prettier</li>
+            <li><strong>HTML:</strong> prettier</li>
+            <li><strong>JSON:</strong> prettier</li>
+        </ul>
+
+        <h2>AWS CLI Usage</h2>
+
+        <h3>Verify AWS Configuration</h3>
+        <pre><code>aws sts get-caller-identity</code></pre>
+
+        <h3>Test Bedrock Access</h3>
+        <pre><code>aws bedrock list-foundation-models --region us-east-1</code></pre>
+
+        <h3>Common AWS Commands</h3>
+        <pre><code># List SageMaker Domains
+aws sagemaker list-domains --region us-east-1
+
+# List Comprehend Jobs
+aws comprehend list-entities-detection-jobs --region us-east-1
+
+# List Rekognition Collections
+aws rekognition list-collections --region us-east-1
+
+# Check CloudWatch Alarms
+aws cloudwatch describe-alarms --region us-east-1</code></pre>
+
+        <h2>AWS Credentials Configuration</h2>
+
+        <h3>Method 1: Mount Local AWS Credentials (Recommended)</h3>
+        <p>The docker-compose.yml is configured to mount <code>~/.aws:/root/.aws:ro</code> by default.</p>
+
+        <h3>Method 2: Environment Variables</h3>
+        <p>Edit <code>docker-compose.yml</code> and add:</p>
+        <pre><code>environment:
+  - AWS_ACCESS_KEY_ID=your_access_key
+  - AWS_SECRET_ACCESS_KEY=your_secret_key
+  - AWS_DEFAULT_REGION=us-east-1</code></pre>
+
+        <h3>Method 3: Configure Inside Container</h3>
+        <pre><code>docker-compose exec aws-cli-env bash
+aws configure</code></pre>
+
+        <h2>Working with Python</h2>
+
+        <h3>Create Virtual Environment</h3>
+        <pre><code>python -m venv venv
+source venv/bin/activate</code></pre>
+
+        <h3>Example: Using Boto3</h3>
+        <pre><code>import boto3
+
+bedrock = boto3.client('bedrock', region_name='us-east-1')
+response = bedrock.list_foundation_models()
+print(response)</code></pre>
+
+        <h2>Billing Alerts</h2>
+        <p>Configure billing alerts to avoid unexpected costs:</p>
+        <pre><code>/scripts/configure-billing-alerts.sh</code></pre>
+        <div class="note">
+            <strong>Note:</strong> Update <code>YOUR_ACCOUNT_ID</code> in the script with your actual AWS account ID.
+        </div>
+
+        <h2>File Persistence</h2>
+        <p>The following directories are mounted from your host:</p>
+        <ul>
+            <li><code>./workspace</code> → <code>/workspace</code> (Read/Write)</li>
+            <li><code>./scripts</code> → <code>/scripts</code> (Read-only)</li>
+            <li><code>~/.aws</code> → <code>/root/.aws</code> (Read-only)</li>
+        </ul>
+        <p>All work in <code>/workspace</code> will persist after container restarts.</p>
+
+        <h2>Troubleshooting</h2>
+
+        <h3>AWS Credentials Not Found</h3>
+        <p>Ensure your <code>~/.aws/credentials</code> file exists or environment variables are set.</p>
+
+        <h3>Neovim Plugins Not Working</h3>
+        <p>Run <code>:PlugInstall</code> inside Neovim to install all plugins.</p>
+
+        <h3>LSP Not Working</h3>
+        <p>Install language servers on first use:</p>
+        <pre><code>:TSInstall python javascript typescript html css json</code></pre>
+
+        <h2>Tips and Best Practices</h2>
+        <div class="tip">
+            <ol>
+                <li><strong>Always use us-east-1 region</strong> for maximum AI service availability</li>
+                <li><strong>Set up billing alerts</strong> before starting practice</li>
+                <li><strong>Use workspaces</strong> for organizing different practice areas</li>
+                <li><strong>Commit code to Git</strong> for version control</li>
+                <li><strong>Test AWS connectivity</strong> before starting work sessions</li>
+                <li><strong>Use jq</strong> to parse AWS CLI JSON output: <code>aws ... | jq .</code></li>
+                <li><strong>Leverage Neovim LSP</strong> for intelligent code completion</li>
+            </ol>
+        </div>
+
+        <h2>Additional Resources</h2>
+        <ul>
+            <li><a href="https://docs.aws.amazon.com/cli/">AWS CLI Documentation</a></li>
+            <li><a href="https://boto3.amazonaws.com/v1/documentation/api/latest/index.html">Boto3 Documentation</a></li>
+            <li><a href="https://neovim.io/doc/">Neovim Documentation</a></li>
+            <li><a href="https://docs.aws.amazon.com/bedrock/">AWS Bedrock Documentation</a></li>
+        </ul>
+
+        <div class="footer">
+            <p><strong>Environment Version:</strong> 1.0 | <strong>Last Updated:</strong> October 2025</p>
+        </div>
+    </div>
+</body>
+</html>
