@@ -1,0 +1,45 @@
+/* Minimal Custom CSS for Tailwind Migration */
+/* Only truly unique styles that can't be replicated with Tailwind utilities */
+
+/* Smooth transitions for interactive elements */
+* {
+    transition-property: transform, box-shadow, border-color;
+    transition-duration: 300ms;
+    transition-timing-function: ease;
+}
+
+/* Custom gradient backgrounds that are reused */
+.gradient-aws-dark {
+    background: linear-gradient(135deg, #232f3e 0%, #131921 100%);
+}
+
+.gradient-aws-blue {
+    background: linear-gradient(135deg, rgba(74, 123, 167, 0.85) 0%, rgba(61, 90, 128, 0.85) 100%);
+}
+
+.gradient-page-bg {
+    background: linear-gradient(135deg, #e8eef3 0%, #d4dce6 100%);
+}
+
+/* Modal specific styles (complex positioning) */
+.modal-image-container {
+    cursor: grab;
+}
+
+.modal-image-container:active {
+    cursor: grabbing;
+}
+
+.modal-image {
+    position: absolute;
+    max-width: none;
+    transition: transform 0.1s ease-out;
+    transform-origin: center center;
+}
+
+/* Progress bar segments with specific widths */
+.segment-1 { background: #2c5282; width: 20%; }
+.segment-2 { background: #3d5a80; width: 24%; }
+.segment-3 { background: #4a7ba7; width: 28%; }
+.segment-4 { background: #5b8db8; width: 14%; }
+.segment-5 { background: #6fa3c4; width: 14%; }

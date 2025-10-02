@@ -4,201 +4,228 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AWS AI Practitioner Certification - Study Guides</title>
-    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../tailwind-custom.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'aws-dark': '#232f3e',
+                        'aws-orange': '#ff9900',
+                        'aws-blue': '#2c5282',
+                        'aws-blue-dark': '#1e3a5f',
+                        'aws-blue-light': '#4a7ba7',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>🎓 AWS AI Practitioner Certification</h1>
-            <p>Comprehensive Study Guide Collection</p>
+<body class="gradient-page-bg min-h-screen p-5">
+    <div class="max-w-7xl mx-auto p-10 bg-white/75 rounded-2xl shadow-2xl">
+        <div class="gradient-aws-blue text-center mb-12 p-10 rounded-2xl text-white shadow-lg">
+            <h1 class="text-5xl font-bold mb-4 drop-shadow-lg">🎓 AWS AI Practitioner Certification</h1>
+            <p class="text-2xl opacity-95">Comprehensive Study Guide Collection</p>
         </div>
 
-        <div class="intro">
-            <h2>📚 About This Study Guide</h2>
-            <p>Welcome to the complete AWS AI Practitioner certification study guide collection. This resource covers all five domains of the AWS AI Practitioner exam, providing comprehensive coverage of essential concepts, practical examples, and hands-on exercises.</p>
-            <p style="margin-top: 15px;"><strong>How to use:</strong> Click on any domain below to access detailed study materials. Each domain includes learning objectives, core concepts, AWS services, and hands-on practice recommendations.</p>
+        <div class="bg-slate-50/90 p-8 rounded-xl mb-10 border-l-4 border-aws-blue shadow-md">
+            <h2 class="text-aws-blue-dark text-2xl font-semibold mb-4">📚 About This Study Guide</h2>
+            <p class="text-gray-700 leading-relaxed">Welcome to the complete AWS AI Practitioner certification study guide collection. This resource covers all five domains of the AWS AI Practitioner exam, providing comprehensive coverage of essential concepts, practical examples, and hands-on exercises.</p>
+            <p class="text-gray-700 leading-relaxed mt-4"><strong>How to use:</strong> Click on any domain below to access detailed study materials. Each domain includes learning objectives, core concepts, AWS services, and hands-on practice recommendations.</p>
         </div>
 
-        <div class="exam-info">
-            <h2>📊 Exam Overview</h2>
-            <div class="exam-stats">
-                <div class="exam-stat">
-                    <div class="exam-stat-value">85</div>
-                    <div class="exam-stat-label">Questions</div>
+        <div class="gradient-aws-blue text-white p-8 rounded-2xl mb-10 shadow-lg">
+            <h2 class="text-2xl font-semibold mb-5">📊 Exam Overview</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div class="bg-white/95 p-5 rounded-xl text-center border border-gray-200 shadow-md">
+                    <div class="text-4xl font-bold mb-2 text-aws-blue">85</div>
+                    <div class="text-sm text-gray-600 font-medium">Questions</div>
                 </div>
-                <div class="exam-stat">
-                    <div class="exam-stat-value">120 min</div>
-                    <div class="exam-stat-label">Duration</div>
+                <div class="bg-white/95 p-5 rounded-xl text-center border border-gray-200 shadow-md">
+                    <div class="text-4xl font-bold mb-2 text-aws-blue">120 min</div>
+                    <div class="text-sm text-gray-600 font-medium">Duration</div>
                 </div>
-                <div class="exam-stat">
-                    <div class="exam-stat-value">720/1000</div>
-                    <div class="exam-stat-label">Passing Score</div>
+                <div class="bg-white/95 p-5 rounded-xl text-center border border-gray-200 shadow-md">
+                    <div class="text-4xl font-bold mb-2 text-aws-blue">720/1000</div>
+                    <div class="text-sm text-gray-600 font-medium">Passing Score</div>
                 </div>
-                <div class="exam-stat">
-                    <div class="exam-stat-value">$75</div>
-                    <div class="exam-stat-label">Exam Cost</div>
+                <div class="bg-white/95 p-5 rounded-xl text-center border border-gray-200 shadow-md">
+                    <div class="text-4xl font-bold mb-2 text-aws-blue">$75</div>
+                    <div class="text-sm text-gray-600 font-medium">Exam Cost</div>
                 </div>
             </div>
         </div>
 
-        <div class="progress-overview">
-            <h2>📊 Domain Weight Distribution</h2>
-            <div class="progress-bar-container">
-                <div class="progress-segment segment-1">D1: 20%</div>
-                <div class="progress-segment segment-2">D2: 24%</div>
-                <div class="progress-segment segment-3">D3: 28%</div>
-                <div class="progress-segment segment-4">D4: 14%</div>
-                <div class="progress-segment segment-5">D5: 14%</div>
+        <div class="bg-white/95 border-2 border-gray-300 rounded-2xl p-8 mb-10 shadow-md">
+            <h2 class="text-aws-blue-dark text-2xl font-semibold mb-5">📊 Domain Weight Distribution</h2>
+            <div class="bg-gray-200 rounded-xl h-8 overflow-hidden mb-3 flex">
+                <div class="segment-1 flex items-center justify-center text-white font-bold text-sm">D1: 20%</div>
+                <div class="segment-2 flex items-center justify-center text-white font-bold text-sm">D2: 24%</div>
+                <div class="segment-3 flex items-center justify-center text-white font-bold text-sm">D3: 28%</div>
+                <div class="segment-4 flex items-center justify-center text-white font-bold text-sm">D4: 14%</div>
+                <div class="segment-5 flex items-center justify-center text-white font-bold text-sm">D5: 14%</div>
             </div>
-            <p style="color: #6c757d; font-size: 0.95em; margin-top: 15px;">
+            <p class="text-gray-600 text-sm mt-4">
                 <strong>Note:</strong> Domain 3 (Applications of Foundation Models) carries the highest weight at 28%, making it the most important domain to master.
             </p>
         </div>
 
-        <div class="domains-grid">
-            <a href="domain1-study-guide.html" class="domain-card">
-                <div class="domain-header">
-                    <div class="domain-number">1</div>
-                    <div class="domain-title">
-                        <h3>Fundamentals of AI and ML</h3>
-                        <span class="domain-weight">20% of exam</span>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+            <a href="domain1-study-guide.html" class="block bg-white/95 border-2 border-gray-300 rounded-2xl p-8 hover:border-aws-blue hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="bg-gradient-to-br from-aws-blue to-aws-blue-dark text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mr-5 shadow-lg">1</div>
+                    <div class="flex-1">
+                        <h3 class="text-aws-blue-dark text-xl font-semibold mb-1">Fundamentals of AI and ML</h3>
+                        <span class="inline-block bg-blue-100 text-aws-blue-dark px-3 py-1 rounded-full text-sm font-semibold border border-blue-200">20% of exam</span>
                     </div>
                 </div>
-                <p class="domain-description">
+                <p class="text-gray-600 mb-4 leading-relaxed">
                     Build foundational knowledge of artificial intelligence and machine learning concepts essential for understanding AWS AI services.
                 </p>
-                <div class="domain-topics">
-                    <h4>Key Topics:</h4>
-                    <ul>
-                        <li>AI, ML, and Deep Learning Concepts</li>
-                        <li>Types of Machine Learning</li>
-                        <li>Data Concepts and Preprocessing</li>
-                        <li>Model Training and Evaluation</li>
+                <div class="bg-slate-100/80 p-4 rounded-lg border-l-4 border-aws-blue-light">
+                    <h4 class="text-aws-blue-dark text-sm font-semibold mb-2">Key Topics:</h4>
+                    <ul class="space-y-1">
+                        <li class="text-gray-700 text-sm"><span class="text-aws-blue-light font-bold mr-1">✓</span>AI, ML, and Deep Learning Concepts</li>
+                        <li class="text-gray-700 text-sm"><span class="text-aws-blue-light font-bold mr-1">✓</span>Types of Machine Learning</li>
+                        <li class="text-gray-700 text-sm"><span class="text-aws-blue-light font-bold mr-1">✓</span>Data Concepts and Preprocessing</li>
+                        <li class="text-gray-700 text-sm"><span class="text-aws-blue-light font-bold mr-1">✓</span>Model Training and Evaluation</li>
                     </ul>
                 </div>
-                <div class="study-time">⏱️ Recommended Study Time: 2-3 weeks</div>
+                <div class="bg-slate-100/90 text-gray-700 px-4 py-2 rounded-lg mt-4 text-sm text-center font-medium border border-gray-300">
+                    ⏱️ Recommended Study Time: 2-3 weeks
+                </div>
             </a>
 
-            <a href="domain2-study-guide.html" class="domain-card">
-                <div class="domain-header">
-                    <div class="domain-number">2</div>
-                    <div class="domain-title">
-                        <h3>Fundamentals of Generative AI</h3>
-                        <span class="domain-weight">24% of exam</span>
+            <a href="domain2-study-guide.html" class="block bg-white/95 border-2 border-gray-300 rounded-2xl p-8 hover:border-aws-blue hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="bg-gradient-to-br from-aws-blue to-aws-blue-dark text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mr-5 shadow-lg">2</div>
+                    <div class="flex-1">
+                        <h3 class="text-aws-blue-dark text-xl font-semibold mb-1">Fundamentals of Generative AI</h3>
+                        <span class="inline-block bg-blue-100 text-aws-blue-dark px-3 py-1 rounded-full text-sm font-semibold border border-blue-200">24% of exam</span>
                     </div>
                 </div>
-                <p class="domain-description">
+                <p class="text-gray-600 mb-4 leading-relaxed">
                     Master generative AI concepts, foundation models, and AWS services that enable generative AI applications.
                 </p>
-                <div class="domain-topics">
-                    <h4>Key Topics:</h4>
-                    <ul>
-                        <li>Generative AI and Foundation Models</li>
-                        <li>Large Language Models (LLMs)</li>
-                        <li>Capabilities and Limitations</li>
-                        <li>AWS GenAI Infrastructure</li>
+                <div class="bg-slate-100/80 p-4 rounded-lg border-l-4 border-aws-blue-light">
+                    <h4 class="text-aws-blue-dark text-sm font-semibold mb-2">Key Topics:</h4>
+                    <ul class="space-y-1">
+                        <li class="text-gray-700 text-sm"><span class="text-aws-blue-light font-bold mr-1">✓</span>Generative AI and Foundation Models</li>
+                        <li class="text-gray-700 text-sm"><span class="text-aws-blue-light font-bold mr-1">✓</span>Large Language Models (LLMs)</li>
+                        <li class="text-gray-700 text-sm"><span class="text-aws-blue-light font-bold mr-1">✓</span>Capabilities and Limitations</li>
+                        <li class="text-gray-700 text-sm"><span class="text-aws-blue-light font-bold mr-1">✓</span>AWS GenAI Infrastructure</li>
                     </ul>
                 </div>
-                <div class="study-time">⏱️ Recommended Study Time: 3-4 weeks</div>
+                <div class="bg-slate-100/90 text-gray-700 px-4 py-2 rounded-lg mt-4 text-sm text-center font-medium border border-gray-300">
+                    ⏱️ Recommended Study Time: 3-4 weeks
+                </div>
             </a>
 
-            <a href="domain3-study-guide.html" class="domain-card">
-                <div class="domain-header">
-                    <div class="domain-number">3</div>
-                    <div class="domain-title">
-                        <h3>Applications of Foundation Models</h3>
-                        <span class="domain-weight">28% of exam</span>
+            <a href="domain3-study-guide.html" class="block bg-white/95 border-2 border-gray-300 rounded-2xl p-8 hover:border-aws-blue hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="bg-gradient-to-br from-aws-blue to-aws-blue-dark text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mr-5 shadow-lg">3</div>
+                    <div class="flex-1">
+                        <h3 class="text-aws-blue-dark text-xl font-semibold mb-1">Applications of Foundation Models</h3>
+                        <span class="inline-block bg-blue-100 text-aws-blue-dark px-3 py-1 rounded-full text-sm font-semibold border border-blue-200">28% of exam</span>
                     </div>
                 </div>
-                <p class="domain-description">
+                <p class="text-gray-600 mb-4 leading-relaxed">
                     Learn practical implementation of foundation models, prompt engineering, fine-tuning, and deployment strategies.
                 </p>
-                <div class="domain-topics">
-                    <h4>Key Topics:</h4>
-                    <ul>
-                        <li>Application Design Patterns</li>
-                        <li>Prompt Engineering Techniques</li>
-                        <li>Model Training and Fine-tuning</li>
-                        <li>Performance Evaluation</li>
+                <div class="bg-slate-100/80 p-4 rounded-lg border-l-4 border-aws-blue-light">
+                    <h4 class="text-aws-blue-dark text-sm font-semibold mb-2">Key Topics:</h4>
+                    <ul class="space-y-1">
+                        <li class="text-gray-700 text-sm"><span class="text-aws-blue-light font-bold mr-1">✓</span>Application Design Patterns</li>
+                        <li class="text-gray-700 text-sm"><span class="text-aws-blue-light font-bold mr-1">✓</span>Prompt Engineering Techniques</li>
+                        <li class="text-gray-700 text-sm"><span class="text-aws-blue-light font-bold mr-1">✓</span>Model Training and Fine-tuning</li>
+                        <li class="text-gray-700 text-sm"><span class="text-aws-blue-light font-bold mr-1">✓</span>Performance Evaluation</li>
                     </ul>
                 </div>
-                <div class="study-time">⏱️ Recommended Study Time: 4-5 weeks</div>
+                <div class="bg-slate-100/90 text-gray-700 px-4 py-2 rounded-lg mt-4 text-sm text-center font-medium border border-gray-300">
+                    ⏱️ Recommended Study Time: 4-5 weeks
+                </div>
             </a>
 
-            <a href="domain4-study-guide.html" class="domain-card">
-                <div class="domain-header">
-                    <div class="domain-number">4</div>
-                    <div class="domain-title">
-                        <h3>Guidelines for Responsible AI</h3>
-                        <span class="domain-weight">14% of exam</span>
+            <a href="domain4-study-guide.html" class="block bg-white/95 border-2 border-gray-300 rounded-2xl p-8 hover:border-aws-blue hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="bg-gradient-to-br from-aws-blue to-aws-blue-dark text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mr-5 shadow-lg">4</div>
+                    <div class="flex-1">
+                        <h3 class="text-aws-blue-dark text-xl font-semibold mb-1">Guidelines for Responsible AI</h3>
+                        <span class="inline-block bg-blue-100 text-aws-blue-dark px-3 py-1 rounded-full text-sm font-semibold border border-blue-200">14% of exam</span>
                     </div>
                 </div>
-                <p class="domain-description">
+                <p class="text-gray-600 mb-4 leading-relaxed">
                     Understand ethical AI development, bias detection and mitigation, fairness, explainability, and human-centered design.
                 </p>
-                <div class="domain-topics">
-                    <h4>Key Topics:</h4>
-                    <ul>
-                        <li>Responsible AI Features</li>
-                        <li>Bias Detection and Mitigation</li>
-                        <li>Explainable AI (XAI)</li>
-                        <li>Human-Centered Design</li>
+                <div class="bg-slate-100/80 p-4 rounded-lg border-l-4 border-aws-blue-light">
+                    <h4 class="text-aws-blue-dark text-sm font-semibold mb-2">Key Topics:</h4>
+                    <ul class="space-y-1">
+                        <li class="text-gray-700 text-sm"><span class="text-aws-blue-light font-bold mr-1">✓</span>Responsible AI Features</li>
+                        <li class="text-gray-700 text-sm"><span class="text-aws-blue-light font-bold mr-1">✓</span>Bias Detection and Mitigation</li>
+                        <li class="text-gray-700 text-sm"><span class="text-aws-blue-light font-bold mr-1">✓</span>Explainable AI (XAI)</li>
+                        <li class="text-gray-700 text-sm"><span class="text-aws-blue-light font-bold mr-1">✓</span>Human-Centered Design</li>
                     </ul>
                 </div>
-                <div class="study-time">⏱️ Recommended Study Time: 2-3 weeks</div>
+                <div class="bg-slate-100/90 text-gray-700 px-4 py-2 rounded-lg mt-4 text-sm text-center font-medium border border-gray-300">
+                    ⏱️ Recommended Study Time: 2-3 weeks
+                </div>
             </a>
 
-            <a href="domain5-study-guide.html" class="domain-card">
-                <div class="domain-header">
-                    <div class="domain-number">5</div>
-                    <div class="domain-title">
-                        <h3>Security, Compliance & Governance</h3>
-                        <span class="domain-weight">14% of exam</span>
+            <a href="domain5-study-guide.html" class="block bg-white/95 border-2 border-gray-300 rounded-2xl p-8 hover:border-aws-blue hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="bg-gradient-to-br from-aws-blue to-aws-blue-dark text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mr-5 shadow-lg">5</div>
+                    <div class="flex-1">
+                        <h3 class="text-aws-blue-dark text-xl font-semibold mb-1">Security, Compliance & Governance</h3>
+                        <span class="inline-block bg-blue-100 text-aws-blue-dark px-3 py-1 rounded-full text-sm font-semibold border border-blue-200">14% of exam</span>
                     </div>
                 </div>
-                <p class="domain-description">
+                <p class="text-gray-600 mb-4 leading-relaxed">
                     Implement security best practices, ensure compliance, and establish governance frameworks for AI solutions.
                 </p>
-                <div class="domain-topics">
-                    <h4>Key Topics:</h4>
-                    <ul>
-                        <li>AI System Security</li>
-                        <li>Compliance Frameworks (GDPR, HIPAA)</li>
-                        <li>Data Protection and Encryption</li>
-                        <li>Governance Strategies</li>
+                <div class="bg-slate-100/80 p-4 rounded-lg border-l-4 border-aws-blue-light">
+                    <h4 class="text-aws-blue-dark text-sm font-semibold mb-2">Key Topics:</h4>
+                    <ul class="space-y-1">
+                        <li class="text-gray-700 text-sm"><span class="text-aws-blue-light font-bold mr-1">✓</span>AI System Security</li>
+                        <li class="text-gray-700 text-sm"><span class="text-aws-blue-light font-bold mr-1">✓</span>Compliance Frameworks (GDPR, HIPAA)</li>
+                        <li class="text-gray-700 text-sm"><span class="text-aws-blue-light font-bold mr-1">✓</span>Data Protection and Encryption</li>
+                        <li class="text-gray-700 text-sm"><span class="text-aws-blue-light font-bold mr-1">✓</span>Governance Strategies</li>
                     </ul>
                 </div>
-                <div class="study-time">⏱️ Recommended Study Time: 2-3 weeks</div>
+                <div class="bg-slate-100/90 text-gray-700 px-4 py-2 rounded-lg mt-4 text-sm text-center font-medium border border-gray-300">
+                    ⏱️ Recommended Study Time: 2-3 weeks
+                </div>
             </a>
 
-            <a href="mind-map.html" class="domain-card">
-                <div class="domain-header">
-                    <div class="domain-number">🗺️</div>
-                    <div class="domain-title">
-                        <h3>Visual Mind Map</h3>
-                        <span class="domain-weight" style="background: #e6f2ff; color: #1e3a5f; border: 1px solid #b8d4f1;">All Domains</span>
+            <a href="mind-map.html" class="block bg-white/95 border-2 border-gray-300 rounded-2xl p-8 hover:border-aws-blue hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 shadow-md">
+                <div class="flex items-center mb-4">
+                    <div class="bg-gradient-to-br from-aws-blue to-aws-blue-dark text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mr-5 shadow-lg">🗺️</div>
+                    <div class="flex-1">
+                        <h3 class="text-aws-blue-dark text-xl font-semibold mb-1">Visual Mind Map</h3>
+                        <span class="inline-block bg-blue-100 text-aws-blue-dark px-3 py-1 rounded-full text-sm font-semibold border border-blue-200">All Domains</span>
                     </div>
                 </div>
-                <p class="domain-description">
+                <p class="text-gray-600 mb-4 leading-relaxed">
                     Interactive mind map visualization showing key concepts and relationships across all five certification domains.
                 </p>
-                <div class="domain-topics">
-                    <h4>Features:</h4>
-                    <ul>
-                        <li>Comprehensive domain overview</li>
-                        <li>Zoom in/out for detailed view</li>
-                        <li>Pan to explore different areas</li>
-                        <li>Fullscreen mode available</li>
+                <div class="bg-slate-100/80 p-4 rounded-lg border-l-4 border-aws-blue-light">
+                    <h4 class="text-aws-blue-dark text-sm font-semibold mb-2">Features:</h4>
+                    <ul class="space-y-1">
+                        <li class="text-gray-700 text-sm"><span class="text-aws-blue-light font-bold mr-1">✓</span>Comprehensive domain overview</li>
+                        <li class="text-gray-700 text-sm"><span class="text-aws-blue-light font-bold mr-1">✓</span>Zoom in/out for detailed view</li>
+                        <li class="text-gray-700 text-sm"><span class="text-aws-blue-light font-bold mr-1">✓</span>Pan to explore different areas</li>
+                        <li class="text-gray-700 text-sm"><span class="text-aws-blue-light font-bold mr-1">✓</span>Fullscreen mode available</li>
                     </ul>
                 </div>
-                <div class="study-time">🔍 Click to explore the interactive mind map</div>
+                <div class="bg-slate-100/90 text-gray-700 px-4 py-2 rounded-lg mt-4 text-sm text-center font-medium border border-gray-300">
+                    🔍 Click to explore the interactive mind map
+                </div>
             </a>
         </div>
 
-
-        <div class="footer">
-            <p><strong>Total Recommended Study Time:</strong> 13-18 weeks</p>
-            <p style="margin-top: 10px;">Good luck with your AWS AI Practitioner certification journey! 🚀</p>
+        <div class="text-center p-8 text-gray-600 border-t-2 border-gray-300 mt-10">
+            <p class="text-gray-700 leading-relaxed mb-3"><strong>Total Recommended Study Time:</strong> 13-18 weeks</p>
+            <p class="text-gray-700 leading-relaxed mb-3">Good luck with your AWS AI Practitioner certification journey! 🚀</p>
         </div>
     </div>
 

@@ -5,7 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AWS AI Practitioner - Domain 4: Guidelines for Responsible AI</title>
-    <link rel="stylesheet" href="../style.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../tailwind-custom.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'aws-dark': '#232f3e',
+                        'aws-orange': '#ff9900',
+                        'aws-blue': '#2c5282',
+                        'aws-blue-dark': '#1e3a5f',
+                        'aws-blue-light': '#4a7ba7',
+                    }
+                }
+            }
+        }
+    </script>
 
     <script>
       
@@ -56,293 +72,293 @@
 
     </script>
     </head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>⚖️ Domain 4: Guidelines for Responsible AI</h1>
-            <p>AWS AI Practitioner Certification Study Guide</p>
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressFill"></div>
+<body class="gradient-page-bg min-h-screen p-5">
+    <div class="max-w-7xl mx-auto p-10 bg-white/75 rounded-2xl shadow-2xl">
+        <div class="gradient-aws-blue text-center mb-12 p-10 rounded-2xl text-white shadow-lg">
+            <h1 class="text-5xl font-bold mb-4 drop-shadow-lg">⚖️ Domain 4: Guidelines for Responsible AI</h1>
+            <p class="text-gray-700 leading-relaxed mb-3">AWS AI Practitioner Certification Study Guide</p>
+            <div class="bg-gray-200 rounded-xl h-2 my-5 overflow-hidden">
+                <div class="bg-gradient-to-r from-aws-blue-light to-aws-blue h-full rounded-xl transition-all duration-300" id="progressFill"></div>
             </div>
-            <p><strong>Weight: 14% of exam</strong> | <strong>Study Time: 2-3 weeks</strong></p>
+            <p class="text-gray-700 leading-relaxed mb-3"><strong>Weight: 14% of exam</strong> | <strong>Study Time: 2-3 weeks</strong></p>
         </div>
 
-        <div class="domain-overview">
-            <h2>📋 Domain Overview</h2>
-            <p><strong>Purpose:</strong> This domain focuses on ethical AI development, responsible AI practices, bias detection and mitigation, fairness, explainability, and human-centered design principles for AI systems.</p>
-            <p><strong>Focus Areas:</strong> Responsible AI features, bias and fairness, explainable AI, human-centered design, and AWS tools for responsible AI implementation.</p>
-            <p><strong>Depth Level:</strong> Conceptual understanding with practical knowledge of AWS responsible AI tools and implementation strategies.</p>
+        <div class="bg-slate-50/90 p-6 rounded-xl mb-8 border-l-4 border-aws-blue shadow-md">
+            <h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">📋 Domain Overview</h2>
+            <p class="text-gray-700 leading-relaxed mb-3"><strong>Purpose:</strong> This domain focuses on ethical AI development, responsible AI practices, bias detection and mitigation, fairness, explainability, and human-centered design principles for AI systems.</p>
+            <p class="text-gray-700 leading-relaxed mb-3"><strong>Focus Areas:</strong> Responsible AI features, bias and fairness, explainable AI, human-centered design, and AWS tools for responsible AI implementation.</p>
+            <p class="text-gray-700 leading-relaxed mb-3"><strong>Depth Level:</strong> Conceptual understanding with practical knowledge of AWS responsible AI tools and implementation strategies.</p>
         </div>
 
         <!-- Task Statement 4.1 -->
-        <div class="task-statement">
-            <div class="task-header" onclick="toggleTask('task1')">
-                <h3>Task Statement 4.1: Explain the Development of AI Systems that are Responsible</h3>
-                <button class="toggle-btn" id="toggle1">▼</button>
+        <div class="bg-white border border-gray-200 rounded-xl mb-6 overflow-hidden shadow-lg">
+            <div class="gradient-aws-blue text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task1')">
+                <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Task Statement 4.1: Explain the Development of AI Systems that are Responsible</h3>
+                <button class="bg-transparent border-none text-white text-2xl cursor-pointer transition-transform duration-300 p-0 m-0 leading-none" id="toggle1">▼</button>
             </div>
-            <div class="task-content" id="task1">
-                <div class="objectives">
-                    <h4>🎯 Learning Objectives:</h4>
-                    <ul>
-                        <li>Identify features of responsible AI (bias, fairness, explainability)</li>
-                        <li>Understand the effects of bias in AI systems</li>
-                        <li>Recognize methods for bias detection and mitigation</li>
-                        <li>Understand responsible AI development lifecycle</li>
+            <div class="p-6 hidden" id="task1">
+                <div class="bg-slate-100/80 p-4 rounded-lg my-4 border-l-4 border-aws-blue-light">
+                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🎯 Learning Objectives:</h4>
+                    <ul class="list-none space-y-2 ml-0">
+                        <li class="text-gray-700">Identify features of responsible AI (bias, fairness, explainability)</li>
+                        <li class="text-gray-700">Understand the effects of bias in AI systems</li>
+                        <li class="text-gray-700">Recognize methods for bias detection and mitigation</li>
+                        <li class="text-gray-700">Understand responsible AI development lifecycle</li>
                     </ul>
                 </div>
 
-                <h4>🔑 Core Features of Responsible AI</h4>
-                <div class="concept-grid">
+                <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🔑 Core Features of Responsible AI</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
                     <div class="principle-card">
-                        <h5>Fairness</h5>
-                        <p>AI systems should treat all individuals and groups equitably, without discrimination or bias.</p>
-                        <p><strong>Key Aspects:</strong> Equal treatment, equal opportunity, demographic parity</p>
-                        <p><strong>Measurement:</strong> Statistical parity, equalized odds, calibration</p>
-                        <p><strong>AWS Tools:</strong> SageMaker Clarify bias detection</p>
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Fairness</h5>
+                        <p class="text-gray-700 leading-relaxed mb-3">AI systems should treat all individuals and groups equitably, without discrimination or bias.</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Key Aspects:</strong> Equal treatment, equal opportunity, demographic parity</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Measurement:</strong> Statistical parity, equalized odds, calibration</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>AWS Tools:</strong> SageMaker Clarify bias detection</p>
                     </div>
                     <div class="principle-card">
-                        <h5>Explainability</h5>
-                        <p>AI decisions should be interpretable and understandable to humans.</p>
-                        <p><strong>Levels:</strong> Global (model behavior), Local (individual predictions)</p>
-                        <p><strong>Techniques:</strong> SHAP, LIME, feature importance, attention visualization</p>
-                        <p><strong>AWS Tools:</strong> SageMaker Clarify explainability features</p>
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Explainability</h5>
+                        <p class="text-gray-700 leading-relaxed mb-3">AI decisions should be interpretable and understandable to humans.</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Levels:</strong> Global (model behavior), Local (individual predictions)</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Techniques:</strong> SHAP, LIME, feature importance, attention visualization</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>AWS Tools:</strong> SageMaker Clarify explainability features</p>
                     </div>
                     <div class="principle-card">
-                        <h5>Transparency</h5>
-                        <p>Clear communication about AI system capabilities, limitations, and decision processes.</p>
-                        <p><strong>Components:</strong> Model documentation, data sources, performance metrics</p>
-                        <p><strong>Implementation:</strong> Model cards, AI service cards, audit trails</p>
-                        <p><strong>AWS Resources:</strong> AI Service Cards, documentation standards</p>
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Transparency</h5>
+                        <p class="text-gray-700 leading-relaxed mb-3">Clear communication about AI system capabilities, limitations, and decision processes.</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Components:</strong> Model documentation, data sources, performance metrics</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Implementation:</strong> Model cards, AI service cards, audit trails</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>AWS Resources:</strong> AI Service Cards, documentation standards</p>
                     </div>
                     <div class="principle-card">
-                        <h5>Accountability</h5>
-                        <p>Clear responsibility and governance structures for AI system outcomes.</p>
-                        <p><strong>Elements:</strong> Human oversight, audit trails, error handling</p>
-                        <p><strong>Practices:</strong> Regular monitoring, incident response, continuous improvement</p>
-                        <p><strong>AWS Support:</strong> CloudTrail, monitoring, governance frameworks</p>
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Accountability</h5>
+                        <p class="text-gray-700 leading-relaxed mb-3">Clear responsibility and governance structures for AI system outcomes.</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Elements:</strong> Human oversight, audit trails, error handling</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Practices:</strong> Regular monitoring, incident response, continuous improvement</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>AWS Support:</strong> CloudTrail, monitoring, governance frameworks</p>
                     </div>
                 </div>
 
-                <h4>⚠️ Types and Effects of Bias in AI Systems</h4>
+                <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">⚠️ Types and Effects of Bias in AI Systems</h4>
                 <div class="bias-type data-bias">
-                    <h5>Data Bias</h5>
-                    <p><strong>Definition:</strong> Systematic errors or prejudices in training data</p>
-                    <p><strong>Types:</strong> Historical bias, representation bias, measurement bias</p>
-                    <p><strong>Examples:</strong> Underrepresented demographics, skewed historical data</p>
-                    <p><strong>Effects:</strong> Unfair predictions, perpetuation of stereotypes</p>
-                    <p><strong>Detection:</strong> Statistical analysis of data distributions</p>
+                    <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Data Bias</h5>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Definition:</strong> Systematic errors or prejudices in training data</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Types:</strong> Historical bias, representation bias, measurement bias</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Examples:</strong> Underrepresented demographics, skewed historical data</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Effects:</strong> Unfair predictions, perpetuation of stereotypes</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Detection:</strong> Statistical analysis of data distributions</p>
                 </div>
 
                 <div class="bias-type model-bias">
-                    <h5>Model Bias</h5>
-                    <p><strong>Definition:</strong> Bias introduced during model training and development</p>
-                    <p><strong>Causes:</strong> Algorithm selection, feature engineering, hyperparameter tuning</p>
-                    <p><strong>Examples:</strong> Overfitting to majority groups, biased feature selection</p>
-                    <p><strong>Effects:</strong> Discriminatory outcomes, reduced performance for minorities</p>
-                    <p><strong>Detection:</strong> Performance analysis across different groups</p>
+                    <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Model Bias</h5>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Definition:</strong> Bias introduced during model training and development</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Causes:</strong> Algorithm selection, feature engineering, hyperparameter tuning</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Examples:</strong> Overfitting to majority groups, biased feature selection</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Effects:</strong> Discriminatory outcomes, reduced performance for minorities</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Detection:</strong> Performance analysis across different groups</p>
                 </div>
 
                 <div class="bias-type deployment-bias">
-                    <h5>Deployment Bias</h5>
-                    <p><strong>Definition:</strong> Bias that emerges when models are used in real-world contexts</p>
-                    <p><strong>Causes:</strong> Context mismatch, feedback loops, user behavior</p>
-                    <p><strong>Examples:</strong> Different usage patterns, evolving data distributions</p>
-                    <p><strong>Effects:</strong> Degraded performance over time, amplified inequalities</p>
-                    <p><strong>Detection:</strong> Continuous monitoring and evaluation</p>
+                    <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Deployment Bias</h5>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Definition:</strong> Bias that emerges when models are used in real-world contexts</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Causes:</strong> Context mismatch, feedback loops, user behavior</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Examples:</strong> Different usage patterns, evolving data distributions</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Effects:</strong> Degraded performance over time, amplified inequalities</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Detection:</strong> Continuous monitoring and evaluation</p>
                 </div>
 
-                <h4>📊 Bias Detection Methods</h4>
-                <div class="concept-grid">
-                    <div class="concept-card">
-                        <h5>Statistical Measures</h5>
-                        <p><strong>Demographic Parity:</strong> Equal positive prediction rates across groups</p>
-                        <p><strong>Equalized Odds:</strong> Equal true/false positive rates across groups</p>
-                        <p><strong>Calibration:</strong> Prediction probabilities match actual outcomes</p>
-                        <p><strong>AWS Implementation:</strong> SageMaker Clarify pre-training bias metrics</p>
+                <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">📊 Bias Detection Methods</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
+                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Statistical Measures</h5>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Demographic Parity:</strong> Equal positive prediction rates across groups</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Equalized Odds:</strong> Equal true/false positive rates across groups</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Calibration:</strong> Prediction probabilities match actual outcomes</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>AWS Implementation:</strong> SageMaker Clarify pre-training bias metrics</p>
                     </div>
-                    <div class="concept-card">
-                        <h5>Performance Analysis</h5>
-                        <p><strong>Group-wise Metrics:</strong> Accuracy, precision, recall by demographic</p>
-                        <p><strong>Confusion Matrix Analysis:</strong> Error patterns across groups</p>
-                        <p><strong>ROC Curve Comparison:</strong> Performance differences visualization</p>
-                        <p><strong>AWS Tools:</strong> SageMaker Clarify post-training bias analysis</p>
+                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Performance Analysis</h5>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Group-wise Metrics:</strong> Accuracy, precision, recall by demographic</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Confusion Matrix Analysis:</strong> Error patterns across groups</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>ROC Curve Comparison:</strong> Performance differences visualization</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>AWS Tools:</strong> SageMaker Clarify post-training bias analysis</p>
                     </div>
-                    <div class="concept-card">
-                        <h5>Continuous Monitoring</h5>
-                        <p><strong>Real-time Detection:</strong> Live bias monitoring in production</p>
-                        <p><strong>Drift Detection:</strong> Changes in bias over time</p>
-                        <p><strong>Alert Systems:</strong> Automated notifications for bias threshold breaches</p>
-                        <p><strong>AWS Services:</strong> SageMaker Model Monitor, CloudWatch</p>
+                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Continuous Monitoring</h5>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Real-time Detection:</strong> Live bias monitoring in production</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Drift Detection:</strong> Changes in bias over time</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Alert Systems:</strong> Automated notifications for bias threshold breaches</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>AWS Services:</strong> SageMaker Model Monitor, CloudWatch</p>
                     </div>
-                    <div class="concept-card">
-                        <h5>Human Evaluation</h5>
-                        <p><strong>Expert Review:</strong> Domain expert assessment of model outputs</p>
-                        <p><strong>User Feedback:</strong> Stakeholder and end-user input</p>
-                        <p><strong>Adversarial Testing:</strong> Intentional bias probing</p>
-                        <p><strong>AWS Support:</strong> A2I (Augmented AI) human review workflows</p>
+                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Human Evaluation</h5>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Expert Review:</strong> Domain expert assessment of model outputs</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>User Feedback:</strong> Stakeholder and end-user input</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Adversarial Testing:</strong> Intentional bias probing</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>AWS Support:</strong> A2I (Augmented AI) human review workflows</p>
                     </div>
                 </div>
 
-                <div class="visual-placeholder">
-                    <h4>📊 Recommended Visual: Bias Detection Workflow</h4>
-                    <p>Create a flowchart showing: Data Collection → Bias Analysis → Model Training → Performance Evaluation → Deployment Monitoring → Continuous Improvement</p>
+                <div class="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-dashed border-gray-400 rounded-lg p-8 text-center my-4 text-gray-600 italic">
+                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">📊 Recommended Visual: Bias Detection Workflow</h4>
+                    <p class="text-gray-700 leading-relaxed mb-3">Create a flowchart showing: Data Collection → Bias Analysis → Model Training → Performance Evaluation → Deployment Monitoring → Continuous Improvement</p>
                 </div>
 
-                <h4>🔧 Bias Mitigation Strategies</h4>
+                <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🔧 Bias Mitigation Strategies</h4>
                 <div class="lifecycle-container">
                     <div class="lifecycle-stage">
-                        <h5>Pre-processing Techniques</h5>
-                        <p><strong>Data Augmentation:</strong> Increase representation of underrepresented groups</p>
-                        <p><strong>Resampling:</strong> Balance dataset across demographic groups</p>
-                        <p><strong>Feature Selection:</strong> Remove or modify biased features</p>
-                        <p><strong>Synthetic Data:</strong> Generate balanced training examples</p>
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Pre-processing Techniques</h5>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Data Augmentation:</strong> Increase representation of underrepresented groups</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Resampling:</strong> Balance dataset across demographic groups</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Feature Selection:</strong> Remove or modify biased features</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Synthetic Data:</strong> Generate balanced training examples</p>
                     </div>
                     <div class="lifecycle-stage">
-                        <h5>In-processing Techniques</h5>
-                        <p><strong>Fairness Constraints:</strong> Add fairness objectives to loss function</p>
-                        <p><strong>Adversarial Debiasing:</strong> Train models to be invariant to sensitive attributes</p>
-                        <p><strong>Multi-task Learning:</strong> Joint optimization for performance and fairness</p>
-                        <p><strong>Regularization:</strong> Penalty terms for biased predictions</p>
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">In-processing Techniques</h5>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Fairness Constraints:</strong> Add fairness objectives to loss function</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Adversarial Debiasing:</strong> Train models to be invariant to sensitive attributes</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Multi-task Learning:</strong> Joint optimization for performance and fairness</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Regularization:</strong> Penalty terms for biased predictions</p>
                     </div>
                     <div class="lifecycle-stage">
-                        <h5>Post-processing Techniques</h5>
-                        <p><strong>Threshold Optimization:</strong> Adjust decision thresholds per group</p>
-                        <p><strong>Calibration:</strong> Ensure prediction probabilities are well-calibrated</p>
-                        <p><strong>Output Modification:</strong> Adjust final predictions to achieve fairness</p>
-                        <p><strong>Ensemble Methods:</strong> Combine multiple models for fairer outcomes</p>
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Post-processing Techniques</h5>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Threshold Optimization:</strong> Adjust decision thresholds per group</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Calibration:</strong> Ensure prediction probabilities are well-calibrated</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Output Modification:</strong> Adjust final predictions to achieve fairness</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Ensemble Methods:</strong> Combine multiple models for fairer outcomes</p>
                     </div>
                 </div>
 
-                <div class="aws-services">
-                    <h4>🔧 AWS Tools for Responsible AI Development</h4>
-                    <div class="service-grid">
-                        <div class="service-item">
+                <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-aws-blue-light">
+                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🔧 AWS Tools for Responsible AI Development</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
                             <strong>Amazon SageMaker Clarify</strong><br>
                             Comprehensive bias detection and model explainability platform
                         </div>
-                        <div class="service-item">
+                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
                             <strong>AWS AI Service Cards</strong><br>
                             Transparency documentation for AWS AI services
                         </div>
-                        <div class="service-item">
+                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
                             <strong>Amazon A2I (Augmented AI)</strong><br>
                             Human review workflows for AI predictions
                         </div>
-                        <div class="service-item">
+                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
                             <strong>AWS CloudTrail</strong><br>
                             Audit trails and governance for AI system usage
                         </div>
-                        <div class="service-item">
+                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
                             <strong>Amazon Bedrock Guardrails</strong><br>
                             Safety controls and content filtering for foundation models
                         </div>
-                        <div class="service-item">
+                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
                             <strong>SageMaker Model Monitor</strong><br>
                             Continuous monitoring for model performance and bias
                         </div>
                     </div>
                 </div>
 
-                <div class="hands-on">
-                    <h4>🛠️ Hands-On Practice</h4>
-                    <ul>
-                        <li><strong>SageMaker Clarify:</strong> Run bias detection on a sample dataset</li>
-                        <li><strong>Bias Metrics:</strong> Calculate demographic parity and equalized odds</li>
-                        <li><strong>Model Cards:</strong> Create documentation for a model including bias analysis</li>
-                        <li><strong>A2I Workflow:</strong> Set up human review for high-risk predictions</li>
-                        <li><strong>Monitoring Setup:</strong> Configure alerts for bias threshold breaches</li>
+                <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-blue-400">
+                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🛠️ Hands-On Practice</h4>
+                    <ul class="list-none space-y-2 ml-0">
+                        <li class="text-gray-700"><strong>SageMaker Clarify:</strong> Run bias detection on a sample dataset</li>
+                        <li class="text-gray-700"><strong>Bias Metrics:</strong> Calculate demographic parity and equalized odds</li>
+                        <li class="text-gray-700"><strong>Model Cards:</strong> Create documentation for a model including bias analysis</li>
+                        <li class="text-gray-700"><strong>A2I Workflow:</strong> Set up human review for high-risk predictions</li>
+                        <li class="text-gray-700"><strong>Monitoring Setup:</strong> Configure alerts for bias threshold breaches</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <!-- Task Statement 4.2 -->
-        <div class="task-statement">
-            <div class="task-header" onclick="toggleTask('task2')">
-                <h3>Task Statement 4.2: Recognize the Importance of Transparent and Explainable AI</h3>
-                <button class="toggle-btn" id="toggle2">▼</button>
+        <div class="bg-white border border-gray-200 rounded-xl mb-6 overflow-hidden shadow-lg">
+            <div class="gradient-aws-blue text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task2')">
+                <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Task Statement 4.2: Recognize the Importance of Transparent and Explainable AI</h3>
+                <button class="bg-transparent border-none text-white text-2xl cursor-pointer transition-transform duration-300 p-0 m-0 leading-none" id="toggle2">▼</button>
             </div>
-            <div class="task-content" id="task2">
-                <div class="objectives">
-                    <h4>🎯 Learning Objectives:</h4>
-                    <ul>
-                        <li>Understand different levels of AI explainability</li>
-                        <li>Identify appropriate explainability techniques for different use cases</li>
-                        <li>Recognize the importance of transparency in AI systems</li>
-                        <li>Understand trade-offs between model performance and explainability</li>
+            <div class="p-6 hidden" id="task2">
+                <div class="bg-slate-100/80 p-4 rounded-lg my-4 border-l-4 border-aws-blue-light">
+                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🎯 Learning Objectives:</h4>
+                    <ul class="list-none space-y-2 ml-0">
+                        <li class="text-gray-700">Understand different levels of AI explainability</li>
+                        <li class="text-gray-700">Identify appropriate explainability techniques for different use cases</li>
+                        <li class="text-gray-700">Recognize the importance of transparency in AI systems</li>
+                        <li class="text-gray-700">Understand trade-offs between model performance and explainability</li>
                     </ul>
                 </div>
 
-                <h4>🔍 Levels of AI Explainability</h4>
-                <div class="concept-grid">
-                    <div class="concept-card">
-                        <h5>Global Explainability</h5>
+                <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🔍 Levels of AI Explainability</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
+                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Global Explainability</h5>
                         <span class="explainability-level explainability-global">Model-Level</span>
-                        <p>Understanding overall model behavior and decision patterns across all inputs</p>
-                        <p><strong>Techniques:</strong> Feature importance, model visualization, decision trees</p>
-                        <p><strong>Use Cases:</strong> Model validation, regulatory compliance, stakeholder communication</p>
-                        <p><strong>AWS Tools:</strong> SageMaker Clarify global explanations</p>
-                        <p><strong>Benefits:</strong> High-level insights, policy development, trust building</p>
+                        <p class="text-gray-700 leading-relaxed mb-3">Understanding overall model behavior and decision patterns across all inputs</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Techniques:</strong> Feature importance, model visualization, decision trees</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Use Cases:</strong> Model validation, regulatory compliance, stakeholder communication</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>AWS Tools:</strong> SageMaker Clarify global explanations</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Benefits:</strong> High-level insights, policy development, trust building</p>
                     </div>
-                    <div class="concept-card">
-                        <h5>Local Explainability</h5>
+                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Local Explainability</h5>
                         <span class="explainability-level explainability-local">Instance-Level</span>
-                        <p>Understanding why a specific prediction was made for an individual input</p>
-                        <p><strong>Techniques:</strong> SHAP values, LIME, attention maps, gradient-based methods</p>
-                        <p><strong>Use Cases:</strong> Individual decision justification, debugging, user trust</p>
-                        <p><strong>AWS Tools:</strong> SageMaker Clarify local explanations</p>
-                        <p><strong>Benefits:</strong> Detailed insights, actionable feedback, error identification</p>
+                        <p class="text-gray-700 leading-relaxed mb-3">Understanding why a specific prediction was made for an individual input</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Techniques:</strong> SHAP values, LIME, attention maps, gradient-based methods</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Use Cases:</strong> Individual decision justification, debugging, user trust</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>AWS Tools:</strong> SageMaker Clarify local explanations</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Benefits:</strong> Detailed insights, actionable feedback, error identification</p>
                     </div>
-                    <div class="concept-card">
-                        <h5>Counterfactual Explanations</h5>
+                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Counterfactual Explanations</h5>
                         <span class="explainability-level explainability-counterfactual">What-If Analysis</span>
-                        <p>Explaining what would need to change for a different prediction outcome</p>
-                        <p><strong>Techniques:</strong> Counterfactual generation, minimal changes analysis</p>
-                        <p><strong>Use Cases:</strong> Actionable recommendations, fairness analysis, user guidance</p>
-                        <p><strong>Implementation:</strong> Custom algorithms, research tools</p>
-                        <p><strong>Benefits:</strong> Actionable insights, fairness assessment, user empowerment</p>
+                        <p class="text-gray-700 leading-relaxed mb-3">Explaining what would need to change for a different prediction outcome</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Techniques:</strong> Counterfactual generation, minimal changes analysis</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Use Cases:</strong> Actionable recommendations, fairness analysis, user guidance</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Implementation:</strong> Custom algorithms, research tools</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Benefits:</strong> Actionable insights, fairness assessment, user empowerment</p>
                     </div>
                 </div>
 
-                <h4>🛠️ Explainability Techniques and Methods</h4>
+                <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🛠️ Explainability Techniques and Methods</h4>
                 <div class="tool-feature">
-                    <h6>SHAP (SHapley Additive exPlanations)</h6>
-                    <p><strong>Principle:</strong> Game theory-based approach to explain individual predictions</p>
-                    <p><strong>Advantages:</strong> Mathematically grounded, consistent, efficient</p>
-                    <p><strong>Applications:</strong> Feature attribution, model comparison, debugging</p>
-                    <p><strong>AWS Integration:</strong> Built into SageMaker Clarify</p>
-                </div>
-
-                <div class="tool-feature">
-                    <h6>LIME (Local Interpretable Model-agnostic Explanations)</h6>
-                    <p><strong>Principle:</strong> Local linear approximation of complex model behavior</p>
-                    <p><strong>Advantages:</strong> Model-agnostic, intuitive, fast</p>
-                    <p><strong>Applications:</strong> Text, image, and tabular data explanation</p>
-                    <p><strong>Limitations:</strong> Local approximation may not capture global patterns</p>
+                    <h6 class="text-sm font-semibold mb-2 text-aws-blue">SHAP (SHapley Additive exPlanations)</h6>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Principle:</strong> Game theory-based approach to explain individual predictions</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Advantages:</strong> Mathematically grounded, consistent, efficient</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Applications:</strong> Feature attribution, model comparison, debugging</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>AWS Integration:</strong> Built into SageMaker Clarify</p>
                 </div>
 
                 <div class="tool-feature">
-                    <h6>Attention Mechanisms</h6>
-                    <p><strong>Principle:</strong> Visualization of model attention weights in neural networks</p>
-                    <p><strong>Applications:</strong> NLP models, computer vision, sequence modeling</p>
-                    <p><strong>Benefits:</strong> Direct insight into model focus areas</p>
-                    <p><strong>AWS Context:</strong> Available in foundation models through Bedrock</p>
+                    <h6 class="text-sm font-semibold mb-2 text-aws-blue">LIME (Local Interpretable Model-agnostic Explanations)</h6>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Principle:</strong> Local linear approximation of complex model behavior</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Advantages:</strong> Model-agnostic, intuitive, fast</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Applications:</strong> Text, image, and tabular data explanation</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Limitations:</strong> Local approximation may not capture global patterns</p>
                 </div>
 
                 <div class="tool-feature">
-                    <h6>Feature Importance</h6>
-                    <p><strong>Principle:</strong> Ranking features by their contribution to model predictions</p>
-                    <p><strong>Methods:</strong> Permutation importance, gain-based importance, coefficient analysis</p>
-                    <p><strong>Applications:</strong> Feature selection, model interpretation, domain insights</p>
-                    <p><strong>AWS Tools:</strong> Built-in algorithms, SageMaker Clarify</p>
+                    <h6 class="text-sm font-semibold mb-2 text-aws-blue">Attention Mechanisms</h6>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Principle:</strong> Visualization of model attention weights in neural networks</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Applications:</strong> NLP models, computer vision, sequence modeling</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Benefits:</strong> Direct insight into model focus areas</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>AWS Context:</strong> Available in foundation models through Bedrock</p>
                 </div>
 
-                <div class="visual-placeholder">
-                    <h4>📊 Recommended Visual: Explainability Technique Selection Matrix</h4>
-                    <p>Create a matrix showing Model Type (Linear/Tree/Neural) vs Explanation Need (Global/Local/Counterfactual) with recommended techniques in each cell.</p>
+                <div class="tool-feature">
+                    <h6 class="text-sm font-semibold mb-2 text-aws-blue">Feature Importance</h6>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Principle:</strong> Ranking features by their contribution to model predictions</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Methods:</strong> Permutation importance, gain-based importance, coefficient analysis</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Applications:</strong> Feature selection, model interpretation, domain insights</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>AWS Tools:</strong> Built-in algorithms, SageMaker Clarify</p>
                 </div>
 
-                <h4>⚖️ Performance vs Explainability Trade-offs</h4>
+                <div class="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-dashed border-gray-400 rounded-lg p-8 text-center my-4 text-gray-600 italic">
+                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">📊 Recommended Visual: Explainability Technique Selection Matrix</h4>
+                    <p class="text-gray-700 leading-relaxed mb-3">Create a matrix showing Model Type (Linear/Tree/Neural) vs Explanation Need (Global/Local/Counterfactual) with recommended techniques in each cell.</p>
+                </div>
+
+                <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">⚖️ Performance vs Explainability Trade-offs</h4>
                 <table class="comparison-table">
                     <thead>
                         <tr>
@@ -392,297 +408,297 @@
                     </tbody>
                 </table>
 
-                <h4>🎯 Use Case-Specific Explainability Requirements</h4>
-                <div class="concept-grid">
-                    <div class="concept-card">
-                        <h5>High-Stakes Decisions</h5>
+                <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🎯 Use Case-Specific Explainability Requirements</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
+                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">High-Stakes Decisions</h5>
                         <span class="risk-indicator risk-high">High Risk</span>
-                        <p><strong>Examples:</strong> Medical diagnosis, loan approval, criminal justice</p>
-                        <p><strong>Requirements:</strong> Detailed explanations, regulatory compliance, audit trails</p>
-                        <p><strong>Techniques:</strong> SHAP, LIME, counterfactuals, human review</p>
-                        <p><strong>AWS Approach:</strong> SageMaker Clarify + A2I workflows</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Examples:</strong> Medical diagnosis, loan approval, criminal justice</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Requirements:</strong> Detailed explanations, regulatory compliance, audit trails</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Techniques:</strong> SHAP, LIME, counterfactuals, human review</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>AWS Approach:</strong> SageMaker Clarify + A2I workflows</p>
                     </div>
-                    <div class="concept-card">
-                        <h5>Business Intelligence</h5>
+                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Business Intelligence</h5>
                         <span class="risk-indicator risk-medium">Medium Risk</span>
-                        <p><strong>Examples:</strong> Marketing optimization, demand forecasting, pricing</p>
-                        <p><strong>Requirements:</strong> Feature insights, trend analysis, actionable recommendations</p>
-                        <p><strong>Techniques:</strong> Feature importance, trend analysis, scenario modeling</p>
-                        <p><strong>AWS Approach:</strong> SageMaker explanations + business dashboards</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Examples:</strong> Marketing optimization, demand forecasting, pricing</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Requirements:</strong> Feature insights, trend analysis, actionable recommendations</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Techniques:</strong> Feature importance, trend analysis, scenario modeling</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>AWS Approach:</strong> SageMaker explanations + business dashboards</p>
                     </div>
-                    <div class="concept-card">
-                        <h5>Recommendation Systems</h5>
+                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Recommendation Systems</h5>
                         <span class="risk-indicator risk-low">Low Risk</span>
-                        <p><strong>Examples:</strong> Content recommendations, product suggestions</p>
-                        <p><strong>Requirements:</strong> User understanding, preference insights, diversity</p>
-                        <p><strong>Techniques:</strong> Collaborative filtering explanations, content-based reasoning</p>
-                        <p><strong>AWS Approach:</strong> Personalize explanations + custom interfaces</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Examples:</strong> Content recommendations, product suggestions</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Requirements:</strong> User understanding, preference insights, diversity</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Techniques:</strong> Collaborative filtering explanations, content-based reasoning</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>AWS Approach:</strong> Personalize explanations + custom interfaces</p>
                     </div>
-                    <div class="concept-card">
-                        <h5>Creative Applications</h5>
+                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Creative Applications</h5>
                         <span class="risk-indicator risk-low">Low Risk</span>
-                        <p><strong>Examples:</strong> Content generation, art creation, music composition</p>
-                        <p><strong>Requirements:</strong> Creative process insights, style explanations</p>
-                        <p><strong>Techniques:</strong> Attention visualization, style analysis, process documentation</p>
-                        <p><strong>AWS Approach:</strong> Bedrock insights + custom visualization</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Examples:</strong> Content generation, art creation, music composition</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Requirements:</strong> Creative process insights, style explanations</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Techniques:</strong> Attention visualization, style analysis, process documentation</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>AWS Approach:</strong> Bedrock insights + custom visualization</p>
                     </div>
                 </div>
 
-                <h4>📋 Transparency Best Practices</h4>
+                <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">📋 Transparency Best Practices</h4>
                 <div class="design-principle">
-                    <h5>Documentation Standards</h5>
-                    <p>Maintain comprehensive documentation including model cards, data sheets, and performance reports</p>
-                    <p><strong>Components:</strong> Model purpose, training data, performance metrics, limitations</p>
+                    <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Documentation Standards</h5>
+                    <p class="text-gray-700 leading-relaxed mb-3">Maintain comprehensive documentation including model cards, data sheets, and performance reports</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Components:</strong> Model purpose, training data, performance metrics, limitations</p>
                 </div>
 
                 <div class="design-principle">
-                    <h5>User Communication</h5>
-                    <p>Provide clear, accessible explanations to end users about AI system capabilities and limitations</p>
-                    <p><strong>Elements:</strong> Plain language explanations, confidence indicators, uncertainty communication</p>
+                    <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">User Communication</h5>
+                    <p class="text-gray-700 leading-relaxed mb-3">Provide clear, accessible explanations to end users about AI system capabilities and limitations</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Elements:</strong> Plain language explanations, confidence indicators, uncertainty communication</p>
                 </div>
 
                 <div class="design-principle">
-                    <h5>Stakeholder Engagement</h5>
-                    <p>Involve relevant stakeholders in explanation design and validation processes</p>
-                    <p><strong>Participants:</strong> Domain experts, end users, affected communities, regulators</p>
+                    <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Stakeholder Engagement</h5>
+                    <p class="text-gray-700 leading-relaxed mb-3">Involve relevant stakeholders in explanation design and validation processes</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Participants:</strong> Domain experts, end users, affected communities, regulators</p>
                 </div>
 
                 <div class="design-principle">
-                    <h5>Continuous Improvement</h5>
-                    <p>Regularly update explanations based on user feedback and system performance</p>
-                    <p><strong>Process:</strong> Feedback collection, explanation effectiveness measurement, iterative refinement</p>
+                    <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Continuous Improvement</h5>
+                    <p class="text-gray-700 leading-relaxed mb-3">Regularly update explanations based on user feedback and system performance</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Process:</strong> Feedback collection, explanation effectiveness measurement, iterative refinement</p>
                 </div>
 
-                <div class="aws-services">
-                    <h4>🔧 AWS Explainability Tools</h4>
-                    <div class="service-grid">
-                        <div class="service-item">
+                <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-aws-blue-light">
+                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🔧 AWS Explainability Tools</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
                             <strong>SageMaker Clarify</strong><br>
                             Comprehensive explainability platform with SHAP and other techniques
                         </div>
-                        <div class="service-item">
+                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
                             <strong>SageMaker Debugger</strong><br>
                             Real-time monitoring and debugging of model training
                         </div>
-                        <div class="service-item">
+                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
                             <strong>SageMaker Model Registry</strong><br>
                             Version control and documentation for model explanations
                         </div>
-                        <div class="service-item">
+                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
                             <strong>Amazon A2I</strong><br>
                             Human-in-the-loop workflows for explanation validation
                         </div>
                     </div>
                 </div>
 
-                <div class="hands-on">
-                    <h4>🛠️ Hands-On Practice</h4>
-                    <ul>
-                        <li><strong>SHAP Analysis:</strong> Generate SHAP explanations for a trained model</li>
-                        <li><strong>Feature Importance:</strong> Analyze and visualize feature contributions</li>
-                        <li><strong>Model Comparison:</strong> Compare explainability across different model types</li>
-                        <li><strong>User Interface:</strong> Design explanation interfaces for different user types</li>
-                        <li><strong>Documentation:</strong> Create comprehensive model cards with explanations</li>
+                <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-blue-400">
+                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🛠️ Hands-On Practice</h4>
+                    <ul class="list-none space-y-2 ml-0">
+                        <li class="text-gray-700"><strong>SHAP Analysis:</strong> Generate SHAP explanations for a trained model</li>
+                        <li class="text-gray-700"><strong>Feature Importance:</strong> Analyze and visualize feature contributions</li>
+                        <li class="text-gray-700"><strong>Model Comparison:</strong> Compare explainability across different model types</li>
+                        <li class="text-gray-700"><strong>User Interface:</strong> Design explanation interfaces for different user types</li>
+                        <li class="text-gray-700"><strong>Documentation:</strong> Create comprehensive model cards with explanations</li>
                     </ul>
                 </div>
             </div>
         </div>
 
         <!-- Task Statement 4.3 -->
-        <div class="task-statement">
-            <div class="task-header" onclick="toggleTask('task3')">
-                <h3>Task Statement 4.3: Understand Principles of Human-Centered Design for Explainable AI</h3>
-                <button class="toggle-btn" id="toggle3">▼</button>
+        <div class="bg-white border border-gray-200 rounded-xl mb-6 overflow-hidden shadow-lg">
+            <div class="gradient-aws-blue text-white p-5 cursor-pointer transition-all duration-300 relative flex items-center justify-between hover:opacity-90" onclick="toggleTask('task3')">
+                <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Task Statement 4.3: Understand Principles of Human-Centered Design for Explainable AI</h3>
+                <button class="bg-transparent border-none text-white text-2xl cursor-pointer transition-transform duration-300 p-0 m-0 leading-none" id="toggle3">▼</button>
             </div>
-            <div class="task-content" id="task3">
-                <div class="objectives">
-                    <h4>🎯 Learning Objectives:</h4>
-                    <ul>
-                        <li>Understand human-centered design principles for AI systems</li>
-                        <li>Recognize the importance of user needs in explanation design</li>
-                        <li>Identify design patterns for effective AI explanations</li>
-                        <li>Understand accessibility and inclusivity in AI explanation design</li>
+            <div class="p-6 hidden" id="task3">
+                <div class="bg-slate-100/80 p-4 rounded-lg my-4 border-l-4 border-aws-blue-light">
+                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🎯 Learning Objectives:</h4>
+                    <ul class="list-none space-y-2 ml-0">
+                        <li class="text-gray-700">Understand human-centered design principles for AI systems</li>
+                        <li class="text-gray-700">Recognize the importance of user needs in explanation design</li>
+                        <li class="text-gray-700">Identify design patterns for effective AI explanations</li>
+                        <li class="text-gray-700">Understand accessibility and inclusivity in AI explanation design</li>
                     </ul>
                 </div>
 
-                <h4>👥 Core Principles of Human-Centered Design</h4>
-                <div class="concept-grid">
+                <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">👥 Core Principles of Human-Centered Design</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
                     <div class="principle-card">
-                        <h5>Design for Amplified Decision-Making</h5>
-                        <p>AI should enhance human decision-making capabilities rather than replace human judgment</p>
-                        <p><strong>Approach:</strong> Provide insights that complement human expertise</p>
-                        <p><strong>Implementation:</strong> Confidence scores, uncertainty indicators, alternative options</p>
-                        <p><strong>Example:</strong> Medical diagnosis AI that highlights areas of concern for doctor review</p>
-                        <p><strong>AWS Context:</strong> A2I human review workflows, explanation interfaces</p>
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Design for Amplified Decision-Making</h5>
+                        <p class="text-gray-700 leading-relaxed mb-3">AI should enhance human decision-making capabilities rather than replace human judgment</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Approach:</strong> Provide insights that complement human expertise</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Implementation:</strong> Confidence scores, uncertainty indicators, alternative options</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Example:</strong> Medical diagnosis AI that highlights areas of concern for doctor review</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>AWS Context:</strong> A2I human review workflows, explanation interfaces</p>
                     </div>
                     <div class="principle-card">
-                        <h5>Design for Unbiased Decision-Making</h5>
-                        <p>Actively work to reduce bias and promote fairness in AI-assisted decisions</p>
-                        <p><strong>Approach:</strong> Transparent bias reporting, fairness metrics, corrective guidance</p>
-                        <p><strong>Implementation:</strong> Bias alerts, demographic analysis, fairness dashboards</p>
-                        <p><strong>Example:</strong> Hiring AI that flags potential bias in candidate evaluation</p>
-                        <p><strong>AWS Tools:</strong> SageMaker Clarify bias detection and reporting</p>
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Design for Unbiased Decision-Making</h5>
+                        <p class="text-gray-700 leading-relaxed mb-3">Actively work to reduce bias and promote fairness in AI-assisted decisions</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Approach:</strong> Transparent bias reporting, fairness metrics, corrective guidance</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Implementation:</strong> Bias alerts, demographic analysis, fairness dashboards</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Example:</strong> Hiring AI that flags potential bias in candidate evaluation</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>AWS Tools:</strong> SageMaker Clarify bias detection and reporting</p>
                     </div>
                     <div class="principle-card">
-                        <h5>Design for Appropriate Trust</h5>
-                        <p>Build the right level of trust - neither over-reliance nor under-utilization</p>
-                        <p><strong>Approach:</strong> Calibrated confidence, limitation disclosure, performance transparency</p>
-                        <p><strong>Implementation:</strong> Accuracy indicators, error examples, capability boundaries</p>
-                        <p><strong>Example:</strong> Weather prediction AI showing confidence intervals and historical accuracy</p>
-                        <p><strong>AWS Support:</strong> Model performance monitoring, explanation quality metrics</p>
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Design for Appropriate Trust</h5>
+                        <p class="text-gray-700 leading-relaxed mb-3">Build the right level of trust - neither over-reliance nor under-utilization</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Approach:</strong> Calibrated confidence, limitation disclosure, performance transparency</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Implementation:</strong> Accuracy indicators, error examples, capability boundaries</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Example:</strong> Weather prediction AI showing confidence intervals and historical accuracy</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>AWS Support:</strong> Model performance monitoring, explanation quality metrics</p>
                     </div>
                     <div class="principle-card">
-                        <h5>Design for User Understanding</h5>
-                        <p>Explanations should match user mental models and expertise levels</p>
-                        <p><strong>Approach:</strong> Adaptive explanations, progressive disclosure, domain-appropriate language</p>
-                        <p><strong>Implementation:</strong> Role-based interfaces, explanation complexity controls</p>
-                        <p><strong>Example:</strong> Financial AI with different explanation depths for experts vs consumers</p>
-                        <p><strong>AWS Implementation:</strong> Custom explanation interfaces, user profiling</p>
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Design for User Understanding</h5>
+                        <p class="text-gray-700 leading-relaxed mb-3">Explanations should match user mental models and expertise levels</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Approach:</strong> Adaptive explanations, progressive disclosure, domain-appropriate language</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Implementation:</strong> Role-based interfaces, explanation complexity controls</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Example:</strong> Financial AI with different explanation depths for experts vs consumers</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>AWS Implementation:</strong> Custom explanation interfaces, user profiling</p>
                     </div>
                 </div>
 
-                <h4>🎨 Design Patterns for Effective AI Explanations</h4>
+                <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🎨 Design Patterns for Effective AI Explanations</h4>
                 <div class="tool-feature">
-                    <h6>Progressive Disclosure</h6>
-                    <p><strong>Concept:</strong> Start with high-level explanations and allow users to drill down for details</p>
-                    <p><strong>Implementation:</strong> Layered interfaces, expandable sections, detail-on-demand</p>
-                    <p><strong>Benefits:</strong> Reduces cognitive load, accommodates different expertise levels</p>
-                    <p><strong>Example:</strong> Summary → Key factors → Detailed analysis → Raw data</p>
-                </div>
-
-                <div class="tool-feature">
-                    <h6>Contextual Explanations</h6>
-                    <p><strong>Concept:</strong> Provide explanations that are relevant to the current task and context</p>
-                    <p><strong>Implementation:</strong> Context-aware interfaces, task-specific explanations</p>
-                    <p><strong>Benefits:</strong> Higher relevance, improved user satisfaction, better decision support</p>
-                    <p><strong>Example:</strong> Different explanations for diagnosis vs treatment planning in medical AI</p>
+                    <h6 class="text-sm font-semibold mb-2 text-aws-blue">Progressive Disclosure</h6>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Concept:</strong> Start with high-level explanations and allow users to drill down for details</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Implementation:</strong> Layered interfaces, expandable sections, detail-on-demand</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Benefits:</strong> Reduces cognitive load, accommodates different expertise levels</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Example:</strong> Summary → Key factors → Detailed analysis → Raw data</p>
                 </div>
 
                 <div class="tool-feature">
-                    <h6>Comparative Explanations</h6>
-                    <p><strong>Concept:</strong> Show how the current prediction compares to alternatives or similar cases</p>
-                    <p><strong>Implementation:</strong> Side-by-side comparisons, ranking explanations, similarity analysis</p>
-                    <p><strong>Benefits:</strong> Better understanding of decision boundaries, improved calibration</p>
-                    <p><strong>Example:</strong> Loan application showing why approved vs similar denied applications</p>
+                    <h6 class="text-sm font-semibold mb-2 text-aws-blue">Contextual Explanations</h6>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Concept:</strong> Provide explanations that are relevant to the current task and context</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Implementation:</strong> Context-aware interfaces, task-specific explanations</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Benefits:</strong> Higher relevance, improved user satisfaction, better decision support</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Example:</strong> Different explanations for diagnosis vs treatment planning in medical AI</p>
                 </div>
 
                 <div class="tool-feature">
-                    <h6>Interactive Explanations</h6>
-                    <p><strong>Concept:</strong> Allow users to explore and manipulate explanations to build understanding</p>
-                    <p><strong>Implementation:</strong> What-if scenarios, parameter adjustment, counterfactual exploration</p>
-                    <p><strong>Benefits:</strong> Deeper understanding, user engagement, learning opportunities</p>
-                    <p><strong>Example:</strong> Credit scoring tool allowing users to see impact of different financial scenarios</p>
+                    <h6 class="text-sm font-semibold mb-2 text-aws-blue">Comparative Explanations</h6>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Concept:</strong> Show how the current prediction compares to alternatives or similar cases</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Implementation:</strong> Side-by-side comparisons, ranking explanations, similarity analysis</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Benefits:</strong> Better understanding of decision boundaries, improved calibration</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Example:</strong> Loan application showing why approved vs similar denied applications</p>
                 </div>
 
-                <div class="visual-placeholder">
-                    <h4>🎨 Recommended Visual: Human-Centered Design Process</h4>
-                    <p>Create a circular diagram showing: User Research → Define Requirements → Design Explanations → Prototype → Test with Users → Iterate → Deploy → Monitor</p>
+                <div class="tool-feature">
+                    <h6 class="text-sm font-semibold mb-2 text-aws-blue">Interactive Explanations</h6>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Concept:</strong> Allow users to explore and manipulate explanations to build understanding</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Implementation:</strong> What-if scenarios, parameter adjustment, counterfactual exploration</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Benefits:</strong> Deeper understanding, user engagement, learning opportunities</p>
+                    <p class="text-gray-700 leading-relaxed mb-3"><strong>Example:</strong> Credit scoring tool allowing users to see impact of different financial scenarios</p>
                 </div>
 
-                <h4>👤 User-Centered Explanation Design Process</h4>
+                <div class="bg-gradient-to-br from-gray-100 to-gray-200 border-2 border-dashed border-gray-400 rounded-lg p-8 text-center my-4 text-gray-600 italic">
+                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🎨 Recommended Visual: Human-Centered Design Process</h4>
+                    <p class="text-gray-700 leading-relaxed mb-3">Create a circular diagram showing: User Research → Define Requirements → Design Explanations → Prototype → Test with Users → Iterate → Deploy → Monitor</p>
+                </div>
+
+                <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">👤 User-Centered Explanation Design Process</h4>
                 <div class="lifecycle-container">
                     <div class="lifecycle-stage">
-                        <h5>User Research and Needs Analysis</h5>
-                        <p><strong>Activities:</strong> User interviews, task analysis, mental model research</p>
-                        <p><strong>Outputs:</strong> User personas, explanation requirements, context understanding</p>
-                        <p><strong>Key Questions:</strong> Who are the users? What decisions do they make? What information do they need?</p>
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">User Research and Needs Analysis</h5>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Activities:</strong> User interviews, task analysis, mental model research</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Outputs:</strong> User personas, explanation requirements, context understanding</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Key Questions:</strong> Who are the users? What decisions do they make? What information do they need?</p>
                     </div>
                     <div class="lifecycle-stage">
-                        <h5>Explanation Requirement Definition</h5>
-                        <p><strong>Activities:</strong> Requirement gathering, stakeholder alignment, success criteria definition</p>
-                        <p><strong>Outputs:</strong> Explanation specifications, design constraints, evaluation metrics</p>
-                        <p><strong>Considerations:</strong> Technical feasibility, regulatory requirements, user preferences</p>
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Explanation Requirement Definition</h5>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Activities:</strong> Requirement gathering, stakeholder alignment, success criteria definition</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Outputs:</strong> Explanation specifications, design constraints, evaluation metrics</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Considerations:</strong> Technical feasibility, regulatory requirements, user preferences</p>
                     </div>
                     <div class="lifecycle-stage">
-                        <h5>Design and Prototyping</h5>
-                        <p><strong>Activities:</strong> Interface design, explanation algorithm selection, prototype development</p>
-                        <p><strong>Outputs:</strong> Design mockups, interactive prototypes, explanation samples</p>
-                        <p><strong>Tools:</strong> Design software, AWS services, user testing platforms</p>
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Design and Prototyping</h5>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Activities:</strong> Interface design, explanation algorithm selection, prototype development</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Outputs:</strong> Design mockups, interactive prototypes, explanation samples</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Tools:</strong> Design software, AWS services, user testing platforms</p>
                     </div>
                     <div class="lifecycle-stage">
-                        <h5>User Testing and Validation</h5>
-                        <p><strong>Activities:</strong> Usability testing, explanation effectiveness evaluation, feedback collection</p>
-                        <p><strong>Outputs:</strong> Test results, user feedback, improvement recommendations</p>
-                        <p><strong>Metrics:</strong> Understanding accuracy, decision quality, user satisfaction</p>
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">User Testing and Validation</h5>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Activities:</strong> Usability testing, explanation effectiveness evaluation, feedback collection</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Outputs:</strong> Test results, user feedback, improvement recommendations</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Metrics:</strong> Understanding accuracy, decision quality, user satisfaction</p>
                     </div>
                     <div class="lifecycle-stage">
-                        <h5>Iterative Improvement</h5>
-                        <p><strong>Activities:</strong> Design refinement, A/B testing, continuous monitoring</p>
-                        <p><strong>Outputs:</strong> Updated designs, performance improvements, user adoption metrics</p>
-                        <p><strong>Process:</strong> Regular evaluation cycles, user feedback integration, design evolution</p>
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Iterative Improvement</h5>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Activities:</strong> Design refinement, A/B testing, continuous monitoring</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Outputs:</strong> Updated designs, performance improvements, user adoption metrics</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Process:</strong> Regular evaluation cycles, user feedback integration, design evolution</p>
                     </div>
                 </div>
 
-                <h4>♿ Accessibility and Inclusivity in AI</h4>
-                <div class="concept-grid">
-                    <div class="concept-card">
-                        <h5>Universal Design Principles</h5>
-                        <p>Design AI explanations that are accessible to users with diverse abilities and backgrounds</p>
-                        <p><strong>Considerations:</strong> Visual impairments, cognitive differences, language barriers</p>
-                        <p><strong>Implementation:</strong> Multiple modalities, adjustable complexity, multilingual support</p>
-                        <p><strong>Standards:</strong> WCAG compliance, accessibility testing</p>
+                <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">♿ Accessibility and Inclusivity in AI</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 my-5">
+                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Universal Design Principles</h5>
+                        <p class="text-gray-700 leading-relaxed mb-3">Design AI explanations that are accessible to users with diverse abilities and backgrounds</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Considerations:</strong> Visual impairments, cognitive differences, language barriers</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Implementation:</strong> Multiple modalities, adjustable complexity, multilingual support</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Standards:</strong> WCAG compliance, accessibility testing</p>
                     </div>
-                    <div class="concept-card">
-                        <h5>Cultural Sensitivity</h5>
-                        <p>Ensure explanations are culturally appropriate and avoid biased assumptions</p>
-                        <p><strong>Approach:</strong> Diverse user testing, cultural consultation, localization</p>
-                        <p><strong>Examples:</strong> Culturally appropriate metaphors, inclusive language</p>
+                    <div class="bg-slate-50 p-5 rounded-xl border border-gray-300 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                        <h5 class="text-base font-semibold mb-2 text-aws-blue-dark">Cultural Sensitivity</h5>
+                        <p class="text-gray-700 leading-relaxed mb-3">Ensure explanations are culturally appropriate and avoid biased assumptions</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Approach:</strong> Diverse user testing, cultural consultation, localization</p>
+                        <p class="text-gray-700 leading-relaxed mb-3"><strong>Examples:</strong> Culturally appropriate metaphors, inclusive language</p>
                     </div>
                 </div>
 
-                <div class="aws-services">
-                    <h4>🔧 AWS Tools for Human-Centered AI Design</h4>
-                    <div class="service-grid">
-                        <div class="service-item">
+                <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-aws-blue-light">
+                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🔧 AWS Tools for Human-Centered AI Design</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
                             <strong>Amazon A2I</strong><br>
                             Human-in-the-loop workflows for user-centered AI validation
                         </div>
-                        <div class="service-item">
+                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
                             <strong>SageMaker Clarify</strong><br>
                             Explainability features designed for different user personas
                         </div>
-                        <div class="service-item">
+                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
                             <strong>Amazon Polly</strong><br>
                             Text-to-speech for accessibility in AI interfaces
                         </div>
-                        <div class="service-item">
+                        <div class="bg-white/95 p-4 rounded-lg border border-gray-300">
                             <strong>Amazon Translate</strong><br>
                             Multilingual explanation support
                         </div>
                     </div>
                 </div>
 
-                <div class="hands-on">
-                    <h4>🛠️ Hands-On Practice</h4>
-                    <ul>
-                        <li><strong>User Research:</strong> Conduct user interviews to understand explanation needs</li>
-                        <li><strong>Prototype Design:</strong> Create multiple explanation interface prototypes</li>
-                        <li><strong>A/B Testing:</strong> Test different explanation approaches with users</li>
-                        <li><strong>Accessibility Testing:</strong> Evaluate AI interfaces for accessibility</li>
-                        <li><strong>Iterative Design:</strong> Implement feedback loops for continuous improvement</li>
+                <div class="bg-slate-100/80 p-5 rounded-lg my-4 border-l-4 border-blue-400">
+                    <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">🛠️ Hands-On Practice</h4>
+                    <ul class="list-none space-y-2 ml-0">
+                        <li class="text-gray-700"><strong>User Research:</strong> Conduct user interviews to understand explanation needs</li>
+                        <li class="text-gray-700"><strong>Prototype Design:</strong> Create multiple explanation interface prototypes</li>
+                        <li class="text-gray-700"><strong>A/B Testing:</strong> Test different explanation approaches with users</li>
+                        <li class="text-gray-700"><strong>Accessibility Testing:</strong> Evaluate AI interfaces for accessibility</li>
+                        <li class="text-gray-700"><strong>Iterative Design:</strong> Implement feedback loops for continuous improvement</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <div class="study-tips">
-            <h4>💡 Study Tips for Domain 4</h4>
-            <ul>
-                <li><strong>Ethical Focus:</strong> Understand the "why" behind responsible AI practices</li>
-                <li><strong>SageMaker Clarify:</strong> Deep hands-on practice with bias detection and explainability</li>
-                <li><strong>Real-World Examples:</strong> Study case studies of AI bias and fairness issues</li>
-                <li><strong>AWS Tools:</strong> Know which AWS services support responsible AI features</li>
-                <li><strong>Human-Centered Design:</strong> Understand user-centered design principles</li>
-                <li><strong>Documentation Practice:</strong> Create model cards and explanation documentation</li>
+        <div class="bg-slate-100/80 p-5 rounded-lg my-5 border-l-4 border-aws-blue-light">
+            <h4 class="text-lg font-semibold mb-3 text-aws-blue-dark">💡 Study Tips for Domain 4</h4>
+            <ul class="list-none space-y-2 ml-0">
+                <li class="text-gray-700"><strong>Ethical Focus:</strong> Understand the "why" behind responsible AI practices</li>
+                <li class="text-gray-700"><strong>SageMaker Clarify:</strong> Deep hands-on practice with bias detection and explainability</li>
+                <li class="text-gray-700"><strong>Real-World Examples:</strong> Study case studies of AI bias and fairness issues</li>
+                <li class="text-gray-700"><strong>AWS Tools:</strong> Know which AWS services support responsible AI features</li>
+                <li class="text-gray-700"><strong>Human-Centered Design:</strong> Understand user-centered design principles</li>
+                <li class="text-gray-700"><strong>Documentation Practice:</strong> Create model cards and explanation documentation</li>
             </ul>
         </div>
 
-        <div class="nav-buttons">
-            <button class="nav-btn" onclick="window.location.href='domain3-study-guide.html'">← Previous Domain</button>
-            <button class="nav-btn" onclick="window.location.href='domain5-study-guide.html'">Next Domain →</button>
+        <div class="flex justify-between items-center gap-5 mt-10 mb-5 pt-5 border-t-2 border-gray-300">
+            <button class="bg-gradient-to-r from-aws-blue to-aws-blue-dark text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:from-aws-blue-dark hover:to-aws-blue hover:-translate-y-0.5 hover:shadow-lg disabled:bg-gray-400 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='domain3-study-guide.html'">← Previous Domain</button>
+            <button class="bg-gradient-to-r from-aws-blue to-aws-blue-dark text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:from-aws-blue-dark hover:to-aws-blue hover:-translate-y-0.5 hover:shadow-lg disabled:bg-gray-400 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='domain5-study-guide.html'">Next Domain →</button>
         </div>
         <div style="text-align: center; margin-top: 20px;">
-            <button class="nav-btn" onclick="window.location.href='index.html'" style="background: linear-gradient(135deg, #495057, #6c757d);">🏠 Back to Home</button>
+            <button class="bg-gradient-to-r from-aws-blue to-aws-blue-dark text-white border-none px-7 py-3.5 rounded-lg cursor-pointer text-base font-medium transition-all duration-300 no-underline inline-block shadow-md hover:from-aws-blue-dark hover:to-aws-blue hover:-translate-y-0.5 hover:shadow-lg disabled:bg-gray-400 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none disabled:opacity-60" onclick="window.location.href='index.html'" style="background: linear-gradient(135deg, #495057, #6c757d);">🏠 Back to Home</button>
         </div>
     </div>
 

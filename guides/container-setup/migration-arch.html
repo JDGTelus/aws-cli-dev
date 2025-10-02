@@ -4,19 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Migration to Arch Linux</title>
-    <link rel="stylesheet" href="../style.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../tailwind-custom.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'aws-dark': '#232f3e',
+                        'aws-orange': '#ff9900',
+                        'aws-blue': '#2c5282',
+                        'aws-blue-dark': '#1e3a5f',
+                        'aws-blue-light': '#4a7ba7',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <div class="container">
-        <h1>Migration to Arch Linux (Historical)</h1>
+<body class="gradient-page-bg min-h-screen p-5">
+    <div class="max-w-7xl mx-auto p-10 bg-white/75 rounded-2xl shadow-2xl">
+        <h1 class="text-5xl font-bold mb-4 drop-shadow-lg">Migration to Arch Linux (Historical)</h1>
         <div class="warning">
-            <p><strong>Note:</strong> This migration path was attempted but abandoned due to ARM64 compatibility issues. The project now uses <strong>Alpine Linux</strong> instead.</p>
-            <p>See <a href="alpine-linux-guide.html">alpine-linux-guide.html</a> for current setup.</p>
+            <p class="text-gray-700 leading-relaxed mb-3"><strong>Note:</strong> This migration path was attempted but abandoned due to ARM64 compatibility issues. The project now uses <strong>Alpine Linux</strong> instead.</p>
+            <p class="text-gray-700 leading-relaxed mb-3">See <a href="alpine-linux-guide.html">alpine-linux-guide.html</a> for current setup.</p>
         </div>
-        <h2>Why This Was Attempted</h2>
-        <p>Ubuntu 24.04 had Neovim 0.9.5, but nvim-lspconfig requires 0.10+. Arch Linux has the latest packages but doesn't support ARM64 Docker images.</p>
-        <h2>Final Solution</h2>
-        <p><strong>Alpine Linux</strong> - Lightweight, multi-platform, with Neovim 0.11+</p>
+        <h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Why This Was Attempted</h2>
+        <p class="text-gray-700 leading-relaxed mb-3">Ubuntu 24.04 had Neovim 0.9.5, but nvim-lspconfig requires 0.10+. Arch Linux has the latest packages but doesn't support ARM64 Docker images.</p>
+        <h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Final Solution</h2>
+        <p class="text-gray-700 leading-relaxed mb-3"><strong>Alpine Linux</strong> - Lightweight, multi-platform, with Neovim 0.11+</p>
         <pre><code>Base Image: alpine:latest
 Neovim: 0.11.1
 Platform Support: ARM64 + x86_64</code></pre>

@@ -4,24 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alpine Linux Container Guide</title>
-    <link rel="stylesheet" href="../style.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../tailwind-custom.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'aws-dark': '#232f3e',
+                        'aws-orange': '#ff9900',
+                        'aws-blue': '#2c5282',
+                        'aws-blue-dark': '#1e3a5f',
+                        'aws-blue-light': '#4a7ba7',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <div class="container">
-        <h1>🏔️ Alpine Linux Container Guide</h1>
+<body class="gradient-page-bg min-h-screen p-5">
+    <div class="max-w-7xl mx-auto p-10 bg-white/75 rounded-2xl shadow-2xl">
+        <h1 class="text-5xl font-bold mb-4 drop-shadow-lg">🏔️ Alpine Linux Container Guide</h1>
 
-        <h2>What is Alpine Linux?</h2>
-        <p><strong>Alpine Linux</strong> is a security-oriented, lightweight Linux distribution. It's the most popular base image for Docker containers.</p>
+        <h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">What is Alpine Linux?</h2>
+        <p class="text-gray-700 leading-relaxed mb-3"><strong>Alpine Linux</strong> is a security-oriented, lightweight Linux distribution. It's the most popular base image for Docker containers.</p>
 
-        <h3>Why Alpine?</h3>
-        <ul>
-            <li><strong>Neovim 0.10+</strong>: Latest in repositories</li>
-            <li><strong>Tiny</strong>: ~7MB base image</li>
-            <li><strong>Fast</strong>: APK package manager</li>
-            <li><strong>Multi-platform</strong>: ARM64 + x86_64 support</li>
+        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Why Alpine?</h3>
+        <ul class="list-none space-y-2 ml-0">
+            <li class="text-gray-700"><strong>Neovim 0.10+</strong>: Latest in repositories</li>
+            <li class="text-gray-700"><strong>Tiny</strong>: ~7MB base image</li>
+            <li class="text-gray-700"><strong>Fast</strong>: APK package manager</li>
+            <li class="text-gray-700"><strong>Multi-platform</strong>: ARM64 + x86_64 support</li>
         </ul>
 
-        <h2>Package Manager: <code>apk</code></h2>
+        <h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Package Manager: <code>apk</code></h2>
         <table>
             <thead>
                 <tr>
@@ -54,7 +70,7 @@
             </tbody>
         </table>
 
-        <h2>Common Commands</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Common Commands</h2>
         <pre><code># Update &amp; upgrade
 apk update &amp;&amp; apk upgrade
 
@@ -70,14 +86,14 @@ apk search keyword
 # List installed
 apk list --installed</code></pre>
 
-        <h2>Everything Else is Identical</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Everything Else is Identical</h2>
         <div class="highlight">
-            <p>✅ Zsh with Oh-My-Zsh (same)<br>
+            <p class="text-gray-700 leading-relaxed mb-3">✅ Zsh with Oh-My-Zsh (same)<br>
             ✅ AWS CLI (same)<br>
             ✅ Git, Python, Node.js (same)<br>
             ✅ Neovim 0.10+ (works perfectly)<br>
             ✅ All your scripts (same)</p>
-            <p><strong>Only difference:</strong> Use <code>apk</code> instead of <code>apt</code>!</p>
+            <p class="text-gray-700 leading-relaxed mb-3"><strong>Only difference:</strong> Use <code>apk</code> instead of <code>apt</code>!</p>
         </div>
     </div>
 </body>

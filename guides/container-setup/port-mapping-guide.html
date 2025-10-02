@@ -4,18 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Port Mapping Guide</title>
-    <link rel="stylesheet" href="../style.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../tailwind-custom.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'aws-dark': '#232f3e',
+                        'aws-orange': '#ff9900',
+                        'aws-blue': '#2c5282',
+                        'aws-blue-dark': '#1e3a5f',
+                        'aws-blue-light': '#4a7ba7',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <div class="container">
-        <h1>🌐 Port Mapping Guide</h1>
+<body class="gradient-page-bg min-h-screen p-5">
+    <div class="max-w-7xl mx-auto p-10 bg-white/75 rounded-2xl shadow-2xl">
+        <h1 class="text-5xl font-bold mb-4 drop-shadow-lg">🌐 Port Mapping Guide</h1>
 
-        <h2>Overview</h2>
-        <p>The container exposes common development ports, allowing you to run web applications inside the container and access them from your host browser.</p>
+        <h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Overview</h2>
+        <p class="text-gray-700 leading-relaxed mb-3">The container exposes common development ports, allowing you to run web applications inside the container and access them from your host browser.</p>
 
-        <h2>Exposed Ports</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Exposed Ports</h2>
 
-        <h3>Frontend Development</h3>
+        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Frontend Development</h3>
         <table>
             <thead>
                 <tr>
@@ -33,7 +49,7 @@
             </tbody>
         </table>
 
-        <h3>Backend Development</h3>
+        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Backend Development</h3>
         <table>
             <thead>
                 <tr>
@@ -50,21 +66,21 @@
             </tbody>
         </table>
 
-        <h2>Important: Binding to 0.0.0.0</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Important: Binding to 0.0.0.0</h2>
         
         <div class="success">
-            <p><strong>✅ Correct:</strong></p>
+            <p class="text-gray-700 leading-relaxed mb-3"><strong>✅ Correct:</strong></p>
             <pre><code>app.run(host='0.0.0.0', port=5000)</code></pre>
         </div>
 
         <div class="warning">
-            <p><strong>❌ Wrong:</strong></p>
+            <p class="text-gray-700 leading-relaxed mb-3"><strong>❌ Wrong:</strong></p>
             <pre><code>app.run(host='localhost', port=5000)  # Won't be accessible from host!</code></pre>
         </div>
 
-        <h2>Quick Examples</h2>
+        <h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Quick Examples</h2>
 
-        <h3>React Application</h3>
+        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">React Application</h3>
         <pre><code># Inside container
 cd workspace/my-react-app
 npm create vite@latest . -- --template react
@@ -73,31 +89,31 @@ npm run dev
 
 # Access from host: http://localhost:5173</code></pre>
 
-        <h3>Flask API</h3>
+        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Flask API</h3>
         <pre><code># Inside container
 cd workspace/my-api
 python app.py  # Must bind to 0.0.0.0
 
 # Access from host: http://localhost:5000</code></pre>
 
-        <h3>Next.js Application</h3>
+        <h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Next.js Application</h3>
         <pre><code># Inside container
 cd workspace/my-nextjs-app
 npm run dev
 
 # Access from host: http://localhost:3000</code></pre>
 
-        <h2>Best Practices</h2>
-        <ul>
-            <li>Always bind to <code>0.0.0.0</code> (not localhost)</li>
-            <li>Access from host via <code>http://localhost:PORT</code></li>
-            <li>Multiple apps can run on different ports</li>
-            <li>Check port conflicts with <code>netstat -tlnp</code></li>
-            <li>Add custom ports in <code>docker-compose.yml</code> if needed</li>
+        <h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Best Practices</h2>
+        <ul class="list-none space-y-2 ml-0">
+            <li class="text-gray-700">Always bind to <code>0.0.0.0</code> (not localhost)</li>
+            <li class="text-gray-700">Access from host via <code>http://localhost:PORT</code></li>
+            <li class="text-gray-700">Multiple apps can run on different ports</li>
+            <li class="text-gray-700">Check port conflicts with <code>netstat -tlnp</code></li>
+            <li class="text-gray-700">Add custom ports in <code>docker-compose.yml</code> if needed</li>
         </ul>
 
-        <h2>Full Documentation</h2>
-        <p>See <code>guides/port-mapping-guide.md</code> for complete examples, troubleshooting, and advanced usage.</p>
+        <h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Full Documentation</h2>
+        <p class="text-gray-700 leading-relaxed mb-3">See <code>guides/port-mapping-guide.md</code> for complete examples, troubleshooting, and advanced usage.</p>
     </div>
 </body>
 </html>

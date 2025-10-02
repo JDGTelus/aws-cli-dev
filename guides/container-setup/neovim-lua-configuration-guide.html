@@ -3,16 +3,32 @@
 <head>
     <meta charset="utf-8">
     <title>Neovim Lua Configuration Guide</title>
-    <link rel="stylesheet" href="../style.css">
+        <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../tailwind-custom.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'aws-dark': '#232f3e',
+                        'aws-orange': '#ff9900',
+                        'aws-blue': '#2c5282',
+                        'aws-blue-dark': '#1e3a5f',
+                        'aws-blue-light': '#4a7ba7',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-<h1>Neovim Lua Configuration Guide</h1>
+<body class="gradient-page-bg min-h-screen p-5">
+<h1 class="text-5xl font-bold mb-4 drop-shadow-lg">Neovim Lua Configuration Guide</h1>
 <br>
-<h2>Overview</h2>
+<h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Overview</h2>
 <br>
-<p>Your Neovim setup uses modern Lua configuration instead of the traditional Vimscript <code>.vimrc</code>. This provides better performance, type safety, and more powerful configuration options.</p>
+<p class="text-gray-700 leading-relaxed mb-3">Your Neovim setup uses modern Lua configuration instead of the traditional Vimscript <code>.vimrc</code>. This provides better performance, type safety, and more powerful configuration options.</p>
 <br>
-<h2>Directory Structure</h2>
+<h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Directory Structure</h2>
 <br>
 <pre><code>
 ~/.config/nvim/
@@ -22,16 +38,16 @@
 └── lazy-lock.json        # Plugin version lock file (auto-generated)
 </code></pre>
 <br>
-<h2>File Breakdown</h2>
+<h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">File Breakdown</h2>
 <br>
-<h3>`~/.config/nvim/init.lua`</h3>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">`~/.config/nvim/init.lua`</h3>
 <br>
-<p>This is the main entry point for your Neovim configuration. It:</p>
+<p class="text-gray-700 leading-relaxed mb-3">This is the main entry point for your Neovim configuration. It:</p>
 <br>
-<p>1. <strong>Bootstraps lazy.nvim</strong>: Downloads and sets up the plugin manager</p>
-<p>2. <strong>Sets basic Vim options</strong>: Tab settings, line numbers, etc.</p>
-<p>3. <strong>Configures key mappings</strong>: Leader key and function keys</p>
-<p>4. <strong>Loads plugins</strong>: Requires the <code>plugins.lua</code> file</p>
+<p class="text-gray-700 leading-relaxed mb-3">1. <strong>Bootstraps lazy.nvim</strong>: Downloads and sets up the plugin manager</p>
+<p class="text-gray-700 leading-relaxed mb-3">2. <strong>Sets basic Vim options</strong>: Tab settings, line numbers, etc.</p>
+<p class="text-gray-700 leading-relaxed mb-3">3. <strong>Configures key mappings</strong>: Leader key and function keys</p>
+<p class="text-gray-700 leading-relaxed mb-3">4. <strong>Loads plugins</strong>: Requires the <code>plugins.lua</code> file</p>
 <br>
 <pre><code>
 -- Key sections explained:
@@ -53,9 +69,9 @@ vim.keymap.set(&quot;n&quot;, &quot;&lt;F2&gt;&quot;, &quot;:NvimTreeToggle&lt;C
 require(&quot;plugins&quot;)          -- Loads lua/plugins.lua
 </code></pre>
 <br>
-<h3>`~/.config/nvim/lua/plugins.lua`</h3>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">`~/.config/nvim/lua/plugins.lua`</h3>
 <br>
-<p>This file contains all plugin configurations using lazy.nvim. Each plugin is configured as a table:</p>
+<p class="text-gray-700 leading-relaxed mb-3">This file contains all plugin configurations using lazy.nvim. Each plugin is configured as a table:</p>
 <br>
 <pre><code>
 return require(&quot;lazy&quot;).setup({
@@ -75,33 +91,33 @@ return require(&quot;lazy&quot;).setup({
 })
 </code></pre>
 <br>
-<h2>Plugin Categories</h2>
+<h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Plugin Categories</h2>
 <br>
-<h3>Core Functionality</h3>
-<ul><li><strong>nvim-tree.lua</strong>: File explorer (replaces NERDTree)</li>
-<li><strong>telescope.nvim</strong>: Fuzzy finder (replaces FZF)</li>
-<li><strong>nvim-lspconfig</strong>: Native LSP support (replaces coc.nvim)</li>
-<li><strong>mason.nvim</strong>: LSP server management (manual installation)</li>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Core Functionality</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-gray-700"><strong>nvim-tree.lua</strong>: File explorer (replaces NERDTree)</li>
+<li class="text-gray-700"><strong>telescope.nvim</strong>: Fuzzy finder (replaces FZF)</li>
+<li class="text-gray-700"><strong>nvim-lspconfig</strong>: Native LSP support (replaces coc.nvim)</li>
+<li class="text-gray-700"><strong>mason.nvim</strong>: LSP server management (manual installation)</li>
 </ul><br>
-<h3>Code Intelligence</h3>
-<ul><li><strong>nvim-cmp</strong>: Autocompletion engine</li>
-<li><strong>LuaSnip</strong>: Snippet engine</li>
-<li><strong>nvim-treesitter</strong>: Syntax highlighting and parsing</li>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Code Intelligence</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-gray-700"><strong>nvim-cmp</strong>: Autocompletion engine</li>
+<li class="text-gray-700"><strong>LuaSnip</strong>: Snippet engine</li>
+<li class="text-gray-700"><strong>nvim-treesitter</strong>: Syntax highlighting and parsing</li>
 </ul><br>
-<h3>UI Enhancements</h3>
-<ul><li><strong>lualine.nvim</strong>: Status line</li>
-<li><strong>bufferline.nvim</strong>: Buffer tabs</li>
-<li><strong>tokyonight.nvim</strong>: Color scheme</li>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">UI Enhancements</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-gray-700"><strong>lualine.nvim</strong>: Status line</li>
+<li class="text-gray-700"><strong>bufferline.nvim</strong>: Buffer tabs</li>
+<li class="text-gray-700"><strong>tokyonight.nvim</strong>: Color scheme</li>
 </ul><br>
-<h3>Development Tools</h3>
-<ul><li><strong>null-ls.nvim</strong>: Formatting and linting</li>
-<li><strong>gitsigns.nvim</strong>: Git integration</li>
-<li><strong>vim-dadbod</strong>: Database tools</li>
-<li><strong>markdown-preview.nvim</strong>: Markdown preview</li>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Development Tools</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-gray-700"><strong>null-ls.nvim</strong>: Formatting and linting</li>
+<li class="text-gray-700"><strong>gitsigns.nvim</strong>: Git integration</li>
+<li class="text-gray-700"><strong>vim-dadbod</strong>: Database tools</li>
+<li class="text-gray-700"><strong>markdown-preview.nvim</strong>: Markdown preview</li>
 </ul><br>
-<h2>Configuration Patterns</h2>
+<h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Configuration Patterns</h2>
 <br>
-<h3>1. Basic Plugin Setup</h3>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">1. Basic Plugin Setup</h3>
 <pre><code>
 {
   &quot;plugin/name&quot;,
@@ -111,7 +127,7 @@ return require(&quot;lazy&quot;).setup({
 }
 </code></pre>
 <br>
-<h3>2. Plugin with Dependencies</h3>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">2. Plugin with Dependencies</h3>
 <pre><code>
 {
   &quot;main/plugin&quot;,
@@ -124,7 +140,7 @@ return require(&quot;lazy&quot;).setup({
 }
 </code></pre>
 <br>
-<h3>3. Lazy Loading by Command</h3>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">3. Lazy Loading by Command</h3>
 <pre><code>
 {
   &quot;command/plugin&quot;,
@@ -135,7 +151,7 @@ return require(&quot;lazy&quot;).setup({
 }
 </code></pre>
 <br>
-<h3>4. Lazy Loading by Filetype</h3>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">4. Lazy Loading by Filetype</h3>
 <pre><code>
 {
   &quot;filetype/plugin&quot;,
@@ -146,7 +162,7 @@ return require(&quot;lazy&quot;).setup({
 }
 </code></pre>
 <br>
-<h3>5. Key Mapping Setup</h3>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">5. Key Mapping Setup</h3>
 <pre><code>
 config = function()
   require(&quot;plugin&quot;).setup()
@@ -156,18 +172,18 @@ config = function()
 end,
 </code></pre>
 <br>
-<h2>LSP Configuration</h2>
+<h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">LSP Configuration</h2>
 <br>
-<p>The LSP setup uses three main components:</p>
+<p class="text-gray-700 leading-relaxed mb-3">The LSP setup uses three main components:</p>
 <br>
-<h3>1. Mason (Server Management)</h3>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">1. Mason (Server Management)</h3>
 <pre><code>
 require(&quot;mason&quot;).setup()
 -- Note: Install LSP servers manually using :Mason command
 -- mason-lspconfig was removed due to compatibility issues
 </code></pre>
 <br>
-<h3>2. Server Configuration</h3>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">2. Server Configuration</h3>
 <pre><code>
 local servers = {
   ts_ls = {},                      -- TypeScript/JavaScript (updated name)
@@ -183,7 +199,7 @@ local servers = {
 }
 </code></pre>
 <br>
-<h3>3. Key Mappings on Attach</h3>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">3. Key Mappings on Attach</h3>
 <pre><code>
 vim.api.nvim_create_autocmd(&quot;LspAttach&quot;, {
   callback = function(ev)
@@ -195,9 +211,9 @@ vim.api.nvim_create_autocmd(&quot;LspAttach&quot;, {
 })
 </code></pre>
 <br>
-<h2>Vim Options in Lua</h2>
+<h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Vim Options in Lua</h2>
 <br>
-<p>Convert Vimscript options to Lua:</p>
+<p class="text-gray-700 leading-relaxed mb-3">Convert Vimscript options to Lua:</p>
 <br>
 <table><tr><td>Vimscript</td><td>Lua</td></tr>
 <tr><td><code>set number</code></td><td><code>vim.opt.number = true</code></td></tr>
@@ -206,7 +222,7 @@ vim.api.nvim_create_autocmd(&quot;LspAttach&quot;, {
 <tr><td><code>set nobackup</code></td><td><code>vim.opt.backup = false</code></td></tr>
 <tr><td><code>let g:variable = &quot;value&quot;</code></td><td><code>vim.g.variable = &quot;value&quot;</code></td></tr>
 </table><br>
-<h2>Key Mapping Syntax</h2>
+<h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Key Mapping Syntax</h2>
 <br>
 <pre><code>
 -- Basic syntax
@@ -225,7 +241,7 @@ vim.keymap.set(&quot;v&quot;, &quot;gc&quot;, &quot;:Comment&lt;CR&gt;&quot;, { 
 -- &quot;c&quot; = command mode
 </code></pre>
 <br>
-<h2>Autocommands in Lua</h2>
+<h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Autocommands in Lua</h2>
 <br>
 <pre><code>
 -- Create autocommand
@@ -247,11 +263,11 @@ vim.api.nvim_create_autocmd(&quot;FileType&quot;, {
 })
 </code></pre>
 <br>
-<h2>Managing Plugins</h2>
+<h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Managing Plugins</h2>
 <br>
-<h3>Adding New Plugins</h3>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Adding New Plugins</h3>
 <br>
-<p>1. Add to <code>~/.config/nvim/lua/plugins.lua</code>:</p>
+<p class="text-gray-700 leading-relaxed mb-3">1. Add to <code>~/.config/nvim/lua/plugins.lua</code>:</p>
 <pre><code>
 {
   &quot;author/new-plugin&quot;,
@@ -261,26 +277,26 @@ vim.api.nvim_create_autocmd(&quot;FileType&quot;, {
 }
 </code></pre>
 <br>
-<p>2. Restart Neovim or run <code>:Lazy sync</code></p>
+<p class="text-gray-700 leading-relaxed mb-3">2. Restart Neovim or run <code>:Lazy sync</code></p>
 <br>
-<h3>Plugin Commands</h3>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Plugin Commands</h3>
 <br>
-<ul><li><code>:Lazy</code> - Open plugin manager UI</li>
-<li><code>:Lazy sync</code> - Update all plugins</li>
-<li><code>:Lazy install</code> - Install missing plugins</li>
-<li><code>:Lazy clean</code> - Remove unused plugins</li>
-<li><code>:Lazy update</code> - Update plugins</li>
-<li><code>:Lazy restore</code> - Restore to lockfile versions</li>
+<ul class="list-none space-y-2 ml-0"><li class="text-gray-700"><code>:Lazy</code> - Open plugin manager UI</li>
+<li class="text-gray-700"><code>:Lazy sync</code> - Update all plugins</li>
+<li class="text-gray-700"><code>:Lazy install</code> - Install missing plugins</li>
+<li class="text-gray-700"><code>:Lazy clean</code> - Remove unused plugins</li>
+<li class="text-gray-700"><code>:Lazy update</code> - Update plugins</li>
+<li class="text-gray-700"><code>:Lazy restore</code> - Restore to lockfile versions</li>
 </ul><br>
-<h3>Plugin Loading States</h3>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Plugin Loading States</h3>
 <br>
-<ul><li><strong>Loaded</strong>: Plugin is active and ready</li>
-<li><strong>Not Loaded</strong>: Plugin is installed but not loaded (lazy loading)</li>
-<li><strong>Failed</strong>: Plugin failed to load (check <code>:checkhealth</code>)</li>
+<ul class="list-none space-y-2 ml-0"><li class="text-gray-700"><strong>Loaded</strong>: Plugin is active and ready</li>
+<li class="text-gray-700"><strong>Not Loaded</strong>: Plugin is installed but not loaded (lazy loading)</li>
+<li class="text-gray-700"><strong>Failed</strong>: Plugin failed to load (check <code>:checkhealth</code>)</li>
 </ul><br>
-<h2>Debugging Configuration</h2>
+<h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Debugging Configuration</h2>
 <br>
-<h3>Health Checks</h3>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Health Checks</h3>
 <pre><code>
 -- Check overall health
 :checkhealth
@@ -291,20 +307,20 @@ vim.api.nvim_create_autocmd(&quot;FileType&quot;, {
 :checkhealth telescope
 </code></pre>
 <br>
-<h3>Lua Errors</h3>
-<ul><li>Errors appear in <code>:messages</code></li>
-<li>Use <code>print()</code> for debugging</li>
-<li>Check syntax with <code>:lua vim.cmd(&#x27;syntax on&#x27;)</code></li>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Lua Errors</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-gray-700">Errors appear in <code>:messages</code></li>
+<li class="text-gray-700">Use <code>print()</code> for debugging</li>
+<li class="text-gray-700">Check syntax with <code>:lua vim.cmd(&#x27;syntax on&#x27;)</code></li>
 </ul><br>
-<h3>LSP Debugging</h3>
-<ul><li><code>:LspInfo</code> - Show attached LSP servers</li>
-<li><code>:LspLog</code> - View LSP logs</li>
-<li><code>:Mason</code> - Check server installations</li>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">LSP Debugging</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-gray-700"><code>:LspInfo</code> - Show attached LSP servers</li>
+<li class="text-gray-700"><code>:LspLog</code> - View LSP logs</li>
+<li class="text-gray-700"><code>:Mason</code> - Check server installations</li>
 </ul><br>
-<h2>Best Practices</h2>
+<h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Best Practices</h2>
 <br>
-<h3>1. Modular Configuration</h3>
-<p>Split large configs into separate files:</p>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">1. Modular Configuration</h3>
+<p class="text-gray-700 leading-relaxed mb-3">Split large configs into separate files:</p>
 <pre><code>
 lua/
 ├── plugins/
@@ -316,8 +332,8 @@ lua/
     └── options.lua
 </code></pre>
 <br>
-<h3>2. Lazy Loading</h3>
-<p>Use lazy loading to improve startup time:</p>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">2. Lazy Loading</h3>
+<p class="text-gray-700 leading-relaxed mb-3">Use lazy loading to improve startup time:</p>
 <pre><code>
 {
   &quot;heavy/plugin&quot;,
@@ -327,7 +343,7 @@ lua/
 }
 </code></pre>
 <br>
-<h3>3. Error Handling</h3>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">3. Error Handling</h3>
 <pre><code>
 local ok, plugin = pcall(require, &quot;plugin&quot;)
 if not ok then
@@ -338,22 +354,22 @@ end
 plugin.setup()
 </code></pre>
 <br>
-<h3>4. Performance</h3>
-<ul><li>Use lazy loading for non-essential plugins</li>
-<li>Avoid heavy computations in config functions</li>
-<li>Profile startup time with <code>--startuptime</code></li>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">4. Performance</h3>
+<ul class="list-none space-y-2 ml-0"><li class="text-gray-700">Use lazy loading for non-essential plugins</li>
+<li class="text-gray-700">Avoid heavy computations in config functions</li>
+<li class="text-gray-700">Profile startup time with <code>--startuptime</code></li>
 </ul><br>
-<h2>Migration Tips</h2>
+<h2 class="text-2xl font-semibold mb-4 text-aws-blue-dark">Migration Tips</h2>
 <br>
-<h3>From .vimrc to init.lua</h3>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">From .vimrc to init.lua</h3>
 <br>
-<p>1. <strong>Settings</strong>: Convert <code>set</code> commands to <code>vim.opt</code></p>
-<p>2. <strong>Variables</strong>: Convert <code>let g:</code> to <code>vim.g</code></p>
-<p>3. <strong>Key mappings</strong>: Use <code>vim.keymap.set()</code></p>
-<p>4. <strong>Autocommands</strong>: Use <code>vim.api.nvim_create_autocmd()</code></p>
-<p>5. <strong>Plugins</strong>: Migrate to lazy.nvim syntax</p>
+<p class="text-gray-700 leading-relaxed mb-3">1. <strong>Settings</strong>: Convert <code>set</code> commands to <code>vim.opt</code></p>
+<p class="text-gray-700 leading-relaxed mb-3">2. <strong>Variables</strong>: Convert <code>let g:</code> to <code>vim.g</code></p>
+<p class="text-gray-700 leading-relaxed mb-3">3. <strong>Key mappings</strong>: Use <code>vim.keymap.set()</code></p>
+<p class="text-gray-700 leading-relaxed mb-3">4. <strong>Autocommands</strong>: Use <code>vim.api.nvim_create_autocmd()</code></p>
+<p class="text-gray-700 leading-relaxed mb-3">5. <strong>Plugins</strong>: Migrate to lazy.nvim syntax</p>
 <br>
-<h3>Common Conversions</h3>
+<h3 class="text-xl font-semibold mb-2 text-aws-blue-dark">Common Conversions</h3>
 <br>
 <pre><code>
 -- Old .vimrc
@@ -369,6 +385,6 @@ vim.g.variable = &quot;value&quot;
 vim.keymap.set(&quot;n&quot;, &quot;&lt;F2&gt;&quot;, &quot;:NvimTreeToggle&lt;CR&gt;&quot;, { silent = true })
 </code></pre>
 <br>
-<p>This Lua configuration provides better performance, easier debugging, and more powerful customization options than traditional Vimscript configurations.</p>
+<p class="text-gray-700 leading-relaxed mb-3">This Lua configuration provides better performance, easier debugging, and more powerful customization options than traditional Vimscript configurations.</p>
 </body>
 </html>
