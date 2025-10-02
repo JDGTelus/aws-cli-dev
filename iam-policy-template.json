@@ -1,0 +1,66 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "BedrockFullAccess",
+            "Effect": "Allow",
+            "Action": [
+                "bedrock:*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "SageMakerFullAccess",
+            "Effect": "Allow",
+            "Action": [
+                "sagemaker:*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "AIServicesReadAccess",
+            "Effect": "Allow",
+            "Action": [
+                "comprehend:*",
+                "rekognition:*",
+                "textract:*",
+                "polly:*",
+                "transcribe:*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "GovernanceAndMonitoring",
+            "Effect": "Allow",
+            "Action": [
+                "cloudtrail:*",
+                "config:*",
+                "kms:*",
+                "cloudwatch:*",
+                "ce:*",
+                "budgets:*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "IAMForStudyRole",
+            "Effect": "Allow",
+            "Action": [
+                "iam:GetRole",
+                "iam:GetUser",
+                "iam:ListRoles",
+                "iam:PassRole"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "STSAccess",
+            "Effect": "Allow",
+            "Action": [
+                "sts:GetCallerIdentity",
+                "sts:AssumeRole"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

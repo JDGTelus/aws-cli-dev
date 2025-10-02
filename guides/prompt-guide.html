@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zsh Prompt Customization Guide</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #f5576c;
+            border-bottom: 4px solid #f5576c;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #f5576c;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 5px solid #f5576c;
+        }
+        h3 {
+            color: #f093fb;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #c7254e;
+            font-size: 0.9em;
+        }
+        pre {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 20px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background: #f5576c;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .info {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💻 Zsh Prompt Customization Guide</h1>
+
+        <h2>Current Prompt Format</h2>
+        <pre><code>aws-cli-env ➜ ~ </code></pre>
+
+        <p>With git:</p>
+        <pre><code>aws-cli-env ➜ ~ (main)</code></pre>
+
+        <p>With AWS region:</p>
+        <pre><code>aws-cli-env ➜ ~ &lt;us-east-1&gt;</code></pre>
+
+        <p>With both:</p>
+        <pre><code>aws-cli-env ➜ ~ (main) &lt;us-east-1&gt;</code></pre>
+
+        <h2>How It Works</h2>
+        <p>The prompt is defined in <code>~/.zshrc</code> (line 24):</p>
+        <pre><code>PROMPT='%(?:%{$fg_bold[green]%}aws-cli-env ➜ :%{$fg_bold[red]%}aws-cli-env ➜ )%{$fg[cyan]%}~ %{$reset_color%}$(git_prompt_info)$(aws_region_prompt)'</code></pre>
+
+        <h3>Breakdown</h3>
+        <ol>
+            <li><strong><code>%(?:...)</code></strong> - Conditional based on last command exit status
+                <ul>
+                    <li>If successful: Shows green prompt</li>
+                    <li>If failed: Shows red prompt</li>
+                </ul>
+            </li>
+            <li><strong><code>aws-cli-env ➜ </code></strong> - Container name with arrow and space</li>
+            <li><strong><code>~ </code></strong> - Tilde with one space</li>
+            <li><strong><code>$(git_prompt_info)</code></strong> - Git branch (from Oh-My-Zsh)</li>
+            <li><strong><code>$(aws_region_prompt)</code></strong> - AWS region (custom function)</li>
+        </ol>
+
+        <h2>Customizing the Prompt</h2>
+
+        <h3>Show Current Directory Instead of Tilde</h3>
+        <p>Replace <code>~</code> with <code>%c</code> (directory name) or <code>%~</code> (full path):</p>
+        <pre><code># Show directory name
+PROMPT='%(?:%{$fg_bold[green]%}aws-cli-env ➜ :%{$fg_bold[red]%}aws-cli-env ➜ )%{$fg[cyan]%}%c %{$reset_color%}$(git_prompt_info)$(aws_region_prompt)'
+
+# Show full path
+PROMPT='%(?:%{$fg_bold[green]%}aws-cli-env ➜ :%{$fg_bold[red]%}aws-cli-env ➜ )%{$fg[cyan]%}%~ %{$reset_color%}$(git_prompt_info)$(aws_region_prompt)'</code></pre>
+
+        <h3>Change Colors</h3>
+        <p>Available colors: <code>black</code>, <code>red</code>, <code>green</code>, <code>yellow</code>, <code>blue</code>, <code>magenta</code>, <code>cyan</code>, <code>white</code></p>
+        <pre><code># Change tilde to yellow
+PROMPT='%(?:%{$fg_bold[green]%}aws-cli-env ➜ :%{$fg_bold[red]%}aws-cli-env ➜ )%{$fg[yellow]%}~ %{$reset_color%}$(git_prompt_info)$(aws_region_prompt)'</code></pre>
+
+        <h2>Zsh Prompt Codes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Meaning</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><code>%~</code></td><td>Current directory (full path with ~ for home)</td></tr>
+                <tr><td><code>%c</code></td><td>Current directory name only</td></tr>
+                <tr><td><code>%/</code></td><td>Current directory (absolute path)</td></tr>
+                <tr><td><code>%n</code></td><td>Username</td></tr>
+                <tr><td><code>%m</code></td><td>Hostname (short)</td></tr>
+                <tr><td><code>%T</code></td><td>Time (24-hour HH:MM)</td></tr>
+                <tr><td><code>%D</code></td><td>Date (YY-MM-DD)</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Applying Changes</h2>
+        <p>After editing <code>~/.zshrc</code>:</p>
+        <pre><code>source ~/.zshrc</code></pre>
+
+        <h2>Why Theme Files Don't Work</h2>
+        <div class="info">
+            <p><strong>Important:</strong> Oh-My-Zsh themes are loaded first, but then <code>.zshrc</code> sets a custom <code>PROMPT</code> variable which <strong>overrides</strong> the theme.</p>
+            <p>To customize: Edit line 24 in <code>.zshrc</code>, NOT the theme file.</p>
+        </div>
+
+        <h2>Example: Minimal Prompt</h2>
+        <pre><code>PROMPT='➜ '</code></pre>
+        <p>Result: <code>➜ </code></p>
+
+        <h2>Current Setup Location</h2>
+        <ul>
+            <li><strong>File:</strong> <code>/root/.zshrc</code> (or <code>~/.zshrc</code>)</li>
+            <li><strong>Line:</strong> 24</li>
+            <li><strong>Custom functions:</strong> Lines 17-22 (<code>aws_region_prompt</code>)</li>
+        </ul>
+
+        <h2>Full Documentation</h2>
+        <p>See <code>guides/prompt-guide.md</code> for complete examples and advanced customization.</p>
+    </div>
+</body>
+</html>

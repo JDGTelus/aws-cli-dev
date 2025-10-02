@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Port Mapping Guide</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #6a11cb;
+            border-bottom: 4px solid #6a11cb;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #6a11cb;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 5px solid #6a11cb;
+        }
+        h3 {
+            color: #2575fc;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #c7254e;
+        }
+        pre {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 20px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background: #6a11cb;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .warning {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        ul {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌐 Port Mapping Guide</h1>
+
+        <h2>Overview</h2>
+        <p>The container exposes common development ports, allowing you to run web applications inside the container and access them from your host browser.</p>
+
+        <h2>Exposed Ports</h2>
+
+        <h3>Frontend Development</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Port</th>
+                    <th>Framework/Tool</th>
+                    <th>Usage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>3000</td><td>React, Next.js</td><td>Default dev server</td></tr>
+                <tr><td>3001</td><td>Alternative</td><td>Secondary frontend app</td></tr>
+                <tr><td>5173</td><td>Vite</td><td>Default Vite dev server</td></tr>
+                <tr><td>8080</td><td>Vue.js</td><td>Default Vue dev server</td></tr>
+                <tr><td>4200</td><td>Angular</td><td>Default Angular dev server</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Backend Development</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Port</th>
+                    <th>Framework</th>
+                    <th>Usage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>5000</td><td>Flask</td><td>Default Flask dev server</td></tr>
+                <tr><td>8000</td><td>Django, FastAPI</td><td>Default server</td></tr>
+                <tr><td>8001</td><td>Alternative</td><td>Secondary backend</td></tr>
+                <tr><td>9000</td><td>Alternative</td><td>Additional backend</td></tr>
+            </tbody>
+        </table>
+
+        <h2>Important: Binding to 0.0.0.0</h2>
+        
+        <div class="success">
+            <p><strong>✅ Correct:</strong></p>
+            <pre><code>app.run(host='0.0.0.0', port=5000)</code></pre>
+        </div>
+
+        <div class="warning">
+            <p><strong>❌ Wrong:</strong></p>
+            <pre><code>app.run(host='localhost', port=5000)  # Won't be accessible from host!</code></pre>
+        </div>
+
+        <h2>Quick Examples</h2>
+
+        <h3>React Application</h3>
+        <pre><code># Inside container
+cd workspace/my-react-app
+npm create vite@latest . -- --template react
+npm install
+npm run dev
+
+# Access from host: http://localhost:5173</code></pre>
+
+        <h3>Flask API</h3>
+        <pre><code># Inside container
+cd workspace/my-api
+python app.py  # Must bind to 0.0.0.0
+
+# Access from host: http://localhost:5000</code></pre>
+
+        <h3>Next.js Application</h3>
+        <pre><code># Inside container
+cd workspace/my-nextjs-app
+npm run dev
+
+# Access from host: http://localhost:3000</code></pre>
+
+        <h2>Best Practices</h2>
+        <ul>
+            <li>Always bind to <code>0.0.0.0</code> (not localhost)</li>
+            <li>Access from host via <code>http://localhost:PORT</code></li>
+            <li>Multiple apps can run on different ports</li>
+            <li>Check port conflicts with <code>netstat -tlnp</code></li>
+            <li>Add custom ports in <code>docker-compose.yml</code> if needed</li>
+        </ul>
+
+        <h2>Full Documentation</h2>
+        <p>See <code>guides/port-mapping-guide.md</code> for complete examples, troubleshooting, and advanced usage.</p>
+    </div>
+</body>
+</html>

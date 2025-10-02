@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Setup Guide for AI Practitioner Environment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #232f3e;
+            border-bottom: 4px solid #ff9900;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: #232f3e;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 5px solid #ff9900;
+            font-size: 1.8em;
+        }
+        h3 {
+            color: #545b64;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+        h4 {
+            color: #687078;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #c7254e;
+        }
+        pre {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 20px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 20px 0;
+            border-left: 4px solid #ff9900;
+        }
+        pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .warning {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .info {
+            background: #d1ecf1;
+            border-left: 5px solid #17a2b8;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .success {
+            background: #d4edda;
+            border-left: 5px solid #28a745;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .danger {
+            background: #f8d7da;
+            border-left: 5px solid #dc3545;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .step-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #dee2e6;
+            margin: 20px 0;
+        }
+        .checklist {
+            list-style: none;
+            margin-left: 0;
+        }
+        .checklist li:before {
+            content: "✓ ";
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background: #232f3e;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .nav {
+            background: #232f3e;
+            color: white;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+        }
+        .nav h3 {
+            color: white;
+            margin: 0 0 15px 0;
+        }
+        .nav ul {
+            list-style: none;
+            margin: 0;
+        }
+        .nav li {
+            margin: 8px 0;
+        }
+        .nav a {
+            color: #ff9900;
+            text-decoration: none;
+        }
+        .nav a:hover {
+            text-decoration: underline;
+        }
+        .footer {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #ddd;
+            text-align: center;
+            color: #666;
+        }
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AWS Setup Guide for AI Practitioner Environment</h1>
+
+        <div class="nav">
+            <h3>Table of Contents</h3>
+            <ul>
+                <li><a href="#prerequisites">Prerequisites</a></li>
+                <li><a href="#account-setup">AWS Account Setup</a></li>
+                <li><a href="#iam-user">IAM User and Credentials</a></li>
+                <li><a href="#iam-policy">IAM Policy Configuration</a></li>
+                <li><a href="#cli-config">AWS CLI Configuration</a></li>
+                <li><a href="#billing">Billing and Cost Management</a></li>
+                <li><a href="#services">Service-Specific Setup</a></li>
+                <li><a href="#security">Security Best Practices</a></li>
+                <li><a href="#verification">Verification Steps</a></li>
+            </ul>
+        </div>
+
+        <h2 id="prerequisites">Prerequisites</h2>
+        <ul class="checklist">
+            <li>Active AWS Account</li>
+            <li>AWS CLI installed in container (provided by this environment)</li>
+            <li>Basic understanding of IAM policies and roles</li>
+        </ul>
+
+        <h2 id="account-setup">AWS Account Setup</h2>
+
+        <h3>1. Create AWS Account</h3>
+        <div class="step-box">
+            <p>If you don't have an AWS account:</p>
+            <ol>
+                <li>Go to <a href="https://aws.amazon.com" target="_blank">https://aws.amazon.com</a></li>
+                <li>Click "Create an AWS Account"</li>
+                <li>Follow the registration process</li>
+                <li>Provide payment method (required even for free tier)</li>
+                <li>Verify your identity via phone</li>
+                <li>Choose Support Plan (Basic/Free is sufficient for learning)</li>
+            </ol>
+        </div>
+
+        <h3>2. Enable MFA (Multi-Factor Authentication)</h3>
+        <div class="success">
+            <strong>Highly Recommended for Security</strong>
+            <ol>
+                <li>Sign in to AWS Console</li>
+                <li>Click your account name → Security Credentials</li>
+                <li>Under "Multi-factor authentication (MFA)", click "Assign MFA device"</li>
+                <li>Choose virtual MFA device</li>
+                <li>Use Google Authenticator, Authy, or similar app</li>
+                <li>Scan QR code and enter two consecutive MFA codes</li>
+            </ol>
+        </div>
+
+        <h2 id="iam-user">IAM User and Credentials Configuration</h2>
+
+        <div class="danger">
+            <strong>⚠️ WARNING:</strong> Never use root account credentials for daily operations!
+        </div>
+
+        <h3>Create IAM User (RECOMMENDED)</h3>
+
+        <h4>Step 1: Create IAM User</h4>
+        <pre><code>aws iam create-user --user-name ai-practitioner-user</code></pre>
+
+        <p>Or via AWS Console:</p>
+        <ol>
+            <li>Go to IAM Dashboard → Users → Add User</li>
+            <li>User name: <code>ai-practitioner-user</code></li>
+            <li>Access type: Select "Programmatic access"</li>
+            <li>Click "Next: Permissions"</li>
+        </ol>
+
+        <h4>Step 2: Attach Policies</h4>
+        <p><strong>Using Custom Policy (Recommended):</strong></p>
+        <pre><code>aws iam create-policy \
+  --policy-name AIPractitionerPolicy \
+  --policy-document file://iam-policy-template.json</code></pre>
+
+        <p>Then attach to user:</p>
+        <pre><code>aws iam attach-user-policy \
+  --user-name ai-practitioner-user \
+  --policy-arn arn:aws:iam::YOUR_ACCOUNT_ID:policy/AIPractitionerPolicy</code></pre>
+
+        <h4>Step 3: Create Access Keys</h4>
+        <pre><code>aws iam create-access-key --user-name ai-practitioner-user</code></pre>
+
+        <div class="warning">
+            <strong>Important:</strong> Save the output! You'll need:
+            <ul>
+                <li><code>AccessKeyId</code></li>
+                <li><code>SecretAccessKey</code></li>
+            </ul>
+        </div>
+
+        <h2 id="iam-policy">IAM Policy Configuration</h2>
+
+        <h3>Understanding the Provided Policy Template</h3>
+        <p>The <code>iam-policy-template.json</code> includes permissions for:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Service</th>
+                    <th>Permission Level</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Amazon Bedrock</td>
+                    <td>Full Access</td>
+                    <td>Foundation models and generative AI</td>
+                </tr>
+                <tr>
+                    <td>Amazon SageMaker</td>
+                    <td>Full Access</td>
+                    <td>ML model training and deployment</td>
+                </tr>
+                <tr>
+                    <td>AI Services</td>
+                    <td>Full Access</td>
+                    <td>Comprehend, Rekognition, Textract, Polly, Transcribe</td>
+                </tr>
+                <tr>
+                    <td>CloudTrail/Config</td>
+                    <td>Full Access</td>
+                    <td>Governance and compliance</td>
+                </tr>
+                <tr>
+                    <td>CloudWatch</td>
+                    <td>Full Access</td>
+                    <td>Monitoring and logging</td>
+                </tr>
+                <tr>
+                    <td>Cost Explorer/Budgets</td>
+                    <td>Full Access</td>
+                    <td>Cost management</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 id="cli-config">AWS CLI Configuration</h2>
+
+        <h3>Method 1: Interactive Configuration</h3>
+        <p>Inside the container:</p>
+        <pre><code>aws configure</code></pre>
+
+        <p>Enter:</p>
+        <ul>
+            <li><strong>AWS Access Key ID:</strong> Your access key</li>
+            <li><strong>AWS Secret Access Key:</strong> Your secret key</li>
+            <li><strong>Default region name:</strong> <span class="highlight">us-east-1</span></li>
+            <li><strong>Default output format:</strong> json</li>
+        </ul>
+
+        <h3>Method 2: Manual Configuration</h3>
+        <p>Create <code>~/.aws/credentials</code>:</p>
+        <pre><code>[default]
+aws_access_key_id = YOUR_ACCESS_KEY_ID
+aws_secret_access_key = YOUR_SECRET_ACCESS_KEY</code></pre>
+
+        <p>Create <code>~/.aws/config</code>:</p>
+        <pre><code>[default]
+region = us-east-1
+output = json</code></pre>
+
+        <h3>Verify Configuration</h3>
+        <pre><code>aws sts get-caller-identity</code></pre>
+
+        <div class="success">
+            <strong>Expected output:</strong>
+            <pre><code>{
+    "UserId": "AIDAI...",
+    "Account": "123456789012",
+    "Arn": "arn:aws:iam::123456789012:user/ai-practitioner-user"
+}</code></pre>
+        </div>
+
+        <h2 id="billing">Billing and Cost Management</h2>
+
+        <h3>1. Enable Billing Alerts</h3>
+
+        <h4>Prerequisites</h4>
+        <ol>
+            <li>Sign in as root user</li>
+            <li>Go to Billing Dashboard → Billing Preferences</li>
+            <li>Check "Receive Billing Alerts"</li>
+            <li>Save preferences</li>
+        </ol>
+
+        <h4>Create SNS Topic for Alerts</h4>
+        <pre><code>aws sns create-topic --name billing-alerts --region us-east-1</code></pre>
+
+        <p>Subscribe to topic:</p>
+        <pre><code>aws sns subscribe \
+  --topic-arn arn:aws:sns:us-east-1:YOUR_ACCOUNT_ID:billing-alerts \
+  --protocol email \
+  --notification-endpoint your-email@example.com \
+  --region us-east-1</code></pre>
+
+        <div class="warning">
+            <strong>Important:</strong> Confirm subscription via email!
+        </div>
+
+        <h4>Create Billing Alarm</h4>
+        <p>Run the provided script:</p>
+        <pre><code>/scripts/configure-billing-alerts.sh</code></pre>
+
+        <h3>2. Monitor Costs</h3>
+        <pre><code>aws ce get-cost-and-usage \
+  --time-period Start=2025-10-01,End=2025-10-31 \
+  --granularity MONTHLY \
+  --metrics "BlendedCost" \
+  --region us-east-1</code></pre>
+
+        <h2 id="services">Service-Specific Setup</h2>
+
+        <h3>Amazon Bedrock</h3>
+
+        <h4>1. Enable Model Access</h4>
+        <div class="info">
+            <p>Bedrock requires explicit model access request:</p>
+            <ol>
+                <li>Go to AWS Console → Bedrock</li>
+                <li>Click "Model access" in left sidebar</li>
+                <li>Click "Manage model access"</li>
+                <li>Select models you want to use:
+                    <ul>
+                        <li><strong>Claude</strong> (Anthropic)</li>
+                        <li><strong>Titan</strong> (Amazon)</li>
+                        <li><strong>Llama</strong> (Meta)</li>
+                        <li><strong>Stable Diffusion</strong> (Stability AI)</li>
+                    </ul>
+                </li>
+                <li>Submit access request</li>
+            </ol>
+        </div>
+
+        <h4>2. Verify Model Access</h4>
+        <pre><code>aws bedrock list-foundation-models --region us-east-1</code></pre>
+
+        <h4>3. Test Model Invocation</h4>
+        <pre><code>aws bedrock-runtime invoke-model \
+  --model-id anthropic.claude-v2 \
+  --body '{"prompt": "\n\nHuman: Hello\n\nAssistant:", "max_tokens_to_sample": 100}' \
+  --region us-east-1 \
+  output.json</code></pre>
+
+        <h3>Amazon SageMaker</h3>
+
+        <h4>1. Create SageMaker Execution Role</h4>
+        <pre><code>aws iam create-role \
+  --role-name SageMakerExecutionRole \
+  --assume-role-policy-document file://trust-policy.json</code></pre>
+
+        <h4>2. Create S3 Bucket for SageMaker</h4>
+        <pre><code>aws s3 mb s3://ai-practitioner-sagemaker-bucket --region us-east-1</code></pre>
+
+        <h2 id="security">Security Best Practices</h2>
+
+        <div class="step-box">
+            <h3>Essential Security Measures</h3>
+            <ol>
+                <li><strong>Use IAM Roles Instead of Keys</strong> (when possible)
+                    <p>For EC2 instances or Lambda functions, use IAM roles instead of access keys.</p>
+                </li>
+                <li><strong>Rotate Access Keys Regularly</strong>
+                    <pre><code>aws iam create-access-key --user-name ai-practitioner-user
+aws iam delete-access-key \
+  --user-name ai-practitioner-user \
+  --access-key-id OLD_ACCESS_KEY_ID</code></pre>
+                </li>
+                <li><strong>Enable CloudTrail</strong>
+                    <pre><code>aws cloudtrail create-trail \
+  --name ai-practitioner-trail \
+  --s3-bucket-name ai-practitioner-cloudtrail-bucket \
+  --is-multi-region-trail</code></pre>
+                </li>
+                <li><strong>Use Least Privilege Principle</strong>
+                    <p>Only grant permissions that are absolutely necessary.</p>
+                </li>
+                <li><strong>Monitor with AWS Config</strong>
+                    <p>Enable AWS Config to track resource changes and compliance.</p>
+                </li>
+            </ol>
+        </div>
+
+        <h2 id="verification">Verification Steps</h2>
+
+        <h3>Complete Setup Checklist</h3>
+        <p>Run these commands to verify your setup:</p>
+
+        <pre><code>echo "1. Testing AWS CLI connection..."
+aws sts get-caller-identity
+
+echo -e "\n2. Checking Bedrock access..."
+aws bedrock list-foundation-models --region us-east-1 --query 'modelSummaries[0].modelId' --output text
+
+echo -e "\n3. Checking SageMaker access..."
+aws sagemaker list-domains --region us-east-1
+
+echo -e "\n4. Checking Comprehend access..."
+aws comprehend list-entities-detection-jobs --region us-east-1
+
+echo -e "\n5. Checking Rekognition access..."
+aws rekognition list-collections --region us-east-1
+
+echo -e "\n6. Checking CloudWatch alarms..."
+aws cloudwatch describe-alarms --region us-east-1
+
+echo -e "\n7. Checking billing alerts..."
+aws cloudwatch describe-alarms --alarm-names "AI-Practice-Billing-Alert" --region us-east-1
+
+echo -e "\n✅ All checks complete!"</code></pre>
+
+        <h2>Troubleshooting</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Problem</th>
+                    <th>Solution</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Access Denied Errors</td>
+                    <td>
+                        <ul>
+                            <li>Check IAM policy is attached to user</li>
+                            <li>Verify Bedrock model access is enabled in console</li>
+                            <li>Confirm correct region (us-east-1)</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Unable to locate credentials</td>
+                    <td>
+                        <ul>
+                            <li>Run <code>aws configure</code></li>
+                            <li>Verify <code>~/.aws/credentials</code> exists</li>
+                            <li>Check environment variables</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Service not available in region</td>
+                    <td>Always use <span class="highlight">us-east-1</span> for maximum AI service availability</td>
+                </tr>
+                <tr>
+                    <td>Billing alerts not working</td>
+                    <td>
+                        <ul>
+                            <li>Confirm email subscription to SNS topic</li>
+                            <li>Verify CloudWatch alarm is active</li>
+                            <li>Check billing preferences are enabled (root account only)</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Additional Resources</h2>
+        <ul>
+            <li><a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html" target="_blank">AWS IAM Best Practices</a></li>
+            <li><a href="https://docs.aws.amazon.com/bedrock/latest/userguide/" target="_blank">AWS Bedrock User Guide</a></li>
+            <li><a href="https://awscli.amazonaws.com/v2/documentation/api/latest/index.html" target="_blank">AWS CLI Command Reference</a></li>
+            <li><a href="https://docs.aws.amazon.com/cost-management/" target="_blank">AWS Cost Management</a></li>
+            <li><a href="https://aws.amazon.com/architecture/security-identity-compliance/" target="_blank">AWS Security Best Practices</a></li>
+        </ul>
+
+        <div class="footer">
+            <p><strong>Last Updated:</strong> October 2025 | <strong>Version:</strong> 1.0</p>
+        </div>
+    </div>
+</body>
+</html>

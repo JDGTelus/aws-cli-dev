@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Start Guide</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #28a745 0%, #1a7a34 100%);
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #28a745;
+            border-bottom: 4px solid #28a745;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #28a745;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 5px solid #28a745;
+        }
+        h3 {
+            color: #1a7a34;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #c7254e;
+        }
+        pre {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 20px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+        ul {
+            margin-left: 30px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚡ Quick Start Guide</h1>
+
+        <h2>Build and Run</h2>
+        <pre><code>cd aws-cli-dev
+./setup.sh
+docker-compose up -d
+docker-compose exec aws-cli-env zsh</code></pre>
+
+        <h2>First Steps Inside Container</h2>
+
+        <h3>1. Configure AWS (Required for AWS work)</h3>
+        <pre><code>aws configure</code></pre>
+
+        <h3>2. Setup Neovim IDE (Lua-based)</h3>
+        <pre><code>/scripts/setup-neovim.sh</code></pre>
+
+        <h3>3. Setup Tmux (Optional)</h3>
+        <pre><code>/scripts/setup-tmux-preview.sh</code></pre>
+
+        <h2>Quick Reference</h2>
+
+        <h3>Neovim (after setup-neovim.sh)</h3>
+        <ul>
+            <li><code>&lt;Space&gt;</code> - Leader key</li>
+            <li><code>&lt;F2&gt;</code> - Toggle file explorer (nvim-tree)</li>
+            <li><code>&lt;Leader&gt;ff</code> - Find files (Telescope)</li>
+            <li><code>&lt;Leader&gt;fg</code> - Live grep (Telescope)</li>
+            <li><code>&lt;Leader&gt;fb</code> - Browse buffers (Telescope)</li>
+            <li><code>:Mason</code> - Manage LSP servers</li>
+            <li><code>:Lazy</code> - Manage plugins</li>
+        </ul>
+
+        <h3>Tmux (after setup)</h3>
+        <ul>
+            <li><code>Ctrl+a</code> - Prefix key</li>
+            <li><code>Prefix + c</code> - New window</li>
+            <li><code>Prefix + "</code> - Split horizontal</li>
+            <li><code>Prefix + %</code> - Split vertical</li>
+            <li><code>Prefix + h/j/k/l</code> - Navigate panes</li>
+            <li><code>Prefix + I</code> - Install plugins</li>
+        </ul>
+
+        <h3>Zsh Aliases</h3>
+        <ul>
+            <li><code>awswho</code> - Show AWS identity</li>
+            <li><code>awsregion</code> - Show AWS region</li>
+            <li><code>ll</code>, <code>la</code>, <code>l</code> - Better ls</li>
+            <li><code>gs</code>, <code>ga</code>, <code>gc</code> - Git shortcuts</li>
+        </ul>
+
+        <h2>Useful Commands</h2>
+        <pre><code># Check Neovim version (should be 0.10.2+)
+nvim --version
+
+# Test AWS connection
+aws sts get-caller-identity
+
+# List installed Python packages
+pip list
+
+# Check Node.js packages
+npm list -g --depth=0</code></pre>
+
+        <h2>Exposed Ports</h2>
+        <p>Common development ports are mapped to your host:</p>
+        <ul>
+            <li><strong>Frontend</strong>: 3000 (React/Next.js), 5173 (Vite), 8080 (Vue)</li>
+            <li><strong>Backend</strong>: 5000 (Flask), 8000 (Django/FastAPI)</li>
+            <li><strong>Node.js</strong>: 3030, 4000 (GraphQL)</li>
+            <li><strong>Databases</strong>: 5432 (PostgreSQL), 3306 (MySQL), 27017 (MongoDB)</li>
+        </ul>
+        <p><strong>Example:</strong></p>
+        <pre><code># Start React app in container
+cd workspace/my-app &amp;&amp; npm run dev
+# Access from host: http://localhost:3000</code></pre>
+
+        <h2>Documentation</h2>
+        <ul>
+            <li>Full docs: <code>/guides/usage_guide.md</code></li>
+            <li>Neovim guide: <code>/guides/neovim-lua-configuration-guide.md</code></li>
+            <li>AWS setup: <code>guides/aws-setup-guide.md</code></li>
+        </ul>
+    </div>
+</body>
+</html>

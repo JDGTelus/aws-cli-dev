@@ -1,0 +1,43 @@
+services:
+  aws-cli-env:
+    build: .
+    container_name: ai-practitioner-aws-env
+    volumes:
+      - aws-config:/root/.aws
+      - ./workspace:/workspace
+      - ./scripts:/scripts:ro
+    environment:
+      - AWS_DEFAULT_REGION=us-east-1
+      - AWS_DEFAULT_OUTPUT=json
+    ports:
+      # Frontend dev servers
+      - "3000:3000"   # React, Next.js, Vite default
+      - "3001:3001"   # Alternative frontend port
+      - "5173:5173"   # Vite default
+      - "8080:8080"   # Vue, alternative dev server
+      - "4200:4200"   # Angular default
+      # Backend dev servers
+      - "5000:5000"   # Flask default
+      - "8000:8000"   # Django, FastAPI default
+      - "8001:8001"   # Alternative backend port
+      - "9000:9000"   # Alternative backend port
+      # Node.js common ports
+      - "3030:3030"   # Express alternative
+      - "4000:4000"   # GraphQL/Apollo default
+      - "5001:5001"   # Alternative API port
+      # Database ports (if needed)
+      - "5432:5432"   # PostgreSQL
+      - "3306:3306"   # MySQL
+      - "27017:27017" # MongoDB
+      - "6379:6379"   # Redis
+    stdin_open: true
+    tty: true
+    networks:
+      - aws-practice
+
+volumes:
+  aws-config:
+
+networks:
+  aws-practice:
+    driver: bridge
