@@ -37,11 +37,11 @@
 }
 
 /* Progress bar segments - using Tailwind blue palette */
-.segment-1 { background: rgb(29 78 216); width: 20%; }  /* blue-700 */
-.segment-2 { background: rgb(37 99 235); width: 24%; }  /* blue-600 */
-.segment-3 { background: rgb(59 130 246); width: 28%; } /* blue-500 */
-.segment-4 { background: rgb(96 165 250); width: 14%; } /* blue-400 */
-.segment-5 { background: rgb(147 197 253); width: 14%; }/* blue-300 */
+.segment-1 { background: rgb(234, 88, 12); width: 20%; }  /* blue-700 */
+.segment-2 { background: rgb(247, 128, 64); width: 24%; }  /* blue-600 */
+.segment-3 { background: rgb(237, 147, 99); width: 28%; } /* blue-500 */
+.segment-4 { background: rgb(242, 168, 128); width: 14%; } /* blue-400 */
+.segment-5 { background: rgb(252, 186, 147); width: 14%; }/* blue-300 */
 
 /* Modal specific styles */
 .modal-image-container {
