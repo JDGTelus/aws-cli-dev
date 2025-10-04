@@ -14,14 +14,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-aws_region_prompt() {
-    local region=$(aws configure get region 2>/dev/null)
-    if [ -n "$region" ]; then
-        echo "%{$fg[cyan]%}<$region>%{$reset_color%}"
-    fi
-}
-
-PROMPT='%(?:%{$fg_bold[green]%}aws-cli-env ➜ :%{$fg_bold[red]%}aws-cli-env ➜ )%{$fg[cyan]%}~ %{$reset_color%}$(git_prompt_info)$(aws_region_prompt)'
+PROMPT='%(?:%{$fg_bold[green]%}aws-cli-env ➜ :%{$fg_bold[red]%}aws-cli-env ➜ )%{$fg[cyan]%}~ %{$reset_color%}$(git_prompt_info)'
 
 export EDITOR='nvim'
 export VISUAL='nvim'
