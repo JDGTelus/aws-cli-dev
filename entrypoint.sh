@@ -3,9 +3,8 @@
 if [ ! -f /root/.aws/credentials ] && [ -z "$AWS_ACCESS_KEY_ID" ]; then
     echo "⚠️  AWS credentials not found!"
     echo "Please configure AWS credentials using one of these methods:"
-    echo "1. Mount ~/.aws directory: -v ~/.aws:/root/.aws"
-    echo "2. Set environment variables: AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY"
-    echo "3. Run 'aws configure' inside the container"
+    echo "1. Set environment variables: AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY"
+    echo "2. Run 'aws configure' inside the container"
     echo ""
 fi
 

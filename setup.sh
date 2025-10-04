@@ -9,7 +9,7 @@ echo "Tmux: Configured with 256-color and UTF-8 support"
 echo "Ports: Frontend (3000-8080) & Backend (5000-9000) exposed"
 echo ""
 
-mkdir -p workspace scripts
+mkdir -p scripts
 
 echo "📦 Building Docker container (Alpine Linux)..."
 docker-compose build

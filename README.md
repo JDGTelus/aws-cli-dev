@@ -1,12 +1,44 @@
 # AWS CLI Development Environment
 
-Complete containerized development environment for AWS AI Practitioner certification preparation.
+**Completely isolated containerized development environment** for AWS AI Practitioner certification preparation with modern terminal-based tooling.
 
 **Base Image:** Alpine Linux (Latest) - Tiny, secure, multi-platform with Neovim 0.11+
 
-**Note:** Configured for Apple Silicon (ARM) compatibility with platform: linux/amd64
+**Platform:** Configured for Apple Silicon (ARM) compatibility with platform: linux/amd64
 
 📖 **New to Alpine?** See [guides/alpine-linux-guide.md](guides/alpine-linux-guide.md)
+
+## 🔒 Complete Isolation Model
+
+This environment is designed for **maximum isolation** with no data leakage to the host system:
+
+```
+┌─────────────────────────────────────┐
+│         HOST SYSTEM                 │
+│  (No AWS credentials, no code)      │
+│                                     │
+│  Only exposed:                      │
+│  • Port forwards (localhost only)   │
+│  • ./scripts (read-only configs)    │
+└─────────────────────────────────────┘
+              ↕
+┌─────────────────────────────────────┐
+│      DOCKER CONTAINER               │
+│                                     │
+│  Working Directory: /git            │
+│  AWS Credentials: Docker volume     │
+│  All work stays in container        │
+│                                     │
+│  ⚠️  User responsible for backups   │
+└─────────────────────────────────────┘
+```
+
+**Key Security Features:**
+- ✅ AWS credentials stored ONLY in isolated Docker volume
+- ✅ All code and work files stay inside container (`/git` directory)
+- ✅ No host directory mounts (except read-only scripts)
+- ✅ Port forwarding for development (localhost only)
+- ⚠️ **You must manually backup your work** (see Data Persistence section)
 
 ## Quick Start
 
@@ -18,6 +50,8 @@ docker-compose up -d
 docker-compose exec aws-cli-env zsh
 ```
 
+You'll start in `/git` directory - your isolated workspace.
+
 ## Features
 
 - **AWS CLI v2** - Latest version
@@ -26,8 +60,9 @@ docker-compose exec aws-cli-env zsh
 - **Neovim** - Ready for custom configuration
 - **Tmux** - 256-color and UTF-8 support, ready for plugins
 - **Zsh + Oh-My-Zsh** - Enhanced shell with UTF-8 locale and AWS region in prompt
-- **Independent AWS config** - Isolated from host credentials
+- **Independent AWS config** - Isolated in Docker volume (never touches host)
 - **Port Mapping** - Common dev/prod ports exposed for web development
+- **Complete Isolation** - All work stays in container
 
 ## Documentation
 
@@ -101,10 +136,12 @@ aws configure
 
 Or set environment variables in `docker-compose.yml`.
 
+**Important:** AWS credentials are stored ONLY in the Docker volume, never on the host system.
+
 ## Directory Structure
 
 ```
-aws-cli-dev/
+aws-cli-dev/                        # Host directory
 ├── Dockerfile                      # Container definition
 ├── docker-compose.yml              # Container orchestration
 ├── .zshrc                          # Zsh configuration
@@ -115,11 +152,16 @@ aws-cli-dev/
 │   ├── usage_guide.md
 │   ├── neovim-lua-configuration-guide.md
 │   └── neovim-navigation-manual.md
-├── scripts/                        # Setup scripts (created by setup.sh)
-│   ├── setup-neovim.sh            # Neovim IDE setup
-│   ├── setup-tmux-preview.sh      # Tmux configuration
-│   └── configure-billing-alerts.sh # AWS billing alerts
-└── workspace/                      # Your work files (created by setup.sh)
+└── scripts/                        # Setup scripts (mounted read-only)
+    ├── setup-neovim.sh            # Neovim IDE setup
+    ├── setup-tmux-preview.sh      # Tmux configuration
+    └── configure-billing-alerts.sh # AWS billing alerts
+
+Container filesystem:
+/git/                               # Your working directory (isolated)
+├── (your projects and code here)
+/root/.aws/                         # AWS credentials (Docker volume)
+/scripts/                           # Setup scripts (read-only mount)
 ```
 
 ## Container Management
@@ -134,7 +176,7 @@ docker-compose up -d
 docker-compose exec aws-cli-env zsh
 ```
 
-**Note:** The service name is `aws-cli-env` (not `aws-dev-env`)
+**Note:** You'll start in `/git` directory - your isolated workspace.
 
 ### Stop the environment
 ```bash
@@ -146,11 +188,66 @@ docker-compose down
 docker-compose down -v
 ```
 
+⚠️ **Warning:** This will permanently delete all AWS credentials and any data in the container!
+
 ### Rebuild after changes
 ```bash
 docker-compose build --no-cache
 docker-compose up -d
 ```
+
+## Data Persistence & Backups
+
+### What Persists
+- **Docker Volume (`aws-config`)**: AWS credentials survive container restarts
+- **Container Filesystem (`/git`)**: Your code survives container restarts BUT NOT container removal
+
+### What Gets Deleted
+- Running `docker-compose down -v`: Deletes EVERYTHING (credentials + code)
+- Running `docker-compose down` then `docker-compose up`: Keeps credentials, DELETES code
+- Removing the container: DELETES all code in `/git`
+
+### How to Backup Your Work
+
+#### Option 1: Copy files from container to host
+```bash
+# Copy entire /git directory
+docker cp ai-practitioner-aws-env:/git ./backup-git
+
+# Copy specific files
+docker cp ai-practitioner-aws-env:/git/myproject ./myproject
+```
+
+#### Option 2: Commit container to image
+```bash
+# Save current state as new image
+docker commit ai-practitioner-aws-env my-aws-backup:latest
+
+# Later, run from backup
+docker run -it my-aws-backup:latest zsh
+```
+
+#### Option 3: Backup Docker volume
+```bash
+# Backup AWS credentials volume
+docker run --rm -v aws-cli-dev_aws-config:/data -v $(pwd):/backup alpine tar czf /backup/aws-config-backup.tar.gz -C /data .
+
+# Restore AWS credentials volume
+docker run --rm -v aws-cli-dev_aws-config:/data -v $(pwd):/backup alpine tar xzf /backup/aws-config-backup.tar.gz -C /data
+```
+
+#### Option 4: Use git inside container
+```bash
+# Inside container
+cd /git/myproject
+git init
+git remote add origin <your-repo-url>
+git add .
+git commit -m "Backup"
+git push
+```
+
+**Recommendation:** Use git repositories for your code and backup the AWS credentials volume periodically.
 
 ## Key Features
 
@@ -219,12 +316,16 @@ The container exposes common development ports for web applications:
 **Usage Example:**
 ```bash
 # Inside container - start a React dev server
-cd workspace/my-app
-npm run dev
+cd /git
+npx create-react-app my-app
+cd my-app
+npm start
 # Access from host: http://localhost:3000
 
 # Inside container - start a Flask app
-cd workspace/my-api
+cd /git
+mkdir my-api && cd my-api
+# Create app.py with Flask app on port 5000
 python app.py
 # Access from host: http://localhost:5000
 ```
@@ -239,7 +340,7 @@ docker system prune -a
 ```
 
 ### AWS credentials not working
-Ensure you've run `aws configure` inside the container, not on the host.
+Ensure you've run `aws configure` inside the container. Credentials are stored in the Docker volume, not on the host.
 
 ### Scripts not executable
 ```bash
@@ -249,10 +350,23 @@ chmod +x /scripts/*.sh
 ### Want to start fresh
 ```bash
 docker-compose down -v  # Remove everything including volumes
-rm -rf workspace/*       # Clear workspace
 ./setup.sh              # Rebuild
 ```
+
+⚠️ **Warning:** This deletes ALL data including AWS credentials and code!
+
+### Need to recover work after accidental deletion
+If you didn't backup, your work is **permanently lost**. Always backup important work using git or `docker cp`.
 
 ## Support
 
 See the comprehensive guides in the `/guides` directory for detailed configuration, troubleshooting, and usage instructions.
+
+## Security Best Practices
+
+1. **Never commit AWS credentials** to git repositories
+2. **Regularly backup** your `/git` directory and AWS credentials volume
+3. **Use IAM roles** with minimal permissions for AWS access
+4. **Monitor AWS costs** using the billing alerts script
+5. **Keep the container updated** by rebuilding periodically
+6. **Use git** for version control of your code inside the container

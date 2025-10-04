@@ -66,13 +66,13 @@ The `.zshrc` file sets a custom `PROMPT` variable **after** sourcing Oh-My-Zsh, 
 ### Current Prompt Format
 
 ```
-aws-cli-env ➜ workspace <us-east-1>
+aws-cli-env ➜ git <us-east-1>
 ```
 
 Components:
 - `aws-cli-env` - Container name
 - `➜` - Prompt character (green if last command succeeded, red if failed)
-- `workspace` - Current directory name
+- `git` - Current directory name
 - `<us-east-1>` - AWS region (only shows when configured)
 
 When in a git repository:
@@ -92,7 +92,7 @@ After rebuild:
 ```bash
 # Check prompt shows container name
 docker-compose exec aws-cli-env zsh
-# Should show: aws-cli-env ➜ /workspace
+# Should show: aws-cli-env ➜ git
 
 # Run Neovim setup (LSP servers should install without errors)
 /scripts/setup-neovim.sh
