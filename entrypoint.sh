@@ -30,18 +30,19 @@ else
 fi
 
 echo ""
-echo "🏔️  OS: Alpine Linux (lightweight, secure)"
+echo "🐧 OS: Ubuntu 24.04 LTS"
 echo "📝 Editor: Neovim $(nvim --version 2>/dev/null | head -1 | awk '{print $2}' || echo 'installed')"
 echo "🐍 Python: $(python --version 2>&1)"
 echo "📦 Node: $(node --version 2>&1)"
 echo "🐚 Shell: zsh with oh-my-zsh"
 echo "🖥️  Tmux: Available"
+echo "🤖 OpenCode: $(opencode --version 2>&1 || echo 'Not installed')"
 echo ""
 echo "💡 Tips:"
 echo "  • Setup Neovim IDE: /scripts/setup-neovim.sh"
 echo "  • Setup Tmux: /scripts/setup-tmux-preview.sh"
-echo "  • Package manager: apk (e.g., apk add htop)"
-echo "  • Alpine guide: /guides/alpine-linux-guide.md"
+echo "  • Package manager: apt (e.g., apt install htop)"
+echo "  • Run OpenCode: opencode"
 echo ""
 
 exec "$@"

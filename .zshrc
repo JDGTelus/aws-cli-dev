@@ -70,4 +70,17 @@ if [ -f ~/.zsh_aliases ]; then
     source ~/.zsh_aliases
 fi
 
+# Show current AWS region in prompt
+function aws_region_prompt() {
+  local region=$(aws configure get region 2>/dev/null)
+  if [ -n "$region" ]; then
+    echo "<region:$region>"
+  fi
+}
+
+PROMPT='%(?:%{$fg_bold[green]%}aws-cli-env ➜ :%{$fg_bold[red]%}aws-cli-env ➜ )%{$fg[cyan]%}~ %{$reset_color%}$(git_prompt_info)%{$fg[yellow]%}$(aws_region_prompt)%{$reset_color%}'
+
+# Add opencode to PATH
+export PATH=$HOME/.opencode/bin:$PATH
+
 echo "🚀 AI Practitioner Environment Ready!"
