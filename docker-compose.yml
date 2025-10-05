@@ -1,6 +1,5 @@
 services:
   aws-cli-env:
-    platform: linux/amd64
     build: .
     container_name: ai-practitioner-aws-env
     volumes:
