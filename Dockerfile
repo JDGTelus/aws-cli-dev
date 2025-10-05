@@ -95,10 +95,10 @@ RUN chsh -s $(which zsh)
 # Install opencode
 RUN curl -fsSL https://opencode.ai/install | bash
 
-WORKDIR /git
+WORKDIR /root
 
 # Create necessary directories
-RUN mkdir -p /root/.aws /root/.config/nvim /root/.config/opencode
+RUN mkdir -p /root/.aws /root/.config/nvim /root/.config/opencode /root/git
 
 # Copy configuration files
 COPY .zshrc /root/.zshrc

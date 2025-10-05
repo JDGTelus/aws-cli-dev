@@ -43,6 +43,7 @@ echo "  • Setup Neovim IDE: /scripts/setup-neovim.sh"
 echo "  • Setup Tmux: /scripts/setup-tmux-preview.sh"
 echo "  • Package manager: apt (e.g., apt install htop)"
 echo "  • Run OpenCode: opencode"
+echo "  • Your projects: /root/git (persists to ./workspace)"
 echo ""
 
 exec "$@"
