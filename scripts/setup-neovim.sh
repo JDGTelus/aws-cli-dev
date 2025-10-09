@@ -2,32 +2,310 @@
 
 set -e
 
-echo "=================================================="
-echo "Neovim Development Environment Setup Script"
-echo "=================================================="
-echo ""
+SCRIPT_VERSION="1.0.0"
+NVIM_CONFIG_DIR="${HOME}/.config/nvim"
+NVIM_DATA_DIR="${HOME}/.local/share/nvim"
 
-NVIM_CONFIG_DIR="$HOME/.config/nvim"
-NVIM_DATA_DIR="$HOME/.local/share/nvim"
-SCRIPTS_DIR="$HOME/.scripts"
+GREEN='\033[0;32m'
+BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+NC='\033[0m'
 
-echo "[1/8] Creating directory structure..."
-mkdir -p "$NVIM_CONFIG_DIR/lua"
-mkdir -p "$NVIM_DATA_DIR"
-mkdir -p "$SCRIPTS_DIR"
+print_header() {
+    echo -e "${BLUE}================================================================${NC}"
+    echo -e "${BLUE}  Neovim Development Environment Setup v${SCRIPT_VERSION}${NC}"
+    echo -e "${BLUE}================================================================${NC}"
+    echo ""
+}
 
-echo "[2/8] Installing Python dependencies..."
-pip3 install --break-system-packages --user black flake8 pylint autopep8 2>/dev/null || pip install --break-system-packages --user black flake8 pylint autopep8
+print_step() {
+    echo -e "${GREEN}==>${NC} ${1}"
+}
 
-echo "[3/8] Checking Node.js dependencies..."
-echo "Note: Node.js packages are already installed globally in the container"
+print_warning() {
+    echo -e "${YELLOW}WARNING:${NC} ${1}"
+}
 
-echo "[4/8] Checking system build dependencies..."
-echo "✓ Build tools already installed in container"
+print_error() {
+    echo -e "${RED}ERROR:${NC} ${1}"
+}
 
-echo "[5/8] Writing Neovim configuration files..."
+print_success() {
+    echo -e "${GREEN}✓${NC} ${1}"
+}
 
-cat > "$NVIM_CONFIG_DIR/init.lua" << 'INITLUA'
+detect_distro() {
+    if [ -f /etc/os-release ]; then
+        . /etc/os-release
+        DISTRO=$ID
+        DISTRO_VERSION=$VERSION_ID
+    elif [ -f /etc/lsb-release ]; then
+        . /etc/lsb-release
+        DISTRO=$DISTRIB_ID
+        DISTRO_VERSION=$DISTRIB_RELEASE
+    else
+        DISTRO="unknown"
+        DISTRO_VERSION="unknown"
+    fi
+    
+    DISTRO=$(echo "$DISTRO" | tr '[:upper:]' '[:lower:]')
+    print_step "Detected distribution: ${DISTRO} ${DISTRO_VERSION}"
+}
+
+check_command() {
+    if command -v "$1" &> /dev/null; then
+        print_success "$1 is installed ($(command -v $1))"
+        return 0
+    else
+        print_warning "$1 is not installed"
+        return 1
+    fi
+}
+
+check_prerequisites() {
+    print_step "Checking prerequisites..."
+    
+    local missing_prereqs=()
+    
+    if ! check_command python3; then
+        missing_prereqs+=("python3")
+    fi
+    
+    if ! check_command node; then
+        missing_prereqs+=("node")
+    fi
+    
+    if ! check_command npm; then
+        missing_prereqs+=("npm")
+    fi
+    
+    if ! check_command pip3; then
+        missing_prereqs+=("pip3")
+    fi
+    
+    if [ ${#missing_prereqs[@]} -ne 0 ]; then
+        print_error "Missing prerequisites: ${missing_prereqs[*]}"
+        print_error "Please install Python 3 and Node.js first"
+        exit 1
+    fi
+    
+    print_success "All prerequisites met"
+    python3 --version
+    node --version
+    npm --version
+}
+
+install_system_dependencies() {
+    print_step "Installing system dependencies..."
+    
+    case "$DISTRO" in
+        ubuntu|debian|linuxmint|pop|elementary)
+            sudo apt-get update
+            sudo apt-get install -y \
+                git \
+                curl \
+                wget \
+                build-essential \
+                unzip \
+                gettext \
+                cmake \
+                ripgrep \
+                fd-find \
+                xclip \
+                python3-venv \
+                python3-dev
+            ;;
+        
+        fedora|rhel|centos|rocky|almalinux)
+            if command -v dnf &> /dev/null; then
+                PKG_MGR="dnf"
+            else
+                PKG_MGR="yum"
+            fi
+            
+            sudo $PKG_MGR install -y \
+                git \
+                curl \
+                wget \
+                gcc \
+                gcc-c++ \
+                make \
+                unzip \
+                gettext \
+                cmake \
+                ripgrep \
+                fd-find \
+                xclip \
+                python3-devel
+            ;;
+        
+        arch|manjaro|endeavouros)
+            sudo pacman -Sy --noconfirm \
+                git \
+                curl \
+                wget \
+                base-devel \
+                unzip \
+                gettext \
+                cmake \
+                ripgrep \
+                fd \
+                xclip \
+                python
+            ;;
+        
+        opensuse*|sles)
+            sudo zypper install -y \
+                git \
+                curl \
+                wget \
+                gcc \
+                gcc-c++ \
+                make \
+                unzip \
+                gettext-tools \
+                cmake \
+                ripgrep \
+                fd \
+                xclip \
+                python3-devel
+            ;;
+        
+        *)
+            print_warning "Unknown distribution. Attempting to install basic dependencies..."
+            print_warning "You may need to manually install: git, curl, wget, build-essential, cmake, ripgrep, fd"
+            ;;
+    esac
+    
+    print_success "System dependencies installed"
+}
+
+install_neovim() {
+    print_step "Installing/Updating Neovim..."
+    
+    if check_command nvim; then
+        CURRENT_NVIM_VERSION=$(nvim --version | head -n1)
+        print_warning "Neovim already installed: $CURRENT_NVIM_VERSION"
+        
+        read -p "Do you want to update to the latest version? (y/N) " -n 1 -r
+        echo
+        if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+            print_step "Skipping Neovim installation"
+            return 0
+        fi
+    fi
+    
+    case "$DISTRO" in
+        ubuntu|debian|linuxmint|pop|elementary)
+            if [[ "$DISTRO_VERSION" =~ ^(22|23|24) ]] || [[ "$DISTRO" == "debian" && "$DISTRO_VERSION" -ge 12 ]]; then
+                sudo apt-get install -y neovim
+            else
+                print_step "Installing Neovim from AppImage for older distribution..."
+                curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+                chmod u+x nvim.appimage
+                sudo mv nvim.appimage /usr/local/bin/nvim
+            fi
+            ;;
+        
+        fedora|rhel|centos|rocky|almalinux)
+            if command -v dnf &> /dev/null; then
+                sudo dnf install -y neovim
+            else
+                print_step "Installing Neovim from AppImage..."
+                curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+                chmod u+x nvim.appimage
+                sudo mv nvim.appimage /usr/local/bin/nvim
+            fi
+            ;;
+        
+        arch|manjaro|endeavouros)
+            sudo pacman -S --noconfirm neovim
+            ;;
+        
+        opensuse*|sles)
+            sudo zypper install -y neovim
+            ;;
+        
+        *)
+            print_step "Installing Neovim from AppImage..."
+            curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+            chmod u+x nvim.appimage
+            sudo mv nvim.appimage /usr/local/bin/nvim
+            ;;
+    esac
+    
+    if check_command nvim; then
+        nvim --version | head -n1
+        print_success "Neovim installed successfully"
+    else
+        print_error "Neovim installation failed"
+        exit 1
+    fi
+}
+
+install_python_tools() {
+    print_step "Installing Python tools for Neovim..."
+    
+    pip3 install --user --upgrade pip
+    
+    pip3 install --user \
+        pynvim \
+        black \
+        flake8 \
+        autopep8 \
+        pylint \
+        mypy
+    
+    print_success "Python tools installed"
+    
+    print_step "Installed Python tools:"
+    pip3 list --user | grep -E "pynvim|black|flake8|autopep8|pylint|mypy" || true
+}
+
+install_node_tools() {
+    print_step "Installing Node.js tools for Neovim..."
+    
+    npm install -g \
+        neovim \
+        prettier \
+        eslint \
+        @fsouza/prettierd \
+        eslint_d \
+        typescript \
+        typescript-language-server \
+        vscode-langservers-extracted \
+        yaml-language-server \
+        bash-language-server
+    
+    print_success "Node.js tools installed"
+    
+    print_step "Installed Node.js tools:"
+    npm list -g --depth=0 | grep -E "neovim|prettier|eslint|typescript|language-server" || true
+}
+
+backup_existing_config() {
+    if [ -d "$NVIM_CONFIG_DIR" ]; then
+        BACKUP_DIR="${NVIM_CONFIG_DIR}.backup.$(date +%Y%m%d_%H%M%S)"
+        print_warning "Existing Neovim config found. Creating backup at: $BACKUP_DIR"
+        mv "$NVIM_CONFIG_DIR" "$BACKUP_DIR"
+        print_success "Backup created"
+    fi
+    
+    if [ -d "$NVIM_DATA_DIR" ]; then
+        BACKUP_DATA_DIR="${NVIM_DATA_DIR}.backup.$(date +%Y%m%d_%H%M%S)"
+        print_warning "Existing Neovim data found. Creating backup at: $BACKUP_DATA_DIR"
+        mv "$NVIM_DATA_DIR" "$BACKUP_DATA_DIR"
+        print_success "Data backup created"
+    fi
+}
+
+create_nvim_config() {
+    print_step "Creating Neovim configuration..."
+    
+    mkdir -p "$NVIM_CONFIG_DIR/lua"
+    
+    cat > "$NVIM_CONFIG_DIR/init.lua" << 'INIT_LUA'
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -73,9 +351,9 @@ vim.keymap.set("n", "<F4>", ":set number!<CR>", { silent = true })
 vim.keymap.set("n", "<C-m>", "<C-w>", { silent = true })
 
 require("plugins")
-INITLUA
+INIT_LUA
 
-cat > "$NVIM_CONFIG_DIR/lua/plugins.lua" << 'PLUGINSLUA'
+    cat > "$NVIM_CONFIG_DIR/lua/plugins.lua" << 'PLUGINS_LUA'
 return require("lazy").setup({
   {
     "nvim-tree/nvim-tree.lua",
@@ -208,9 +486,32 @@ return require("lazy").setup({
   },
 
   {
+    "williamboman/mason-lspconfig.nvim",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "neovim/nvim-lspconfig",
+    },
+    config = function()
+      require("mason-lspconfig").setup({
+        ensure_installed = {
+          "ts_ls",
+          "pyright",
+          "html",
+          "cssls",
+          "jsonls",
+          "eslint",
+          "lua_ls",
+        },
+        automatic_installation = true,
+      })
+    end,
+  },
+
+  {
     "neovim/nvim-lspconfig",
     dependencies = {
       "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
       "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
@@ -226,6 +527,7 @@ return require("lazy").setup({
                 typeCheckingMode = "basic",
                 autoSearchPaths = true,
                 useLibraryCodeForTypes = true,
+                diagnosticMode = "workspace",
               }
             }
           }
@@ -343,6 +645,68 @@ return require("lazy").setup({
   },
 
   {
+    "stevearc/conform.nvim",
+    event = { "BufWritePre" },
+    cmd = { "ConformInfo" },
+    config = function()
+      require("conform").setup({
+        formatters_by_ft = {
+          python = { "black" },
+          javascript = { "prettier" },
+          typescript = { "prettier" },
+          javascriptreact = { "prettier" },
+          typescriptreact = { "prettier" },
+          css = { "prettier" },
+          html = { "prettier" },
+          json = { "prettier" },
+          markdown = { "prettier" },
+        },
+        format_on_save = {
+          timeout_ms = 500,
+          lsp_fallback = true,
+        },
+      })
+
+      vim.keymap.set({ "n", "v" }, "<leader>f", function()
+        require("conform").format({
+          lsp_fallback = true,
+          async = false,
+          timeout_ms = 500,
+        })
+      end, { desc = "Format file or range (in visual mode)" })
+    end,
+  },
+
+  {
+    "mfussenegger/nvim-lint",
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      local lint = require("lint")
+      
+      lint.linters_by_ft = {
+        python = { "flake8" },
+        javascript = { "eslint" },
+        typescript = { "eslint" },
+        javascriptreact = { "eslint" },
+        typescriptreact = { "eslint" },
+      }
+
+      local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
+
+      vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+        group = lint_augroup,
+        callback = function()
+          lint.try_lint()
+        end,
+      })
+
+      vim.keymap.set("n", "<leader>l", function()
+        lint.try_lint()
+      end, { desc = "Trigger linting for current file" })
+    end,
+  },
+
+  {
     "windwp/nvim-autopairs",
     config = function()
       require("nvim-autopairs").setup({})
@@ -424,82 +788,13 @@ return require("lazy").setup({
   },
 
   {
-    "jose-elias-alvarez/null-ls.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = function()
-      local null_ls = require("null-ls")
-      null_ls.setup({
-        sources = {
-          null_ls.builtins.formatting.prettier.with({
-            filetypes = { "javascript", "typescript", "css", "html", "json", "markdown" },
-          }),
-          null_ls.builtins.formatting.black.with({
-            filetypes = { "python" },
-          }),
-          null_ls.builtins.diagnostics.eslint,
-          null_ls.builtins.diagnostics.flake8,
-        },
-      })
-
-      vim.api.nvim_create_autocmd("BufWritePre", {
-        pattern = { "*.js", "*.jsx", "*.ts", "*.tsx", "*.py", "*.json", "*.css", "*.html", "*.md" },
-        callback = function()
-          vim.lsp.buf.format({ async = false })
-        end,
-      })
-    end,
-  },
-
-  {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     build = "cd app && npm install",
     init = function()
       vim.g.mkdp_filetypes = { "markdown" }
-      vim.g.mkdp_auto_start = 0
-      vim.g.mkdp_auto_close = 1
-      vim.g.mkdp_refresh_slow = 0
-      vim.g.mkdp_command_for_global = 0
-      vim.g.mkdp_open_to_the_world = 0
-      vim.g.mkdp_open_ip = ""
-      vim.g.mkdp_port = ""
-      vim.g.mkdp_echo_preview_url = 0
-      vim.g.mkdp_browserfunc = ""
-      vim.g.mkdp_preview_options = {
-        mkit = {},
-        katex = {},
-        uml = {},
-        maid = {},
-        disable_sync_scroll = 0,
-        sync_scroll_type = "middle",
-        hide_yaml_meta = 1,
-        sequence_diagrams = {},
-        flowchart_diagrams = {},
-        content_editable = false,
-        disable_filename = 0,
-      }
-      vim.g.mkdp_markdown_css = ""
-      vim.g.mkdp_highlight_css = ""
-      vim.g.mkdp_page_title = "「${name}」"
-      vim.g.mkdp_combine_preview = 0
-      vim.g.mkdp_combine_preview_auto_refresh = 1
-      
-      vim.api.nvim_create_user_command("MarkdownPreviewW3m", function()
-        local file = vim.fn.expand("%:p")
-        if vim.fn.fnamemodify(file, ":e") == "md" then
-          local temp_html = vim.fn.tempname() .. ".html"
-          vim.fn.system(string.format("python3 /home/jd/md_to_html.py '%s' '%s' 'Markdown Preview'", file, temp_html))
-          vim.cmd("split")
-          vim.cmd("terminal w3m " .. temp_html)
-        else
-          print("Not a markdown file")
-        end
-      end, {})
-
-      vim.keymap.set("n", "<leader>mp", ":MarkdownPreview<CR>", { silent = true, desc = "Markdown Preview (Browser)" })
-      vim.keymap.set("n", "<leader>mw", ":MarkdownPreviewW3m<CR>", { silent = true, desc = "Markdown Preview (w3m)" })
+      vim.keymap.set("n", "<leader>mp", ":MarkdownPreview<CR>", { silent = true })
       vim.keymap.set("n", "<leader>ms", ":MarkdownPreviewStop<CR>", { silent = true })
-      vim.keymap.set("n", "<leader>mt", ":MarkdownPreviewToggle<CR>", { silent = true })
     end,
     ft = { "markdown" },
   },
@@ -513,153 +808,129 @@ return require("lazy").setup({
     end,
   },
 })
-PLUGINSLUA
+PLUGINS_LUA
 
-echo "[6/8] Writing markdown to HTML converter script..."
-cat > "$HOME/md_to_html.py" << 'MDTOHTML'
-#!/usr/bin/env python3
-import re
-import html
-import sys
+    print_success "Neovim configuration files created"
+}
 
-def md_to_html(md_content):
-    lines = md_content.split('\n')
-    html_lines = []
-    in_code_block = False
+install_plugins() {
+    print_step "Installing Neovim plugins..."
     
-    for line in lines:
-        if line.strip().startswith('```'):
-            if not in_code_block:
-                html_lines.append('<pre><code>')
-                in_code_block = True
-            else:
-                html_lines.append('</code></pre>')
-                in_code_block = False
-            continue
-        
-        if in_code_block:
-            html_lines.append(html.escape(line))
-            continue
-        
-        if line.startswith('### '):
-            html_lines.append(f'<h3>{html.escape(line[4:])}</h3>')
-        elif line.startswith('## '):
-            html_lines.append(f'<h2>{html.escape(line[3:])}</h2>')
-        elif line.startswith('# '):
-            html_lines.append(f'<h1>{html.escape(line[2:])}</h1>')
-        elif line.startswith('- '):
-            html_lines.append(f'<li>{process_inline_formatting(html.escape(line[2:]))}</li>')
-        elif '|' in line and line.strip().startswith('|'):
-            cells = [cell.strip() for cell in line.split('|')[1:-1]]
-            if all(cell.strip() in ['', '-', '---', '----', '-----', '------', '-------', '--------'] or cell.strip().startswith('-') for cell in cells):
-                continue
-            cell_html = ''.join(f'<td>{process_inline_formatting(html.escape(cell))}</td>' for cell in cells)
-            html_lines.append(f'<tr>{cell_html}</tr>')
-        elif line.strip() == '':
-            html_lines.append('<br>')
-        else:
-            if line.strip():
-                html_lines.append(f'<p>{process_inline_formatting(html.escape(line))}</p>')
+    print_step "This will open Neovim and automatically install plugins."
+    print_step "The window will close automatically when done (may take 1-2 minutes)."
     
-    return '\n'.join(html_lines)
-
-def process_inline_formatting(text):
-    text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
-    text = re.sub(r'`([^`]+)`', r'<code>\1</code>', text)
-    return text
-
-def main():
-    input_file = sys.argv[1]
-    output_file = sys.argv[2]
-    title = sys.argv[3] if len(sys.argv) > 3 else "Document"
+    sleep 2
     
-    with open(input_file, 'r') as f:
-        md_content = f.read()
+    nvim --headless "+Lazy! sync" +qa
     
-    html_content = md_to_html(md_content)
+    print_success "Plugins installed"
+}
+
+verify_installation() {
+    print_step "Verifying installation..."
     
-    html_content = re.sub(r'(<li>.*?</li>\s*)+', lambda m: f'<ul>{m.group(0)}</ul>', html_content, flags=re.DOTALL)
+    echo ""
+    echo "=== Verification Report ==="
+    echo ""
     
-    html_content = re.sub(r'(<tr>.*?</tr>\s*)+', lambda m: f'<table>{m.group(0)}</table>', html_content, flags=re.DOTALL)
+    if command -v nvim &> /dev/null; then
+        echo "✓ Neovim: $(nvim --version | head -n1)"
+    else
+        echo "✗ Neovim: NOT FOUND"
+    fi
     
-    full_html = f'''<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>{title}</title>
-    <style>
-        body {{ font-family: Arial, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; line-height: 1.6; }}
-        h1, h2, h3 {{ color: #333; margin-top: 30px; }}
-        h1 {{ border-bottom: 2px solid #333; padding-bottom: 10px; }}
-        code {{ background-color: #f4f4f4; padding: 2px 4px; border-radius: 3px; font-family: monospace; }}
-        pre {{ background-color: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; }}
-        pre code {{ background: none; padding: 0; }}
-        table {{ border-collapse: collapse; width: 100%; margin: 20px 0; }}
-        th, td {{ border: 1px solid #ddd; padding: 8px; text-align: left; }}
-        th {{ background-color: #f2f2f2; font-weight: bold; }}
-        ul {{ margin: 10px 0; padding-left: 20px; }}
-        li {{ margin: 5px 0; }}
-        strong {{ color: #d73027; }}
-        p {{ margin: 10px 0; }}
-    </style>
-</head>
-<body>
-{html_content}
-</body>
-</html>'''
+    if command -v python3 &> /dev/null; then
+        echo "✓ Python: $(python3 --version)"
+    else
+        echo "✗ Python: NOT FOUND"
+    fi
     
-    with open(output_file, 'w') as f:
-        f.write(full_html)
+    if command -v node &> /dev/null; then
+        echo "✓ Node.js: $(node --version)"
+    else
+        echo "✗ Node.js: NOT FOUND"
+    fi
     
-    print(f'Successfully converted {input_file} to {output_file}')
+    echo ""
+    echo "=== Python Tools ==="
+    pip3 list --user 2>/dev/null | grep -E "pynvim|black|flake8" || echo "Warning: Some Python tools may be missing"
+    
+    echo ""
+    echo "=== Node.js Tools ==="
+    npm list -g --depth=0 2>/dev/null | grep -E "neovim|prettier|eslint" || echo "Warning: Some Node.js tools may be missing"
+    
+    echo ""
+    echo "=== Neovim Configuration ==="
+    if [ -f "$NVIM_CONFIG_DIR/init.lua" ]; then
+        echo "✓ init.lua: EXISTS"
+    else
+        echo "✗ init.lua: NOT FOUND"
+    fi
+    
+    if [ -f "$NVIM_CONFIG_DIR/lua/plugins.lua" ]; then
+        echo "✓ plugins.lua: EXISTS"
+    else
+        echo "✗ plugins.lua: NOT FOUND"
+    fi
+    
+    if [ -d "$NVIM_DATA_DIR/lazy" ]; then
+        echo "✓ Lazy.nvim: INSTALLED"
+        PLUGIN_COUNT=$(find "$NVIM_DATA_DIR/lazy" -mindepth 1 -maxdepth 1 -type d | wc -l)
+        echo "  Plugins installed: $PLUGIN_COUNT"
+    else
+        echo "✗ Lazy.nvim: NOT FOUND"
+    fi
+}
 
-if __name__ == '__main__':
-    main()
-MDTOHTML
+print_completion_message() {
+    echo ""
+    echo -e "${GREEN}================================================================${NC}"
+    echo -e "${GREEN}  Installation Complete!${NC}"
+    echo -e "${GREEN}================================================================${NC}"
+    echo ""
+    echo "Next steps:"
+    echo ""
+    echo "1. Start Neovim:"
+    echo "   $ nvim"
+    echo ""
+    echo "2. Check plugin status:"
+    echo "   :Lazy"
+    echo ""
+    echo "3. Check LSP servers:"
+    echo "   :Mason"
+    echo ""
+    echo "4. Useful keybindings:"
+    echo "   Leader key: SPACE"
+    echo "   F2          - Toggle file tree"
+    echo "   F3          - Next buffer"
+    echo "   F4          - Toggle line numbers"
+    echo "   <leader>ff  - Find files"
+    echo "   <leader>fg  - Live grep"
+    echo "   <leader>f   - Format code"
+    echo "   <leader>l   - Lint code"
+    echo "   gd          - Go to definition"
+    echo "   K           - Show hover documentation"
+    echo ""
+    echo "For more information, see ~/.config/nvim/"
+    echo ""
+}
 
-chmod +x "$HOME/md_to_html.py"
+main() {
+    print_header
+    
+    detect_distro
+    check_prerequisites
+    install_system_dependencies
+    install_neovim
+    install_python_tools
+    install_node_tools
+    backup_existing_config
+    create_nvim_config
+    install_plugins
+    verify_installation
+    print_completion_message
+}
 
-echo "[7/8] Starting Neovim to install and verify plugins..."
-echo "This will bootstrap lazy.nvim and install all plugins..."
-echo ""
-
-nvim --headless "+Lazy! sync" +qa 2>&1 | tee /tmp/nvim-setup.log
-
-sleep 2
-
-echo ""
-echo "[8/8] Installing LSP servers via Mason..."
-nvim --headless "+MasonInstall pyright typescript-language-server html-lsp css-lsp json-lsp eslint-lsp lua-language-server" +qa 2>&1 | tee -a /tmp/nvim-setup.log
-
-sleep 3
-
-echo ""
-echo "=================================================="
-echo "✓ Setup Complete!"
-echo "=================================================="
-echo ""
-echo "Installed components:"
-echo "  • Neovim configuration: $NVIM_CONFIG_DIR"
-echo "  • Plugin manager: lazy.nvim"
-echo "  • LSP servers via Mason"
-echo "  • Python formatters: black, flake8"
-echo "  • Node.js formatters: prettier, eslint"
-echo "  • Markdown converter: ~/md_to_html.py"
-echo ""
-echo "Key mappings:"
-echo "  <Space> - Leader key"
-echo "  <F2>    - Toggle file explorer"
-echo "  <F3>    - Next buffer"
-echo "  <F4>    - Toggle line numbers"
-echo "  <Space>ff - Find files"
-echo "  <Space>fg - Live grep"
-echo "  <Space>fb - Browse buffers"
-echo ""
-echo "To complete setup:"
-echo "  1. Open Neovim: nvim"
-echo "  2. Wait for plugins to finish installing"
-echo "  3. Run :checkhealth to verify installation"
-echo "  4. Run :Mason to check LSP server status"
-echo ""
-echo "Setup log saved to: /tmp/nvim-setup.log"
-echo "=================================================="
+if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+    main "$@"
+fi
